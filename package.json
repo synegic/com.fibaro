@@ -4,13 +4,13 @@
   "description": "This app adds support for Fibaro devices in Homey",
   "main": "app.js",
   "dependencies": {
-    "homey-log": "^1.0.2",
-    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git",
+    "homey-log": "^1.0.5",
+    "homey-meshdriver": "file:../../node-homey-meshdriver",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {},
   "scripts": {
-		"run": "homeyConfig compose && athom project --run",
+    "run": "homeyConfig compose && athom project --run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
