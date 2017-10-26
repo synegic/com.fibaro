@@ -1,13 +1,13 @@
 'use strict';
 
-const ZwaveSensorDevice = require('homey-meshdriver').ZwaveSensorDevice;
+const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
-class FibaroDoorSensor extends ZwaveSensorDevice {
+class FibaroDoorSensor extends ZwaveDevice {
 
-	onMeshInit() {
-		super.onMeshInit({
-			autoRegisterSystemCapabilities: true,
-		})
+	async onMeshInit() {
+		this.registerCapability('alarm_contact', 'NOTIFICATION');
+		this.registerCapability('alarm_tamper', 'NOTIFICATION');
+		this.registerCapability('measure_battery', 'BATTERY');
 	}
 }
 
