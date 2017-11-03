@@ -48,9 +48,7 @@ class FibaroRGB extends ZwaveDevice {
 		if( typeof temperature !== 'number' ) {
 			temperature = this.getCapabilityValue('lighttemperature');
 		}
-		
-		console.log('_onTemperature', temperature);
-		
+				
 		let duration = 1000;
 		let rgb = FibaroRGB.getTemperatureColor(temperature);
 		
