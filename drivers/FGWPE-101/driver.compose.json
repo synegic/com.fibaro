@@ -1,0 +1,35 @@
+{
+    "name": {
+        "en": "Wall Plug",
+        "nl": "Tussenstekker"
+    },
+    "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": 1536,
+        "productId": [
+            4096,
+            8192,
+            12288
+        ],
+        "learnmode": {
+            "image": "/drivers/FGWPE-101/assets/learnmode.svg",
+            "instruction": {
+                "en": "Insert the Wall Plug in a socket or press the button on your Fibaro Wall Plug three times",
+                "nl": "Stop de Tussenstekker in het stopcontact of druk driemaal op de knop op de Tussenstekker"
+            }
+        },
+        "associationGroups": [
+            3
+        ]
+    },
+    "class": "socket",
+    "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+    ],
+    "images": {
+        "large": "/drivers/FGWPE-101/assets/images/large.png",
+        "small": "/drivers/FGWPE-101/assets/images/small.png"
+    }
+}

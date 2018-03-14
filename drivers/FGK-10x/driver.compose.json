@@ -1,0 +1,37 @@
+{
+    "name": {
+      "en": "Door/Window Sensor (Z-Wave Plus)",
+      "nl": "Deur/Raam Sensor (Z-Wave Plus)"
+    },
+    "zwave": {
+      "manufacturerId": 271,
+      "productTypeId": 1793,
+      "productId": [
+        4097,
+        8193,
+        12289
+      ],
+      "learnmode": {
+        "image": "/drivers/FGK-10x/assets/learnmode.svg",
+        "instruction": {
+          "en": "Press the button on your Fibaro Door/Window Sensor three times",
+          "nl": "Druk driemaal op de knop op de Fibaro Deur/Raam Sensor"
+        }
+      },
+      "associationGroups": [
+        1,
+        2
+      ]
+    },
+    "class": "sensor",
+    "capabilities": [
+      "alarm_contact",
+      "alarm_tamper",
+      "measure_temperature",
+      "measure_battery"
+    ],
+    "images": {
+      "large": "/drivers/FGK-10x/assets/images/large.png",
+      "small": "/drivers/FGK-10x/assets/images/small.png"
+    }
+  }

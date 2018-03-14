@@ -1,0 +1,45 @@
+{
+    "name": {
+      "en": "Motion, light and temperature sensor",
+      "nl": "Beweging, licht en temperatuur sensor"
+    },
+    "zwave": {
+      "manufacturerId": 271,
+      "productTypeId": [
+        2048
+      ],
+      "productId": [
+        4097
+      ],
+      "zwaveAllianceProductId": 1048,
+      "learnmode": {
+        "image": "/drivers/FGMS-001/assets/learnmode.svg",
+        "instruction": {
+          "en": "Press the button on your Fibaro Motion Sensor three times",
+          "nl": "Druk driemaal op de knop op de Fibaro Bewegingssensor"
+        }
+      },
+      "associationGroups": [
+        3
+      ],
+      "defaultConfiguration": [
+        {
+          "id": 24,
+          "size": 1,
+          "value": 1
+        }
+      ]
+    },
+    "class": "sensor",
+    "capabilities": [
+      "measure_battery",
+      "measure_luminance",
+      "measure_temperature",
+      "alarm_motion",
+      "alarm_tamper"
+    ],
+    "images": {
+      "large": "/drivers/FGMS-001/assets/images/large.png",
+      "small": "/drivers/FGMS-001/assets/images/small.png"
+    }
+  }
