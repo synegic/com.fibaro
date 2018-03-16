@@ -6,6 +6,10 @@
         "en": "Operation Mode",
         "nl": "Werking Modus"
       },
+      "zwave": {
+        "index": 1,
+        "size": 1
+      },
       "hint": {
         "en": "Choose in what way the contact alarm is being activated",
         "nl": "Kies in welke manier het contact alarm geactiveerd word"
@@ -35,6 +39,10 @@
         "en": "Default Alarm Status",
         "nl": "Standaard Alarm Status"
       },
+      "zwave": {
+        "index": 2,
+        "size": 1
+      },
       "hint": {
         "en": "When will the alarm be triggerd.",
         "nl": "Wanneer word het alarm geactiveerd."
@@ -63,6 +71,10 @@
       "label": {
         "en": "LED Indication",
         "nl": "LED Indicatie"
+      },
+      "zwave": {
+        "index": 3,
+        "size": 1
       },
       "hint": {
         "en": "What will the LED indicate.",
@@ -135,6 +147,10 @@
         "en": "Tamper Alarm Cancellation",
         "nl": "Sabotage Alarm Annulering"
       },
+      "zwave": {
+        "index": 30,
+        "size": 2
+      },
       "hint": {
         "en": "Sets the time (in seconds) when the tamper alarm goes off. Range: 0 - 32400",
         "nl": "Zet de tijd (in seconden) wanneer het sabotage alarm uit gaat. Bereik: 0 - 32400"
@@ -152,6 +168,10 @@
         "en": "Tamper Cancellation",
         "nl": "Sabotage Annulering"
       },
+      "zwave": {
+        "index": 31,
+        "size": 1
+      },
       "hint": {
         "en": "Choose if the tamper alarm turns off",
         "nl": "Kies of het sabotage alarm uit gaat"
@@ -164,6 +184,10 @@
       "label": {
         "en": "Temperature Measure Interval",
         "nl": "Temperatuur Meet Interval"
+      },
+      "zwave": {
+        "index": 50,
+        "size": 2
       },
       "hint": {
         "en": "Sets the interval (in seconds) when the temperature gets measured. Range: 0, 5 - 32400, 0 = Off",
@@ -182,6 +206,10 @@
         "en": "Temperature Report Treshold",
         "nl": "Temperatuur Verzend Drempel"
       },
+      "zwave": {
+        "index": 51,
+        "size": 2
+      },
       "hint": {
         "en": "Set how much the temperature needs to change before the temperature is being send. Range: 0, 1 - 300, 10 = 1 Degree, 0 = Off",
         "nl": "Zet hoeveel de temperatuur verander moet zijn voor de temperatuur verzonden word. Bereik: 0, 1 - 300, 10 = 1 Graden, 0 = Uit"
@@ -199,6 +227,10 @@
         "en": "Temperature Report Interval",
         "nl": "Temperatuur Verzend Interval"
       },
+      "zwave": {
+        "index": 52,
+        "size": 2
+      },
       "hint": {
         "en": "Sets the time (in seconds) when the temperature is being send. Range: 0, 5 - 32400, 0 = Off",
         "nl": "Zet de tijd (in seconden) wanneer de temperatuur verzonden word. Bereik: 0, 5 - 32400, 0 = Uit"
@@ -215,6 +247,10 @@
       "label": {
         "en": "Temperature Offset",
         "nl": "Temperatuur Compensatie"
+      },
+      "zwave": {
+        "index": 53,
+        "size": 2
       },
       "hint": {
         "en": "Sets how much the temperature needs to be offset. Range: -1000 - 1000",

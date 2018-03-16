@@ -1,21 +1,21 @@
 {
   "name": {
-    "en": "Door/Window Sensor (Z-Wave plus)",
-    "nl": "Deur/Raam Sensor (Z-Wave plus)"
+    "en": "Door/Window Sensor",
+    "nl": "Deur/Raam Sensor"
   },
   "zwave": {
     "manufacturerId": 271,
     "productTypeId": [
-      1793
+      1792
     ],
     "productId": [
-      4097,
-      8193,
-      12289
+      4096,
+      8192,
+      12288
     ],
-    "zwaveAllianceProductId": 1356,
+    "zwaveAllianceProductId": 1050,
     "learnmode": {
-      "image": "/drivers/FGK-10x/assets/learnmode.svg",
+      "image": "/drivers/FGK-101/assets/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro Door/Window Sensor three times",
         "nl": "Druk driemaal op de knop op de Fibaro Deur/Raam Sensor"
@@ -23,7 +23,8 @@
     },
     "associationGroups": [
       1,
-      2
+      2,
+      3
     ]
   },
   "class": "sensor",
@@ -34,7 +35,7 @@
     "measure_battery"
   ],
   "images": {
-    "large": "/drivers/FGK-10x/assets/images/large.png",
-    "small": "/drivers/FGK-10x/assets/images/small.png"
+    "large": "/drivers/FGK-101/assets/images/large.png",
+    "small": "/drivers/FGK-101/assets/images/small.png"
   }
 }
