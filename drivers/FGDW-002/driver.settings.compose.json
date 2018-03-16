@@ -1,0 +1,484 @@
+[
+    {
+        "id": "door_window_state",
+        "value": "0",
+        "label": {
+            "en": "Door/Window state",
+            "nl": "Deur/Raam staat"
+        },
+        "hint": {
+            "en": "Set the state in which the door/window is closed",
+            "nl": "Bepaal in welke stand het raam/de deur gesloten is"
+        },
+        "zwave": {
+            "index": 1,
+            "size": 1
+        },
+        "type": "dropdown",
+        "values": [
+            {
+                "id": "0",
+                "label": {
+                    "en": "Closed when magnet near",
+                    "nl": "Gesloten wanneer de magneet de sensor aanraakt"
+                }
+            },
+            {
+                "id": "1",
+                "label": {
+                    "en": "Opened when magnet near",
+                    "nl": "Geopend wanneer de magneet de sensor aanraakt"
+                }
+            }
+        ]
+    },
+    {
+        "id": "association_group_2_triggers",
+        "value": "0",
+        "label": {
+            "en": "2nd association group triggers",
+            "nl": "2e associatie groep triggers"
+        },
+        "hint": {
+            "en": "Determine when a command is send to the 2nd association group",
+            "nl": "Bepaal wanneer er een commando word verstuurd naar de 2e associatie groep"
+        },
+        "zwave": {
+            "index": 11,
+            "size": 1
+        },
+        "values": [
+            {
+                "id": "0",
+                "label": {
+                    "en": "switch after opening and closing"
+                }
+            },
+            {
+                "id": "1",
+                "label": {
+                    "en": "switch after opening (parameter 12)"
+                }
+            },
+            {
+                "id": "2",
+                "label": {
+                    "en": "switch after closing (parameter 13)"
+                }
+            }
+        ],
+        "type": "dropdown"
+    },
+    {
+        "id": "command_open",
+        "value": 255,
+        "label": {
+            "en": "Command sent when opened",
+            "nl": "Commando dat wordt verstuurd bij opengaan van het raam/de deur"
+        },
+        "hint": {
+            "en": "Value sent to devices in 2nd association group. Use 0 for off, 255 for on, or values between 1 and 99 for dim",
+            "nl": "Waarde verstuurd naar de apparaten in de 2e associatie groep. Gebruik 0 voor uit, 255 voor aan, en waarden tussen de 1 en 99 voor dimmen"
+        },
+        "zwave": {
+            "index": 12,
+            "size": 2
+        },
+        "attr": {
+            "min": 0,
+            "max": 255
+        },
+        "type": "number"
+    },
+    {
+        "id": "command_close",
+        "value": 0,
+        "label": {
+            "en": "Command sent when closed",
+            "nl": "Commando dat wordt verstuurd bij sluiten van het raam/de deur"
+        },
+        "hint": {
+            "en": "Value sent to devices in 2nd association group. Use 0 for off, 255 for on, or values between 1 and 99 for dim",
+            "nl": "Waarde verstuurd naar de apparaten in de 2e associatie groep. Gebruik 0 voor uit, 255 voor aan, en waarden tussen de 1 en 99 voor dimmen"
+        },
+        "zwave": {
+            "index": 13,
+            "size": 2
+        },
+        "attr": {
+            "min": 0,
+            "max": 255
+        },
+        "type": "number"
+    },
+    {
+        "id": "command_open_delay",
+        "value": 0,
+        "label": {
+            "en": "Delay before the command for opening is sent",
+            "nl": "Vertraging voordat het commando bij opening wordt verstuurd"
+        },
+        "hint": {
+            "en": "Time that must elapse from opening to send the command frame to to devices in 2nd association group. Range: 0-32400 (in seconds)",
+            "nl": "Tijd die moet verlopen voordat het commando bij het openen van het raam/de deur wordt verstuurd. Bereik: 0 - 32400 (in seconden)"
+        },
+        "zwave": {
+            "index": 14,
+            "size": 2
+        },
+        "attr": {
+            "min": 0,
+            "max": 32400
+        },
+        "type": "number"
+    },
+    {
+        "id": "command_close_delay",
+        "value": 0,
+        "label": {
+            "en": "Delay before the command for closing is sent",
+            "nl": "Vertraging voordat het commando bij sluiten wordt verstuurd"
+        },
+        "hint": {
+            "en": "Time that must elapse from closing to send the command frame to to devices in 2nd association group. Range: 0-32400 (in seconds)",
+            "nl": "Tijd die moet verlopen voordat het commando bij het sluiten van het raam/de deur wordt verstuurd. Bereik: 0 - 32400 (in seconden)"
+        },
+        "zwave": {
+            "index": 15,
+            "size": 2
+        },
+        "attr": {
+            "min": 0,
+            "max": 32400
+        },
+        "type": "number"
+    },
+    {
+        "id": "led_indications",
+        "value": "0",
+        "label": {
+            "en": "Visual LED indications",
+            "nl": "Visuele LED indicaties"
+        },
+        "hint": {
+            "en": "Determine when the LED indicator will light up",
+            "nl": "Bepaal wanneer de LED indicator licht geeft"
+        },
+        "zwave": {
+            "index": 2,
+            "size": 1
+        },
+        "values": [
+            {
+                "id": "1",
+                "label": {
+                    "en": "indication of opening-closing",
+                    "nl": "indicatie voor het openen-sluiten"
+                }
+            },
+            {
+                "id": "2",
+                "label": {
+                    "en": "indication of wake up",
+                    "nl": "indicatie voor ontwaken van het apparaat"
+                }
+            },
+            {
+                "id": "4",
+                "label": {
+                    "en": "indication of device tampering",
+                    "nl": "indicatie voor sabotage"
+                }
+            }
+        ],
+        "type": "dropdown"
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Tamper alarm settings",
+            "nl": "Instellingen sabotage alarm"
+        },
+        "collapsed": true,
+        "children": [
+            {
+                "id": "tamper_cancellation_delay",
+                "value": 5,
+                "label": {
+                    "en": "Tamper alarm cancellation delay (seconds)",
+                    "nl": "Trillingsalarm annulering periode (seconden)"
+                },
+                "hint": {
+                    "en": "Another tampering detected during the cancellation delay will not extend the delay.\nRange: 1 - 32400.",
+                    "nl": "Nog een trilling binnen deze periode zal de periode niet verlengen.\nBereik: 1 - 32400."
+                },
+                "zwave": {
+                    "index": 30,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 0,
+                    "max": 32400
+                },
+                "type": "number"
+            },
+            {
+                "id": "tamper_cancellation",
+                "value": true,
+                "label": {
+                    "en": "Enable tamper alarm cancellation",
+                    "nl": "Schakel trillingsalarm annulering aan"
+                },
+                "hint": {
+                    "en": "This parameter allows to enable/disable cancellation of the tamper alarm.",
+                    "nl": "Deze paramter staat u toe de annulering van het trillingsalarm in/uit te schakelen."
+                },
+                "zwave": {
+                    "index": 31,
+                    "size": 1
+                },
+                "type": "checkbox"
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Temperature sensor settings",
+            "nl": "Instellingen temperatuursensor"
+        },
+        "collapsed": true,
+        "children": [
+            {
+                "id": "temperature_report_threshold",
+                "value": 10,
+                "label": {
+                    "en": "Temperature report threshold (value times 0.1°C)",
+                    "nl": "Temperatuur rapportage grens (Waarde maal 0.1°C)"
+                },
+                "hint": {
+                    "en": "How much must the temperature change before being reported to Homey. Range: 0 (off) - 300, default: 10",
+                    "nl": "Hoeveel moet de temperatuur veranderen voordat de waarde wordt gerapporteerd aan Homey. Bereik: 0 (uit) - 300, standaard: 10"
+                },
+                "zwave": {
+                    "index": 51,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 0,
+                    "max": 300
+                },
+                "type": "number"
+            },
+            {
+                "id": "temperature_measuring_interval",
+                "value": 300,
+                "label": {
+                    "en": "Temperature measuring interval (seconds)",
+                    "nl": "Temperatuur meet interval (seconden)"
+                },
+                "hint": {
+                    "en": "Determine how often the temperature will be measured\nRange: 0, 1 - 32400\n0 = Reports not being send.",
+                    "nl": "Bepaal hoe vaak de temperatuur wordt gemeten\nBereik: 0, 1 - 32400\n0 = Er word niks verzonden."
+                },
+                "zwave": {
+                    "index": 50,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 0,
+                    "max": 32400
+                },
+                "type": "number"
+            },
+            {
+                "id": "temperature_report_interval",
+                "value": 0,
+                "label": {
+                    "en": "Temperature report interval (seconden)",
+                    "nl": "Temperatuur rapportage interval (seconden)"
+                },
+                "hint": {
+                    "en": "Determine how often the temperature will be sent to Homey, even when the value has not changed.\nRange: 0, 1 - 32400\n0 = Reports not being send.",
+                    "nl": "Bepaal wanneer de temperatuur naar Homey word verstuurd, ook als de waarde niet is veranderd\nBereik: 0, 1 - 32400\n0 = Er word nisk verzonden."
+                },
+                "zwave": {
+                    "index": 52,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 0,
+                    "max": 32400
+                },
+                "type": "number"
+            },
+            {
+                "id": "temperature_offset",
+                "value": 0,
+                "label": {
+                    "en": "Temperature offset (0.1°C)",
+                    "nl": "Temperatuur correctie (0,1°C)"
+                },
+                "hint": {
+                    "en": "The value to be added to the measured temperature.\nRange: -100ºC - 100ºC.",
+                    "nl": "De waarde die wordt toegevoegd aan de gemeten temperatuur.\nBereik: -100ºC - 100ºC."
+                },
+                "zwave": {
+                    "index": 53,
+                    "size": 2
+                },
+                "attr": {
+                    "min": -1000,
+                    "max": 1000
+                },
+                "type": "number"
+            },
+            {
+                "id": "temperature_alarm_reports",
+                "value": "0",
+                "label": {
+                    "en": "Temperature alarm reports",
+                    "nl": "Temperatuur alarm rapportages"
+                },
+                "hint": {
+                    "en": "Determine when temperature alarms are reported to Homey",
+                    "nl": "Bepaal wanneer er temperatuursalarmen worden verstuurd naar Homey"
+                },
+                "zwave": {
+                    "index": 54,
+                    "size": 1
+                },
+                "values": [
+                    {
+                        "id": "0",
+                        "label": {
+                            "en": "temperature alarms disabled",
+                            "nl": "temperatuursalarm uitgeschakeld"
+                        }
+                    },
+                    {
+                        "id": "1",
+                        "label": {
+                            "en": "high temperature alarm",
+                            "nl": "temperatuursalarm voor hoge temperaturen"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "label": {
+                            "en": "low temperature alarm",
+                            "nl": "temperatuursalarm voor lage temperaturen"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "label": {
+                            "en": "high and low temperature alarms enabled",
+                            "nl": "temperatuursalarm voor zowel hoge als lage temperaturen"
+                        }
+                    }
+                ],
+                "type": "dropdown"
+            },
+            {
+                "id": "temperature_alarm_high",
+                "value": 350,
+                "label": {
+                    "en": "Temperature at which the high temperature alarm should go off",
+                    "nl": "Waarde waarbij het hoge temperatuursalarm af moet gaan"
+                },
+                "hint": {
+                    "en": "If this temperature is reached the high temperature alarm will trigger. Range: 1-600 (steps of 0.1°C)",
+                    "nl": "Wanneer deze temperatuur bereikt wordt gaat het hoge temperatuursalarm af. Bereik: 1-600 (stappen van 0.1°C)"
+                },
+                "zwave": {
+                    "index": 55,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 1,
+                    "max": 600
+                },
+                "type": "number"
+            },
+            {
+                "id": "temperature_alarm_low",
+                "value": 100,
+                "label": {
+                    "en": "Temperature at which the low temperature alarm should go off",
+                    "nl": "Waarde waarbij het lage temperatuursalarm af moet gaan"
+                },
+                "hint": {
+                    "en": "If this temperature is reached the low temperature alarm will trigger. Range: 1-600 (steps of 0.1°C)",
+                    "nl": "Wanneer deze temperatuur bereikt wordt gaat het lage temperatuursalarm af. Bereik: 1-600 (stappen van 0.1°C)"
+                },
+                "zwave": {
+                    "index": 56,
+                    "size": 2
+                },
+                "attr": {
+                    "min": 1,
+                    "max": 600
+                },
+                "type": "number"
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Z-Wave association settings",
+            "nl": "Z-Wave associatie instellingen"
+        },
+        "collapsed": true,
+        "children": [
+            {
+                "id": "secure_mode_associations",
+                "value": "3",
+                "label": {
+                    "en": "Associations in Z-Wave network Security Mode",
+                    "nl": "Associaties in Z-Wave netwerk Security Modus"
+                },
+                "hint": {
+                    "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st group “Lifeline”.",
+                    "nl": "Deze instelling bepaalt hoe commando's worden verstuurd naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd. Instelling is alleen actief in Z-Wave netwerk Security Modus en is niet van toepassing op de eerste associatie groep."
+                },
+                "zwave": {
+                    "index": 3,
+                    "size": 1
+                },
+                "values": [
+                    {
+                        "id": "0",
+                        "label": {
+                            "en": "None of the groups are sent as secure",
+                            "nl": "Geen van de groepen wordt beveiligd verstuurd"
+                        }
+                    },
+                    {
+                        "id": "1",
+                        "label": {
+                            "en": "Association group 2, on/off sent as secure",
+                            "nl": "Associatie groep 2, aan/uit wordt beveiligd verstuurd"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "label": {
+                            "en": "Association group 3, tamper sent as secure",
+                            "nl": "Associatie groep 3, trilling wordt beveiligd verstuurd"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "label": {
+                            "en": "Association group 2 and 3 sent as secure (on/off and tamper)",
+                            "nl": "Associatie groep 2 en 3 worden beveiligd verstuurd (aan/uit and trilling)"
+                        }
+                    }
+                ],
+                "type": "dropdown"
+            }
+        ]
+    }
+]

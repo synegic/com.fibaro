@@ -4,16 +4,28 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 class FibaroMotionSensor extends ZwaveDevice {
 	async onMeshInit() {
-		this.registerCapability('alarm_tamper', 'SENSOR_ALARM');
-		this.registerCapability('alarm_motion', 'SENSOR_BINARY');
-		this.registerCapability('measure_luminance', 'SENSOR_MULTILEVEL');
-		this.registerCapability('measure_battery', 'BATTERY');
+		this.registerCapability('alarm_tamper', 'SENSOR_ALARM', {
+			getOpts: {
+				getOnOnline: true,
+			},
+		});
+		this.registerCapability('alarm_motion', 'SENSOR_BINARY', {
+			getOpts: {
+				getOnOnline: true,
+			},
+		});
+		this.registerCapability('measure_luminance', 'SENSOR_MULTILEVEL', {
+			getOpts: {
+				getOnOnline: true,
+			},
+		});
 		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', {
 			getOpts: {
 				getOnOnline: true,
 				getOnStart: false,
 			},
 		});
+		this.registerCapability('measure_battery', 'BATTERY');
 
 		/*
 		=====================================================
