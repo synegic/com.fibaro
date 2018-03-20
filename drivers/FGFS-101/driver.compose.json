@@ -1,0 +1,40 @@
+{
+  "id": "FGFS-101",
+  "name": {
+    "en": "Flood sensor",
+    "nl": "Overstromingssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "alarm_tamper",
+    "measure_temperature",
+    "alarm_water"
+  ],
+  "images": {
+    "large": "/drivers/FGFS-101/assets/images/large.png",
+    "small": "/drivers/FGFS-101/assets/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      2816
+    ],
+    "productId": [
+      4097,
+      8193,
+      12289
+    ],
+    "zwaveAllianceProductId": 994,
+    "learnmode": {
+      "image": "/drivers/FGFS-101/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your Fibaro flood sensor three times",
+        "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor"
+      }
+    },
+    "associationGroups": [
+      3
+    ]
+  }
+}
