@@ -14,7 +14,8 @@ class FibaroFloodSensorPlus extends ZwaveDevice {
         this.registerSetting('temperature_measure_offset', value => value * 100);
         this.registerSetting('low_temperature_threshold', value => value * 100);
         this.registerSetting('high_temperature_threshold', value => value * 100);
-	
+    }
+
 }
 
 module.exports = FibaroFloodSensorPlus;

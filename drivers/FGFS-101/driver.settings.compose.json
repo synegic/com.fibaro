@@ -2,8 +2,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Flood sensor settings",
-      "nl": "Instellingen overstromingssensor"
+      "en": "Flood sensor",
+      "nl": "Overstromingssensor"
     },
     "collapsed": false,
     "children": [
@@ -12,11 +12,11 @@
         "type": "checkbox",
         "label": {
           "en": "Flood Sensor",
-          "nl": "Vloedsensor"
+          "nl": "Overstromingssensor"
         },
         "hint": {
-          "en": "Enable or Disable the flood sensor",
-          "nl": "Zet de Vloedsensor Aan of Uit"
+          "en": "This parameter (77) enables/disables the Flood Sensor.",
+          "nl": "Deze parameter (77) schakelt de overstromingssensor in/uit."
         },
         "zwave": {
           "index": 77,
@@ -28,12 +28,12 @@
         "id": "alarm_cancel_status",
         "type": "checkbox",
         "label": {
-          "en": "Alarm Cancellation Active",
-          "nl": "Alarm Annuleering Actief"
+          "en": "Alarm cancellation cctive",
+          "nl": "Alarm annuleering actief"
         },
         "hint": {
-          "en": "Enable or Disable the flood alarm cancellation",
-          "nl": "Zet de vloed alarm annulering Aan of Uit"
+          "en": "This parameter (9) enables/disables the flood alarm canellation",
+          "nl": "Deze parameter (9) schakelt de overstromingsalarm annulerin in/uit"
         },
         "zwave": {
           "index": 9,
@@ -46,11 +46,11 @@
         "type": "dropdown",
         "label": {
           "en": "Flood signal",
-          "nl": "Overstromings signaal"
+          "nl": "Overstroming signaal"
         },
         "hint": {
-          "en": "Parameter allows for LED indicator and acoustic alarm deactivation in case of flooding detection",
-          "nl": "Deze parameter bepaalt welke visuele en akoestische alarmen af gaan bij water detectie"
+          "en": "This parameter (2) determines which visual and acoustig alarms go of when a flood is detected.",
+          "nl": "Deze parameter (2) bepaalt welke visuele en akoestische alarmen af gaan bij water detectie."
         },
         "zwave": {
           "index": 2,
@@ -82,8 +82,8 @@
           {
             "id": "3",
             "label": {
-              "en": "Acoustic and Visual",
-              "nl": "Akoestisch en Visueel"
+              "en": "Acoustic and visual",
+              "nl": "Akoestisch en visueel"
             }
           }
         ]
@@ -92,12 +92,12 @@
         "id": "alarm_duration",
         "type": "number",
         "label": {
-          "en": "Visual and Akoestic Alarm Duration",
-          "nl": "Visueel en Akoestische Alarm Duur"
+          "en": "Visual and Akoestic Alarm Duration (s)",
+          "nl": "Visueel en Akoestische Alarm Duur (s)"
         },
         "hint": {
-          "en": "Sets the time after how many seconds the alarm becomes silent.\n0 = immediately\nRange: 0 - 65535",
-          "nl": "Zet de tijd na hoeveel seconden het alarm stil word.\n0 = Meteen\nBereik: 0 - 65535"
+          "en": "This parameter (75) determines the duration of visual and acoustic alarms.",
+          "nl": "Deze parameter (75) stelt de tijd in waarna de visuele en akoestische alarmen uitgaan."
         },
         "zwave": {
           "index": 75,
@@ -114,12 +114,12 @@
         "id": "alarm_cancellation",
         "type": "number",
         "label": {
-          "en": "Alarm Cancellation Time",
-          "nl": "Alarm Annulering Tijd"
+          "en": "Alarm cancellation time (s)",
+          "nl": "Alarm annulering tijd (s)"
         },
         "hint": {
-          "en": "Sets the time (in seconds) the flood alarm will cancel.\n",
-          "nl": "Zet de tijd (in seconden) dat het overstromingsalarm annuleert.\n"
+          "en": "This parameter (1) determines the time after which the flood alarm is cancelled.",
+          "nl": "Deze parameter (1) stelt de tijd in waarna het overstromingsalarm wordt uitgeschakelt."
         },
         "zwave": {
           "index": 1,
@@ -135,12 +135,12 @@
         "id": "tamper_alarm",
         "type": "dropdown",
         "label": {
-          "en": "Tamper Alarm",
-          "nl": "Sabotage Alarm"
+          "en": "Tamper alarm",
+          "nl": "Sabotage alarm"
         },
         "hint": {
-          "en": "Choose the way Tamper Alarm is being send",
-          "nl": "Kies de manier waarop het Sabotage Alarm word verzonden"
+          "en": "This parameter (74) determines when the tamper alarm is send.",
+          "nl": "Deze parameter (74) bepaald wanneer het sabotage alarm afgaat."
         },
         "zwave": {
           "index": 74,
@@ -151,29 +151,29 @@
           {
             "id": "0",
             "label": {
-              "en": "Tamper Alarm Off",
-              "nl": "Sabotage Alarm Uit"
+              "en": "Tamper alarm off",
+              "nl": "Sabotage alarm uit"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Tamper Alarm By TMP Button",
-              "nl": "Sabotage Alarm Bij drukken Knop"
+              "en": "Tamper alarm when removed from surface",
+              "nl": "Sabotage alarm bij demontage"
             }
           },
           {
             "id": "2",
             "label": {
-              "en": "Tamper Alarm On Movement",
-              "nl": "Sabotage Alarm Bij Beweging"
+              "en": "Tamper alarm on movement",
+              "nl": "Sabotage alarm bij beweging"
             }
           },
           {
             "id": "3",
             "label": {
-              "en": "Both Options",
-              "nl": "Beide Opties"
+              "en": "Both options",
+              "nl": "Beide opties"
             }
           }
         ]
@@ -192,12 +192,12 @@
         "id": "temperature_measure_interval",
         "type": "number",
         "label": {
-          "en": "Temperature Measure Interval",
-          "nl": "Temperatuur Meting Interval"
+          "en": "Temperature measure interval (s)",
+          "nl": "Interval voor temperatuursmetingen (s)"
         },
         "hint": {
-          "en": "Sets the interval (in seconds) that the temperature is being measured.\nRange: 1 - 65535",
-          "nl": "Zet de interval (in seconden) dat de temperatuur wordt gemeten.\nBereik: 1 - 65535"
+          "en": "This parameter (10) determines the time between consecutive temperature measurements.",
+          "nl": "Deze parameter (10) stelt de tijd tussen temperatuursmetingen in."
         },
         "zwave": {
           "index": 10,
@@ -213,12 +213,12 @@
         "id": "temperature_measure_hysteresis",
         "type": "number",
         "label": {
-          "en": "Temperature Measure Hysteresis",
-          "nl": "Temperatuur Meting Hysteresis"
+          "en": "Temperature measure hysteresis (°C)",
+          "nl": "Minimaal temperatuursverschil bij meting (°C)"
         },
         "hint": {
-          "en": "Sets the amount of degree* the temperature must change before being measured.\n* - 100 = 1 degree difference\nRange: 1 - 1000",
-          "nl": "Zet de hoeveelheid graden* de temperatuur veranderen moet voor het meet.\n* - 100 = 1 graden verschil\nBereik: 1 - 65535"
+          "en": "This parameterer (12) determines the change in temperature before a new measurement.",
+          "nl": "Deze parameter (12) stelt het minimale verschil in temperatuur in voor een nieuwe meting."
         },
         "zwave": {
           "index": 12,
@@ -226,28 +226,28 @@
         },
         "attr": {
           "min": 1,
-          "max": 1000
+          "max": 100
         },
-        "value": 50
+        "value": 5
       },
       {
         "id": "temperature_offset",
         "type": "number",
         "label": {
-          "en": "Temperature Offset",
-          "nl": "Temperatuur Compensatie"
+          "en": "Temperature offset (°C)",
+          "nl": "Temperatuur compensatie (°C)"
         },
         "hint": {
-          "en": "Sets the amount of degree* the temperature need to be offset.\n* - 100 = 1 degree\nRange: -10000 - 10000",
-          "nl": "Zet hoeveel graden* het temperatuur gecompenseerd moet worden.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+          "en": "This parameter (73) determines how many degrees will be added or removed from each measurement.",
+          "nl": "Deze parameter (73) stelt de hoeveelheid graden afwijking voor temperatuursmetingen in."
         },
         "zwave": {
           "index": 73,
           "size": 2
         },
         "attr": {
-          "min": -10000,
-          "max": 10000
+          "min": -100,
+          "max": 100
         },
         "value": 0
       },
@@ -255,43 +255,43 @@
         "id": "low_temperature_treshold",
         "type": "number",
         "label": {
-          "en": "Low Temperature Alarm, Treshold",
-          "nl": "Temperatuur Laag Alarm, Drempel"
+          "en": "Low temperature alarm, treshold (°C)",
+          "nl": "Temperatuur laag alarm, drempel (°C)"
         },
         "hint": {
-          "en": "Sets the amount of degree* the low temperature alarm triggers.\n* - 100 = 1 degree\nRange: -10000 - 10000",
-          "nl": "Zet de hoeveelheid graden* het laag temperatuur alarm activeerd.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+          "en": "This parameter (50) determines the threshold for the low temperature alarm.",
+          "nl": "Deze parameter (50) bepaald de drempel voor het lage temperatuur alarm."
         },
         "zwave": {
           "index": 50,
           "size": 2
         },
         "attr": {
-          "min": -10000,
-          "max": 10000
+          "min": -100,
+          "max": 100
         },
-        "value": 1500
+        "value": 15
       },
       {
         "id": "high_temperature_treshold",
         "type": "number",
         "label": {
-          "en": "High Temperature Alarm, Treshold",
-          "nl": "Temperatuur Hoog Alarm, Drempel"
+          "en": "High temperature alarm, treshold (°C)",
+          "nl": "Temperatuur hoog alarm, drempel (°C)"
         },
         "hint": {
-          "en": "Sets the amount of degree* the high temperature alarm triggers.\n* - 100 = 1 degree\nRange: -10000 - 10000",
-          "nl": "Zet de hoeveelheid graden* het hoog temperatuur alarm activeerd.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+          "en": "This parameter (51) determines the threshold for the high temperature alarm.",
+          "nl": "Deze parameter (51) bepaald de drempel voor het hoge temperatuur alarm."
         },
         "zwave": {
           "index": 51,
           "size": 2
         },
         "attr": {
-          "min": -10000,
-          "max": 10000
+          "min": -100,
+          "max": 100
         },
-        "value": 3500
+        "value": 35
       },
       {
         "id": "low_temperature_led",
@@ -301,8 +301,8 @@
           "nl": "Temperatuur Laag LED"
         },
         "hint": {
-          "en": "Sets which colour the LED will be when temperature is below then Low Temperature Alarm Treshold",
-          "nl": "Zet welke kleur de LED is wanneer de temperuur beneden de Temperatuur Laag Alarm Drempel is"
+          "en": "This parameter (61) determines which colour the low temperature alarm LED indication displays.",
+          "nl": "Deze parameter (61) bepaald de kleur van de LED wanneer het lage temperatuursalarm afgaat."
         },
         "zwave": {
           "index": 61,
@@ -376,8 +376,8 @@
           "nl": "Type alarm frame dat naar alle apparaten in eerste associatie group wordt gestuurd (rook alarm)"
         },
         "hint": {
-          "en": "Allows for choosing a command class used in 1st association group, available settings: 0, 255",
-          "nl": "Kies een command class welke gebruikt wordt in de eerste associatie groep"
+          "en": "This parameter (62) determines which commands are send to the 1st association group",
+          "nl": "Deze parameter (62) bepaald welke commando's er worden verstuurd naar de 1e associatie groep"
         },
         "zwave": {
           "index": 62,
@@ -447,12 +447,12 @@
         "id": "led_indication",
         "type": "dropdown",
         "label": {
-          "en": "LED Temperature Indication",
-          "nl": "LED Temperatuur Weergave"
+          "en": "LED temperature indication",
+          "nl": "LED temperatuur weergave"
         },
         "hint": {
-          "en": "Choose if the LED indicates the temperature",
-          "nl": "Kies of de LED de temperatuur weergeeft"
+          "en": "This parameter (63) determines if the LED displays the temperature",
+          "nl": "Deze parameter (63) bepaald of de LED de temperatuur weergeeft"
         },
         "zwave": {
           "index": 63,
@@ -463,22 +463,22 @@
           {
             "id": "0",
             "label": {
-              "en": "LED Doesn't Indicate",
-              "nl": "LED Geeft Niet Weer"
+              "en": "LED doesn't indicate",
+              "nl": "LED geeft niet weer"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "LED Blinks Every Measurement",
-              "nl": "LED Knippert Bij Elke Meting"
+              "en": "LED blinks every measurement",
+              "nl": "LED knippert bij elke meting"
             }
           },
           {
             "id": "2",
             "label": {
-              "en": "LED Always On (When Constantly Powered)",
-              "nl": "LED Geeft Altijd Weer (Onder Constante Spanning"
+              "en": "LED always on (when constantly powered)",
+              "nl": "LED geeft altijd weer (onder constante spanning"
             }
           }
         ]
