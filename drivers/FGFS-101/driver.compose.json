@@ -12,8 +12,13 @@
     "alarm_water"
   ],
   "images": {
+<<<<<<< HEAD
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+=======
+    "large": "/drivers/FGFS-101/assets/images/large.png",
+    "small": "/drivers/FGFS-101/assets/images/small.png"
+>>>>>>> added FGFS-101, small tweaks to plus version
   },
   "zwave": {
     "manufacturerId": 271,
@@ -27,10 +32,17 @@
     ],
     "zwaveAllianceProductId": 994,
     "learnmode": {
+<<<<<<< HEAD
       "image": "/{{driverAssetsPath}}/assets/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro flood sensor three times.",
         "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor."
+=======
+      "image": "/drivers/FGFS-101/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your Fibaro flood sensor three times",
+        "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor"
+>>>>>>> added FGFS-101, small tweaks to plus version
       }
     },
     "associationGroups": [

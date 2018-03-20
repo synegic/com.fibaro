@@ -2,8 +2,13 @@
   {
     "type": "group",
     "label": {
+<<<<<<< HEAD
       "en": "Flood sensor",
       "nl": "Overstromingssensor"
+=======
+      "en": "Flood sensor settings",
+      "nl": "Instellingen overstromingssensor"
+>>>>>>> added FGFS-101, small tweaks to plus version
     },
     "collapsed": false,
     "children": [
@@ -12,11 +17,19 @@
         "type": "checkbox",
         "label": {
           "en": "Flood Sensor",
+<<<<<<< HEAD
           "nl": "Overstromingssensor"
         },
         "hint": {
           "en": "This parameter (77) enables/disables the Flood Sensor.",
           "nl": "Deze parameter (77) schakelt de overstromingssensor in/uit."
+=======
+          "nl": "Vloedsensor"
+        },
+        "hint": {
+          "en": "Enable or Disable the flood sensor",
+          "nl": "Zet de Vloedsensor Aan of Uit"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 77,
@@ -28,12 +41,21 @@
         "id": "alarm_cancel_status",
         "type": "checkbox",
         "label": {
+<<<<<<< HEAD
           "en": "Alarm cancellation cctive",
           "nl": "Alarm annuleering actief"
         },
         "hint": {
           "en": "This parameter (9) enables/disables the flood alarm canellation",
           "nl": "Deze parameter (9) schakelt de overstromingsalarm annulerin in/uit"
+=======
+          "en": "Alarm Cancellation Active",
+          "nl": "Alarm Annuleering Actief"
+        },
+        "hint": {
+          "en": "Enable or Disable the flood alarm cancellation",
+          "nl": "Zet de vloed alarm annulering Aan of Uit"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 9,
@@ -46,11 +68,19 @@
         "type": "dropdown",
         "label": {
           "en": "Flood signal",
+<<<<<<< HEAD
           "nl": "Overstroming signaal"
         },
         "hint": {
           "en": "This parameter (2) determines which visual and acoustig alarms go of when a flood is detected.",
           "nl": "Deze parameter (2) bepaalt welke visuele en akoestische alarmen af gaan bij water detectie."
+=======
+          "nl": "Overstromings signaal"
+        },
+        "hint": {
+          "en": "Parameter allows for LED indicator and acoustic alarm deactivation in case of flooding detection",
+          "nl": "Deze parameter bepaalt welke visuele en akoestische alarmen af gaan bij water detectie"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 2,
@@ -82,8 +112,13 @@
           {
             "id": "3",
             "label": {
+<<<<<<< HEAD
               "en": "Acoustic and visual",
               "nl": "Akoestisch en visueel"
+=======
+              "en": "Acoustic and Visual",
+              "nl": "Akoestisch en Visueel"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           }
         ]
@@ -92,12 +127,21 @@
         "id": "alarm_duration",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Visual and Akoestic Alarm Duration (s)",
           "nl": "Visueel en Akoestische Alarm Duur (s)"
         },
         "hint": {
           "en": "This parameter (75) determines the duration of visual and acoustic alarms.",
           "nl": "Deze parameter (75) stelt de tijd in waarna de visuele en akoestische alarmen uitgaan."
+=======
+          "en": "Visual and Akoestic Alarm Duration",
+          "nl": "Visueel en Akoestische Alarm Duur"
+        },
+        "hint": {
+          "en": "Sets the time after how many seconds the alarm becomes silent.\n0 = immediately\nRange: 0 - 65535",
+          "nl": "Zet de tijd na hoeveel seconden het alarm stil word.\n0 = Meteen\nBereik: 0 - 65535"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 75,
@@ -114,12 +158,21 @@
         "id": "alarm_cancellation",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Alarm cancellation time (s)",
           "nl": "Alarm annulering tijd (s)"
         },
         "hint": {
           "en": "This parameter (1) determines the time after which the flood alarm is cancelled.",
           "nl": "Deze parameter (1) stelt de tijd in waarna het overstromingsalarm wordt uitgeschakelt."
+=======
+          "en": "Alarm Cancellation Time",
+          "nl": "Alarm Annulering Tijd"
+        },
+        "hint": {
+          "en": "Sets the time (in seconds) the flood alarm will cancel.\n",
+          "nl": "Zet de tijd (in seconden) dat het overstromingsalarm annuleert.\n"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 1,
@@ -135,12 +188,21 @@
         "id": "tamper_alarm",
         "type": "dropdown",
         "label": {
+<<<<<<< HEAD
           "en": "Tamper alarm",
           "nl": "Sabotage alarm"
         },
         "hint": {
           "en": "This parameter (74) determines when the tamper alarm is send.",
           "nl": "Deze parameter (74) bepaald wanneer het sabotage alarm afgaat."
+=======
+          "en": "Tamper Alarm",
+          "nl": "Sabotage Alarm"
+        },
+        "hint": {
+          "en": "Choose the way Tamper Alarm is being send",
+          "nl": "Kies de manier waarop het Sabotage Alarm word verzonden"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 74,
@@ -151,29 +213,49 @@
           {
             "id": "0",
             "label": {
+<<<<<<< HEAD
               "en": "Tamper alarm off",
               "nl": "Sabotage alarm uit"
+=======
+              "en": "Tamper Alarm Off",
+              "nl": "Sabotage Alarm Uit"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           },
           {
             "id": "1",
             "label": {
+<<<<<<< HEAD
               "en": "Tamper alarm when removed from surface",
               "nl": "Sabotage alarm bij demontage"
+=======
+              "en": "Tamper Alarm By TMP Button",
+              "nl": "Sabotage Alarm Bij drukken Knop"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           },
           {
             "id": "2",
             "label": {
+<<<<<<< HEAD
               "en": "Tamper alarm on movement",
               "nl": "Sabotage alarm bij beweging"
+=======
+              "en": "Tamper Alarm On Movement",
+              "nl": "Sabotage Alarm Bij Beweging"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           },
           {
             "id": "3",
             "label": {
+<<<<<<< HEAD
               "en": "Both options",
               "nl": "Beide opties"
+=======
+              "en": "Both Options",
+              "nl": "Beide Opties"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           }
         ]
@@ -192,12 +274,21 @@
         "id": "temperature_measure_interval",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Temperature measure interval (s)",
           "nl": "Interval voor temperatuursmetingen (s)"
         },
         "hint": {
           "en": "This parameter (10) determines the time between consecutive temperature measurements.",
           "nl": "Deze parameter (10) stelt de tijd tussen temperatuursmetingen in."
+=======
+          "en": "Temperature Measure Interval",
+          "nl": "Temperatuur Meting Interval"
+        },
+        "hint": {
+          "en": "Sets the interval (in seconds) that the temperature is being measured.\nRange: 1 - 65535",
+          "nl": "Zet de interval (in seconden) dat de temperatuur wordt gemeten.\nBereik: 1 - 65535"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 10,
@@ -213,12 +304,21 @@
         "id": "temperature_measure_hysteresis",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Temperature measure hysteresis (°C)",
           "nl": "Minimaal temperatuursverschil bij meting (°C)"
         },
         "hint": {
           "en": "This parameterer (12) determines the change in temperature before a new measurement.",
           "nl": "Deze parameter (12) stelt het minimale verschil in temperatuur in voor een nieuwe meting."
+=======
+          "en": "Temperature Measure Hysteresis",
+          "nl": "Temperatuur Meting Hysteresis"
+        },
+        "hint": {
+          "en": "Sets the amount of degree* the temperature must change before being measured.\n* - 100 = 1 degree difference\nRange: 1 - 1000",
+          "nl": "Zet de hoeveelheid graden* de temperatuur veranderen moet voor het meet.\n* - 100 = 1 graden verschil\nBereik: 1 - 65535"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 12,
@@ -226,28 +326,48 @@
         },
         "attr": {
           "min": 1,
+<<<<<<< HEAD
           "max": 100
         },
         "value": 5
+=======
+          "max": 1000
+        },
+        "value": 50
+>>>>>>> added FGFS-101, small tweaks to plus version
       },
       {
         "id": "temperature_offset",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Temperature offset (°C)",
           "nl": "Temperatuur compensatie (°C)"
         },
         "hint": {
           "en": "This parameter (73) determines how many degrees will be added or removed from each measurement.",
           "nl": "Deze parameter (73) stelt de hoeveelheid graden afwijking voor temperatuursmetingen in."
+=======
+          "en": "Temperature Offset",
+          "nl": "Temperatuur Compensatie"
+        },
+        "hint": {
+          "en": "Sets the amount of degree* the temperature need to be offset.\n* - 100 = 1 degree\nRange: -10000 - 10000",
+          "nl": "Zet hoeveel graden* het temperatuur gecompenseerd moet worden.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 73,
           "size": 2
         },
         "attr": {
+<<<<<<< HEAD
           "min": -100,
           "max": 100
+=======
+          "min": -10000,
+          "max": 10000
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "value": 0
       },
@@ -255,43 +375,75 @@
         "id": "low_temperature_treshold",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "Low temperature alarm, treshold (°C)",
           "nl": "Temperatuur laag alarm, drempel (°C)"
         },
         "hint": {
           "en": "This parameter (50) determines the threshold for the low temperature alarm.",
           "nl": "Deze parameter (50) bepaald de drempel voor het lage temperatuur alarm."
+=======
+          "en": "Low Temperature Alarm, Treshold",
+          "nl": "Temperatuur Laag Alarm, Drempel"
+        },
+        "hint": {
+          "en": "Sets the amount of degree* the low temperature alarm triggers.\n* - 100 = 1 degree\nRange: -10000 - 10000",
+          "nl": "Zet de hoeveelheid graden* het laag temperatuur alarm activeerd.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 50,
           "size": 2
         },
         "attr": {
+<<<<<<< HEAD
           "min": -100,
           "max": 100
         },
         "value": 15
+=======
+          "min": -10000,
+          "max": 10000
+        },
+        "value": 1500
+>>>>>>> added FGFS-101, small tweaks to plus version
       },
       {
         "id": "high_temperature_treshold",
         "type": "number",
         "label": {
+<<<<<<< HEAD
           "en": "High temperature alarm, treshold (°C)",
           "nl": "Temperatuur hoog alarm, drempel (°C)"
         },
         "hint": {
           "en": "This parameter (51) determines the threshold for the high temperature alarm.",
           "nl": "Deze parameter (51) bepaald de drempel voor het hoge temperatuur alarm."
+=======
+          "en": "High Temperature Alarm, Treshold",
+          "nl": "Temperatuur Hoog Alarm, Drempel"
+        },
+        "hint": {
+          "en": "Sets the amount of degree* the high temperature alarm triggers.\n* - 100 = 1 degree\nRange: -10000 - 10000",
+          "nl": "Zet de hoeveelheid graden* het hoog temperatuur alarm activeerd.\n* - 100 = 1 graden\nBereik: -10000 - 10000"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 51,
           "size": 2
         },
         "attr": {
+<<<<<<< HEAD
           "min": -100,
           "max": 100
         },
         "value": 35
+=======
+          "min": -10000,
+          "max": 10000
+        },
+        "value": 3500
+>>>>>>> added FGFS-101, small tweaks to plus version
       },
       {
         "id": "low_temperature_led",
@@ -301,8 +453,13 @@
           "nl": "Temperatuur Laag LED"
         },
         "hint": {
+<<<<<<< HEAD
           "en": "This parameter (61) determines which colour the low temperature alarm LED indication displays.",
           "nl": "Deze parameter (61) bepaald de kleur van de LED wanneer het lage temperatuursalarm afgaat."
+=======
+          "en": "Sets which colour the LED will be when temperature is below then Low Temperature Alarm Treshold",
+          "nl": "Zet welke kleur de LED is wanneer de temperuur beneden de Temperatuur Laag Alarm Drempel is"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 61,
@@ -376,8 +533,13 @@
           "nl": "Type alarm frame dat naar alle apparaten in eerste associatie group wordt gestuurd (rook alarm)"
         },
         "hint": {
+<<<<<<< HEAD
           "en": "This parameter (62) determines which commands are send to the 1st association group",
           "nl": "Deze parameter (62) bepaald welke commando's er worden verstuurd naar de 1e associatie groep"
+=======
+          "en": "Allows for choosing a command class used in 1st association group, available settings: 0, 255",
+          "nl": "Kies een command class welke gebruikt wordt in de eerste associatie groep"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 62,
@@ -447,12 +609,21 @@
         "id": "led_indication",
         "type": "dropdown",
         "label": {
+<<<<<<< HEAD
           "en": "LED temperature indication",
           "nl": "LED temperatuur weergave"
         },
         "hint": {
           "en": "This parameter (63) determines if the LED displays the temperature",
           "nl": "Deze parameter (63) bepaald of de LED de temperatuur weergeeft"
+=======
+          "en": "LED Temperature Indication",
+          "nl": "LED Temperatuur Weergave"
+        },
+        "hint": {
+          "en": "Choose if the LED indicates the temperature",
+          "nl": "Kies of de LED de temperatuur weergeeft"
+>>>>>>> added FGFS-101, small tweaks to plus version
         },
         "zwave": {
           "index": 63,
@@ -463,22 +634,37 @@
           {
             "id": "0",
             "label": {
+<<<<<<< HEAD
               "en": "LED doesn't indicate",
               "nl": "LED geeft niet weer"
+=======
+              "en": "LED Doesn't Indicate",
+              "nl": "LED Geeft Niet Weer"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           },
           {
             "id": "1",
             "label": {
+<<<<<<< HEAD
               "en": "LED blinks every measurement",
               "nl": "LED knippert bij elke meting"
+=======
+              "en": "LED Blinks Every Measurement",
+              "nl": "LED Knippert Bij Elke Meting"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           },
           {
             "id": "2",
             "label": {
+<<<<<<< HEAD
               "en": "LED always on (when constantly powered)",
               "nl": "LED geeft altijd weer (onder constante spanning"
+=======
+              "en": "LED Always On (When Constantly Powered)",
+              "nl": "LED Geeft Altijd Weer (Onder Constante Spanning"
+>>>>>>> added FGFS-101, small tweaks to plus version
             }
           }
         ]
