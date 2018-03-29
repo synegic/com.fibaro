@@ -1,0 +1,40 @@
+{
+  "id": "basic_command_config",
+  "value": "0",
+  "label": {
+    "en": "Motion detection command",
+    "nl": "Bewegingsdetectie commando"
+  },
+  "hint": {
+    "en": "Determine the command sent to 2nd association group (assigned to PIR sensor). The values of on and off commands may be modified by the following parameters.\nDefault value: on and off.",
+    "nl": "Bepaal het commando dat naar de 2e associatie groep wordt gestuurd (toegekend aan de PIR). De waarden van het aan of uit commando kan in onderstaande parameters aangepast worden.\nStandaard waarde: aan en uit."
+  },
+  "zwave": {
+    "index": 12,
+    "size": 1
+  },
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "On and off",
+        "nl": "Aan en uit"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Only on",
+        "nl": "Alleen aan"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "Only off",
+        "nl": "Alleen uit"
+      }
+    }
+  ],
+  "type": "dropdown"
+}

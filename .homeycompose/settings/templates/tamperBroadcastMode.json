@@ -1,0 +1,16 @@
+{
+  "id": "tamper_broadcast_mode",
+  "value": false,
+  "label": {
+    "en": "Tamper broadcast mode"
+  },
+  "hint": {
+    "en": "Send tamper alarms in broadcast mode",
+    "nl": "Verstuur sabotage alarm meldingen in broadcast modus"
+  },
+  "zwave": {
+    "index": 28,
+    "size": 1
+  },
+  "type": "checkbox"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "temperature_report_threshold",
+  "value": 10,
+  "label": {
+    "en": "Temperature report threshold (value times 0.1°C)",
+    "nl": "Temperatuur rapportage grens (Waarde maal 0.1°C)"
+  },
+  "hint": {
+    "en": "How much must the temperature change before being reported to Homey. Range: 0 (off) - 255, default: 10",
+    "nl": "Hoeveel moet de temperatuur veranderen voordat de waarde wordt gerapporteerd aan Homey. Bereik: 0 (uit) - 255, standaard: 10"
+  },
+  "zwave": {
+    "index": 60,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 255
+  },
+  "type": "number"
+}

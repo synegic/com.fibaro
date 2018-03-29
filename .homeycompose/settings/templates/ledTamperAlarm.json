@@ -1,0 +1,17 @@
+{
+  "id": "led_indicating_tamper_alarm",
+  "value": true,
+  "label": {
+    "en": "LED indicating tamper alarm",
+    "nl": "LED geeft trillingsalarm aan"
+  },
+  "hint": {
+    "en": "LED alarm (police car resemblance) active or not. Default value: true.",
+    "nl": "LED actief bij trillingsalarm. Standaard waarde: true."
+  },
+  "zwave": {
+    "index": 89,
+    "size": 1
+  },
+  "type": "checkbox"
+}

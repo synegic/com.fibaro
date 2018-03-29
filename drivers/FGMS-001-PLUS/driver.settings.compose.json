@@ -8,300 +8,34 @@
     "collapsed": false,
     "children": [
       {
-        "id": "motion_sensor_sensitivity",
-        "value": 15,
-        "label": {
-          "en": "Motion sensor sensitivity",
-          "nl": "Bewegingssensor gevoeligheid"
-        },
-        "hint": {
-          "en": "The lower the value, the more sensitive the PIR sensor is. Range 8 - 255\nStandard: 10",
-          "nl": "Een lagere waarde betekent een gevoeligere sensor. Bereik: 8 - 255\nStandaard: 10"
-        },
-        "zwave": {
-          "index": 1,
-          "size": 2
-        },
-        "attr": {
-          "min": 8,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "motionSensitivity"
       },
       {
-        "id": "motion_sensor_blindtime",
-        "value": 15,
-        "label": {
-          "en": "Motion sensor blindtime",
-          "nl": "Bewegingssensor blindtime"
-        },
-        "hint": {
-          "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. Range: 0 - 15 (0.5s - 8s).",
-          "nl": "Periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie. Bereik: 0 - 15 (0,5s - 8s)."
-        },
-        "zwave": {
-          "index": 2,
-          "size": 1
-        },
-        "attr": {
-          "min": 0,
-          "max": 15
-        },
-        "type": "number"
+        "$extends": "motionBlindTime"
       },
       {
-        "id": "motion_pulse_counter",
-        "value": "1",
-        "label": {
-          "en": "Motion detection pulse counter",
-          "nl": "Bewegingsdetectie pulse teller"
-        },
-        "hint": {
-          "en": "Amount of moves before motion is reported. A higher value results in a less sensitive motion sensor",
-          "nl": "Hoeveelheid bewegingen voordat dit wordt gerapporteerd, een hogere waarde resulteert in een minder gevoelige sensor"
-        },
-        "zwave": {
-          "index": 3,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "1 pulse",
-              "nl": "1 beweging"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "2 pulse",
-              "nl": "2 bewegingen"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "3 pulse",
-              "nl": "3 bewegingen"
-            }
-          },
-          {
-            "id": "3",
-            "label": {
-              "en": "4 pulse",
-              "nl": "4 bewegingen"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "motionPulseCounter"
       },
       {
-        "id": "motion_detection_time_window",
-        "value": "2",
-        "label": {
-          "en": "Motion detection time window",
-          "nl": "Tijdvak voor bewegingsdetectie"
-        },
-        "hint": {
-          "en": "Period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting",
-          "nl": "Tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen"
-        },
-        "zwave": {
-          "index": 4,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "4 seconds"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "8 seconds"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "12 seconds"
-            }
-          },
-          {
-            "id": "3",
-            "label": {
-              "en": "16 seconds"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "motionDetectionWindow"
       },
       {
-        "id": "motion_cancellation_delay",
-        "value": 30,
-        "label": {
-          "en": "Motion alarm cancellation delay (seconds)",
-          "nl": "Bewegingsalarm annuleringsperiode (seconden)"
-        },
-        "hint": {
-          "en": "Set the time (in seconds) when the motion alarm will be cancelled.\nRange: 1 - 32767.",
-          "nl": "Zet de tijd (in seconden) wanneer het bewegingsalarm zal worden geannuleerd.\nBereik: 1 - 32767."
-        },
-        "zwave": {
-          "index": 6,
-          "size": 2
-        },
-        "attr": {
-          "min": 1,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "motionCancellationDelay"
       },
       {
-        "id": "day_night",
-        "value": "0",
-        "label": {
-          "en": "Motion operating mode",
-          "nl": "Bewegingsalarm functie"
-        },
-        "hint": {
-          "en": "Determine when the motion should be active.\nDefault value: Always active.",
-          "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
-        },
-        "zwave": {
-          "index": 8,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "Always active",
-              "nl": "Altijd actief"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Only during day",
-              "nl": "Alleen overdag"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Only during night",
-              "nl": "Alleen 's nachts"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "motionDayNight"
       },
       {
-        "id": "day_night_threshold",
-        "value": 200,
-        "label": {
-          "en": "Motion operating mode threshold",
-          "nl": "Bewegingsalarm functie drempel"
-        },
-        "hint": {
-          "en": "Determine on which lux level it is either day or night.\nRange: 1 - 32767.\nDefault value: 200.",
-          "nl": "Bepaal bij hoeveel lux het schakelt tussen dag of nacht.\nBereik: 1 - 32767.\nStandaard waarde: 200."
-        },
-        "zwave": {
-          "index": 9,
-          "size": 2
-        },
-        "attr": {
-          "min": 1,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "motionDayNightThreshold"
       },
       {
-        "id": "basic_command_config",
-        "value": "0",
-        "label": {
-          "en": "Motion detection command",
-          "nl": "Bewegingsdetectie commando"
-        },
-        "hint": {
-          "en": "Determine the command sent to 2nd association group (assigned to PIR sensor). The values of on and off commands may be modified by the following parameters.\nDefault value: on and off.",
-          "nl": "Bepaal het commando dat naar de 2e associatie groep wordt gestuurd (toegekend aan de PIR). De waarden van het aan of uit commando kan in onderstaande parameters aangepast worden.\nStandaard waarde: aan en uit."
-        },
-        "zwave": {
-          "index": 12,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "On and off",
-              "nl": "Aan en uit"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Only on",
-              "nl": "Alleen aan"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Only off",
-              "nl": "Alleen uit"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "motionBasicCommandConfig"
       },
       {
-        "id": "basic_on_command",
-        "value": 255,
-        "label": {
-          "en": "Motion detection on command",
-          "nl": "Bewegingsdetectie aan commando"
-        },
-        "hint": {
-          "en": "The on command sent at the moment of motion detection. Further motion detections, during the cancellation time, will not result in sending additional commands.\nRange: 0 (off), 1 - 99 (dim), 255 (on).\nDefault value: 255 (on).",
-          "nl": "Het inschakel commando dat wordt verstuurd tijdens Bewegingsalarm. Opvolgende bewegingsalarmen, tijdens de annuleringsperiode, resulteren niet in extra inschakel commandos.\nBereik: 0 (uit), 1 - 99 (dim), 255 (aan).\nStandaard waarde: 255 (aan)."
-        },
-        "zwave": {
-          "index": 14,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "motionBasicOnCommand"
       },
       {
-        "id": "basic_off_command",
-        "value": 0,
-        "label": {
-          "en": "Motion detection off command",
-          "nl": "Bewegingsdetectie uit commando"
-        },
-        "hint": {
-          "en": "The off command at the moment of motion alarm cancellation, after the cancellation delay time.\nRange: 0 (off), 1 - 99 (dim), 255 (on).\nDefault value: 0 (off).",
-          "nl": "Het uitschakel commando dat wordt verstuurd na annulering van het Bewegingsalarm, na de Bewegingsalarm annuleringsperiode.\nBereik: 0 (off), 1 - 99 (dim), 255 (on).\nStandaard waarde: 0 (uit)."
-        },
-        "zwave": {
-          "index": 16,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "motionBasicOffCommand"
       }
     ]
   },
@@ -314,135 +48,22 @@
     "collapsed": true,
     "children": [
       {
-        "id": "tamper_sensitivity",
-        "value": 20,
-        "label": {
-          "en": "Tamper sensitivity",
-          "nl": "Trilling gevoeligheid"
-        },
-        "hint": {
-          "en": "Sets the amount of movement is needed before triggered.\nRange: 0 (Inactive), 1 (0.08G) - 121 (2G).",
-          "nl": "Zet hoeveel beweging nodig is voor het activeerd.\nBereik: 0 (Niet Actief), 1 (0.08G) - 121 (2G)."
-        },
-        "zwave": {
-          "index": 20,
-          "size": 1
-        },
-        "attr": {
-          "min": 0,
-          "max": 121
-        },
-        "type": "number"
+        "$extends": "tamperSensitivity"
       },
       {
-        "id": "tamper_cancellation_delay",
-        "value": 30,
-        "label": {
-          "en": "Tamper alarm cancellation delay (seconds)",
-          "nl": "Trillingsalarm annulering periode (seconden)"
-        },
-        "hint": {
-          "en": "Another tampering detected during the cancellation delay will not extend the delay.\nRange: 1 - 32767.",
-          "nl": "Nog een trilling binnen deze periode zal de periode niet verlengen.\nBereik: 1 - 32767."
-        },
-        "zwave": {
-          "index": 22,
-          "size": 2
-        },
-        "attr": {
-          "min": 1,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "tamperCancellationDelay"
       },
       {
-        "id": "tamper_operating_mode",
-        "value": "0",
-        "label": {
-          "en": "Tamper operation mode",
-          "nl": "Trilling operatie modus"
-        },
-        "hint": {
-          "en": "Determine the behaviour of tamper and how it reports",
-          "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
-        },
-        "zwave": {
-          "index": 24,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "Tamper only",
-              "nl": "Alleen sabotage alarm"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Tamper and earthquake detector",
-              "nl": "Sabotage en aardbeving detectie"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Tamper and orientation in space",
-              "nl": "Sabotage en orientatie raportage"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "tamperOperatingMode"
       },
       {
-        "id": "tamper_cancellation",
-        "value": true,
-        "label": {
-          "en": "Enable tamper alarm cancellation",
-          "nl": "Schakel trillingsalarm annulering aan"
-        },
-        "hint": {
-          "en": "This parameter allows to enable/disable cancellation of the tamper alarm.",
-          "nl": "Deze paramter staat u toe de annulering van het trillingsalarm in/uit te schakelen."
-        },
-        "zwave": {
-          "index": 25,
-          "size": 1
-        },
-        "type": "checkbox"
+        "$extends": "tamperCancellation"
       },
       {
-        "id": "tamper_broadcast_mode",
-        "value": false,
-        "label": {
-          "en": "Tamper broadcast mode"
-        },
-        "hint": {
-          "en": "Send tamper alarms in broadcast mode",
-          "nl": "Verstuur sabotage alarm meldingen in broadcast modus"
-        },
-        "zwave": {
-          "index": 28,
-          "size": 1
-        },
-        "type": "checkbox"
+        "$extends": "tamperBroadcastMode"
       },
       {
-        "id": "tamper_broadcast_mode_backward_compatible",
-        "value": false,
-        "label": {
-          "en": "Tamper - backward compatible broadcast mode"
-        },
-        "hint": {
-          "en": "Send tamper alarms in broadcast mode. (Backwards compatibility mode)",
-          "nl": "Verstuur sabotage alarm meldingen in broadcast modus. (Backwards compatibility modus)"
-        },
-        "zwave": {
-          "index": 29,
-          "size": 1
-        },
-        "type": "checkbox"
+        "$extends": "tamperBroadcastModeBC"
       }
     ]
   },
@@ -455,46 +76,10 @@
     "collapsed": true,
     "children": [
       {
-        "id": "illumination_report_threshold",
-        "value": 200,
-        "label": {
-          "en": "Illuminance report threshold",
-          "nl": "Lichtsterkte rapportage drempel"
-        },
-        "hint": {
-          "en": "Sets how many lux needs to change before the value is reported to Homey. Range: 0 (off) - 32767, default: 200",
-          "nl": "Zet hoeveel lux er moet veranderen voordat de waarde naar Homey word gerapporteerd. Bereik: 0 (uit) - 32767, standaard: 200"
-        },
-        "zwave": {
-          "index": 40,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "illuminationReportThreshold"
       },
       {
-        "id": "illumination_report_interval",
-        "value": 3600,
-        "label": {
-          "en": "Illuminance report interval (seconds)",
-          "nl": "Lichtsterkte rapportage interval (seconden)"
-        },
-        "hint": {
-          "en": "Determine the time between illumination reports to Homey, independent of value changes. Range: 0 (off) - 32767, default: 3600",
-          "nl": "Bepaal wanneer de lichtsterkte waarden naar Homey worden verzonden, ook als deze niet veranderd is. Bereik: 0 (uit) - 32676, standaard: 3600"
-        },
-        "zwave": {
-          "index": 42,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "illuminationReportInterval"
       }
     ]
   },
@@ -507,130 +92,22 @@
     "collapsed": true,
     "children": [
       {
-        "id": "temperature_report_threshold",
-        "value": 10,
-        "label": {
-          "en": "Temperature report threshold (value times 0.1°C)",
-          "nl": "Temperatuur rapportage grens (Waarde maal 0.1°C)"
-        },
-        "hint": {
-          "en": "How much must the temperature change before being reported to Homey. Range: 0 (off) - 255, default: 10",
-          "nl": "Hoeveel moet de temperatuur veranderen voordat de waarde wordt gerapporteerd aan Homey. Bereik: 0 (uit) - 255, standaard: 10"
-        },
-        "zwave": {
-          "index": 60,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "temperatureReportThreshold"
       },
       {
-        "id": "temperature_measuring_interval",
-        "value": 900,
-        "label": {
-          "en": "Temperature measuring interval (seconds)",
-          "nl": "Temperatuur meet interval (seconden)"
-        },
-        "hint": {
-          "en": "Determine how often the temperature will be measured\nRange: 0, 1 - 32767\n0 = Reports not being send.",
-          "nl": "Bepaal hoe vaak de temperatuur wordt gemeten\nBereik: 0, 1 - 32767\n0 = Er word niks verzonden."
-        },
-        "zwave": {
-          "index": 62,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "temperatureMeasuringInterval"
       },
       {
-        "id": "temperature_report_interval",
-        "value": 0,
-        "label": {
-          "en": "Temperature report interval (seconden)",
-          "nl": "Temperatuur rapportage interval (seconden)"
-        },
-        "hint": {
-          "en": "Determine how often the temperature will be sent to Homey, even when the value has not changed.\nRange: 0, 1 - 32767\n0 = Reports not being send.",
-          "nl": "Bepaal wanneer de temperatuur naar Homey word verstuurd, ook als de waarde niet is veranderd\nBereik: 0, 1 - 32767\n0 = Er word nisk verzonden."
-        },
-        "zwave": {
-          "index": 64,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "temperatureReportInterval"
       },
       {
-        "id": "temperature_offset",
-        "value": 0,
-        "label": {
-          "en": "Temperature offset (0.1°C)",
-          "nl": "Temperatuur correctie (0,1°C)"
-        },
-        "hint": {
-          "en": "The value to be added to the measured temperature.\nRange: -100ºC - 100ºC.",
-          "nl": "De waarde die wordt toegevoegd aan de gemeten temperatuur.\nBereik: -100ºC - 100ºC."
-        },
-        "zwave": {
-          "index": 66,
-          "size": 2
-        },
-        "attr": {
-          "min": -1000,
-          "max": 1000
-        },
-        "type": "number"
+        "$extends": "temperatureOffset"
       },
       {
-        "id": "temperature_blue",
-        "value": 18,
-        "label": {
-          "en": "Temperature for blue LED (°C)",
-          "nl": "Temperatuur voor blauwe LED (°C)"
-        },
-        "hint": {
-          "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red. Range: 0 - 254, default value: 18.",
-          "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder. Bereik: 0 - 254, standaard waarde: 18."
-        },
-        "zwave": {
-          "index": 86,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "temperatureBlue"
       },
       {
-        "id": "temperature_red",
-        "value": 28,
-        "label": {
-          "en": "Temperature for red LED (°C)",
-          "nl": "Temperatuur voor rode LED (°C)"
-        },
-        "hint": {
-          "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'.  Any temperature at or above this value will set the LED to red, below this value it will gradually change to blue. Range: 1 - 255, default value: 28.",
-          "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur hoger of gelijk aan deze waarde is licht de LED rood op, onder deze waarde wordt de LED geleidelijk blauwer. Bereik: 1 - 255, standaard waarde: 28."
-        },
-        "zwave": {
-          "index": 87,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 255
-        },
-        "type": "number"
+        "$extends": "temperatureRed"
       }
     ]
   },
@@ -643,291 +120,19 @@
     "collapsed": true,
     "children": [
       {
-        "id": "led_signaling_mode",
-        "value": "10",
-        "label": {
-          "en": "LED light mode",
-          "nl": "LED licht modus"
-        },
-        "hint": {
-          "en": "Determine the way in which the LED behaves after motion has been detected.\n*1 = 1x Long blink\n*2 = Long blink and a short blink for every motion detected\n*3 = Long blink and blinks twice for every motion detected\nDefault value: colour depends on the temperature *2.",
-          "nl": "Bepaald het gedrag van de LED wanneer beweging is gedetecteerd.\n*1 = 1x Lange knipper\n*2 = Lange knipper en knippert bij elke bewegingsdetectie\n*3 = Lange knipper en knippert 2x bij elke bewegingsdetectie\nStandaard waarde: kleur op basis van de temperatuur *2."
-        },
-        "zwave": {
-          "index": 80,
-          "size": 1
-        },
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "LED inactive"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Colour depends on the temperature *1",
-              "nl": "Kleur op basis van de temperatuur *1"
-            }
-          },
-          {
-            "id": "10",
-            "label": {
-              "en": "Colour depends on the temperature *2",
-              "nl": "Kleur op basis van de temperatuur *2"
-            }
-          },
-          {
-            "id": "19",
-            "label": {
-              "en": "Colour depends on the temperature *3",
-              "nl": "Kleur op basis van de temperatuur *3"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Flashlight mode - 10 seconds",
-              "nl": "Zaklamp modus - 10 seconden"
-            }
-          },
-          {
-            "id": "11",
-            "label": {
-              "en": "Flashlight mode (10 seconds, extends every motion)",
-              "nl": "Zaklamp modus (10 seconden, langer met elke beweging)"
-            }
-          },
-          {
-            "id": "3",
-            "label": {
-              "en": "White *1",
-              "nl": "Wit *1"
-            }
-          },
-          {
-            "id": "12",
-            "label": {
-              "en": "White *2",
-              "nl": "Wit *2"
-            }
-          },
-          {
-            "id": "20",
-            "label": {
-              "en": "White *3",
-              "nl": "Wit *3"
-            }
-          },
-          {
-            "id": "4",
-            "label": {
-              "en": "Red *1",
-              "nl": "Rood *1"
-            }
-          },
-          {
-            "id": "13",
-            "label": {
-              "en": "Red *2",
-              "nl": "Rood *2"
-            }
-          },
-          {
-            "id": "21",
-            "label": {
-              "en": "Red *3",
-              "nl": "Rood *3"
-            }
-          },
-          {
-            "id": "5",
-            "label": {
-              "en": "Green *1",
-              "nl": "Groen *1"
-            }
-          },
-          {
-            "id": "14",
-            "label": {
-              "en": "Green *2",
-              "nl": "Groen *2"
-            }
-          },
-          {
-            "id": "22",
-            "label": {
-              "en": "Green *3",
-              "nl": "Groen *3"
-            }
-          },
-          {
-            "id": "6",
-            "label": {
-              "en": "Blue *1",
-              "nl": "Blauw *1"
-            }
-          },
-          {
-            "id": "15",
-            "label": {
-              "en": "Blue *2",
-              "nl": "Blauw *2"
-            }
-          },
-          {
-            "id": "23",
-            "label": {
-              "en": "Blue *3",
-              "nl": "Blauw *3"
-            }
-          },
-          {
-            "id": "7",
-            "label": {
-              "en": "Yellow *1",
-              "nl": "Geel *1"
-            }
-          },
-          {
-            "id": "16",
-            "label": {
-              "en": "Yellow *2",
-              "nl": "Geel *2"
-            }
-          },
-          {
-            "id": "24",
-            "label": {
-              "en": "Yellow *3",
-              "nl": "Geel *3"
-            }
-          },
-          {
-            "id": "8",
-            "label": {
-              "en": "Cyan *1",
-              "nl": "Cyaan *1"
-            }
-          },
-          {
-            "id": "17",
-            "label": {
-              "en": "Cyan *2",
-              "nl": "Cyaan *2"
-            }
-          },
-          {
-            "id": "25",
-            "label": {
-              "en": "Cyan *3",
-              "nl": "Cyaan *3"
-            }
-          },
-          {
-            "id": "9",
-            "label": {
-              "en": "Magenta *1",
-              "nl": "Magenta *1"
-            }
-          },
-          {
-            "id": "18",
-            "label": {
-              "en": "Magenta *2",
-              "nl": "Magenta *2"
-            }
-          },
-          {
-            "id": "26",
-            "label": {
-              "en": "Magenta *3",
-              "nl": "Magenta *3"
-            }
-          }
-        ],
-        "type": "dropdown"
+        "$extends": "ledSignallingMode"
       },
       {
-        "id": "led_brightness",
-        "value": 50,
-        "label": {
-          "en": "LED brightness (percentage)",
-          "nl": "LED helderheid (in procenten)"
-        },
-        "hint": {
-          "en": "Determine the brightness of LED when indicating motion detection. 0 = Determined by ambient brightness. Range: 0 - 100, default value: 50.",
-          "nl": "Bepaal de helderheid van de LED wanneer beweging wordt gedetecteerd. 0 = Bepaald door de omgevingslichtsterkte. Bereik: 0 - 100, standaard waarde: 50."
-        },
-        "zwave": {
-          "index": 81,
-          "size": 1
-        },
-        "attr": {
-          "min": 0,
-          "max": 100
-        },
-        "type": "number"
+        "$extends": "ledBrightness"
       },
       {
-        "id": "led_ambient_1",
-        "value": 100,
-        "label": {
-          "en": "Ambient lux to set LED brightness to 1%",
-          "nl": "Omgevings lux waar LED helderheid 1% is"
-        },
-        "hint": {
-          "en": "The parameter is only relevant when the parameter LED brightness is set to 0, and must be below the value of Ambient lux 100%. Range: 0 - 32766, default value: 100.",
-          "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet onder de waarde van Omgevings lux 100% zijn. Bereik: 0 - 32766, standaard waarde: 100."
-        },
-        "zwave": {
-          "index": 82,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "ledAmbientLow"
       },
       {
-        "id": "led_ambient_100",
-        "value": 1000,
-        "label": {
-          "en": "Ambient lux to set LED brightness to 100%",
-          "nl": "Omgevings lux waar LED helderheid 100% is"
-        },
-        "hint": {
-          "en": "The parameter is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%. Range: 1 - 32767, default value: 1000.",
-          "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van Omgevings lux 1% zijn. Bereik: 1 - 32767, standaard waarde: 1000."
-        },
-        "zwave": {
-          "index": 83,
-          "size": 2
-        },
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "type": "number"
+        "$extends": "ledAmbientHigh"
       },
       {
-        "id": "led_indicating_tamper_alarm",
-        "value": true,
-        "label": {
-          "en": "LED indicating tamper alarm",
-          "nl": "LED geeft trillingsalarm aan"
-        },
-        "hint": {
-          "en": "LED alarm (police car resemblance) active or not. Default value: true.",
-          "nl": "LED actief bij trillingsalarm. Standaard waarde: true."
-        },
-        "zwave": {
-          "index": 89,
-          "size": 1
-        },
-        "type": "checkbox"
+        "$extends": "ledTamperAlarm"
       }
     ]
   },
@@ -940,55 +145,7 @@
     "collapsed": true,
     "children": [
       {
-        "id": "secure_mode_associations",
-        "value": "3",
-        "label": {
-          "en": "Associations in Z-Wave network Security Mode",
-          "nl": "Associaties in Z-Wave netwerk Security Modus"
-        },
-        "hint": {
-          "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st group “Lifeline”.",
-          "nl": "Deze instelling bepaalt hoe commando's worden verstuurd naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd. Instelling is alleen actief in Z-Wave netwerk Security Modus en is niet van toepassing op de eerste associatie groep."
-        },
-        "zwave": {
-          "index": 18,
-          "size": 1
-        },
-        "attr": {
-          "min": 0,
-          "max": 15
-        },
-        "type": "dropdown",
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "None of the groups are sent as secure",
-              "nl": "Geen van de groepen wordt beveiligd verstuurd"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Association group 2, on/off sent as secure",
-              "nl": "Associatie groep 2, aan/uit wordt beveiligd verstuurd"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Association group 3, tamper sent as secure",
-              "nl": "Associatie groep 3, trilling wordt beveiligd verstuurd"
-            }
-          },
-          {
-            "id": "3",
-            "label": {
-              "en": "Association group 2 and 3 sent as secure (on/off and tamper)",
-              "nl": "Associatie groep 2 en 3 worden beveiligd verstuurd (aan/uit and trilling)"
-            }
-          }
-        ]
+        "$extends": "secureModeAssociations"
       }
     ]
   }

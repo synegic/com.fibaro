@@ -1,0 +1,21 @@
+{
+  "id": "temperature_offset",
+  "value": 0,
+  "label": {
+    "en": "Temperature offset (0.1°C)",
+    "nl": "Temperatuur correctie (0,1°C)"
+  },
+  "hint": {
+    "en": "The value to be added to the measured temperature.\nRange: -100ºC - 100ºC.",
+    "nl": "De waarde die wordt toegevoegd aan de gemeten temperatuur.\nBereik: -100ºC - 100ºC."
+  },
+  "zwave": {
+    "index": 66,
+    "size": 2
+  },
+  "attr": {
+    "min": -1000,
+    "max": 1000
+  },
+  "type": "number"
+}

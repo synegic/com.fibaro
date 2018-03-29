@@ -1,0 +1,21 @@
+{
+  "id": "illumination_report_threshold",
+  "value": 200,
+  "label": {
+    "en": "Illuminance report threshold",
+    "nl": "Lichtsterkte rapportage drempel"
+  },
+  "hint": {
+    "en": "Sets how many lux needs to change before the value is reported to Homey. Range: 0 (off) - 32767, default: 200",
+    "nl": "Zet hoeveel lux er moet veranderen voordat de waarde naar Homey word gerapporteerd. Bereik: 0 (uit) - 32767, standaard: 200"
+  },
+  "zwave": {
+    "index": 40,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 32767
+  },
+  "type": "number"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "motion_detection_time_window",
+  "value": "2",
+  "label": {
+    "en": "Motion detection time window",
+    "nl": "Tijdvak voor bewegingsdetectie"
+  },
+  "hint": {
+    "en": "Period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting",
+    "nl": "Tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen"
+  },
+  "zwave": {
+    "index": 4,
+    "size": 1
+  },
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "4 seconds"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "8 seconds"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "12 seconds"
+      }
+    },
+    {
+      "id": "3",
+      "label": {
+        "en": "16 seconds"
+      }
+    }
+  ],
+  "type": "dropdown"
+}

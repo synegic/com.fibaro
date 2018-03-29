@@ -1,0 +1,21 @@
+{
+  "id": "tamper_cancellation_delay",
+  "value": 30,
+  "label": {
+    "en": "Tamper alarm cancellation delay (seconds)",
+    "nl": "Trillingsalarm annulering periode (seconden)"
+  },
+  "hint": {
+    "en": "Another tampering detected during the cancellation delay will not extend the delay.\nRange: 1 - 32767.",
+    "nl": "Nog een trilling binnen deze periode zal de periode niet verlengen.\nBereik: 1 - 32767."
+  },
+  "zwave": {
+    "index": 22,
+    "size": 2
+  },
+  "attr": {
+    "min": 1,
+    "max": 32767
+  },
+  "type": "number"
+}

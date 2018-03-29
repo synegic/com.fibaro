@@ -1,0 +1,40 @@
+{
+  "id": "tamper_operating_mode",
+  "value": "0",
+  "label": {
+    "en": "Tamper operation mode",
+    "nl": "Trilling operatie modus"
+  },
+  "hint": {
+    "en": "Determine the behaviour of tamper and how it reports",
+    "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
+  },
+  "zwave": {
+    "index": 24,
+    "size": 1
+  },
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "Tamper only",
+        "nl": "Alleen sabotage alarm"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Tamper and earthquake detector",
+        "nl": "Sabotage en aardbeving detectie"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "Tamper and orientation in space",
+        "nl": "Sabotage en orientatie raportage"
+      }
+    }
+  ],
+  "type": "dropdown"
+}

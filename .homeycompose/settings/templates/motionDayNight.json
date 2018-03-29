@@ -1,0 +1,40 @@
+{
+  "id": "day_night",
+  "value": "0",
+  "label": {
+    "en": "Motion operating mode",
+    "nl": "Bewegingsalarm functie"
+  },
+  "hint": {
+    "en": "Determine when the motion should be active.\nDefault value: Always active.",
+    "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
+  },
+  "zwave": {
+    "index": 8,
+    "size": 1
+  },
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "Always active",
+        "nl": "Altijd actief"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Only during day",
+        "nl": "Alleen overdag"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "Only during night",
+        "nl": "Alleen 's nachts"
+      }
+    }
+  ],
+  "type": "dropdown"
+}

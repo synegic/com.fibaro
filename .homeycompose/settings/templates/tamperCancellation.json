@@ -1,0 +1,17 @@
+{
+  "id": "tamper_cancellation",
+  "value": true,
+  "label": {
+    "en": "Enable tamper alarm cancellation",
+    "nl": "Schakel trillingsalarm annulering aan"
+  },
+  "hint": {
+    "en": "This parameter allows to enable/disable cancellation of the tamper alarm.",
+    "nl": "Deze paramter staat u toe de annulering van het trillingsalarm in/uit te schakelen."
+  },
+  "zwave": {
+    "index": 25,
+    "size": 1
+  },
+  "type": "checkbox"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "illumination_report_interval",
+  "value": 3600,
+  "label": {
+    "en": "Illuminance report interval (seconds)",
+    "nl": "Lichtsterkte rapportage interval (seconden)"
+  },
+  "hint": {
+    "en": "Determine the time between illumination reports to Homey, independent of value changes. Range: 0 (off) - 32767, default: 3600",
+    "nl": "Bepaal wanneer de lichtsterkte waarden naar Homey worden verzonden, ook als deze niet veranderd is. Bereik: 0 (uit) - 32676, standaard: 3600"
+  },
+  "zwave": {
+    "index": 42,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 32767
+  },
+  "type": "number"
+}

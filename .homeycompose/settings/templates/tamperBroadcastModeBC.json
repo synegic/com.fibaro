@@ -1,0 +1,16 @@
+{
+  "id": "tamper_broadcast_mode_backward_compatible",
+  "value": false,
+  "label": {
+    "en": "Tamper - backward compatible broadcast mode"
+  },
+  "hint": {
+    "en": "Send tamper alarms in broadcast mode. (Backwards compatibility mode)",
+    "nl": "Verstuur sabotage alarm meldingen in broadcast modus. (Backwards compatibility modus)"
+  },
+  "zwave": {
+    "index": 29,
+    "size": 1
+  },
+  "type": "checkbox"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "temperature_blue",
+  "value": 18,
+  "label": {
+    "en": "Temperature for blue LED (°C)",
+    "nl": "Temperatuur voor blauwe LED (°C)"
+  },
+  "hint": {
+    "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red. Range: 0 - 254, default value: 18.",
+    "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder. Bereik: 0 - 254, standaard waarde: 18."
+  },
+  "zwave": {
+    "index": 86,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 255
+  },
+  "type": "number"
+}
