@@ -1,0 +1,75 @@
+{
+  "id": "led_indication",
+  "type": "dropdown",
+  "label": {
+    "en": "LED Indication",
+    "nl": "LED Indicatie"
+  },
+  "zwave": {
+    "index": 3,
+    "size": 1
+  },
+  "hint": {
+    "en": "What will the LED indicate.",
+    "nl": "Wat zal de LED weergeven."
+  },
+  "value": "6",
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "No Indication",
+        "nl": "Geen Indicatie"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Status Changed",
+        "nl": "Status Veranderd"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "On Wakeup",
+        "nl": "Wakker Worden"
+      }
+    },
+    {
+      "id": "3",
+      "label": {
+        "en": "Status Changed & On Wakeup",
+        "nl": "Status Veranderd & Wakker Worden"
+      }
+    },
+    {
+      "id": "4",
+      "label": {
+        "en": "Tamper",
+        "nl": "Sabotage"
+      }
+    },
+    {
+      "id": "5",
+      "label": {
+        "en": "Status Changed & Tamper",
+        "nl": "Status Veranderd & Sabotage"
+      }
+    },
+    {
+      "id": "6",
+      "label": {
+        "en": "On Wakeup & Tamper",
+        "nl": "Wakker Worden & Sabotage"
+      }
+    },
+    {
+      "id": "7",
+      "label": {
+        "en": "Status Changed & On Wakeup & Tamper",
+        "nl": "Status Veranderd & Wakker Worden & Sabotage"
+      }
+    }
+  ]
+}

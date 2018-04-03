@@ -1,0 +1,33 @@
+{
+  "id": "default_alarm_status",
+  "type": "radio",
+  "label": {
+    "en": "Default Alarm Status",
+    "nl": "Standaard Alarm Status"
+  },
+  "zwave": {
+    "index": 2,
+    "size": 1
+  },
+  "hint": {
+    "en": "When will the alarm be triggerd.",
+    "nl": "Wanneer word het alarm geactiveerd."
+  },
+  "value": "0",
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "Door/Window Opened",
+        "nl": "Deur/Raam Geopend"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Door/Window Closed",
+        "nl": "Deur/Raam Gesloten"
+      }
+    }
+  ]
+}

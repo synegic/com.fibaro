@@ -1,0 +1,22 @@
+{
+  "id": "temperature_measure_hystersis",
+  "type": "number",
+  "label": {
+    "en": "Temperature Measure Hystersis",
+    "nl": "Temperatuur Meet Hystersis"
+  },
+  "zwave": {
+    "index": 12,
+    "size": 1,
+    "signed": false
+  },
+  "hint": {
+    "en": "Sets how many degree the temperature must change before being measured.\nRange: 0(0 degree) - 255(16 degree)\n0 = on every \"wakeup\" of the contact.",
+    "nl": "Zet hoeveel graden de temperatuur moet veranderen voor hij meet.\nBereik: 0(0 graden) - 255(16 graden)\n0 = bij elke \"wakeup\" van het contact."
+  },
+  "attr": {
+    "min": 0,
+    "max": 255
+  },
+  "value": 8
+}
