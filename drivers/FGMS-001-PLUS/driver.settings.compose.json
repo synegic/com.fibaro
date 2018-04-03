@@ -32,10 +32,10 @@
         "$extends": "motionBasicCommandConfig"
       },
       {
-        "$extends": "motionBasicOnCommand"
+        "$extends": "commandActivated"
       },
       {
-        "$extends": "motionBasicOffCommand"
+        "$extends": "commandDeactivated"
       }
     ]
   },

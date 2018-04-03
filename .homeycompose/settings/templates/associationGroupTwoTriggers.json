@@ -1,0 +1,40 @@
+{
+  "id": "association_group_2_triggers",
+  "value": "0",
+  "label": {
+    "en": "2nd association group triggers",
+    "nl": "Triggers 2e associatie groep"
+  },
+  "hint": {
+    "en": "This parameter (11) determines when a command is send to the 2nd association group.",
+    "nl": "Deze parameter (11) bepaald wanneer er een commando word verstuurd naar de 2e associatie groep."
+  },
+  "zwave": {
+    "index": 11,
+    "size": 1
+  },
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "After opening and closing",
+        "nl": "Na openen of sluiten"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "After opening",
+        "nl": "Na openen"
+      }
+    },
+    {
+      "id": "2",
+      "label": {
+        "en": "After closing",
+        "nl": "Na sluiten"
+      }
+    }
+  ],
+  "type": "dropdown"
+}

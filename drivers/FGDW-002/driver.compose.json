@@ -12,8 +12,8 @@
     "measure_temperature"
   ],
   "images": {
-    "large": "/drivers/FGDW-002/assets/images/large.png",
-    "small": "/drivers/FGDW-002/assets/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -29,10 +29,10 @@
     "zwaveAllianceProductId": 2181,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2181/FGDW-002-EN-T-v0.3.2.pdf",
     "learnmode": {
-      "image": "/drivers/FGDW-002/assets/learnmode.svg",
+      "image": "/{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "press the button on your Fibaro Door/Window Sensor 2 three times",
-        "nl": "Druk driemaal op de knop op de Fibaro Door/Window Sensor 2"
+        "en": "press the button on your Fibaro Door/Window Sensor 2 three times.",
+        "nl": "Druk driemaal op de knop op de Fibaro Door/Window Sensor 2."
       }
     },
     "associationGroups": [

@@ -1,0 +1,21 @@
+{
+  "id": "command_close_delay",
+  "value": 0,
+  "label": {
+    "en": "Delay before the command for closing is sent (s)",
+    "nl": "Vertraging voordat het commando bij sluiten wordt verstuurd (s)"
+  },
+  "hint": {
+    "en": "This parameter (15) determines the delay before a command is sent when the window is closed.",
+    "nl": "Deze parameter (15) bepaald de vertraging voordat het commando wordt verstuurd bij het sluiten van het raam/de deur."
+  },
+  "zwave": {
+    "index": 15,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 32400
+  },
+  "type": "number"
+}

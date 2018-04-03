@@ -1,0 +1,21 @@
+{
+  "id": "basic_on_command",
+  "value": 255,
+  "label": {
+    "en": "Alarm activation command",
+    "nl": "Alarm activatie commando"
+  },
+  "hint": {
+    "en": "The on command sent at the moment of alarm activation. \nRange: 0 (off), 1 - 99 (dim), 255 (on).\nDefault value: 255 (on).",
+    "nl": "Het inschakel commando dat wordt verstuurd wanneer het alarm geactiveerd wordt. \nBereik: 0 (uit), 1 - 99 (dim), 255 (aan).\nStandaard waarde: 255 (aan)."
+  },
+  "zwave": {
+    "index": 14,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 255
+  },
+  "type": "number"
+}

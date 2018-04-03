@@ -1,0 +1,21 @@
+{
+  "id": "temperature_alarm_high",
+  "value": 350,
+  "label": {
+    "en": "Temperature at which the high temperature alarm should go off",
+    "nl": "Waarde waarbij het hoge temperatuursalarm af moet gaan"
+  },
+  "hint": {
+    "en": "If this temperature is reached the high temperature alarm will trigger. Range: 1-600 (steps of 0.1°C)",
+    "nl": "Wanneer deze temperatuur bereikt wordt gaat het hoge temperatuursalarm af. Bereik: 1-600 (stappen van 0.1°C)"
+  },
+  "zwave": {
+    "index": 55,
+    "size": 2
+  },
+  "attr": {
+    "min": 1,
+    "max": 600
+  },
+  "type": "number"
+}

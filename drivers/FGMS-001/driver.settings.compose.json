@@ -49,7 +49,7 @@
         "$extends": "motionBasicCommandConfig"
       },
       {
-        "$extends": "motionBasicOnCommand",
+        "$extends": "commandActivated",
         "zwave": {
           "index": 14,
           "size": 1,
@@ -57,7 +57,7 @@
         }
       },
       {
-        "$extends": "motionBasicOffCommand",
+        "$extends": "commandDeactivated",
         "zwave": {
           "index": 16,
           "size": 1,
