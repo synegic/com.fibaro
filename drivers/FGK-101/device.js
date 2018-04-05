@@ -5,9 +5,6 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroDoorSensor extends ZwaveDevice {
 
 	async onMeshInit() {
-
-		this.enableDebug();
-
 		this.registerCapability('alarm_contact', 'BASIC', {
 			getOpts: {
 				getOnOnline: true,

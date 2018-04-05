@@ -174,7 +174,7 @@
       "en": "Temperature sensor",
       "nl": "Temperatuurssensor"
     },
-    "collapsed": false,
+    "collapsed": true,
     "children": [
       {
         "$extends": "reportThreshold",
@@ -265,7 +265,7 @@
       "en": "Light sensor",
       "nl": "Lichtsensor"
     },
-    "collapsed": false,
+    "collapsed": true,
     "children": [
       {
         "$extends": "reportThreshold",
@@ -304,7 +304,7 @@
       "en": "Tamper alarm",
       "nl": "Sabotage alarm"
     },
-    "collapsed": false,
+    "collapsed": true,
     "children": [
       {
         "$extends": "activateLed",
@@ -419,7 +419,7 @@
       "en": "Notifications",
       "nl": "Notificaties"
     },
-    "collapsed": false,
+    "collapsed": true,
     "children": [
       {
         "$extends": "ledStyle",
@@ -461,7 +461,7 @@
       "en": "Commands",
       "nl": "Commando's"
     },
-    "collapsed": false,
+    "collapsed": true,
     "children": [
       {
         "$extends": "commandConfiguration",
