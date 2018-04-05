@@ -1,0 +1,16 @@
+{
+  "value": true,
+  "label": {
+    "en": "Enable alarm cancellation",
+    "nl": "Schakel annulering in"
+  },
+  "hint": {
+    "en": "This parameter allows to enable/disable cancellation of alarms.",
+    "nl": "Deze paramter staat u toe de annulering van het alarm in/uit te schakelen."
+  },
+  "zwave": {
+    "index": 25,
+    "size": 1
+  },
+  "type": "checkbox"
+}
