@@ -1,0 +1,21 @@
+{
+  "id": "report_threshold",
+  "value": 200,
+  "label": {
+    "en": "Report threshold",
+    "nl": "Rapportage drempel"
+  },
+  "hint": {
+    "en": "This parameter determines the minimum value change before reporting changes to Homey.",
+    "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+  },
+  "zwave": {
+    "index": 40,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 32767
+  },
+  "type": "number"
+}

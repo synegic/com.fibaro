@@ -1,0 +1,20 @@
+{
+  "value": 0,
+  "label": {
+    "en": "Deactivation command",
+    "nl": "Deactivatie commando"
+  },
+  "hint": {
+    "en": "This parameter determines the command sent when this sensor/alarm deactivates.",
+    "nl": "Deze parameter bepaald welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
+  },
+  "zwave": {
+    "index": 16,
+    "size": 2
+  },
+  "attr": {
+    "min": 0,
+    "max": 255
+  },
+  "type": "number"
+}

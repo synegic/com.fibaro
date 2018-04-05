@@ -1,0 +1,17 @@
+{
+  "type": "radio",
+  "label": {
+    "en": "Operation device",
+    "nl": "Operatief apparaat"
+  },
+  "zwave": {
+    "index": 1,
+    "size": 1
+  },
+  "hint": {
+    "en": "This parameter enables you to specify what device triggers the alarm.",
+    "nl": "Deze parameter staat u toe aan te geven wat voor apparaat het alarm activeert."
+  },
+  "value": "0",
+  "values": []
+}
