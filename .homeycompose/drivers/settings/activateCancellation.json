@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter allows to enable/disable cancellation of alarms.",
-    "nl": "Deze paramter staat u toe de annulering van het alarm in/uit te schakelen."
+    "nl": "Deze paramter bepaalt of de annulering van het alarm in/uit geschakelt is."
   },
   "zwave": {
     "index": 25,

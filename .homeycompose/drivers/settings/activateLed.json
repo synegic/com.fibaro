@@ -10,7 +10,7 @@
   },
   "hint": {
     "en": "This parameter allows you to enable/disable LED indications.",
-    "nl": "Deze parameter staat u toe de LED indicatie in te schakelen."
+    "nl": "Deze parameter bepaalt of de LED indicatie is ingeschakelt."
   },
   "value": true
 }

@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter determines the percentage brightness of the LED.",
-    "nl": "Deze parameter bepaald het helderheidspercentage voor de LED."
+    "nl": "Deze parameter bepaalt het helderheidspercentage voor de LED."
   },
   "zwave": {
     "index": 81,

@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter determines the command sent when this sensor/alarm deactivates.",
-    "nl": "Deze parameter bepaald welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
+    "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
   },
   "zwave": {
     "index": 16,

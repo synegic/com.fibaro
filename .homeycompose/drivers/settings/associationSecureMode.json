@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
-    "nl": "Deze instelling bepaalt hoe commando's worden verstuurd naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
+    "nl": "Deze instelling bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
   },
   "zwave": {
     "index": 18,

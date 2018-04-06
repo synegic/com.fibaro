@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter determines the duration of activation before the activation command is sent.",
-    "nl": "Deze parameter bepaald de duur van de sensor/alarm activatie voordat het commando wordt verstuurt."
+    "nl": "Deze parameter bepaalt de duur van de sensor/alarm activatie voordat het commando wordt verstuurt."
   },
   "zwave": {
     "index": 14,

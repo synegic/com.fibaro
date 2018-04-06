@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter determines when a command is send to the 2nd association group.",
-    "nl": "Deze parameter bepaald wanneer er een commando word verstuurd naar de 2e associatie groep."
+    "nl": "Deze parameter bepaalt wanneer er een commando word verstuurd naar de 2e associatie groep."
   },
   "zwave": {
     "index": 11,

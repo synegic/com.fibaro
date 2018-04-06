@@ -10,7 +10,7 @@
   },
   "hint": {
     "en": "This parameter determines when the LED light indicate status changes.",
-    "nl": "Deze parameter bepaalt wanneer de LED aangeeft dat de status is veranderd."
+    "nl": "Deze parameter bepaalt wanneer de LED aangeeft dat de status is verandert."
   },
   "value": "0",
   "values": []
