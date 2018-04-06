@@ -5,7 +5,7 @@
       "en": "Contact sensor",
       "nl": "Contact sensor"
     },
-    "collapsed": true,
+    "collapsed": false,
     "children": [
       {
         "$extends": "activateLed",
