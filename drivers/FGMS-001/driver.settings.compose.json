@@ -434,7 +434,7 @@
         }
       },
       {
-        "$extends": "commandDectivated",
+        "$extends": "commandDeactivated",
         "$id": "basic_off_command",
         "zwave": {
           "index": 16,

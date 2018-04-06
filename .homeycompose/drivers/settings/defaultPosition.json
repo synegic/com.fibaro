@@ -10,7 +10,7 @@
   },
   "hint": {
     "en": "This parameter allows you to set the default position for this sensor.",
-    "nl": "Deze parameter staat u toe de standaard positite van de sensor in te stellen",
+    "nl": "Deze parameter staat u toe de standaard positite van de sensor in te stellen"
   },
   "value": "0",
   "values": []

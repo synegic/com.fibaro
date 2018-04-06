@@ -124,11 +124,11 @@
       },
       {
         "$extends": "lowThreshold",
-        "$id": "temperature_alarm_low",
+        "$id": "temperature_alarm_low"
       },
       {
         "$extends": "highThreshold",
-        "$id": "temperature_alarm_high",
+        "$id": "temperature_alarm_high"
       },
       {
         "id": "temperature_alarm_reports",
