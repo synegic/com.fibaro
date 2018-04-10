@@ -1,5 +1,4 @@
 {
-  "id": "report_threshold",
   "value": 200,
   "label": {
     "en": "Report threshold",
