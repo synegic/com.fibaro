@@ -2,36 +2,18 @@
     {
         "type": "group",
         "label": {
-            "en": "Power",
-            "nl": "Stroom"
+            "en": "On/off",
+            "nl": "Aan/uit"
         },
         "collapsed": false,
         "children": [
             {
-                "id": "always_on",
-                "type": "checkbox",
-                "label": {
-                    "en": "Always on",
-                    "nl": "Altijd aan"
-                },
-                "hint": {
-                    "en": "This parameter ({{zwaveParameterIndex}}) determines if the device is always on. Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push.",
-                    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames."
-                },
-                "value": false
+                "$extends": "alwaysOn",
+                "$id": "always_on"
             },
             {
-                "id": "save_state",
-                "type": "checkbox",
-                "label": {
-                    "en": "Save Power-off State",
-                    "nl": "Onthoud Stroom-eraf Status"
-                },
-                "hint": {
-                    "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves its last state when power is disconnected.",
-                    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat zijn laatste status onthoudt wanneer de stroom eraf word gehaald."
-                },
-                "value": true
+                "$extends": "saveState",
+                "$id": "save_state"
             }
         ]
     },
@@ -47,8 +29,9 @@
                 "$extends": "reportInterval",
                 "$id": "power_report_interval",
                 "zwave": {
-                    "index": 0,
-                    "size": 0
+                    "index": 43,
+                    "size": 1,
+                    "signed": false
                 },
                 "attr": {
                     "min": 1,
@@ -60,8 +43,8 @@
                 "$extends": "reportThreshold",
                 "$id": "power_report",
                 "zwave": {
-                    "index": 0,
-                    "size": 0
+                    "index": 40,
+                    "size": 1
                 },
                 "attr": {
                     "min": 1,
@@ -73,8 +56,8 @@
                 "$extends": "reportIntervalThreshold",
                 "$id": "power_load_report",
                 "zwave": {
-                    "index": 0,
-                    "size": 0
+                    "index": 42,
+                    "size": 1
                 },
                 "attr": {
                     "min": 1,
@@ -103,11 +86,20 @@
                     "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the kWh usage of the device itself is added to the power usage.",
                     "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
                 },
+                "zwave": {
+                    "index": 49,
+                    "size": 1
+                },
                 "value": false
             },
             {
                 "$extends": "reportThreshold",
                 "$id": "kwh_report_threshold",
+                "zwave": {
+                    "index": 45,
+                    "size": 1,
+                    "signed": false
+                },
                 "attr": {
                     "min": 0.01,
                     "max": 2.55,
@@ -118,6 +110,11 @@
             {
                 "$extends": "reportInterval",
                 "$id": "watt_kwh_report_interval",
+                "zwave": {
+                    "index": 43,
+                    "size": 1,
+                    "signed": false
+                },
                 "attr": {
                     "min": 1,
                     "max": 65535
@@ -145,6 +142,10 @@
                 "hint": {
                     "en": "This parameter ({{zwaveParameterIndex}}) defines the color of the LED ring in on state.",
                     "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+                },
+                "zwave": {
+                    "index": 61,
+                    "size": 1
                 },
                 "values": [
                     {
@@ -230,6 +231,10 @@
                 "hint": {
                     "en": "This parameter ({{zwaveParameterIndex}}) defines the color of the LED ring in off state.",
                     "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+                },
+                "zwave": {
+                    "index": 62,
+                    "size": 1
                 },
                 "values": [
                     {
