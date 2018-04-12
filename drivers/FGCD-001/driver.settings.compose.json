@@ -82,8 +82,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Notifications",
-      "nl": "Notificaties"
+      "en": "LED and acoustic notifications",
+      "nl": "LED en akoestische notificaties"
     },
     "collapsed": true,
     "children": [
@@ -134,8 +134,8 @@
           "nl": "Akoestische Meldingen"
         },
         "hint": {
-          "en": "Determine the accoustic behaviour.",
-          "nl": "Bepaal het acoustische gedrag."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the accoustic behaviour.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het acoustische gedrag."
         },
         "zwave": {
           "index": 4,
