@@ -10,6 +10,26 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
         this._offTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_off');
         this._switchTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_switch');
 
+        this._i1Condition = new Homey.FlowCardCondition('FGBS-001_i1');
+        this._i1Condition
+			.register()
+			.registerRunListener((args, state) => {
+				if (args.device === this) {
+					return state === this.getCapabilityValue('alarm_generic.contact1');
+				}
+				return false;
+			});
+
+        this._i2Condition = new Homey.FlowCardCondition('FGBS-001_i2');
+        this._i2Condition
+            .register()
+            .registerRunListener((args, state) => {
+                if (args.device === this) {
+                    return state === this.getCapabilityValue('alarm_generic.contact2');
+                }
+                return false;
+            });
+
         /*
     	=========================================================================
          Multichannel report listeners for binary reports (generic_alarm)

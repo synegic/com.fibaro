@@ -1,5 +1,71 @@
 {
-  "triggers": [],
-  "conditions": [],
+  "triggers": [
+    {
+      "id": "FGBS-001_i1_on",
+      "title": {
+        "en": "Input 1 opened",
+        "nl": "Ingang 1 geopend"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i1_off",
+      "title": {
+        "en": "Input 1 closed",
+        "nl": "Ingang 1 gesloten"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i1_switch",
+      "title": {
+        "en": "Input 1 switched",
+        "nl": "Ingang 1 geschakeld"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i2_on",
+      "title": {
+        "en": "Input 2 opened",
+        "nl": "Ingang 2 geopend"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i2_off",
+      "title": {
+        "en": "Input 2 closed",
+        "nl": "Ingang 2 gesloten"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i2_switch",
+      "title": {
+        "en": "Input 2 switched",
+        "nl": "Ingang 2 geschakeld"
+      },
+      "args": []
+    },
+  ],
+  "conditions": [
+    {
+      "id": "FGBS-001_i1",
+      "title": {
+        "en": "Input 1 !{{is open|is closed}}",
+        "nl": "Ingang 1 !{{is geopend|is gesloten}}"
+      },
+      "args": []
+    },
+    {
+      "id": "FGBS-001_i2",
+      "title": {
+        "en": "Input 2 !{{is open|is closed}}",
+        "nl": "Ingang 2 !{{is geopend|is gesloten}}"
+      },
+      "args": []
+    }
+  ],
   "actions": []
 }
