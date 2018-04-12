@@ -56,27 +56,11 @@ class FibaroKeyfob extends ZwaveDevice {
         }
 	}
 
-    _sceneRunListener(args, state, callback) {
-        if (state &&
-            state.hasOwnProperty('button') &&
-            state.hasOwnProperty('scene') &&
-            args.hasOwnProperty('button') &&
-            args.hasOwnProperty('scene') &&
-            state.button === args.button &&
-            state.scene === args.scene) {
-            return callback(null, true);
+	customSaveMessage(oldSettings, newSettings, changedKeysArr) {
+	    return {
+	        en: 'To save the settings you need to wake up the Keyfob:\\n1: press O and -,\\n2: press the Δ button repeatedly until the LED is green;\\n3: press + to wake up.',
+            nl: 'Om de instellingen op te slaan moet je de Keyfob wakker maken: \\n1: druk op O en -,\\n2: druk herhaaldelijk op de Δ knop totdat de LED groen is;\\n3: druk op + om wakker te maken.'
         }
-        return callback(null, false);
-    }
-
-	_sequenceRunListener(args, state, callback) {
-        if (state &&
-            state.hasOwnProperty('sequence') &&
-            args.hasOwnProperty('sequence') &&
-            state.sequence === args.sequence) {
-            return callback(null, true);
-        }
-        return callback(null, false);
     }
 
 	sequenceParser(sequence) {
@@ -97,6 +81,29 @@ class FibaroKeyfob extends ZwaveDevice {
         parsedSequence.writeUIntBE(parsing, 0, 2);
         return parsedSequence;
 	}
+
+    _sceneRunListener(args, state, callback) {
+        if (state &&
+            state.hasOwnProperty('button') &&
+            state.hasOwnProperty('scene') &&
+            args.hasOwnProperty('button') &&
+            args.hasOwnProperty('scene') &&
+            state.button === args.button &&
+            state.scene === args.scene) {
+            return callback(null, true);
+        }
+        return callback(null, false);
+    }
+
+    _sequenceRunListener(args, state, callback) {
+        if (state &&
+            state.hasOwnProperty('sequence') &&
+            args.hasOwnProperty('sequence') &&
+            state.sequence === args.sequence) {
+            return callback(null, true);
+        }
+        return callback(null, false);
+    }
 }
 
 module.exports = FibaroKeyfob;
