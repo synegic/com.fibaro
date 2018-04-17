@@ -1,0 +1,47 @@
+{
+  "id": "FWGPx-102-PLUS",
+  "name": {
+    "en": "Wall plug (Z-Wave plus)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "onoff"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      1538
+    ],
+    "productId": [
+      4097,
+      4099,
+      8193,
+      12289
+    ],
+    "zwaveAllianceProductId": 1653,
+    "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1653/FGWPx-102-EN-A-v2.0 29.01.2016-3.pdf",
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Insert the Wall Plug in a socket or press the button on your Fibaro Wall Plug three times",
+        "nl": "Stop de Tussenstekker in het stopcontact of druk driemaal op de knop op de Tussenstekker"
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "“Lifeline” reports the device status and allows\r\nfor assigning single device only (main controller by default)."
+        }
+      }
+    }
+  }
+}

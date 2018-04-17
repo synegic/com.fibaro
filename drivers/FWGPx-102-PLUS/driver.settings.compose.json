@@ -1,0 +1,373 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Power",
+      "nl": "Stroom"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "id": "always_on",
+        "type": "checkbox",
+        "label": {
+          "en": "Always on",
+          "nl": "Altijd aan"
+        },
+        "hint": {
+          "en": "This parameter determines if the device is always on. Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push",
+          "nl": "Deze parameter bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames"
+        },
+        "zwave": {
+          "index": 1,
+          "size": 1
+        },
+        "value": false
+      },
+      {
+        "id": "save_state",
+        "type": "checkbox",
+        "label": {
+          "en": "Save Power-off State",
+          "nl": "Onthoud Stroom-eraf Status"
+        },
+        "hint": {
+          "en": "This parameter determines whether or not the device saves its last state when power is disconnected",
+          "nl": "Deze parameter bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald"
+        },
+        "zwave": {
+          "index": 2,
+          "size": 1
+        },
+        "value": true
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power (W)",
+      "nl": "Stroom (W)"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "$extends": "reportInterval",
+        "$id": "watt_interval_report",
+        "zwave": {
+          "index": 12,
+          "size": 2
+        },
+        "attr": {
+          "min": 5,
+          "max": 600
+        },
+        "value": 30
+      },
+      {
+        "$extends": "reportThreshold",
+        "$id": "watt_threshold_report",
+        "zwave": {
+          "index": 11,
+          "size": 1
+        },
+        "attr": {
+          "min": 1,
+          "max": 100
+        },
+        "value": 15
+      },
+      {
+        "$extends": "reportThreshold",
+        "$id": "immediate_watt_percent_report",
+        "zwave": {
+          "index": 10,
+          "size": 1
+        },
+        "attr": {
+          "min": 1,
+          "max": 100
+        },
+        "value": 80
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power (kWh)",
+      "nl": "Stroom (kWh)"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "id": "own_power",
+        "type": "checkbox",
+        "label": {
+          "en": "Include own power consumption",
+          "nl": "inclusief eigen verbruik"
+        },
+        "hint": {
+          "en": "This parameter determines whether or not the kWh usage of the device itself is added to the power usage.",
+          "nl": "Deze parameter bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
+        },
+        "zwave": {
+          "index": 15,
+          "size": 1
+        },
+        "value": false
+      },
+      {
+        "$extends": "reportThreshold",
+        "$id": "kwh_threshold_report",
+        "zwave": {
+          "index": 13,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 5,
+          "step": 0.01
+        },
+        "value": 0.01
+      },
+      {
+        "$extends": "reportInterval",
+        "$id": "watt_kwh_report_interval",
+        "zwave": {
+          "index": 14,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 32400
+        },
+        "value": 3600
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "LED Notifications",
+      "nl": "LED Notificaties"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "led_ring_color_on",
+        "type": "dropdown",
+        "label": {
+          "en": "Color when on",
+          "nl": "Kleur wanneer aan"
+        },
+        "zwave": {
+          "index": 41,
+          "size": 1
+        },
+        "value": "0",
+        "hint": {
+          "en": "Defines the color of the LED ring in on state",
+          "nl": "De kleur van de LED ring wanneer aan"
+        },
+        "values": [
+          {
+            "id": "1",
+            "label": {
+              "en": "Changes in predefined steps according to power load",
+              "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Changes continuously according to power load using full spectrum of LED color",
+              "nl": "Verandert continu afhankelijk van het stroom verbruik"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "White",
+              "nl": "Wit"
+            }
+          },
+          {
+            "id": "4",
+            "label": {
+              "en": "Red",
+              "nl": "Rood"
+            }
+          },
+          {
+            "id": "5",
+            "label": {
+              "en": "Green",
+              "nl": "Groen"
+            }
+          },
+          {
+            "id": "6",
+            "label": {
+              "en": "Blue",
+              "nl": "Blauw"
+            }
+          },
+          {
+            "id": "7",
+            "label": {
+              "en": "Yellow",
+              "nl": "Geel"
+            }
+          },
+          {
+            "id": "8",
+            "label": {
+              "en": "Cyan",
+              "nl": "Cyaan"
+            }
+          },
+          {
+            "id": "9",
+            "label": {
+              "en": "Magenta",
+              "nl": "Magenta"
+            }
+          },
+          {
+            "id": "0",
+            "label": {
+              "en": "Off",
+              "nl": "Uit"
+            }
+          }
+        ]
+      },
+      {
+        "id": "led_ring_color_off",
+        "type": "dropdown",
+        "label": {
+          "en": "Color when off",
+          "nl": "Kleur wanneer uit"
+        },
+        "zwave": {
+          "index": 42,
+          "size": 1
+        },
+        "value": "0",
+        "hint": {
+          "en": "Defines the color of the LED ring in off state",
+          "nl": "Kleur van de LED ring wanneer uit"
+        },
+        "values": [
+          {
+            "id": "1",
+            "label": {
+              "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
+              "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "White",
+              "nl": "Wit"
+            }
+          },
+          {
+            "id": "4",
+            "label": {
+              "en": "Red",
+              "nl": "Rood"
+            }
+          },
+          {
+            "id": "5",
+            "label": {
+              "en": "Green",
+              "nl": "Groen"
+            }
+          },
+          {
+            "id": "6",
+            "label": {
+              "en": "Blue",
+              "nl": "Blauw"
+            }
+          },
+          {
+            "id": "7",
+            "label": {
+              "en": "Yellow",
+              "nl": "Geel"
+            }
+          },
+          {
+            "id": "8",
+            "label": {
+              "en": "Cyan",
+              "nl": "Cyaan"
+            }
+          },
+          {
+            "id": "9",
+            "label": {
+              "en": "Magenta",
+              "nl": "Magenta"
+            }
+          },
+          {
+            "id": "0",
+            "label": {
+              "en": "Off",
+              "nl": "Uit"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Associations",
+      "nl": "Associaties"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "control_onoff_group2",
+        "type": "dropdown",
+        "label": {
+          "en": "Control association group 2",
+          "nl": "Controlle associatie groep 2"
+        },
+        "zwave": {
+          "index": 20,
+          "size": 1
+        },
+        "value": "0",
+        "hint": {
+          "en": "What will devices do, that are specified in association group 2, when pressing the b-button",
+          "nl": "Wat doen apparaten, die gespecificeerd zijn in associatie groep 2, wanneer je op de b-knop drukt"
+        },
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "Wallplug off, device(s) also off. Wallplug on, device(s) also on",
+              "nl": "Muurplug uit, apparaat(en) ook uit. Muurplug aan, apparaat(en) ook aan"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "Wallplug off, device(s) on. Wallplug on, device(s) off",
+              "nl": "Muurplug uit, apparaat(en) aan. Muurplug aan, apparaat(en) uit"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
