@@ -12,6 +12,9 @@ class FibaroFloodSensor extends ZwaveDevice {
         this.registerCapability('measure_battery', 'BATTERY');
 
         this.registerSetting('temperature_measure_hysteresis', value => value * 10);
+        this.registerSetting('temperature_measure_offset', value => value * 100);
+        this.registerSetting('low_temperature_threshold', value => value * 100);
+        this.registerSetting('high_temperature_threshold', value => value * 100);
     }
 	
 }
