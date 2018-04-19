@@ -16,7 +16,7 @@ class FibaroSwipeDevice extends ZwaveDevice {
         */
         this._directionTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_direction')
 			.register()
-			.registerRunListener( (callback, args, state) => {
+			.registerRunListener( (args, state, callback) => {
                 if (state && args &&
                     state.hasOwnProperty('direction') &&
                     state.hasOwnProperty('scene') &&
@@ -31,7 +31,7 @@ class FibaroSwipeDevice extends ZwaveDevice {
 
         this._roundTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_round')
 			.register()
-			.registerRunListener( (callback, args, state) => {
+			.registerRunListener( (args, state, callback) => {
                 if (state && args &&
                     state.hasOwnProperty('direction') &&
                     state.hasOwnProperty('scene') &&
@@ -46,7 +46,7 @@ class FibaroSwipeDevice extends ZwaveDevice {
 
         this._sequenceTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_sequence')
 			.register()
-			.registerRunListener( (callback, args, state) => {
+			.registerRunListener( (args, state, callback) => {
                 if (state && args &&
                     state.hasOwnProperty('direction') &&
                     args.hasOwnProperty('direction') &&
@@ -182,22 +182,22 @@ class FibaroSwipeDevice extends ZwaveDevice {
         ===================================================================
          */
         this.registerSetting('sequence_1', (newValue) => {
-        	this.parseSequence(newValue);
+        	return this.parseSequence(newValue);
 		});
         this.registerSetting('sequence_2', (newValue) => {
-            this.parseSequence(newValue);
+            return this.parseSequence(newValue);
         });
         this.registerSetting('sequence_3', (newValue) => {
-            this.parseSequence(newValue);
+            return this.parseSequence(newValue);
         });
         this.registerSetting('sequence_4', (newValue) => {
-            this.parseSequence(newValue);
+            return this.parseSequence(newValue);
         });
         this.registerSetting('sequence_5', (newValue) => {
-            this.parseSequence(newValue);
+            return this.parseSequence(newValue);
         });
         this.registerSetting('sequence_6', (newValue) => {
-            this.parseSequence(newValue);
+            return this.parseSequence(newValue);
         });
 
         /*
@@ -226,9 +226,9 @@ class FibaroSwipeDevice extends ZwaveDevice {
     }
 
     parseSequence(sequence) {
-        if (gestures === 0) return new Buffer([0, 0]);
+        if (sequence === 0) return new Buffer([0, 0]);
 
-        const gesture = gestures.split(';').map(Number);
+        const gesture = sequence.split(';').map(Number);
         if (gesture.length === 2) gesture.push(0);
         return new Buffer([gesture[0], gesture[1] * 16 + gesture[2]]);
 	}
