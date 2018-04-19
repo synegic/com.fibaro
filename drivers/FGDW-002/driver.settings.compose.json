@@ -138,8 +138,8 @@
           "nl": "Temperatuur alarm rapportages"
         },
         "hint": {
-          "en": "Determine when temperature alarms are reported to Homey",
-          "nl": "Bepaal wanneer er temperatuursalarmen worden verstuurd naar Homey"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines when temperature alarms are reported to Homey.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wanneer er temperatuursalarmen worden verstuurd naar Homey."
         },
         "zwave": {
           "index": 54,

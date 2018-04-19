@@ -5,8 +5,8 @@
     "nl": "LED licht stijl"
   },
   "hint": {
-    "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-    "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the way in which the LED behaves after events have been detected.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
   },
   "zwave": {
     "index": 80,

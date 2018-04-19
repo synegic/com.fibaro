@@ -5,8 +5,8 @@
     "nl": "Meet interval (s)"
   },
   "hint": {
-    "en": "This parameter determines the time between sensor measurements.",
-    "nl": "Deze parameter bepaalt de tijd tussen het meten van sensorwaarden."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the time between sensor measurements.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd tussen het meten van sensorwaarden."
   },
   "zwave": {
     "index": 42,

@@ -5,8 +5,8 @@
     "nl": "Schakel annulering in"
   },
   "hint": {
-    "en": "This parameter allows to enable/disable cancellation of alarms.",
-    "nl": "Deze paramter bepaalt of de annulering van het alarm in/uit geschakelt is."
+    "en": "This parameter ({{zwaveParameterIndex}}) allows to enable/disable cancellation of alarms.",
+    "nl": "Deze paramter ({{zwaveParameterIndex}}) bepaalt of de annulering van het alarm in-/uitgeschakeld is."
   },
   "zwave": {
     "index": 25,

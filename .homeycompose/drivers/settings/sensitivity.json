@@ -5,8 +5,8 @@
     "nl": "Gevoeligheid"
   },
   "hint": {
-    "en": "This parameter sets the sensitivity for this sensor",
-    "nl": "Deze parameter bepaalt de gevoeligheid van deze sensor"
+    "en": "This parameter ({{zwaveParameterIndex}}) sets the sensitivity for this sensor.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de gevoeligheid van deze sensor."
   },
   "zwave": {
     "index": 1,

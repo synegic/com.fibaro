@@ -15,7 +15,7 @@
     ],
     "zwaveAllianceProductId": 1356,
     "learnmode": {
-      "image": "/drivers/FGK-10x/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro Door/Window Sensor three times",
         "nl": "Druk driemaal op de knop op de Fibaro Deur/Raam Sensor"
@@ -34,7 +34,7 @@
     "measure_battery"
   ],
   "images": {
-    "large": "/drivers/FGK-10x/assets/images/large.png",
-    "small": "/drivers/FGK-10x/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   }
 }

@@ -38,8 +38,8 @@
           "max": 15
         },
         "hint": {
-          "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. Range: 0 - 15 (0.5s - 8s).",
-          "nl": "Periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie. Bereik: 0 - 15 (0,5s - 8s)."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the period of time through which the PIR sensor is “blind” (insensitive) to motion.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie."
         }
       },
       {
@@ -69,8 +69,8 @@
         },
         "value": "0",
         "hint": {
-          "en": "Determine when the motion should be active.\nDefault value: Always active.",
-          "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines when the motion should be active.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wanneer het bewegings alarm actief moet zijn."
         },
         "values": [
           {
@@ -178,8 +178,8 @@
           "max": 254
         },
         "hint": {
-          "en": "Only relevant when LED signaling mode is set to \"depends on temperature\", and must be below red LED.\nRange: 0 - 254.",
-          "nl": "Alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet onder rode LED zijn.\nBereik: 0 - 254."
+          "en": "This parameter ({{zwaveParameterIndex}}) is only relevant when LED signaling mode is set to \"depends on temperature\", and must be below red LED.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) is alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet onder rode LED zijn."
         }
       },
       {
@@ -200,8 +200,8 @@
           "max": 255
         },
         "hint": {
-          "en": "Only relevant when LED signaling mode is set to \"depends on temperature\", and must be above blue LED.\nRange: 1 - 255.",
-          "nl": "Alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet boven blauwe LED zijn.\nBereik: 1 - 255."
+          "en": "This parameter ({{zwaveParameterIndex}}) is only relevant when LED signaling mode is set to \"depends on temperature\", and must be above blue LED.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) is alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet boven blauwe LED zijn."
         }
       }
     ]
@@ -260,8 +260,8 @@
           "max": 65535
         },
         "hint": {
-          "en": "Determine on which lux level it is either day or night.\nRange: 1 - 65535.\nDefault value: 200.",
-          "nl": "Bepaal bij hoeveel lux het schakelt tussen dag of nacht.\nBereik: 1 - 65535.\nStandaard waarde: 200."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines on which lux level it is either day or night.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt bij hoeveel lux het schakelt tussen dag of nacht."
         }
       }
     ]
@@ -308,8 +308,8 @@
           "nl": "Trilling operatie modus"
         },
         "hint": {
-          "en": "Determine the behaviour of tamper and how it reports",
-          "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the tamper alarm and how it reports.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van het sabotage alarm en hoe het rapporteert."
         },
         "zwave": {
           "index": 24,
@@ -345,8 +345,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Notifications",
-      "nl": "Notificaties"
+      "en": "LED notifications",
+      "nl": "LED notificaties"
     },
     "collapsed": true,
     "children": [
@@ -379,8 +379,8 @@
         },
         "value": true,
         "hint": {
-          "en": "LED alarm (police car resemblance) active or not",
-          "nl": "LED actief bij trillingsalarm"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the LED alarm (police car resemblance) is active or not.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de LED actief is bij het sabotage alarm."
         }
       }
     ]

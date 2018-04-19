@@ -45,350 +45,6 @@
   },
   "drivers": [
     {
-      "id": "FGCD-001",
-      "name": {
-        "en": "CO Sensor",
-        "nl": "CO Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery",
-        "alarm_co",
-        "alarm_heat",
-        "measure_temperature"
-      ],
-      "images": {
-        "large": "/drivers/FGCD-001/assets/images/large.png",
-        "small": "/drivers/FGCD-001/assets/images/small.png"
-      },
-      "zwave": {
-        "manufacturerId": 271,
-        "productTypeId": [
-          4609
-        ],
-        "productId": [
-          4096
-        ],
-        "zwaveAllianceProductId": 2336,
-        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
-        "learnmode": {
-          "image": "/drivers/FGCD-001/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press the button on your Fibaro CO Sensor three times",
-            "nl": "Druk driemaal op de knop bovenop de Fibaro CO Sensor"
-          }
-        },
-        "associationGroups": [
-          1
-        ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "“Lifeline” reports the device status and allows for assigning single device only (main controller by default)."
-            }
-          }
-        }
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "CO sensor",
-            "nl": "CO sensor"
-          },
-          "collapsed": false,
-          "children": [
-            {
-              "zwave": {
-                "index": 23,
-                "size": 1
-              },
-              "id": "co_sensor_activation",
-              "value": true,
-              "label": {
-                "en": "Activate sensor",
-                "nl": "Activeer sensor"
-              },
-              "hint": {
-                "en": "This parameter enables/disables this sensor.",
-                "nl": "Deze parameter schakelt deze sensor in/uit."
-              },
-              "type": "checkbox"
-            },
-            {
-              "zwave": {
-                "index": 25,
-                "size": 1
-              },
-              "attr": {
-                "min": 2,
-                "max": 6
-              },
-              "value": 2,
-              "id": "report_threshold",
-              "label": {
-                "en": "Report threshold",
-                "nl": "Rapportage drempel"
-              },
-              "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
-              },
-              "type": "number"
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Temperature sensor",
-            "nl": "Temperatuurssensor"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "zwave": {
-                "index": 21,
-                "size": 1
-              },
-              "attr": {
-                "min": 1,
-                "max": 20
-              },
-              "value": 2,
-              "id": "report_threshold",
-              "label": {
-                "en": "Report threshold",
-                "nl": "Rapportage drempel"
-              },
-              "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
-              },
-              "type": "number"
-            },
-            {
-              "zwave": {
-                "index": 20,
-                "size": 2
-              },
-              "attr": {
-                "min": 1,
-                "max": 2880
-              },
-              "value": 0,
-              "id": "temperature_report_interval",
-              "label": {
-                "en": "Report interval (s)",
-                "nl": "Rapportage interval (s)"
-              },
-              "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
-              },
-              "type": "number"
-            },
-            {
-              "zwave": {
-                "index": 22,
-                "size": 1
-              },
-              "attr": {
-                "min": 1,
-                "max": 85
-              },
-              "value": 55,
-              "id": "temperature_alarm_treshold",
-              "label": {
-                "en": "High value alarm threshold",
-                "nl": "Drempel waarde voor het te hoge waarden alarm"
-              },
-              "hint": {
-                "en": "This parameter determines the threshold at which the high value alarm will go off.",
-                "nl": "Deze parameter bepaalt de drempel waarboven het hoge waarden alerm afgaat."
-              },
-              "type": "number"
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Notifications",
-            "nl": "Notificaties"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "zwave": {
-                "index": 3,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "No Notifications",
-                    "nl": "Geen Meldingen"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Casing Opened",
-                    "nl": "Behuizing Geopend"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Temperature too high",
-                    "nl": "Temperatuur te hoog"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Lack of Z-Wave Range",
-                    "nl": "Te weinig Z-Wave Bereik"
-                  }
-                }
-              ],
-              "value": "0",
-              "id": "visual_notification",
-              "label": {
-                "en": "LED light style",
-                "nl": "LED licht stijl"
-              },
-              "hint": {
-                "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-                "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
-              },
-              "type": "dropdown"
-            },
-            {
-              "id": "acoustic_notification",
-              "type": "dropdown",
-              "label": {
-                "en": "Acoutic Notification",
-                "nl": "Akoestische Meldingen"
-              },
-              "hint": {
-                "en": "Determine the accoustic behaviour.",
-                "nl": "Bepaal het acoustische gedrag."
-              },
-              "zwave": {
-                "index": 4,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "No Notifications",
-                    "nl": "Geen Meldingen"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Casing Opened",
-                    "nl": "Behuizing Geopend"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Temperature too high",
-                    "nl": "Temperatuur te hoog"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Lack of Z-Wave Range",
-                    "nl": "Te weinig Z-Wave Bereik"
-                  }
-                }
-              ],
-              "value": "0"
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Associations",
-            "nl": "Associaties"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "zwave": {
-                "index": 7,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "2nd group sent as secure",
-                    "nl": "2e groep beveiligd verzenden"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "3rd group sent as secure",
-                    "nl": "3e groep beveiligd verzenden"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "4th group sent as secure",
-                    "nl": "4e groep beveiligd verzenden"
-                  }
-                },
-                {
-                  "id": "8",
-                  "label": {
-                    "en": "5th group sent as secure",
-                    "nl": "5e groep beveiligd verzenden"
-                  }
-                },
-                {
-                  "id": "16",
-                  "label": {
-                    "en": "6th group sent as secure",
-                    "nl": "6e groep beveiligd verzenden"
-                  }
-                },
-                {
-                  "id": "32",
-                  "label": {
-                    "en": "7th group sent as secure",
-                    "nl": "7e groep beveiligd verzenden"
-                  }
-                }
-              ],
-              "id": "secure_mode_associaton",
-              "value": "3",
-              "label": {
-                "en": "Associations in Z-Wave network Security Mode",
-                "nl": "Associaties in Z-Wave netwerk Security Modus"
-              },
-              "hint": {
-                "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
-                "nl": "Deze instelling bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
-              },
-              "type": "dropdown"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "FGDW-002",
       "name": {
         "en": "Door/Window sensor 2",
@@ -402,8 +58,8 @@
         "measure_temperature"
       ],
       "images": {
-        "large": "//drivers/FGDW-002/assets/images/large.png",
-        "small": "//drivers/FGDW-002/assets/images/small.png"
+        "large": "/drivers/FGDW-002/assets/images/large.png",
+        "small": "/drivers/FGDW-002/assets/images/small.png"
       },
       "zwave": {
         "manufacturerId": 271,
@@ -419,7 +75,7 @@
         "zwaveAllianceProductId": 2181,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2181/FGDW-002-EN-T-v0.3.2.pdf",
         "learnmode": {
-          "image": "//drivers/FGDW-002/assets/learnmode.svg",
+          "image": "/drivers/FGDW-002/assets/learnmode.svg",
           "instruction": {
             "en": "press the button on your Fibaro Door/Window Sensor 2 three times.",
             "nl": "Druk driemaal op de knop op de Fibaro Door/Window Sensor 2."
@@ -487,8 +143,8 @@
                 "nl": "LED licht stijl"
               },
               "hint": {
-                "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-                "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+                "en": "This parameter (2) determines the way in which the LED behaves after events have been detected.",
+                "nl": "Deze parameter (2) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
               },
               "type": "dropdown"
             },
@@ -520,8 +176,8 @@
                 "size": 1
               },
               "hint": {
-                "en": "This parameter allows you to set the default position for this sensor.",
-                "nl": "Deze parameter staat u toe de standaard positite van de sensor in te stellen"
+                "en": "This parameter (2) determines the default position for this sensor.",
+                "nl": "Deze parameter (2) bepaalt de standaard positite van de sensor in te stellen"
               },
               "value": "0"
             }
@@ -545,14 +201,14 @@
                 "max": 300
               },
               "value": 10,
-              "id": "report_threshold",
+              "id": "temperature_report_threshold",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (51) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (51) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             },
@@ -572,8 +228,8 @@
                 "nl": "Meet interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between sensor measurements.",
-                "nl": "Deze parameter bepaalt de tijd tussen het meten van sensorwaarden."
+                "en": "This parameter (50) determines the time between sensor measurements.",
+                "nl": "Deze parameter (50) bepaalt de tijd tussen het meten van sensorwaarden."
               },
               "type": "number"
             },
@@ -593,8 +249,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+                "en": "This parameter (52) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (52) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "type": "number"
             },
@@ -610,8 +266,8 @@
                 "nl": "Correctie"
               },
               "hint": {
-                "en": "This parameter determines the value to be added to the measured values.",
-                "nl": "Deze parameter bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
+                "en": "This parameter (53) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (53) bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
               },
               "attr": {
                 "min": -1000,
@@ -627,8 +283,8 @@
                 "nl": "Drempel waarde voor het te lage waarden alarm"
               },
               "hint": {
-                "en": "This parameter determines the threshold at which the low value alarm will go off.",
-                "nl": "Deze parameter bepaalt de drempel waaronder het lage waarden alerm afgaat."
+                "en": "This parameter (56) determines the threshold at which the low value alarm will go off.",
+                "nl": "Deze parameter (56) bepaalt de drempel waaronder het lage waarden alerm afgaat."
               },
               "zwave": {
                 "index": 56,
@@ -648,8 +304,8 @@
                 "nl": "Drempel waarde voor het te hoge waarden alarm"
               },
               "hint": {
-                "en": "This parameter determines the threshold at which the high value alarm will go off.",
-                "nl": "Deze parameter bepaalt de drempel waarboven het hoge waarden alerm afgaat."
+                "en": "This parameter (55) determines the threshold at which the high value alarm will go off.",
+                "nl": "Deze parameter (55) bepaalt de drempel waarboven het hoge waarden alerm afgaat."
               },
               "zwave": {
                 "index": 55,
@@ -669,8 +325,8 @@
                 "nl": "Temperatuur alarm rapportages"
               },
               "hint": {
-                "en": "Determine when temperature alarms are reported to Homey",
-                "nl": "Bepaal wanneer er temperatuursalarmen worden verstuurd naar Homey"
+                "en": "This parameter (54) determines when temperature alarms are reported to Homey.",
+                "nl": "Deze parameter (54) bepaalt wanneer er temperatuursalarmen worden verstuurd naar Homey."
               },
               "zwave": {
                 "index": 54,
@@ -730,8 +386,8 @@
                 "nl": "Schakel annulering in"
               },
               "hint": {
-                "en": "This parameter allows to enable/disable cancellation of alarms.",
-                "nl": "Deze paramter bepaalt of de annulering van het alarm in/uit geschakelt is."
+                "en": "This parameter (31) allows to enable/disable cancellation of alarms.",
+                "nl": "Deze paramter (31) bepaalt of de annulering van het alarm in/uit geschakelt is."
               },
               "type": "checkbox"
             },
@@ -751,8 +407,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (30) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "type": "number"
             }
@@ -778,8 +434,8 @@
                 "nl": "Activatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
+                "en": "This parameter (12) determines the command sent when this sensor/alarm activates.",
+                "nl": "Deze parameter (12) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
               },
               "attr": {
                 "min": 0,
@@ -799,8 +455,8 @@
                 "nl": "Deactivatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
+                "en": "This parameter (13) determines the command sent when this sensor/alarm deactivates.",
+                "nl": "Deze parameter (13) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
               },
               "attr": {
                 "min": 0,
@@ -816,8 +472,8 @@
                 "nl": "Vertraging commando bij activatie (s)"
               },
               "hint": {
-                "en": "This parameter determines the duration of activation before the activation command is sent.",
-                "nl": "Deze parameter bepaalt de duur van de sensor/alarm activatie voordat het commando wordt verstuurt."
+                "en": "This parameter (14) determines the duration of activation before the activation command is sent.",
+                "nl": "Deze parameter (14) bepaalt de duur van de sensor/alarm activatie voordat het commando wordt verstuurt."
               },
               "zwave": {
                 "index": 14,
@@ -837,8 +493,8 @@
                 "nl": "Vertraging commando bij deactivatie (s)"
               },
               "hint": {
-                "en": "This parameter determines the duration of deactivation before the deactivation command is sent.",
-                "nl": "Deze parameter bepaalt de duur van de sensor/alarm deactivatie voordat het commando wordt verstuurt."
+                "en": "This parameter (15) determines the duration of deactivation before the deactivation command is sent.",
+                "nl": "Deze parameter (15) bepaalt de duur van de sensor/alarm deactivatie voordat het commando wordt verstuurt."
               },
               "zwave": {
                 "index": 15,
@@ -888,8 +544,8 @@
                 "nl": "Triggers 2e associatie groep"
               },
               "hint": {
-                "en": "This parameter determines when a command is send to the 2nd association group.",
-                "nl": "Deze parameter bepaalt wanneer er een commando word verstuurd naar de 2e associatie groep."
+                "en": "This parameter (11) determines when a command is send to the 2nd association group.",
+                "nl": "Deze parameter (11) bepaalt wanneer er een commando word verstuurd naar de 2e associatie groep."
               },
               "zwave": {
                 "index": 11,
@@ -939,10 +595,553 @@
                 "nl": "Associaties in Z-Wave netwerk Security Modus"
               },
               "hint": {
-                "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
-                "nl": "Deze instelling bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
+                "en": "This parameter (3) defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
+                "nl": "Deze instelling (3) bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
               },
               "type": "dropdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGFS-101-PLUS",
+      "name": {
+        "en": "Flood sensor (Z-Wave Plus) FGFS-101-PLUS",
+        "nl": "Overstromingssensor (Z-Wave Plus) FGFS-101-PLUS"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_tamper",
+        "measure_temperature",
+        "alarm_water"
+      ],
+      "images": {
+        "large": "/drivers/FGFS-101-PLUS/assets/images/large.png",
+        "small": "/drivers/FGFS-101-PLUS/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          2817
+        ],
+        "productId": [
+          4098,
+          8194,
+          12290
+        ],
+        "zwaveAllianceProductId": 2791,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2791/FGFS-101-EN-T-v2.1.pdf",
+        "learnmode": {
+          "image": "/drivers/FGFS-101-PLUS/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Fibaro flood sensor three times.",
+            "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Reports the device status and allows for assigning single device only (Homey by default).",
+              "nl": "Rapporteert de status van het apparaat, er mag maar 1 apparaat in deze groep zitten (standaard is dit Homey)."
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Flood sensor",
+            "nl": "Overstromingssensor"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 77,
+                "size": 1
+              },
+              "id": "flood_sensor",
+              "value": true,
+              "label": {
+                "en": "Activate sensor",
+                "nl": "Activeer sensor"
+              },
+              "hint": {
+                "en": "This parameter (77) enables/disables this sensor.",
+                "nl": "Deze parameter (77) schakelt deze sensor in/uit."
+              },
+              "type": "checkbox"
+            },
+            {
+              "id": "flood_signal",
+              "value": "3",
+              "label": {
+                "en": "Flood signal",
+                "nl": "Overstroming signaal"
+              },
+              "hint": {
+                "en": "This parameter (2) enables/disables the visual and acoustic alarms in case of flood detection",
+                "nl": "Deze parameter (2) schakelt de visuele en akoestische alarmen in/uit in het geval van overstroming."
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "None",
+                    "nl": "Geen"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Visual",
+                    "nl": "Visueel"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Acoustic",
+                    "nl": "Akoestisch"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Acoustic and visual",
+                    "nl": "Akoestisch en visueel"
+                  }
+                }
+              ],
+              "type": "dropdown"
+            },
+            {
+              "zwave": {
+                "index": 75,
+                "size": 4
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "value": 0,
+              "id": "alarm_duration",
+              "label": {
+                "en": "Cancellation delay (s)",
+                "nl": "Annuleringsperiode (s)"
+              },
+              "hint": {
+                "en": "This parameter (75) sets the time after which the visual and acoustic alarm will be cancelled.",
+                "nl": "Deze parameter (75) bepaalt de tijd waarna de visuele en akoestische alarmen gedeactiveert worden."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 1,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 3600
+              },
+              "value": 0,
+              "id": "alarm_cancellation_delay",
+              "label": {
+                "en": "Cancellation delay (s)",
+                "nl": "Annuleringsperiode (s)"
+              },
+              "hint": {
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveert"
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature sensor",
+            "nl": "Temperatuurssensor"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 10,
+                "size": 4
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "value": 300,
+              "id": "temperature_measure_interval",
+              "label": {
+                "en": "Measuring interval (s)",
+                "nl": "Meet interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time between sensor measurements.",
+                "nl": "Deze parameter (10) bepaalt de tijd tussen het meten van sensorwaarden."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 12,
+                "size": 2
+              },
+              "attr": {
+                "min": 1,
+                "max": 100,
+                "steps": 0.1
+              },
+              "value": 5,
+              "id": "temperature_measure_hysteresis",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 73,
+                "size": 2
+              },
+              "attr": {
+                "min": -100,
+                "max": 100,
+                "steps": 0.1
+              },
+              "value": 0,
+              "id": "temperature_measure_offset",
+              "label": {
+                "en": "Offset",
+                "nl": "Correctie"
+              },
+              "hint": {
+                "en": "This parameter (73) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (73) bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 50,
+                "size": 2
+              },
+              "attr": {
+                "min": -100,
+                "max": 100,
+                "steps": 0.1
+              },
+              "value": 15,
+              "id": "low_temperature_threshold",
+              "label": {
+                "en": "Low value alarm threshold",
+                "nl": "Drempel waarde voor het te lage waarden alarm"
+              },
+              "hint": {
+                "en": "This parameter (50) determines the threshold at which the low value alarm will go off.",
+                "nl": "Deze parameter (50) bepaalt de drempel waaronder het lage waarden alerm afgaat."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 51,
+                "size": 2
+              },
+              "attr": {
+                "min": -100,
+                "max": 100,
+                "steps": 0.1
+              },
+              "value": 35,
+              "id": "high_temperature_threshold",
+              "label": {
+                "en": "High value alarm threshold",
+                "nl": "Drempel waarde voor het te hoge waarden alarm"
+              },
+              "hint": {
+                "en": "This parameter (51) determines the threshold at which the high value alarm will go off.",
+                "nl": "Deze parameter (51) bepaalt de drempel waarboven het hoge waarden alerm afgaat."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Tamper alarm",
+            "nl": "Sabotage alarm"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "tamper_alarm",
+              "label": {
+                "en": "Tamper alarm",
+                "nl": "Sabotage alarm"
+              },
+              "hint": {
+                "en": "This parameter (74) determines when the tamper alarm is raised.",
+                "nl": "Deze parameter (74) bepaalt wanneer het sabotage alarm afgaat."
+              },
+              "zwave": {
+                "index": 74,
+                "size": 1
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Tamper alarm off",
+                    "nl": "Sabotage alarm uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Tamper alarm on removal floor",
+                    "nl": "Sabotage alarm bij domonteren"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Tamper alarm on movement",
+                    "nl": "Sabotage alarm bij beweging"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Both options",
+                    "nl": "Beide opties"
+                  }
+                }
+              ],
+              "type": "dropdown"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED notifications",
+            "nl": "LED notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "low_temperature_led",
+              "label": {
+                "en": "Low temperature alarm indicator colour",
+                "nl": "Lage temperatuuralarm indicatie kleur"
+              },
+              "hint": {
+                "en": "This parameter (61) defines the colour of the LED when the low temperature alarm is triggered.",
+                "nl": "Deze parameter (61) bepaalt de kleur van de LED bij het alarm voor te lage temperatuur."
+              },
+              "value": "255",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED Off",
+                    "nl": "LED Uit"
+                  }
+                },
+                {
+                  "id": "16711680",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "65280",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "255",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "16776960",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "65535",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "16750848",
+                  "label": {
+                    "en": "Orange",
+                    "nl": "Oranje"
+                  }
+                },
+                {
+                  "id": "16777215",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                }
+              ],
+              "zwave": {
+                "index": 61,
+                "size": 4
+              },
+              "type": "dropdown"
+            },
+            {
+              "id": "high_temperature_led",
+              "label": {
+                "en": "High temperature alarm indicator colour",
+                "nl": "Hoge temperatuuralarm indicatie kleur"
+              },
+              "hint": {
+                "en": "This parameter (62) defines the colour of the LED when the high temperature alarm is triggered.",
+                "nl": "Deze parameter (62) bepaalt de kleur van de LED bij het alarm voor te hoge temperatuur."
+              },
+              "value": "16711680",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED Off",
+                    "nl": "LED Uit"
+                  }
+                },
+                {
+                  "id": "16711680",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "65280",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "255",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "16776960",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "65535",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "16750848",
+                  "label": {
+                    "en": "Orange",
+                    "nl": "Oranje"
+                  }
+                },
+                {
+                  "id": "16777215",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                }
+              ],
+              "zwave": {
+                "index": 62,
+                "size": 4
+              },
+              "type": "dropdown"
+            },
+            {
+              "zwave": {
+                "index": 63,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED inactive",
+                    "nl": "LED inactief"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "LED for every measurement",
+                    "nl": "LED knippert bij elke meting"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "LED always on (when constantly powered)",
+                    "nl": "LED altijd aan (onder constante spanning)"
+                  }
+                }
+              ],
+              "value": "2",
+              "id": "led_indication",
+              "type": "dropdown",
+              "label": {
+                "en": "LED notification triggers",
+                "nl": "LED notificatie triggers"
+              },
+              "hint": {
+                "en": "This parameter (63) determines when the LED light indicates status changes.",
+                "nl": "Deze parameter (63) bepaalt wanneer de LED aangeeft dat de status is verandert."
+              }
             }
           ]
         }
@@ -1010,8 +1209,8 @@
                 "size": 1
               },
               "hint": {
-                "en": "This parameter allows you to enable/disable LED indications.",
-                "nl": "Deze parameter bepaalt of de LED indicatie is ingeschakelt."
+                "en": "This parameter (2) allows you to enable/disable LED indications.",
+                "nl": "Deze parameter (2) bepaalt of de LED indicatie is ingeschakelt."
               },
               "value": true
             },
@@ -1058,8 +1257,8 @@
                 "nl": "Standaard positie voor sensor"
               },
               "hint": {
-                "en": "This parameter allows you to set the default position for this sensor.",
-                "nl": "Deze parameter staat u toe de standaard positite van de sensor in te stellen"
+                "en": "This parameter (3) determines the default position for this sensor.",
+                "nl": "Deze parameter (3) bepaalt de standaard positite van de sensor in te stellen"
               }
             }
           ]
@@ -1083,14 +1282,14 @@
                 "max": 255
               },
               "value": 8,
-              "id": "report_threshold",
+              "id": "temperature_measure_hystersis",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (12) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             }
@@ -1121,8 +1320,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "type": "number"
             }
@@ -1169,7 +1368,7 @@
         "large": "/drivers/FGK-10x/assets/images/large.png",
         "small": "/drivers/FGK-10x/assets/images/small.png"
       },
-      "id": "FGK-10X",
+      "id": "FGK-10x",
       "settings": [
         {
           "type": "group",
@@ -1207,8 +1406,8 @@
                 "size": 1
               },
               "hint": {
-                "en": "This parameter enables you to specify what device triggers the alarm.",
-                "nl": "Deze parameter staat u toe aan te geven wat voor apparaat het alarm activeert."
+                "en": "This parameter (1) enables you to specify what device triggers the alarm.",
+                "nl": "Deze parameter (1) staat u toe aan te geven wat voor apparaat het alarm activeert."
               },
               "value": "0"
             },
@@ -1240,8 +1439,8 @@
                 "size": 1
               },
               "hint": {
-                "en": "This parameter allows you to set the default position for this sensor.",
-                "nl": "Deze parameter staat u toe de standaard positite van de sensor in te stellen"
+                "en": "This parameter (2) determines the default position for this sensor.",
+                "nl": "Deze parameter (2) bepaalt de standaard positite van de sensor in te stellen"
               },
               "value": "0"
             },
@@ -1315,8 +1514,8 @@
                 "nl": "LED licht stijl"
               },
               "hint": {
-                "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-                "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+                "en": "This parameter (3) determines the way in which the LED behaves after events have been detected.",
+                "nl": "Deze parameter (3) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
               },
               "type": "dropdown"
             }
@@ -1346,8 +1545,8 @@
                 "nl": "Meet interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between sensor measurements.",
-                "nl": "Deze parameter bepaalt de tijd tussen het meten van sensorwaarden."
+                "en": "This parameter (50) determines the time between sensor measurements.",
+                "nl": "Deze parameter (50) bepaalt de tijd tussen het meten van sensorwaarden."
               },
               "type": "number"
             },
@@ -1361,14 +1560,14 @@
                 "max": 300
               },
               "value": 10,
-              "id": "report_threshold",
+              "id": "temperature_report_treshold",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (51) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (51) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             },
@@ -1388,8 +1587,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+                "en": "This parameter (52) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (52) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "type": "number"
             },
@@ -1405,8 +1604,8 @@
                 "nl": "Correctie"
               },
               "hint": {
-                "en": "This parameter determines the value to be added to the measured values.",
-                "nl": "Deze parameter bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
+                "en": "This parameter (66) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
               },
               "attr": {
                 "min": -1000,
@@ -1436,8 +1635,8 @@
                 "nl": "Schakel annulering in"
               },
               "hint": {
-                "en": "This parameter allows to enable/disable cancellation of alarms.",
-                "nl": "Deze paramter bepaalt of de annulering van het alarm in/uit geschakelt is."
+                "en": "This parameter (31) allows to enable/disable cancellation of alarms.",
+                "nl": "Deze paramter (31) bepaalt of de annulering van het alarm in/uit geschakelt is."
               },
               "type": "checkbox"
             },
@@ -1457,8 +1656,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (30) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "type": "number"
             }
@@ -1537,8 +1736,8 @@
                 "nl": "Gevoeligheid"
               },
               "hint": {
-                "en": "This parameter sets the sensitivity for this sensor",
-                "nl": "Deze parameter bepaalt de gevoeligheid van deze sensor"
+                "en": "This parameter (1) sets the sensitivity for this sensor",
+                "nl": "Deze parameter (1) bepaalt de gevoeligheid van deze sensor"
               },
               "type": "number"
             },
@@ -1559,8 +1758,8 @@
                 "max": 15
               },
               "hint": {
-                "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. Range: 0 - 15 (0.5s - 8s).",
-                "nl": "Periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie. Bereik: 0 - 15 (0,5s - 8s)."
+                "en": "This parameter (2) determines the period of time through which the PIR sensor is “blind” (insensitive) to motion.",
+                "nl": "Deze parameter (2) bepaalt de periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie."
               }
             },
             {
@@ -1580,8 +1779,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "type": "number"
             },
@@ -1598,8 +1797,8 @@
               },
               "value": "0",
               "hint": {
-                "en": "Determine when the motion should be active.\nDefault value: Always active.",
-                "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
+                "en": "This parameter (8) determines when the motion should be active.\nDefault value: Always active.",
+                "nl": "Deze parameter (8) bepaalt wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
               },
               "values": [
                 {
@@ -1646,14 +1845,14 @@
                 "max": 255
               },
               "value": 10,
-              "id": "report_threshold",
+              "id": "temperature_report_threshold",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             },
@@ -1674,8 +1873,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+                "en": "This parameter (64) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (64) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "type": "number"
             },
@@ -1696,8 +1895,8 @@
                 "nl": "Meet interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between sensor measurements.",
-                "nl": "Deze parameter bepaalt de tijd tussen het meten van sensorwaarden."
+                "en": "This parameter (62) determines the time between sensor measurements.",
+                "nl": "Deze parameter (62) bepaalt de tijd tussen het meten van sensorwaarden."
               },
               "type": "number"
             },
@@ -1717,8 +1916,8 @@
                 "nl": "Correctie"
               },
               "hint": {
-                "en": "This parameter determines the value to be added to the measured values.",
-                "nl": "Deze parameter bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
+                "en": "This parameter (66) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
               },
               "type": "number"
             },
@@ -1740,8 +1939,8 @@
                 "max": 254
               },
               "hint": {
-                "en": "Only relevant when LED signaling mode is set to \"depends on temperature\", and must be below red LED.\nRange: 0 - 254.",
-                "nl": "Alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet onder rode LED zijn.\nBereik: 0 - 254."
+                "en": "This parameter (86) is only relevant when LED signaling mode is set to \"depends on temperature\", and must be below red LED.",
+                "nl": "Deze parameter (86) is alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet onder rode LED zijn."
               }
             },
             {
@@ -1762,8 +1961,8 @@
                 "max": 255
               },
               "hint": {
-                "en": "Only relevant when LED signaling mode is set to \"depends on temperature\", and must be above blue LED.\nRange: 1 - 255.",
-                "nl": "Alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet boven blauwe LED zijn.\nBereik: 1 - 255."
+                "en": "This parameter (87) is only relevant when LED signaling mode is set to \"depends on temperature\", and must be above blue LED.",
+                "nl": "Deze parameter (87) is alleen relevant wanneer LED kleur staat ingesteld op \"op basis van temperatuur\", en moet boven blauwe LED zijn."
               }
             }
           ]
@@ -1787,14 +1986,14 @@
                 "max": 65535
               },
               "value": 200,
-              "id": "report_threshold",
+              "id": "illumination_report_threshold",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             },
@@ -1815,8 +2014,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+                "en": "This parameter (64) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (64) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "type": "number"
             },
@@ -1838,8 +2037,8 @@
                 "max": 65535
               },
               "hint": {
-                "en": "Determine on which lux level it is either day or night.\nRange: 1 - 65535.\nDefault value: 200.",
-                "nl": "Bepaal bij hoeveel lux het schakelt tussen dag of nacht.\nBereik: 1 - 65535.\nStandaard waarde: 200."
+                "en": "This parameter (9) determines on which lux level it is either day or night.",
+                "nl": "Deze parameter (9) bepaalt bij hoeveel lux het schakelt tussen dag of nacht."
               }
             }
           ]
@@ -1868,8 +2067,8 @@
                 "nl": "Gevoeligheid"
               },
               "hint": {
-                "en": "This parameter sets the sensitivity for this sensor",
-                "nl": "Deze parameter bepaalt de gevoeligheid van deze sensor"
+                "en": "This parameter (1) sets the sensitivity for this sensor",
+                "nl": "Deze parameter (1) bepaalt de gevoeligheid van deze sensor"
               },
               "type": "number"
             },
@@ -1890,8 +2089,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "type": "number"
             },
@@ -1903,8 +2102,8 @@
                 "nl": "Trilling operatie modus"
               },
               "hint": {
-                "en": "Determine the behaviour of tamper and how it reports",
-                "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
+                "en": "This parameter (24) determines the behaviour of the tamper alarm and how it reports.",
+                "nl": "Deze parameter (24) bepaalt het gedrag van het sabotage alarm en hoe het rapporteert."
               },
               "zwave": {
                 "index": 24,
@@ -1940,8 +2139,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Notifications",
-            "nl": "Notificaties"
+            "en": "LED notifications",
+            "nl": "LED notificaties"
           },
           "collapsed": true,
           "children": [
@@ -1953,8 +2152,8 @@
                 "nl": "LED helderheid (%)"
               },
               "hint": {
-                "en": "This parameter determines the percentage brightness of the LED.",
-                "nl": "Deze parameter bepaalt het helderheidspercentage voor de LED."
+                "en": "This parameter (81) determines the percentage brightness of the LED.",
+                "nl": "Deze parameter (81) bepaalt het helderheidspercentage voor de LED."
               },
               "zwave": {
                 "index": 81,
@@ -1974,8 +2173,8 @@
                 "nl": "LED licht stijl"
               },
               "hint": {
-                "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-                "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+                "en": "This parameter (80) determines the way in which the LED behaves after events have been detected.",
+                "nl": "Deze parameter (80) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
               },
               "zwave": {
                 "index": 80,
@@ -2192,8 +2391,8 @@
                 "max": 65534
               },
               "hint": {
-                "en": "The parameter is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of Ambient lux 100%.\nRange: 0 - 65534.",
-                "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet onder de waarde van omgevings lux 100% zijn.\nBereik: 0 - 65534."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of Ambient lux 100%.\nRange: 0 - 65534.",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet onder de waarde van omgevings lux 100% zijn.\nBereik: 0 - 65534."
               }
             },
             {
@@ -2214,8 +2413,8 @@
                 "max": 65535
               },
               "hint": {
-                "en": "The parameter is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%.\nRange: 1 - 65535.",
-                "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van omgevings lux 1% zijn.\nBereik: 1 - 65535."
+                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%.",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van omgevings lux 1% zijn."
               }
             },
             {
@@ -2231,8 +2430,8 @@
               },
               "value": true,
               "hint": {
-                "en": "LED alarm (police car resemblance) active or not",
-                "nl": "LED actief bij trillingsalarm"
+                "en": "This parameter (89) determines whether or not the LED alarm (police car resemblance) is active or not.",
+                "nl": "Deze parameter (89) bepaalt of de LED actief is bij het sabotage alarm."
               }
             }
           ]
@@ -2280,8 +2479,8 @@
                 "nl": "(De-)Activatie commando"
               },
               "hint": {
-                "en": "This parameter determines the commands sent when the sensor/alarm activates and deactivates.",
-                "nl": "Deze parameter bepaalt de commandos die worden verstuurt bij de (de-)activatie van de sensor/het alarm."
+                "en": "This parameter (12) determines the commands sent when the sensor/alarm activates and deactivates.",
+                "nl": "Deze parameter (12) bepaalt de commandos die worden verstuurt bij de (de-)activatie van de sensor/het alarm."
               },
               "type": "dropdown"
             },
@@ -2298,8 +2497,8 @@
                 "nl": "Activatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
+                "en": "This parameter (14) determines the command sent when this sensor/alarm activates.",
+                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
               },
               "attr": {
                 "min": 0,
@@ -2320,8 +2519,8 @@
                 "nl": "Deactivatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
+                "en": "This parameter (16) determines the command sent when this sensor/alarm deactivates.",
+                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
               },
               "attr": {
                 "min": 0,
@@ -2421,8 +2620,8 @@
                 "nl": "Gevoeligheid"
               },
               "hint": {
-                "en": "This parameter sets the sensitivity for this sensor",
-                "nl": "Deze parameter bepaalt de gevoeligheid van deze sensor"
+                "en": "This parameter (1) sets the sensitivity for this sensor",
+                "nl": "Deze parameter (1) bepaalt de gevoeligheid van deze sensor"
               },
               "zwave": {
                 "index": 1,
@@ -2452,8 +2651,8 @@
                 "max": 15
               },
               "hint": {
-                "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. Range: 0 - 15 (0.5s - 8s).",
-                "nl": "Periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie. Bereik: 0 - 15 (0,5s - 8s)."
+                "en": "This parameter (2) determines the period of time through which the PIR sensor is “blind” (insensitive) to motion.",
+                "nl": "Deze parameter (2) bepaalt de periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie."
               }
             },
             {
@@ -2464,8 +2663,8 @@
                 "nl": "Bewegingsdetectie pulse teller"
               },
               "hint": {
-                "en": "Amount of moves before motion is reported. A higher value results in a less sensitive motion sensor",
-                "nl": "Hoeveelheid bewegingen voordat dit wordt gerapporteerd, een hogere waarde resulteert in een minder gevoelige sensor"
+                "en": "This parameter (3) determines the number of times motion is detected before motion is reported. A higher value results in a less sensitive motion sensor.",
+                "nl": "Deze parameter (3) bepaalt de hoeveelheid bewegingen voordat dit wordt gerapporteert, een hogere waarde resulteert in een minder gevoelige sensor."
               },
               "zwave": {
                 "index": 3,
@@ -2511,8 +2710,8 @@
                 "nl": "Tijdvak voor bewegingsdetectie"
               },
               "hint": {
-                "en": "Period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting",
-                "nl": "Tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen"
+                "en": "This parameter (4) determines the period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting.",
+                "nl": "Deze parameter (4) bepaalt het tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen."
               },
               "zwave": {
                 "index": 4,
@@ -2554,8 +2753,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "zwave": {
                 "index": 6,
@@ -2575,8 +2774,8 @@
                 "nl": "Bewegingsalarm functie"
               },
               "hint": {
-                "en": "Determine when the motion should be active.\nDefault value: Always active.",
-                "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
+                "en": "This parameter (8) determines when the motion should be active.",
+                "nl": "Deze parameter (8) bepaalt wanneer het bewegingsalarm actief moet zijn."
               },
               "zwave": {
                 "index": 8,
@@ -2627,14 +2826,14 @@
                 "max": 255
               },
               "value": 10,
-              "id": "report_threshold",
+              "id": "temperature_report_threshold",
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "type": "number"
             },
@@ -2654,8 +2853,8 @@
                 "nl": "Meet interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between sensor measurements.",
-                "nl": "Deze parameter bepaalt de tijd tussen het meten van sensorwaarden."
+                "en": "This parameter (62) determines the time between sensor measurements.",
+                "nl": "Deze parameter (62) bepaalt de tijd tussen het meten van sensorwaarden."
               },
               "type": "number"
             },
@@ -2671,8 +2870,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "This parameter determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+                "en": "This parameter (64) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (64) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "attr": {
                 "min": 0,
@@ -2688,8 +2887,8 @@
                 "nl": "Correctie"
               },
               "hint": {
-                "en": "This parameter determines the value to be added to the measured values.",
-                "nl": "Deze parameter bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
+                "en": "This parameter (66) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegt aan de gemeten waarden."
               },
               "zwave": {
                 "index": 66,
@@ -2709,8 +2908,8 @@
                 "nl": "Temperatuur voor blauwe LED (°C)"
               },
               "hint": {
-                "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red. Range: 0 - 254, default value: 18.",
-                "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder. Bereik: 0 - 254, standaard waarde: 18."
+                "en": "The parameter (86) is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red.",
+                "nl": "Deze parameter (86) is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder."
               },
               "zwave": {
                 "index": 86,
@@ -2730,8 +2929,8 @@
                 "nl": "Temperatuur voor rode LED (°C)"
               },
               "hint": {
-                "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'.  Any temperature at or above this value will set the LED to red, below this value it will gradually change to blue. Range: 1 - 255, default value: 28.",
-                "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur hoger of gelijk aan deze waarde is licht de LED rood op, onder deze waarde wordt de LED geleidelijk blauwer. Bereik: 1 - 255, standaard waarde: 28."
+                "en": "The parameter (87) is relevant only when LED signaling mode is set to 'depends on temperature'.  Any temperature at or above this value will set the LED to red, below this value it will gradually change to blue.",
+                "nl": "Deze parameter (87) is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur hoger of gelijk aan deze waarde is licht de LED rood op, onder deze waarde wordt de LED geleidelijk blauwer."
               },
               "zwave": {
                 "index": 87,
@@ -2754,15 +2953,15 @@
           "collapsed": true,
           "children": [
             {
-              "id": "report_threshold",
+              "id": "illumination_report_threshold",
               "value": 200,
               "label": {
                 "en": "Report threshold",
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
               },
               "zwave": {
                 "index": 40,
@@ -2782,8 +2981,8 @@
                 "nl": "Rapportage interval (s)"
               },
               "hint": {
-                "en": "Determine the time between illumination reports to Homey, independent of value changes. Range: 0 (off) - 32767, default: 3600",
-                "nl": "Bepaal wanneer de lichtsterkte waarden naar Homey worden verzonden, ook als deze niet veranderd is. Bereik: 0 (uit) - 32676, standaard: 3600"
+                "en": "This parameter (64) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (64) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
               },
               "zwave": {
                 "index": 42,
@@ -2803,8 +3002,8 @@
                 "nl": "Bewegingsalarm functie drempel"
               },
               "hint": {
-                "en": "Determine on which lux level it is either day or night.\nRange: 1 - 32767.\nDefault value: 200.",
-                "nl": "Bepaal bij hoeveel lux het schakelt tussen dag of nacht.\nBereik: 1 - 32767.\nStandaard waarde: 200."
+                "en": "This parameter (9) determines on which lux level it is either day or night.",
+                "nl": "Deze parameter (9) bepaalt de hoeveel lux waarbij het schakelt tussen dag of nacht."
               },
               "zwave": {
                 "index": 9,
@@ -2838,8 +3037,8 @@
                 "nl": "Schakel LED notificaties in"
               },
               "hint": {
-                "en": "This parameter allows you to enable/disable LED indications.",
-                "nl": "Deze parameter bepaalt of de LED indicatie is ingeschakelt."
+                "en": "This parameter (89) allows you to enable/disable LED indications.",
+                "nl": "Deze parameter (89) bepaalt of de LED indicatie is ingeschakelt."
               },
               "value": true
             },
@@ -2859,8 +3058,8 @@
                 "nl": "Gevoeligheid"
               },
               "hint": {
-                "en": "This parameter sets the sensitivity for this sensor",
-                "nl": "Deze parameter bepaalt de gevoeligheid van deze sensor"
+                "en": "This parameter (1) sets the sensitivity for this sensor",
+                "nl": "Deze parameter (1) bepaalt de gevoeligheid van deze sensor"
               },
               "type": "number"
             },
@@ -2876,8 +3075,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter bepaalt de tijd waarna het alarm wordt gedeactiveert"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveert"
               },
               "attr": {
                 "min": 1,
@@ -2889,12 +3088,12 @@
               "id": "tamper_operating_mode",
               "value": "0",
               "label": {
-                "en": "Temperature report interval (seconden)",
-                "nl": "Temperatuur rapportage interval (seconden)"
+                "en": "Tamper operation mode",
+                "nl": "Trilling operatie modus"
               },
               "hint": {
-                "en": "Determine the behaviour of tamper and how it reports",
-                "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
+                "en": "This parameter (24) determines the behaviour of the tamper alarm and how it reports.",
+                "nl": "Deze parameter (24) bepaalt het gedrag van het sabotage alarm en hoe het rapporteert."
               },
               "zwave": {
                 "index": 24,
@@ -2933,8 +3132,8 @@
                 "nl": "Schakel annulering in"
               },
               "hint": {
-                "en": "This parameter allows to enable/disable cancellation of alarms.",
-                "nl": "Deze paramter bepaalt of de annulering van het alarm in/uit geschakelt is."
+                "en": "This parameter (25) allows to enable/disable cancellation of alarms.",
+                "nl": "Deze paramter (25) bepaalt of de annulering van het alarm in/uit geschakelt is."
               },
               "zwave": {
                 "index": 25,
@@ -2949,8 +3148,8 @@
                 "en": "Tamper broadcast mode"
               },
               "hint": {
-                "en": "Send tamper alarms in broadcast mode",
-                "nl": "Verstuur sabotage alarm meldingen in broadcast modus"
+                "en": "This parameter (28) determines whether or not tamper alarms are send in broadcast mode.",
+                "nl": "Deze parameter (28) bepaalt of de sabotage alarm meldingen worden verstuurt in broadcast modus."
               },
               "zwave": {
                 "index": 28,
@@ -2965,8 +3164,8 @@
                 "en": "Tamper - backward compatible broadcast mode"
               },
               "hint": {
-                "en": "Send tamper alarms in broadcast mode. (Backwards compatibility mode)",
-                "nl": "Verstuur sabotage alarm meldingen in broadcast modus. (Backwards compatibility modus)"
+                "en": "This parameter (29) determines whether or not tamper alarms are send in broadcast mode. (Backwards compatibility mode).",
+                "nl": "Deze parameter (29) bepaalt of de sabotage alarm meldingen worden verstuurt in broadcast modus. (Backwards compatibility modus)."
               },
               "zwave": {
                 "index": 29,
@@ -2979,8 +3178,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Notifications",
-            "nl": "Notificaties"
+            "en": "LED notifications",
+            "nl": "LED notificaties"
           },
           "collapsed": true,
           "children": [
@@ -2992,8 +3191,8 @@
                 "nl": "LED licht stijl"
               },
               "hint": {
-                "en": "This parameter determines the way in which the LED behaves after events have been detected.",
-                "nl": "Deze parameter bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+                "en": "This parameter (80) determines the way in which the LED behaves after events have been detected.",
+                "nl": "Deze parameter (80) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
               },
               "zwave": {
                 "index": 80,
@@ -3200,8 +3399,8 @@
                 "nl": "LED helderheid (%)"
               },
               "hint": {
-                "en": "This parameter determines the percentage brightness of the LED.",
-                "nl": "Deze parameter bepaalt het helderheidspercentage voor de LED."
+                "en": "This parameter (81) determines the percentage brightness of the LED.",
+                "nl": "Deze parameter (81) bepaalt het helderheidspercentage voor de LED."
               },
               "zwave": {
                 "index": 81,
@@ -3230,8 +3429,8 @@
               },
               "value": 100,
               "hint": {
-                "en": "The parameter is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of Ambient lux 100%.\nRange: 0 - 65534.",
-                "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet onder de waarde van omgevings lux 100% zijn.\nBereik: 0 - 65534."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of Ambient lux 100%.\nRange: 0 - 65534.",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet onder de waarde van omgevings lux 100% zijn.\nBereik: 0 - 65534."
               }
             },
             {
@@ -3251,8 +3450,8 @@
               },
               "value": 1000,
               "hint": {
-                "en": "The parameter is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%.\nRange: 1 - 65535.",
-                "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van omgevings lux 1% zijn.\nBereik: 1 - 65535."
+                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%.",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van omgevings lux 1% zijn."
               }
             }
           ]
@@ -3296,8 +3495,8 @@
                 "nl": "(De-)Activatie commando"
               },
               "hint": {
-                "en": "This parameter determines the commands sent when the sensor/alarm activates and deactivates.",
-                "nl": "Deze parameter bepaalt de commandos die worden verstuurt bij de (de-)activatie van de sensor/het alarm."
+                "en": "This parameter (12) determines the commands sent when the sensor/alarm activates and deactivates.",
+                "nl": "Deze parameter (12) bepaalt de commandos die worden verstuurt bij de (de-)activatie van de sensor/het alarm."
               },
               "zwave": {
                 "index": 12,
@@ -3313,8 +3512,8 @@
                 "nl": "Activatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
+                "en": "This parameter (14) determines the command sent when this sensor/alarm activates.",
+                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveert."
               },
               "zwave": {
                 "index": 14,
@@ -3334,8 +3533,8 @@
                 "nl": "Deactivatie commando"
               },
               "hint": {
-                "en": "This parameter determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
+                "en": "This parameter (16) determines the command sent when this sensor/alarm deactivates.",
+                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveert."
               },
               "zwave": {
                 "index": 16,
@@ -3395,8 +3594,8 @@
                 "nl": "Associaties in Z-Wave netwerk Security Modus"
               },
               "hint": {
-                "en": "This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
-                "nl": "Deze instelling bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
+                "en": "This parameter (18) defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
+                "nl": "Deze instelling (18) bepaalt hoe commando's worden verstuurt naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
               },
               "zwave": {
                 "index": 18,
@@ -4177,290 +4376,350 @@
       "id": "FGWPE-101",
       "settings": [
         {
-          "id": "always_on",
-          "type": "checkbox",
+          "type": "group",
           "label": {
-            "en": "Always on",
-            "nl": "Altijd aan"
+            "en": "Power",
+            "nl": "Stroom"
           },
-          "value": false,
-          "hint": {
-            "en": "Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push",
-            "nl": "Wanneer geactiveerd zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames"
-          }
-        },
-        {
-          "id": "save_state",
-          "type": "checkbox",
-          "label": {
-            "en": "Save Power-off State",
-            "nl": "Onthoud Stroom-eraf Status"
-          },
-          "hint": {
-            "en": "Saves its last state when power is disconnected",
-            "nl": "Onthoud zijn laatste status wanneer stroom eraf word gehaald"
-          },
-          "value": true
-        },
-        {
-          "id": "power_report",
-          "type": "number",
-          "label": {
-            "en": "Watt Report",
-            "nl": "Watt Verzending"
-          },
-          "hint": {
-            "en": "How much must the Wattage have changed (in percentage) before the value is being send immediatly. Range: 1 - 99, 100 = Not used",
-            "nl": "Hoeveel moet de Wattage zijn veranderd (in percentage) voor de waarde meteen word verzonden. Bereik: 1 - 99, 100 = Niet gebruikt"
-          },
-          "attr": {
-            "min": 1,
-            "max": 100
-          },
-          "value": 80
-        },
-        {
-          "id": "power_load_report",
-          "type": "number",
-          "label": {
-            "en": "Watt Report Threshold",
-            "nl": "Watt Verzending Drempel"
-          },
-          "hint": {
-            "en": "How much must the Wattage at least have changed (in percentage) before the value is being send on the interval. Range: 1 - 99, 100 = Not used",
-            "nl": "Hoeveel moet de Wattage minimaal zijn veranderd (in percentage) voor de waarde word verzonden op het interval. Bereik: 1 - 99, 100 = Niet gebruikt"
-          },
-          "attr": {
-            "min": 1,
-            "max": 100
-          },
-          "value": 15
-        },
-        {
-          "id": "power_report_interval",
-          "type": "number",
-          "label": {
-            "en": "Watt Report Interval",
-            "nl": "Watt Verzending Interval"
-          },
-          "hint": {
-            "en": "Set the interval (in seconds) that the Wattage is being send, if change is more then the specified threshold. Range: 1 - 254, 255 = Not being send",
-            "nl": "Zet op welk interval (in seconden) het vermogen word verzonden, als de waarde meer veranderd is dan de drempel. Bereik: 1 - 254, 255 = Niks verzonden"
-          },
-          "attr": {
-            "min": 1,
-            "max": 255
-          },
-          "value": 30
-        },
-        {
-          "id": "kwh_report_threshold",
-          "type": "number",
-          "label": {
-            "en": "kWh Report Threshold",
-            "nl": "kWh Verzending Drempel"
-          },
-          "hint": {
-            "en": "How much must the kWh at least have changed before the value is being send. Range: 0.01 - 2.45, 2.55 = Not send",
-            "nl": "Hoeveel moet de kWh minimaal zijn veranderd voor de waarde word verzonden. Bereik: 0.01 - 2.45, 2.55 = Niet verzonden"
-          },
-          "attr": {
-            "min": 0.01,
-            "max": 2.55,
-            "step": 0.01
-          },
-          "value": 0.1
-        },
-        {
-          "id": "watt_kwh_report_interval",
-          "type": "number",
-          "label": {
-            "en": "All Report Interval",
-            "nl": "Alles Verzending Interval"
-          },
-          "hint": {
-            "en": "How often will the Watt and kWh be send (in seconds), even when threshold and interval are not met. Range: 1 - 65534, 65535 = Not send",
-            "nl": "Hoe vaak word de Watt en kWh verzonden (in seconden), ook als de drempel en interval niet bereikt zijn. Bereik: 1 - 65534, 65535 = Niet verzonden"
-          },
-          "attr": {
-            "min": 1,
-            "max": 65535
-          },
-          "value": 3600
-        },
-        {
-          "id": "own_power",
-          "type": "checkbox",
-          "label": {
-            "en": "Include own power consumption",
-            "nl": "inclusief eigen verbruik"
-          },
-          "hint": {
-            "en": "Does the power consumption (kWh) of the module itself be added on the total amount?",
-            "nl": "Moet het energie verbruik (kWh) van de module zelf opgeteld worden bij de totale hoeveelheid?"
-          },
-          "value": false
-        },
-        {
-          "id": "led_ring_color_on",
-          "type": "dropdown",
-          "label": {
-            "en": "Color when on",
-            "nl": "Kleur wanneer aan"
-          },
-          "value": "0",
-          "hint": {
-            "en": "Defines the color of the LED ring in on state",
-            "nl": "De kleur van de LED ring wanneer aan"
-          },
-          "values": [
+          "collapsed": false,
+          "children": [
             {
-              "id": "0",
+              "id": "always_on",
+              "type": "checkbox",
               "label": {
-                "en": "Changes in predefined steps according to power load",
-                "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
-              }
+                "en": "Always on",
+                "nl": "Altijd aan"
+              },
+              "hint": {
+                "en": "This parameter ({{zwaveParameterIndex}}) determines if the device is always on. Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push.",
+                "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames."
+              },
+              "value": false
             },
             {
-              "id": "1",
+              "id": "save_state",
+              "type": "checkbox",
               "label": {
-                "en": "Changes continuously according to power load using full spectrum of LED color",
-                "nl": "Verandert continu afhankelijk van het stroom verbruik"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "White",
-                "nl": "Wit"
-              }
-            },
-            {
-              "id": "3",
-              "label": {
-                "en": "Red",
-                "nl": "Rood"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Green",
-                "nl": "Groen"
-              }
-            },
-            {
-              "id": "5",
-              "label": {
-                "en": "Blue",
-                "nl": "Blauw"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Yellow",
-                "nl": "Geel"
-              }
-            },
-            {
-              "id": "7",
-              "label": {
-                "en": "Cyan",
-                "nl": "Cyaan"
-              }
-            },
-            {
-              "id": "8",
-              "label": {
-                "en": "Magenta",
-                "nl": "Magenta"
-              }
-            },
-            {
-              "id": "9",
-              "label": {
-                "en": "Off",
-                "nl": "Uit"
-              }
+                "en": "Save Power-off State",
+                "nl": "Onthoud Stroom-eraf Status"
+              },
+              "hint": {
+                "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves its last state when power is disconnected.",
+                "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat zijn laatste status onthoudt wanneer de stroom eraf word gehaald."
+              },
+              "value": true
             }
           ]
         },
         {
-          "id": "led_ring_color_off",
-          "type": "dropdown",
+          "type": "group",
           "label": {
-            "en": "Color when off",
-            "nl": "Kleur wanneer uit"
+            "en": "Power (W)",
+            "nl": "Stroom (W)"
           },
-          "value": "0",
-          "hint": {
-            "en": "Defines the color of the LED ring in off state",
-            "nl": "Kleur van de LED ring wanneer uit"
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 0,
+                "size": 0
+              },
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "value": 30,
+              "id": "power_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (42) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (42) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 0,
+                "size": 0
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 80,
+              "id": "power_report",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (40) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (40) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 0,
+                "size": 0
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 15,
+              "id": "power_load_report",
+              "label": {
+                "en": "Interval report threshold",
+                "nl": "Interval rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum value change before reporting changes to Homey when the reporting interval triggers.",
+                "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt tijdens de interval rapportages."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power (kWh)",
+            "nl": "Stroom (kWh)"
           },
-          "values": [
+          "collapsed": false,
+          "children": [
             {
-              "id": "0",
+              "id": "own_power",
+              "type": "checkbox",
               "label": {
-                "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
-                "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
-              }
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the kWh usage of the device itself is added to the power usage.",
+                "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
+              },
+              "value": false
             },
             {
-              "id": "1",
+              "attr": {
+                "min": 0.01,
+                "max": 2.55,
+                "step": 0.01
+              },
+              "value": 0.1,
+              "id": "kwh_report_threshold",
               "label": {
-                "en": "White",
-                "nl": "Wit"
-              }
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (40) determines the minimum value change before reporting changes to Homey.",
+                "nl": "Deze parameter (40) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurt"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 2
+              },
+              "type": "number"
             },
             {
-              "id": "2",
+              "attr": {
+                "min": 1,
+                "max": 65535
+              },
+              "value": 3600,
+              "id": "watt_kwh_report_interval",
               "label": {
-                "en": "Red",
-                "nl": "Rood"
-              }
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (42) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (42) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet verandert is."
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED notifications",
+            "nl": "LED notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_ring_color_on",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when on",
+                "nl": "Kleur wanneer aan"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (42) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (42) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Changes in predefined steps according to power load",
+                    "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Changes continuously according to power load using full spectrum of LED color",
+                    "nl": "Verandert continu afhankelijk van het stroom verbruik"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                }
+              ]
             },
             {
-              "id": "3",
+              "id": "led_ring_color_off",
+              "type": "dropdown",
               "label": {
-                "en": "Green",
-                "nl": "Groen"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Blue",
-                "nl": "Blauw"
-              }
-            },
-            {
-              "id": "5",
-              "label": {
-                "en": "Yellow",
-                "nl": "Geel"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Cyan",
-                "nl": "Cyaan"
-              }
-            },
-            {
-              "id": "7",
-              "label": {
-                "en": "Magenta",
-                "nl": "Magenta"
-              }
-            },
-            {
-              "id": "8",
-              "label": {
-                "en": "Off",
-                "nl": "Uit"
-              }
+                "en": "Color when off",
+                "nl": "Kleur wanneer uit"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (42) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (42) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
+                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                }
+              ]
             }
           ]
         }

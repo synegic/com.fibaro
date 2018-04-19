@@ -13,8 +13,8 @@
     "alarm_tamper"
   ],
   "images": {
-    "large": "/drivers/FGMS-001-PLUS/assets/images/large.png",
-    "small": "/drivers/FGMS-001-PLUS/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -27,7 +27,7 @@
     "zwaveAllianceProductId": 2762,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2762/FGMS-001-EN-T-v2.1.pdf",
     "learnmode": {
-      "image": "/drivers/FGMS-001-PLUS/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro Motion Sensor three times",
         "nl": "Druk driemaal op de knop op de Fibaro Bewegingssensor"

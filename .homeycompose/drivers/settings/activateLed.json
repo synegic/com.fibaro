@@ -9,8 +9,8 @@
     "size": 1
   },
   "hint": {
-    "en": "This parameter allows you to enable/disable LED indications.",
-    "nl": "Deze parameter bepaalt of de LED indicatie is ingeschakelt."
+    "en": "This parameter ({{zwaveParameterIndex}}) allows you to enable/disable LED indications.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de LED indicatie is ingeschakeld."
   },
   "value": true
 }

@@ -16,7 +16,7 @@
     "max": 65535
   },
   "hint": {
-    "en": "The parameter is relevant only when the parameter LED brightness is set to 0, and must be above the value of Ambient lux 1%.\nRange: 1 - 65535.",
-    "nl": "Deze parameter is alleen relevant wanneer de parameter LED helderheid op 0 staat, en moet boven de waarde van omgevings lux 1% zijn.\nBereik: 1 - 65535."
+    "en": "The parameter ({{zwaveParameterIndex}}) is relevant only when the parameter LED brightness is set to 0, and must be above the value of ambient lux 1%.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde hoger dan 1% zijn."
   }
 }

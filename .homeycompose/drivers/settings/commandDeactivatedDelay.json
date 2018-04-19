@@ -5,8 +5,8 @@
     "nl": "Vertraging commando bij deactivatie (s)"
   },
   "hint": {
-    "en": "This parameter determines the duration of deactivation before the deactivation command is sent.",
-    "nl": "Deze parameter bepaalt de duur van de sensor/alarm deactivatie voordat het commando wordt verstuurt."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the duration of deactivation before the deactivation command is sent.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de duur van de sensor/alarm deactivatie voordat het commando wordt verstuurd."
   },
   "zwave": {
     "index": 15,

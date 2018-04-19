@@ -5,8 +5,8 @@
     "nl": "Activeer sensor"
   },
   "hint": {
-    "en": "This parameter enables/disables this sensor.",
-    "nl": "Deze parameter schakelt deze sensor in/uit."
+    "en": "This parameter ({{zwaveParameterIndex}}) enables/disables this sensor.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) schakelt deze sensor in/uit."
   },
   "zwave": {
     "index": 11,

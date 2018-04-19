@@ -28,8 +28,8 @@
           "max": 15
         },
         "hint": {
-          "en": "Period of time through which the PIR sensor is “blind” (insensitive) to motion. Range: 0 - 15 (0.5s - 8s).",
-          "nl": "Periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie. Bereik: 0 - 15 (0,5s - 8s)."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the period of time through which the PIR sensor is “blind” (insensitive) to motion.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de periode na detecteren van beweging gedurende de sensor ongevoelig is voor nieuwe bewegingsdetectie."
         }
       },
       {
@@ -40,8 +40,8 @@
           "nl": "Bewegingsdetectie pulse teller"
         },
         "hint": {
-          "en": "Amount of moves before motion is reported. A higher value results in a less sensitive motion sensor",
-          "nl": "Hoeveelheid bewegingen voordat dit wordt gerapporteerd, een hogere waarde resulteert in een minder gevoelige sensor"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the number of times motion is detected before motion is reported. A higher value results in a less sensitive motion sensor.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de hoeveelheid bewegingen voordat dit wordt gerapporteert, een hogere waarde resulteert in een minder gevoelige sensor."
         },
         "zwave": {
           "index": 3,
@@ -87,8 +87,8 @@
           "nl": "Tijdvak voor bewegingsdetectie"
         },
         "hint": {
-          "en": "Period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting",
-          "nl": "Tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the period of time in which the number of moves set in the \"Motion pulse counter\" must be reported. A higher value results in a more sensitive motion sensor. It is not recommended to modify this setting.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het tijdvak waarin de bewegingen aangegeven in de \"Bewegingsdetectie pulse teller\" instelling moeten worden gerapporteerd. Een hogere waarde resulteert in een gevoeligere sensor. Het is afgeraden om deze instelling aan te passen."
         },
         "zwave": {
           "index": 4,
@@ -134,8 +134,8 @@
           "nl": "Bewegingsalarm functie"
         },
         "hint": {
-          "en": "Determine when the motion should be active.\nDefault value: Always active.",
-          "nl": "Bepaal wanneer het bewegings alarm actief moet zijn.\nStandaard waarde: Altijd actief."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines when the motion should be active.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wanneer het bewegingsalarm actief moet zijn."
         },
         "zwave": {
           "index": 8,
@@ -223,8 +223,8 @@
           "nl": "Temperatuur voor blauwe LED (°C)"
         },
         "hint": {
-          "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red. Range: 0 - 254, default value: 18.",
-          "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder. Bereik: 0 - 254, standaard waarde: 18."
+          "en": "The parameter ({{zwaveParameterIndex}}) is relevant only when LED signaling mode is set to 'depends on temperature'. Any temperature at or below this value will set the LED to blue, above this value it will gradually change to red.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur lager of gelijk aan deze waarde is licht de LED blauw op, boven deze waarde wordt de LED geleidelijk roder."
         },
         "zwave": {
           "index": 86,
@@ -244,8 +244,8 @@
           "nl": "Temperatuur voor rode LED (°C)"
         },
         "hint": {
-          "en": "The parameter is relevant only when LED signaling mode is set to 'depends on temperature'.  Any temperature at or above this value will set the LED to red, below this value it will gradually change to blue. Range: 1 - 255, default value: 28.",
-          "nl": "Deze parameter is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur hoger of gelijk aan deze waarde is licht de LED rood op, onder deze waarde wordt de LED geleidelijk blauwer. Bereik: 1 - 255, standaard waarde: 28."
+          "en": "The parameter ({{zwaveParameterIndex}}) is relevant only when LED signaling mode is set to 'depends on temperature'.  Any temperature at or above this value will set the LED to red, below this value it will gradually change to blue.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) is alleen relevant wanneer LED kleur modus staat ingesteld op 'op basis van temperatuur'. Als de temperatuur hoger of gelijk aan deze waarde is licht de LED rood op, onder deze waarde wordt de LED geleidelijk blauwer."
         },
         "zwave": {
           "index": 87,
@@ -283,8 +283,8 @@
           "nl": "Bewegingsalarm functie drempel"
         },
         "hint": {
-          "en": "Determine on which lux level it is either day or night.\nRange: 1 - 32767.\nDefault value: 200.",
-          "nl": "Bepaal bij hoeveel lux het schakelt tussen dag of nacht.\nBereik: 1 - 32767.\nStandaard waarde: 200."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines on which lux level it is either day or night.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de hoeveel lux waarbij het schakelt tussen dag of nacht."
         },
         "zwave": {
           "index": 9,
@@ -343,8 +343,8 @@
           "nl": "Trilling operatie modus"
         },
         "hint": {
-          "en": "Determine the behaviour of tamper and how it reports",
-          "nl": "Bepaal het gedrag van het trillingsalarm en hoe het rapporteert"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the tamper alarm and how it reports.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van het sabotage alarm en hoe het rapporteert."
         },
         "zwave": {
           "index": 24,
@@ -386,8 +386,8 @@
           "en": "Tamper broadcast mode"
         },
         "hint": {
-          "en": "Send tamper alarms in broadcast mode",
-          "nl": "Verstuur sabotage alarm meldingen in broadcast modus"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not tamper alarms are send in broadcast mode.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de sabotage alarm meldingen worden verstuurt in broadcast modus."
         },
         "zwave": {
           "index": 28,
@@ -402,8 +402,8 @@
           "en": "Tamper - backward compatible broadcast mode"
         },
         "hint": {
-          "en": "Send tamper alarms in broadcast mode. (Backwards compatibility mode)",
-          "nl": "Verstuur sabotage alarm meldingen in broadcast modus. (Backwards compatibility modus)"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not tamper alarms are send in broadcast mode. (Backwards compatibility mode).",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de sabotage alarm meldingen worden verstuurt in broadcast modus. (Backwards compatibility modus)."
         },
         "zwave": {
           "index": 29,
@@ -416,8 +416,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Notifications",
-      "nl": "Notificaties"
+      "en": "LED notifications",
+      "nl": "LED notificaties"
     },
     "collapsed": true,
     "children": [
