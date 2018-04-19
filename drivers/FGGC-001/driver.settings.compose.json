@@ -78,10 +78,6 @@
           "en": "Up gesture",
           "nl": "Gebaar omhoog"
         },
-        "zwave": {
-          "index": 10,
-          "size": 1
-        },
         "value": true
       },
       {
@@ -90,10 +86,6 @@
         "label": {
           "en": "Down gesture",
           "nl": "Gebaar omlaag"
-        },
-        "zwave": {
-          "index": 10,
-          "size": 1
         },
         "value": true
       },
@@ -104,10 +96,6 @@
           "en": "Left gesture",
           "nl": "Gebaar naar links"
         },
-        "zwave": {
-          "index": 10,
-          "size": 1
-        },
         "value": true
       },
       {
@@ -116,10 +104,6 @@
         "label": {
           "en": "Right gesture",
           "nl": "Gebaar naar rechts"
-        },
-        "zwave": {
-          "index": 10,
-          "size": 1
         },
         "value": true
       },
@@ -130,10 +114,6 @@
           "en": "Clockwise",
           "nl": "Met de klok mee"
         },
-        "zwave": {
-          "index": 10,
-          "size": 1
-        },
         "value": true
       },
       {
@@ -143,10 +123,6 @@
           "en": "Counter clockwise",
           "nl": "Tegen de klok in"
         },
-        "zwave": {
-          "index": 10,
-          "size": 1
-        },
         "value": true
       },
       {
@@ -155,10 +131,6 @@
         "label": {
           "en": "Double up gesture",
           "nl": "Dubbel gebaar omhoog"
-        },
-        "zwave": {
-          "index": 12,
-          "size": 1
         },
         "hint": {
           "en": "This disables toggle mode for association group 2. This will also lower the response time for the single gesture.",
@@ -173,10 +145,6 @@
           "en": "Double down gesture",
           "nl": "Dubbel gebaar omlaag"
         },
-        "zwave": {
-          "index": 12,
-          "size": 1
-        },
         "hint": {
           "en": "This disables toggle mode for association group 3. This will also lower the response time for the single gesture.",
           "nl": "Dit deactiveert schakel modus voor associatie groep 3. Dit zal ook de reactietijd verlagen voor het enkele gebaar."
@@ -190,10 +158,6 @@
           "en": "Double left gesture",
           "nl": "Dubbel gebaar naar links"
         },
-        "zwave": {
-          "index": 12,
-          "size": 1
-        },
         "hint": {
           "en": "This disables toggle mode for association group 4. This will also lower the response time for the single gesture.",
           "nl": "Dit deactiveert schakel modus voor associatie groep 4. Dit zal ook de reactietijd verlagen voor het enkele gebaar."
@@ -206,10 +170,6 @@
         "label": {
           "en": "Double right gesture",
           "nl": "Dubbel gebaar naar rechts"
-        },
-        "zwave": {
-          "index": 12,
-          "size": 1
         },
         "hint": {
           "en": "This disables toggle mode for association group 5. This will also lower the response time for the single gesture.",

@@ -135,72 +135,6 @@ class FibaroSwipeDevice extends ZwaveDevice {
         });
 
         /*
-        ===================================================================
-        Registering gesture parsing for double directional gestures
-        ===================================================================
-         */
-        this.registerSetting('double_up', (newValue, newSettings) => {
-            let doubleValue = 0;
-            if (!newValue) doubleValue += 1;
-            if (!newSettings['double_down']) doubleValue += 2;
-            if (!newSettings['double_left']) doubleValue += 4;
-            if (!newSettings['double_right']) doubleValue += 8;
-
-            return new Buffer([doubleValue]);
-		});
-        this.registerSetting('double_down', (newValue, newSettings) => {
-            let doubleValue = 0;
-            if (!newSettings['double_up']) doubleValue += 1;
-            if (!newValue) doubleValue += 2;
-            if (!newSettings['double_left']) doubleValue += 4;
-            if (!newSettings['double_right']) doubleValue += 8;
-
-            return new Buffer([doubleValue]);
-        });
-        this.registerSetting('double_left', (newValue, newSettings) => {
-            let doubleValue = 0;
-            if (!newSettings['double_up']) doubleValue += 1;
-            if (!newSettings['double_down']) doubleValue += 2;
-            if (!newValue) doubleValue += 4;
-            if (!newSettings['double_right']) doubleValue += 8;
-
-            return new Buffer([doubleValue]);
-        });
-        this.registerSetting('double_right', (newValue, newSettings) => {
-            let doubleValue = 0;
-            if (!newSettings['double_up']) doubleValue += 1;
-            if (!newSettings['double_down']) doubleValue += 2;
-            if (!newSettings['double_left']) doubleValue += 4;
-            if (!newValue) doubleValue += 8;
-
-            return new Buffer([doubleValue]);
-        });
-
-        /*
-        ===================================================================
-        Registering sequence parsing
-        ===================================================================
-         */
-        this.registerSetting('sequence_1', (newValue) => {
-        	return this.parseSequence(newValue);
-		});
-        this.registerSetting('sequence_2', (newValue) => {
-            return this.parseSequence(newValue);
-        });
-        this.registerSetting('sequence_3', (newValue) => {
-            return this.parseSequence(newValue);
-        });
-        this.registerSetting('sequence_4', (newValue) => {
-            return this.parseSequence(newValue);
-        });
-        this.registerSetting('sequence_5', (newValue) => {
-            return this.parseSequence(newValue);
-        });
-        this.registerSetting('sequence_6', (newValue) => {
-            return this.parseSequence(newValue);
-        });
-
-        /*
        ===================================================================
        Interception of scene reports to trigger Flows
        ===================================================================
@@ -224,6 +158,44 @@ class FibaroSwipeDevice extends ZwaveDevice {
 			});
 		}
     }
+
+    async onSettings(oldSettings, newSettings, changedKeys, callback) {
+		if (changedKeys.includes('gesture_up') || changedKeys.includes('gesture_down') ||
+			changedKeys.includes('gesture_left') || changedKeys.includes('gesture_right') ||
+            changedKeys.includes('gesture_cw') || changedKeys.includes('gesture_ccw')) {
+				let parsedValue = 0;
+				if (this.getSetting('gesture_up')) parsedValue += 1;
+            	if (this.getSetting('gesture_down')) parsedValue += 2;
+            	if (this.getSetting('gesture_left')) parsedValue += 4;
+            	if (this.getSetting('gesture_right')) parsedValue += 8;
+            	if (this.getSetting('gesture_cw')) parsedValue += 16;
+            	if (this.getSetting('gesture_ccw')) parsedValue += 32;
+
+            	await this.configurationSet({
+						index: 10,
+						size: 1
+					}, parsedValue);
+
+            	changedKeys = [...changedKeys.filter(changedKey => changedKey !== ('gesture_up' || 'gesture_down' || 'gesture_left' || 'gesture_right' || 'gesture_cw' || 'gesture_ccw'))];
+        }
+		if (changedKeys.includes('double_up') || changedKeys.includes('double_down') ||
+            changedKeys.includes('double_left') || changedKeys.includes('double_right')) {
+				let parsedValue = 0;
+				if (this.getSetting('double_up')) parsedValue += 1;
+				if (this.getSetting('double_down')) parsedValue += 2;
+				if (this.getSetting('double_left')) parsedValue += 4;
+				if (this.getSetting('double_right')) parsedValue += 8;
+
+				await this.configurationSet({
+					index: 12,
+					size: 1
+				}, parsedValue);
+
+            	changedKeys = [...changedKeys.filter(changedKey => changedKey !== ('double_up' || 'double_down' || 'double_left' || 'double_right'))];
+        }
+
+        return super.onSettings(oldSettings, newSettings, changedKeys);
+	}
 
     parseSequence(sequence) {
         if (sequence === 0) return new Buffer([0, 0]);
