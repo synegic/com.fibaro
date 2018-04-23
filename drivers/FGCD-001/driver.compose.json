@@ -12,8 +12,8 @@
     "measure_temperature"
   ],
   "images": {
-    "large": "/drivers/FGCD-001/assets/images/large.png",
-    "small": "/drivers/FGCD-001/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -26,7 +26,7 @@
     "zwaveAllianceProductId": 2336,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
     "learnmode": {
-      "image": "/drivers/FGCD-001/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro CO Sensor three times",
         "nl": "Druk driemaal op de knop bovenop de Fibaro CO Sensor"

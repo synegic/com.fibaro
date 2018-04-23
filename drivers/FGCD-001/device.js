@@ -2,11 +2,10 @@
 
 const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
-class MyDevice extends ZwaveDevice {
+class FibaroCODetectorDevice extends ZwaveDevice {
 	
 	onMeshInit() {
         this.registerCapability('alarm_co', 'NOTIFICATION');
-
         this.registerCapability('alarm_heat', 'NOTIFICATION');
 
         this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL');
@@ -15,4 +14,4 @@ class MyDevice extends ZwaveDevice {
 	
 }
 
-module.exports = MyDevice;
+module.exports = FibaroCODetectorDevice;
