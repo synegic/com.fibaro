@@ -48,6 +48,82 @@
       },
       "args": []
     },
+    {
+      "id": "FGBS-001_temp1",
+      "title": {
+        "en": "Temperature 1 has changed",
+        "nl": "Temperatuur 1 is veranderd"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temp",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "example": 18
+        }
+      ]
+    },
+    {
+      "id": "FGBS-001_temp2",
+      "title": {
+        "en": "Temperature 2 has changed",
+        "nl": "Temperatuur 2 is veranderd"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temp",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "example": 18
+        }
+      ]
+    },
+    {
+      "id": "FGBS-001_temp3",
+      "title": {
+        "en": "Temperature 3 has changed",
+        "nl": "Temperatuur 3 is veranderd"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temp",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "example": 18
+        }
+      ]
+    },
+    {
+      "id": "FGBS-001_temp4",
+      "title": {
+        "en": "Temperature 4 has changed",
+        "nl": "Temperatuur 4 is veranderd"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temp",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "example": 18
+        }
+      ]
+    },
   ],
   "conditions": [
     {
