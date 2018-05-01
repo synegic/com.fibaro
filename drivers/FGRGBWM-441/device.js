@@ -10,7 +10,6 @@ const tinyColor = require('tinycolor');
 class FibaroRGBWControllerDevice extends ZwaveDevice {
 	
 	onMeshInit() {
-		this.settings = this.getSettings();
 		this.hueCache = 0;
 		this.colorCache = {
             r: 0,
@@ -182,14 +181,14 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         if (type === 'get') value = value/360;
         else if (type === 'set') amount = Math.round(value * 360);
 
-        if (!this.settings.hasOwnProperty('color_pallet') ||
-			!this._hueCalibration.hasOwnProperty(this.settings.color_pallet) ||
-			this.settings.color_pallet === 'none') {
+        if (!this.getSettings().hasOwnProperty('color_pallet') ||
+			!this._hueCalibration.hasOwnProperty(this.getSetting('color_pallet')) ||
+			this.getSetting('color_pallet') === 'none') {
         	if (type === 'get') return value;
             else if (type === 'set') return value * 360;
 		}
 
-		let colorConstants = this._hueCalibration(this.settings.color_pallet);
+		let colorConstants = this._hueCalibration(this.getSetting('color_pallet'));
 
         let startValue;
         let toRound;
@@ -307,8 +306,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             }
 
             // If it's an RGB + White strip
-            if (this.settings.strip_type.indexOf('w') >= 0 &&
-                value < (parseInt(this.settings.white_saturation) / 99 || 10) &&
+            if (this.getSetting('strip_type').indexOf('w') >= 0 &&
+                value < (parseInt(this.getSetting('white_saturation')) / 99 || 10) &&
                 this.hueCache === 0) {
                     // Alpha is the white channel in this case
                     rgb.r = rgb.r * value;
@@ -414,7 +413,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
     _temperatureSetParser(color, value) {
         // If it's a single color strip attached
-        if (this.settings.strip_type === ('scr' || 'scg' || 'scb' || 'scw')) {
+        if (this.getSetting('strip_type') === ('scr' || 'scg' || 'scb' || 'scw')) {
             // Set colour temperature to 50% as it's not used
             this.setCapabilityValue('light_temperature', .5);
             // Set dim value to the value it was put at
@@ -423,7 +422,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             this.setCapabilityValue('light_mode', 'color');
 
             // If this light strip is of the correct colour proceed
-            if (color === this.settings.strip_type.slice(2)) {
+            if (color === this.getSetting('strip_type').slice(2)) {
                 return {
                     Value: Math.round((this.getCapabilityValue('dim') || 1) * (1 - value) * 99)
             }
@@ -435,7 +434,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
 
         // If it's a correlated color temperature strip attached
-        if (this.settings.strip_type === 'cct') {
+        if (this.getSetting('strip_type') === 'cct') {
             // Set light mode to temperature
             this.setCapabilityValue('light_mode', 'temperature');
 
@@ -451,11 +450,11 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
 
         // If it's an RGB(W) strip attached
-        if (this.settings.strip_type === ('rgb' || 'rgbw')) {
+        if (this.getSetting('strip_type') === ('rgb' || 'rgbw')) {
             let whiteValue = value;
 
-            const whiteTemperature = this.settings.white_temperature || 'ww';
-            if (this.settings.rgbw_white_temperature === true && this.settings.strip_type.indexOf('w') >= 0) {
+            const whiteTemperature = this.getSetting('white_temperature') || 'ww';
+            if (this.getSetting('rgbw_white_temperature') === true && this.getSetting('strip_type').indexOf('w') >= 0) {
                 let transitionValue;
 
                 // Set initial temperature levels
@@ -465,7 +464,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 else if (whiteTemperature === 'cw') transitionValue = .1;
 
                 // Caps the calibration between 0 and 1
-                transitionValue += Math.min(Math.max(parseInt(this.settings.calibrate_white) / 100 || 0, 0), 1);
+                transitionValue += Math.min(Math.max(parseInt(this.getSetting('calibrate_white')) / 100 || 0, 0), 1);
 
                 if (value > transitionValue) whiteValue = 1 - value;
             }
@@ -487,8 +486,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                     Value: rgb.b
                 }
             } else if (color === 'w') {
-                if (this.settings.rgbw_white_temperature &&
-                    this.settings.strip_type.indexOf('w') >= 0) {
+                if (this.getSetting('rgbw_white_temperature') &&
+                    this.getSetting('strip_type').indexOf('w') >= 0) {
                         return {
                             Value: Math.min(Math.round((this.getCapabilityValue('dim') || 1) * (99 * whiteValue)), 99)
                         };
