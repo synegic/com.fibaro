@@ -16,7 +16,7 @@
     "measure_voltage.input1",
     "measure_voltage.input2",
     "measure_voltage.input3",
-    "measure_voltage.input4",
+    "measure_voltage.input4"
   ],
   "capabilitiesOptions": {
     "onoff": {
