@@ -37,6 +37,24 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             this.realInputConfigs[4] += 8;
         }
 
+        /*
+		================================================================
+		Registering Flows
+		================================================================
+		 */
+        this._onFlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_input_on').register()
+            .registerRunListener(this._onOffFlowRunListener);
+        this._offFlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_input_off').register()
+            .registerRunListener(this._onOffFlowRunListener);
+
+        this._input1FlowTrigger = new Homey.FlowCardTriggerDevice.register();
+        this._input2FlowTrigger = new Homey.FlowCardTriggerDevice.register();
+        this._input3FlowTrigger = new Homey.FlowCardTriggerDevice.register();
+        this._input4FlowTrigger = new Homey.FlowCardTriggerDevice.register();
+
+        this._resetMeterAction = new Homey.FlowCardAction('FGRGBWM-441_reset_meter').register()
+            .registerRunListener(this._resetMeterRunListener);
+
 		/*
 		================================================================
 		Registering on/off and dim
@@ -505,7 +523,24 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     Flow related methods
     ================================================================
      */
-    //TODO add Flows for this driver
+    _onOffFlowRunListener(args, state) {
+        if (args && args.hasOwnProperty('input') &&
+            state && state.hasOwnProperty('input') &&
+            args.input === state.input) {
+            return true
+        }
+        return false;
+    }
+
+    _resetMeterRunListener(args, state) {
+        if (args.device === this && this.node && typeof this.node.CommandClass.COMMAND_CLASS_METER !== 'undefined') {
+            this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {
+                if (err) throw new Error(err); return false;
+                if (result === 'TRANSMIT_COMPLETE_OK') return true;
+                return false;
+            });
+        }
+    }
 
     /*
     ================================================================
@@ -584,6 +619,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         } else if (color === 'w') {
             inputNumber = 4;
             cachedColor = this.colorCache.w
+        } else {
+            throw new Error('Colour not supported');
         }
 
         if (command.name && command.name === 'SWITCH_MULTILEVEL_REPORT') {
@@ -605,7 +642,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.setCapabilityValue(`measure_voltage.input${inputNumber}`, this._valueToVolt(report['Value (Raw)'][0]));
 
                 // Trigger any flows that are used
-                this[`_input${inputNumber}FlowTrigger`].trigger(this, null, {volt: this._valueToVolt(report['Value (Raw)'][0])});
+                this[`_input${inputNumber}FlowTrigger`].trigger(this, {volt: this._valueToVolt(report['Value (Raw)'][0])}, null);
             }
 
             // If not analog input(s), update values in homey
