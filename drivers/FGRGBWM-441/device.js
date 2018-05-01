@@ -18,6 +18,25 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             b: 0,
             w: 0
         };
+		this.realInputConfigs = [
+		    parseInt(this.getSetting('input_config_1') || 1),
+            parseInt(this.getSetting('input_config_2') || 1),
+            parseInt(this.getSetting('input_config_3') || 1),
+            parseInt(this.getSetting('input_config_4') || 1)
+        ];
+
+        if (this.getSetting('strip_type') === 'cct' && this.getCapabilityValue('light_mode') !== 'temperature') {
+            this.setCapabilityValue('light_mode', 'temperature');
+        } else if (this.getCapabilityValue('light_mode') !== 'color') {
+            this.setCapabilityValue('light_mode', 'color');
+        }
+
+        if (this.getSetting('strip_type').indexOf('rgb') < 0 && this.getSetting('strip_type') !== 'cct') {
+		    this.realInputConfigs[1] += 8;
+            this.realInputConfigs[2] += 8;
+            this.realInputConfigs[3] += 8;
+            this.realInputConfigs[4] += 8;
+        }
 
 		/*
 		================================================================
@@ -36,24 +55,36 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
          */
 		this.registerCapability('light_saturation', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 2,
+            reportParser: (command, report) => {
+                this._reportParser(command, report, 'r')
+            },
             setParser: (value) => {
                 return this._colorSetParser('r', value, 'saturation');
             }
         });
         this.registerCapability('light_saturation', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 3,
+            reportParser: (command, report) => {
+                this._reportParser(command, report, 'g')
+            },
             setParser: (value) => {
                 return this._colorSetParser('g', value, 'saturation');
             }
         });
         this.registerCapability('light_saturation', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 4,
+            reportParser: (command, report) => {
+                this._reportParser(command, report, 'b')
+            },
             setParser: (value) => {
                 return this._colorSetParser('b', value, 'saturation');
             }
         });
         this.registerCapability('light_saturation', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 5,
+            reportParser: (command, report) => {
+                this._reportParser(command, report, 'w')
+            },
             setParser: (value) => {
                 return this._colorSetParser('a', value, 'saturation');
             }
@@ -298,31 +329,6 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         };
 	}
 
-    _sendColor(values, multichannels, callback) {
-        if (!this.getCapabilityValue('onoff')) {
-            this.setCapabilityValue('onoff', true);
-        }
-
-        if (typeof values === 'object' && typeof multichannels === 'object') {
-            for (let i = 0; i < values.length; i++) {
-                if (multichannels[i] && values[i] >= 0) {
-                    this.node.MultiChannelNodes[multichannels[i]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({
-                        Value: values[i]
-                    }, (err, result) => {
-                        if (err) {
-                            Homey.error(err);
-                            if (typeof callback === 'function') return callback(err, false);
-                        }
-
-                        if (result === 'TRANSMIT_COMPLETE_OK') {
-                            if (typeof callback === 'function') return callback(null, true);
-                        } else if (typeof callback === 'function') return callback('transmition_failed', false);
-                    });
-                }
-            }
-        } else if (typeof callback === 'function') return callback('unknown_error', false);
-    }
-
     /*
     ================================================================
     Temperature parsing
@@ -419,7 +425,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             // If this light strip is of the correct colour proceed
             if (color === this.settings.strip_type.slice(2)) {
                 return {
-                    Value: Math.round((this.getCapabilityValue('dim') || 1) * (1 - value) * 99);
+                    Value: Math.round((this.getCapabilityValue('dim') || 1) * (1 - value) * 99)
             }
             } else {
                 return {
@@ -492,6 +498,119 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             return {
                 Value: 'off/disable'
             };
+        }
+    }
+
+    /*
+    ================================================================
+    Flow related methods
+    ================================================================
+     */
+    //TODO add Flows for this driver
+
+    /*
+    ================================================================
+    Helper methods
+    ================================================================
+     */
+    _valueToVolt(value) {
+        return Math.round(value / 99 * 100) / 10;
+    }
+
+    _updateValues() {
+        const hsv = tinyColor({
+           r: this.colorCache.r || 0,
+           g: this.colorCache.g || 0,
+           b: this.colorCache.b || 0
+        }).toHsv();
+
+        // Update dim
+        if (this.hasCapability('dim') || this.getCapabilityValue('dim') === 0) {
+            const dim = Math.max(this.colorCache.r, this.colorCache.g, this.colorCache.b);
+            this.setCapabilityValue('dim', dim/99);
+        }
+
+        // Update hue
+        const hue = this._hueParser( (hsv.h || 0), 'get');
+        this.setCapabilityValue('light_hue', hue);
+
+        // Update Saturation
+        this.setCapabilityValue('light_saturation', Math.round(hsv.s * 100) / 100);
+
+        // Update temperature in CCT mode
+        if (this.getSetting('strip_type') === 'cct') {
+            const value = (((this.getCapabilityValue('dim' || 99) - this.colorCache.b) + this.colorCache.w) / (this.getCapabilityValue('dim') * 2) || 198);
+            this.setCapabilityValue('light_temperature', Math.round(value * 100) / 100);
+        }
+    }
+
+    _sendColor(values, multichannels, callback) {
+        if (!this.getCapabilityValue('onoff')) {
+            this.setCapabilityValue('onoff', true);
+        }
+
+        if (typeof values === 'object' && typeof multichannels === 'object') {
+            for (let i = 0; i < values.length; i++) {
+                if (multichannels[i] && values[i] >= 0) {
+                    this.node.MultiChannelNodes[multichannels[i]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({
+                        Value: values[i]
+                    }, (err, result) => {
+                        if (err) {
+                            Homey.error(err);
+                            if (typeof callback === 'function') return callback(err, false);
+                        }
+
+                        if (result === 'TRANSMIT_COMPLETE_OK') {
+                            if (typeof callback === 'function') return callback(null, true);
+                        } else if (typeof callback === 'function') return callback('transmition_failed', false);
+                    });
+                }
+            }
+        } else if (typeof callback === 'function') return callback('unknown_error', false);
+    }
+
+    _reportParser(command, report, color) {
+        let inputNumber;
+        let cachedColor;
+
+        if (color === 'r') {
+            inputNumber = 1;
+            cachedColor = this.colorCache.r
+        } else if (color === 'g') {
+            inputNumber = 2;
+            cachedColor = this.colorCache.g
+        } else if (color === 'b') {
+            inputNumber = 3;
+            cachedColor = this.colorCache.b
+        } else if (color === 'w') {
+            inputNumber = 4;
+            cachedColor = this.colorCache.w
+        }
+
+        if (command.name && command.name === 'SWITCH_MULTILEVEL_REPORT') {
+            // Trigger on/off flows
+            if (report['Value (Raw)'][0] > 0 && cachedColor === 0) {
+                this._onFlowTrigger.trigger(this, null, {input: inputNumber});
+            }
+
+            if (report['Value (Raw)'][0] === 0) {
+                this._offFlowTrigger.trigger(this, null, {input: inputNumber});
+            }
+
+            // Update cache
+            this.colorCache['color'] = (report['Value (Raw)'][0] || 0);
+
+            // If analog input(s) are attached
+            if (this.realInputConfigs[inputNumber] === 8) {
+                // Update the value of this input
+                this.setCapabilityValue(`measure_voltage.input${inputNumber}`, this._valueToVolt(report['Value (Raw)'][0]));
+
+                // Trigger any flows that are used
+                this[`_input${inputNumber}FlowTrigger`].trigger(this, null, {volt: this._valueToVolt(report['Value (Raw)'][0])});
+            }
+
+            // If not analog input(s), update values in homey
+            else this._updateValues();
         }
     }
 }
