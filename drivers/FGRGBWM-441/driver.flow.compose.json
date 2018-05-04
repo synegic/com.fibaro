@@ -178,6 +178,58 @@
   "conditions": [],
   "actions": [
     {
+      "id": "RGBW_specific",
+      "title": {
+        "en": "Set specific brightness",
+        "nl": "Stel specifieke helderheid in"
+      },
+      "args": [
+        {
+          "name": "color",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "r",
+              "label": {
+                "en": "Red output",
+                "nl": "Rode uitgang"
+              }
+            },
+            {
+              "id": "g",
+              "label": {
+                "en": "Green output",
+                "nl": "Groene uitgang"
+              }
+            },
+            {
+              "id": "b",
+              "label": {
+                "en": "Blue output",
+                "nl": "Blauwe uitgang"
+              }
+            },
+            {
+              "id": "w",
+              "label": {
+                "en": "White output",
+                "nl": "Witte uitgang"
+              }
+            }
+          ]
+        },
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100
+        }
+      ]
+    },
+    {
       "id": "RGBW_random",
       "title": {
         "en": "Choose a random color",

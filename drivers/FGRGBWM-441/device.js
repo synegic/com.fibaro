@@ -53,13 +53,20 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         this._input4FlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_volt_input4').register();
 
         this._resetMeterAction = new Homey.FlowCardAction('FGRGBWM-441_reset_meter').register()
-            .registerRunListener(this._resetMeterRunListener);
+            .registerRunListener(this._resetMeterRunListener.bind(this));
 
-		/*
-		================================================================
-		Registering on/off
-		================================================================
-		*/
+        this._randomColorAction =  new Homey.FlowCardAction('RGBW_random').register()
+            .registerRunListener(this._randomColorRunListener.bind(this));
+        this._specificColorAction =  new Homey.FlowCardAction('RGBW_specific').register()
+            .registerRunListener(this._specificColorRunListener.bind(this));
+        this._animationAction =  new Homey.FlowCardAction('RGBW_animation').register()
+            .registerRunListener(this._animationRunListener.bind(this));
+
+        /*
+        ================================================================
+        Registering on/off
+        ================================================================
+        */
 		this.registerCapability('onoff', 'SWITCH_MULTILEVEL', {
 			multiChannelNodeId: 1
 		});
@@ -283,6 +290,137 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             });
         }
     }
+
+    _randomColorRunListener(args, state) {
+        if (args.device !== this) return Promise.reject('Not the right device');
+        if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Random colors only available in RGB(W) mode');
+        if (args.hasOwnProperty('range')) {
+            let rgb = tinyColor({
+                h: Math.round(Math.random() * 100) / 100 * 360,
+                s: 100,
+                v: (this.getCapabilityValue('dim') || 1) * 100
+            }).toRgb();
+
+            if (args.range === 'rgb') {
+                this._sendColor(rgb.r, 2);
+                this._sendColor(rgb.g, 3);
+                this._sendColor(rgb.b, 4);
+            } else if (args.range === 'rgbw' && this.getSetting('strip_type') === 'rgbw') {
+                this._sendColor(rgb.r, 2);
+                this._sendColor(rgb.g, 3);
+                this._sendColor(rgb.b, 4);
+                this._sendColor(rgb.a, 5);
+            } else if (args.range === 'rgb-w' && this.getSetting('strip_type') === 'rgbw') {
+                let randomDecision = Math.round(Math.random());
+
+                if (randomDecision !== 0) {
+                    this._sendColor(0, 2);
+                    this._sendColor(0, 3);
+                    this._sendColor(0, 4);
+                } else {
+                    this._sendColor(rgb.r, 2);
+                    this._sendColor(rgb.g, 3);
+                    this._sendColor(rgb.b, 4);
+                }
+
+                this._sendColor(rgb.a, 5);
+            } else if (args.range.indexOf('r-g-b') >= 0) {
+                let option;
+
+                args.range.indexOf('w') >= 0 ? option = Math.round(Math.random() * 4) : option = Math.round(Math.random() * 3);
+
+                switch (option) {
+                    case 0: rgb.r = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 1: rgb.g = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 2: rgb.b = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 3: rgb.a = 99 * (this.getCapabilityValue('dim') || 1); break;
+                }
+
+                this._sendColor(rgb.r, 2);
+                this._sendColor(rgb.g, 3);
+                this._sendColor(rgb.b, 4);
+                this._sendColor(rgb.a, 5);
+            } else if (args.range.indexOf('r-y-g-c-b-m') >= 0) {
+                let option, hue;
+
+                args.range.indexOf('w') >= 0 ? option = Math.round(Math.random() * 7) : option = Math.round(Math.random() * 6);
+
+                switch (option) {
+                    case 0: rgb.r = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 1: hue = .125; break;
+                    case 2: rgb.g = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 3: hue = .5; break;
+                    case 4: rgb.b = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 5: hue = .875; break;
+                    case 6: rgb.a = 99 * (this.getCapabilityValue('dim') || 1); break;
+                }
+
+                if (hue) rgb = tinyColor({h: hue, s: 100, v: (this.getCapabilityValue('dim') || 1) * 100}).toRgb();
+
+                this._sendColor(rgb.r, 2);
+                this._sendColor(rgb.g, 3);
+                this._sendColor(rgb.b, 4);
+                this._sendColor(rgb.a, 5);
+            }
+        }
+    }
+
+    _specificColorRunListener(args, state) {
+        if (args.device !== this) return Promise.reject('Not the right device');
+        if (args && args.hasOwnProperty('color') && args.hasOwnProperty('brightness')) {
+            let multiChannel;
+            let stripType = this.getSetting('strip_type');
+
+            switch(args.color) {
+                case 'r': multiChannel = 2; break;
+                case 'g': multiChannel = 3; break;
+                case 'b': multiChannel = 4; break;
+                case 'w': multiChannel = 5; break;
+            }
+
+            if (stripType.indexOf('sc') >= 0 && args.color !== stripType.slice(2)) return Promise.reject('Color not in use');
+            if (stripType.indexOf('cct') >= 0 && (args.color === 'r' || args.color === 'g')) return Promise.reject('Color not in use');
+            if (stripType === 'rgb' && args.color === 'w') return Promise.reject('Color not in use');
+
+            return this._sendColor(Math.round(args.brightness * 99), multiChannel);
+        }
+    }
+
+    _animationRunListener(args, state) {
+        if (args.device !== this) return Promise.reject('Not the right device');
+        if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Animations only available in RGB(W) mode');
+        if ((this.realInputConfigs.input1 || this.realInputConfigs.input2 || this.realInputConfigs.input3 || this.realInputConfigs.input4) > 8) {
+            return Promise.reject('Animations only available without analog input');
+        }
+
+        if (args && args.hasOwnProperty('animation')) {
+            if (args.animation === '0') {
+                try {
+                    this._sendColor(this.currentRGB.r, 2);
+                    this._sendColor(this.currentRGB.g, 3);
+                    this._sendColor(this.currentRGB.b, 4);
+                    this._sendColor(this.currentRGB.a, 5);
+                    return Promise.resolve();
+                } catch (err) {
+                    return Promise.reject(err);
+                }
+            }
+            if (args.animation === '11') {
+                args.animation = Math.round(Math.random() * (10-6) + 6);
+            }
+
+            try {
+                this.configurationSet({
+                    index: 72,
+                    size: 1
+                }, new Buffer([parseInt(args.animation)]));
+                return Promise.resolve();
+            } catch (err) {
+                return Promise.reject(err);
+            }
+        }
+    }
+
 
     /*
     ================================================================
