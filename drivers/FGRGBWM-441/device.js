@@ -10,19 +10,19 @@ const tinyGradient = require('tinygradient');
 
 class FibaroRGBWControllerDevice extends ZwaveDevice {
 	
-	onMeshInit() {
+    onMeshInit() {
 	    this.currentRGB = {
 	        r: 0,
             g: 0,
             b: 0,
             a: 0
         };
-		this.realInputConfigs = [
-		    parseInt(this.getSetting('input_config_1') || 1),
-            parseInt(this.getSetting('input_config_2') || 1),
-            parseInt(this.getSetting('input_config_3') || 1),
-            parseInt(this.getSetting('input_config_4') || 1)
-        ];
+		this.realInputConfigs = {
+            "input1": null,
+            "input2": null,
+            "input3": null,
+            "input4": null
+        };
         this.temperatureGradient = tinyGradient([
             '#80c5fc',
             '#ffffff',
@@ -35,12 +35,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             this.setCapabilityValue('light_mode', 'color');
         }
 
-        if (this.getSetting('strip_type').indexOf('rgb') < 0 && this.getSetting('strip_type') !== 'cct') {
-		    this.realInputConfigs[1] += 8;
-            this.realInputConfigs[2] += 8;
-            this.realInputConfigs[3] += 8;
-            this.realInputConfigs[4] += 8;
-        }
+        this._reloadRealInputConfig();
 
         /*
 		================================================================
@@ -74,7 +69,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         Registering light_hue, light_saturation and dim
         ================================================================
         */
-        this.registerMultipleCapabilityListener(['light_saturation', 'light_hue', 'dim'], (value, opts) => {
+        this.registerMultipleCapabilityListener(['light_saturation', 'light_hue', 'dim'], async (value, opts) => {
             let red, green, blue, white;
             let hue, saturation, dim;
 
@@ -108,37 +103,18 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.setCapabilityValue('light_mode', 'color');
             }
 
-            // Set red channel
-            this.node.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: red}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting red channel: ${err}`);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    this.currentRGB.r = red;
-                }
-            });
-
-            // Set green channel
-            this.node.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: green}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting green channel: ${err}`);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    this.currentRGB.g = green;
-                }
-            });
-
-            // Set blue channel
-            this.node.MultiChannelNodes['4'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: blue}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting blue channel: ${err}`);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    this.currentRGB.b = blue;
-                }
-            });
-
-            // Set white channel
-            this.node.MultiChannelNodes['5'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: white}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting white channel: ${err}`);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    this.currentRGB.a = white;
-                }
-            });
+            try {
+                await this._sendColor(red, 2);
+                this.currentRGB.r = red;
+                await this._sendColor(green, 3);
+                this.currentRGB.g = green;
+                await this._sendColor(blue, 4);
+                this.currentRGB.b = blue;
+                await this._sendColor(white, 5);
+                this.currentRGB.a = white;
+            } catch (err) {
+                this.log(err);
+            }
 
             return Promise.resolve();
         });
@@ -148,7 +124,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         Registering light_temperature
         ================================================================
          */
-        this.registerCapabilityListener('light_temperature', (value, opts) => {
+        this.registerCapabilityListener('light_temperature', async (value, opts) => {
             this.setCapabilityValue('light_mode', 'temperature');
             let rgb = this._tempToRGB(value);
 
@@ -157,24 +133,18 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             let blue = (rgb.b / 255) * 99;
             let white = (rgb.a / 255) * 99;
 
-            // Set red channel
-            this.node.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: red}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting red channel: ${err}`);
-            });
-
-            // Set green channel
-            this.node.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: green}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting green channel: ${err}`);
-            });
-
-            // Set blue channel
-            this.node.MultiChannelNodes['4'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: blue}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting blue channel: ${err}`);
-            });
-
-            this.node.MultiChannelNodes['5'].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: white}, (err, result) => {
-                if (err) return Promise.reject(`Error whilst setting white channel: ${err}`);
-            });
+            try {
+                await this._sendColor(red, 2);
+                this.currentRGB.r = red;
+                await this._sendColor(green, 3);
+                this.currentRGB.g = green;
+                await this._sendColor(blue, 4);
+                this.currentRGB.b = blue;
+                await this._sendColor(white, 5);
+                this.currentRGB.a = white;
+            } catch (err) {
+                this.log(err);
+            }
 
             return Promise.resolve();
         });
@@ -220,33 +190,16 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.setCapabilityValue('light_mode', 'color');
             }
 
-            let newInputConfig = [];
-            newInputConfig[1]= parseInt(this.getSetting('input_config_1') || 1);
-            newInputConfig[2]= parseInt(this.getSetting('input_config_2') || 1);
-            newInputConfig[3]= parseInt(this.getSetting('input_config_3') || 1);
-            newInputConfig[4]= parseInt(this.getSetting('input_config_4') || 1);
+            if (this._reloadRealInputConfig()) {
+                let zwaveValue = new Buffer([
+                    this.realInputConfigs.input1 * 16 + this.realInputConfigs.input2,
+                    this.realInputConfigs.input3 * 16 + this.realInputConfigs.input4
+                ]);
 
-            if (value !== 'cct' && value.indexOf('rgb') < 0) {
-                newInputConfig[1] += 8;
-                newInputConfig[2] += 8;
-                newInputConfig[3] += 8;
-                newInputConfig[4] += 8;
-            }
-
-            if (newInputConfig[1] !== this.realInputConfigs[1] ||
-                newInputConfig[2] !== this.realInputConfigs[2] ||
-                newInputConfig[3] !== this.realInputConfigs[3] ||
-                newInputConfig[4] !== this.realInputConfigs[4]) {
-                    this.realInputConfigs = newInputConfig;
-                    let zwaveValue = new Buffer([
-                        this.realInputConfigs[1] * 16 + this.realInputConfigs[2],
-                        this.realInputConfigs[3] * 16 + this.realInputConfigs[4]
-                    ]);
-
-                    this.configurationSet({
-                        index: 14,
-                        size: 2
-                    }, zwaveValue);
+                this.configurationSet({
+                    index: 14,
+                    size: 2
+                }, zwaveValue);
             }
         });
         // Both connected to the same index
@@ -340,24 +293,60 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         return Math.round(value / 99 * 100) / 10;
     }
 
+    _reloadRealInputConfig() {
+        let newInputConfig = {};
+
+        newInputConfig.input1= parseInt(this.getSetting('input_config_1') || 1);
+        newInputConfig.input2= parseInt(this.getSetting('input_config_2') || 1);
+        newInputConfig.input3= parseInt(this.getSetting('input_config_3') || 1);
+        newInputConfig.input4= parseInt(this.getSetting('input_config_4') || 1);
+
+        if (this.getSetting('strip_type') !== 'cct' && this.getSetting('strip_type').indexOf('rgb') < 0) {
+            newInputConfig.input1 += 8;
+            newInputConfig.input2 += 8;
+            newInputConfig.input3 += 8;
+            newInputConfig.input4 += 8;
+        }
+
+        if (newInputConfig.input1 !== this.realInputConfigs.input1 ||
+                newInputConfig.input2 !== this.realInputConfigs.input2 ||
+                newInputConfig.input3 !== this.realInputConfigs.input3 ||
+                newInputConfig.input4 !== this.realInputConfigs.input4) {
+                    this.realInputConfigs = newInputConfig;
+                    return true;
+        }
+        return false;
+    }
+
+    async _sendColor(value, multiChannel) {
+        this.node.MultiChannelNodes[multiChannel].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: value}, (err, result) => {
+            if (err) return Promise.reject(`Error whilst setting channel ${multiChannel}: ${err}`);
+            else return Promise.resolve(result);
+        });
+    }
+
     _inputSettingParser(inputNumber, value, settings) {
-        this.realInputConfigs[inputNumber] = parseInt(value) || 1;
+        this.realInputConfigs[`input${inputNumber}`] = parseInt(value) || 1;
 
         if (newSettings.strip_type.indexOf('rgb') < 0 && newSettings.strip_type !== 'cct') {
-            this.realInputConfigs[inputNumber] += 8;
+            this.realInputConfigs[`input${inputNumber}`] += 8;
         }
 
         let zwaveValue = new Buffer([
-            (this.realInputConfigs[1] * 16 +
-                this.realInputConfigs[2]),
-            (this.realInputConfigs[3] * 16 +
-                this.realInputConfigs[4])
+            (this.realInputConfigs.input1 * 16 +
+                this.realInputConfigs.input2),
+            (this.realInputConfigs.input3 * 16 +
+                this.realInputConfigs.input4)
         ]);
 
-        this.configurationSet({
-            index: 14,
-            size: 2
-        }, zwaveValue);
+        try {
+            this.configurationSet({
+                index: 14,
+                size: 2
+            }, zwaveValue);
+        } catch (err) {
+            this.log(err);
+        }
     }
 
     _reportParser(report, channel) {
@@ -405,7 +394,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             this.setCapabilityValue('dim', newColour.v);
         }
 
-        if (this.realInputConfigs[inputNumber] === 8) {
+        if (this.realInputConfigs[`input${inputNumber}`] === 8) {
             this.setCapabilityValue('measure_voltage.input1', this._valueToVolt(report['Value (Raw)'][0]));
             this[`input${inputNumber}FlowTrigger`].trigger(this, {volt: this._valueToVolt(report['Value (Raw)'][0])}, null);
         }
