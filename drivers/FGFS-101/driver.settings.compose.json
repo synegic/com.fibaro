@@ -103,7 +103,7 @@
     "type": "group",
     "label": {
       "en": "Temperature sensor",
-      "nl": "Temperatuurssensor"
+      "nl": "Temperatuursensor"
     },
     "collapsed": true,
     "children": [
@@ -194,8 +194,8 @@
           "nl": "Sabotage alarm"
         },
         "hint": {
-          "en": "This parameter (74) determines when the tamper alarm is send.",
-          "nl": "Deze parameter (74) bepaald wanneer het sabotage alarm afgaat."
+          "en": "This parameter (74) determines when the tamper alarm is sent.",
+          "nl": "Deze parameter (74) bepaalt wanneer het sabotage alarm afgaat."
         },
         "zwave": {
           "index": 74,
@@ -238,8 +238,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Nofitications",
-      "nl": "Notificaties"
+      "en": "Visual and acoustic nofitications",
+      "nl": "Visuele en acoestische notificaties"
     },
     "collapsed": true,
     "children": [
@@ -247,12 +247,12 @@
         "id": "low_temperature_led",
         "type": "dropdown",
         "label": {
-          "en": "Low Temperature LED",
-          "nl": "Temperatuur Laag LED"
+          "en": "Low temperature LED",
+          "nl": "Temperatuur laag LED"
         },
         "hint": {
           "en": "This parameter (61) determines which colour the low temperature alarm LED indication displays.",
-          "nl": "Deze parameter (61) bepaald de kleur van de LED wanneer het lage temperatuursalarm afgaat."
+          "nl": "Deze parameter (61) bepaalt de kleur van de LED wanneer het lage temperatuuralarm afgaat."
         },
         "zwave": {
           "index": 61,
@@ -322,12 +322,12 @@
         "id": "high_temperature_led",
         "type": "dropdown",
         "label": {
-          "en": "Type of alarm frame sent to 1st association group devices (smoke alarm)",
-          "nl": "Type alarm frame dat naar alle apparaten in eerste associatie group wordt gestuurd (rook alarm)"
+          "en": "High temperature LED",
+          "nl": "Temperatuur hoog LED"
         },
         "hint": {
-          "en": "This parameter (62) determines which commands are send to the 1st association group",
-          "nl": "Deze parameter (62) bepaald welke commando's er worden verstuurd naar de 1e associatie groep"
+          "en": "This parameter (62) determines which colour the high temperature alarm LED indication displays.",
+          "nl": "Deze parameter (62) bepaalt de kleur van de LED wanneer het hoge temperatuuralarm afgaat."
         },
         "zwave": {
           "index": 62,
