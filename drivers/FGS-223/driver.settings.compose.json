@@ -1,0 +1,276 @@
+[
+  {
+    "id": "switch_type",
+    "type": "dropdown",
+    "label": {
+      "en": "Switch Type",
+      "nl": "Schakelaar Type"
+    },
+    "hint": {
+      "en": "What kind of switch is attached to the module.",
+      "nl": "Wat van type schakelaar is verbonden aan de module."
+    },
+    "zwave": {
+      "index": 20,
+      "size": 1
+    },
+    "value": "2",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Momentary Switch",
+          "nl": "Korstondige schakelaar"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Toggle Switch (Closed = On, Open = Off)",
+          "nl": "Tuimel Schakelaar (Dicht = Aan, Open = Uit)"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Toggle Switch (Changes State)",
+          "nl": "Tuimel Schakelaar (Veranderd Status)"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power",
+      "nl": "Stroom"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "save_state",
+        "type": "checkbox",
+        "label": {
+          "en": "Save Power-off State",
+          "nl": "Onthoud Stroom-eraf Status"
+        },
+        "hint": {
+          "en": "Saves its last state when power is disconnected",
+          "nl": "Onthoud zijn laatste status wanneer stroom eraf word gehaald"
+        },
+        "zwave": {
+          "index": 9,
+          "size": 1
+        },
+        "value": true
+      },
+      {
+        "id": "power_report_interval",
+        "type": "number",
+        "label": {
+          "en": "Wattage Report Interval",
+          "nl": "Wattage Verzending Interval"
+        },
+        "hint": {
+          "en": "Sets the interval (in seconds) when all values for Wattage gets send. Range: 0 (Off), 1 - 32000",
+          "nl": "Zet de interval (in seconden) wanneer alle waardes voor Wattage wordt verzonden. Bereik: 0 (Uit), 1 - 32000"
+        },
+        "zwave": {
+          "index": 58,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 32000
+        },
+        "value": 3600
+      },
+      {
+        "id": "energie_report_interval",
+        "type": "number",
+        "label": {
+          "en": "kWh Report Interval",
+          "nl": "kWh Verbruik Verzending Interval"
+        },
+        "hint": {
+          "en": "Sets the interval (in seconds) when all values for kWh gets send. Range: 0 (Off), 1 - 32000",
+          "nl": "Zet de interval (in seconden) wanneer alle waardes voor kWh wordt verzonden. Bereik: 0 (Uit), 1 - 32000"
+        },
+        "zwave": {
+          "index": 59,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 32000
+        },
+        "value": 3600
+      },
+      {
+        "id": "own_power",
+        "type": "checkbox",
+        "label": {
+          "en": "Include own power consumption",
+          "nl": "inclusief eigen verbruik"
+        },
+        "hint": {
+          "en": "Does the power consumption (kWh) of the module itself be added on the total amount?",
+          "nl": "Moet het energie verbruik (kWh) van de module zelf opgeteld worden bij de totale hoeveelheid?"
+        },
+        "zwave": {
+          "index": 60,
+          "size": 1
+        },
+        "value": false
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Input 1 (S1)",
+      "nl": "Ingang 1 (S1)"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "s1_power_report",
+        "type": "number",
+        "label": {
+          "en": "First Channel, Wattage Report Threshold",
+          "nl": "Eerste kanaal, Wattage Verzending Drempel"
+        },
+        "hint": {
+          "en": "How much must the Wattage change (in percentage) before the value is being send. Range: 0 (Off), 1 - 100",
+          "nl": "Hoeveel moet de Wattage zijn veranderd (in percentage) voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 100"
+        },
+        "zwave": {
+          "index": 50,
+          "size": 1
+        },
+        "attr": {
+          "min": 0,
+          "max": 100
+        },
+        "value": 20
+      },
+      {
+        "id": "s1_power_report_interval",
+        "type": "number",
+        "label": {
+          "en": "First Channel, Wattage Report, Minimum Time",
+          "nl": "Eerste kanaal, Wattage Verzending, Minimale Tijd"
+        },
+        "hint": {
+          "en": "This amount of seconds must at least be past, before the value is being send. Range: 0 (Off), 1 - 120",
+          "nl": "Deze hoeveelheid seconden moeten voorbij zijn voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 120"
+        },
+        "zwave": {
+          "index": 51,
+          "size": 1
+        },
+        "attr": {
+          "min": 0,
+          "max": 120
+        },
+        "value": 10
+      },
+      {
+        "id": "s1_kwh_report",
+        "type": "number",
+        "label": {
+          "en": "First Channel, kWh Report Threshold",
+          "nl": "Eerste kanaal, kWh Verzending Drempel"
+        },
+        "hint": {
+          "en": "How much must kWh change before the value is being send. Range: 0 (Off), 0.01 - 320",
+          "nl": "Hoeveel moet de kWh zijn veranderd voor de waarde wordt verzonden. Bereik: 0 (Uit), 0.01 - 320"
+        },
+        "zwave": {
+          "index": 53,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 320,
+          "step": 0.01
+        },
+        "value": 1
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Input 2 (S2)",
+      "nl": "Ingang 2 (S2)"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "s2_power_report",
+        "type": "number",
+        "label": {
+          "en": "Second Channel, Wattage Report Threshold",
+          "nl": "Tweede Kanaal, Wattage Verzending Drempel"
+        },
+        "hint": {
+          "en": "How much must the Wattage change (in percentage) before the value is being send. Range: 0 (Off), 1 - 100",
+          "nl": "Hoeveel moet de Wattage zijn veranderd (in percentage) voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 100"
+        },
+        "zwave": {
+          "index": 54,
+          "size": 1
+        },
+        "attr": {
+          "min": 0,
+          "max": 100
+        },
+        "value": 20
+      },
+      {
+        "id": "s2_power_report_interval",
+        "type": "number",
+        "label": {
+          "en": "Second Channel, Wattage Report, Minimum Time",
+          "nl": "Tweede Kanaal, Wattage Verzending, Minimale Tijd"
+        },
+        "hint": {
+          "en": "This amount of seconds must at least be past, before the value is being send. Range: 0 (Off), 1 - 120",
+          "nl": "Deze hoeveelheid seconden moeten voorbij zijn voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 120"
+        },
+        "zwave": {
+          "index": 55,
+          "size": 1
+        },
+        "attr": {
+          "min": 0,
+          "max": 120
+        },
+        "value": 10
+      },
+      {
+        "id": "s2_kwh_report",
+        "type": "number",
+        "label": {
+          "en": "Second Channel, kWh Report Threshold",
+          "nl": "Tweede Kanaal, kWh Verzending Drempel"
+        },
+        "hint": {
+          "en": "How much must kWh change before the value is being send. Range: 0 (Off), 0.01 - 320",
+          "nl": "Hoeveel moet de kWh zijn veranderd voor de waarde wordt verzonden. Bereik: 0 (Uit), 0.01 - 320"
+        },
+        "zwave": {
+          "index": 57,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 320,
+          "step": 0.01
+        },
+        "value": 1
+      }
+    ]
+  }
+]

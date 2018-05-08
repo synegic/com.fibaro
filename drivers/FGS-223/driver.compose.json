@@ -1,0 +1,68 @@
+{
+  "id": "FGS-223",
+  "name": {
+    "en": "Double Switch 2",
+    "nl": "Dubbele Schakelaar 2"
+  },
+  "class": "socket",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "onoff"
+  ],
+  "images": {
+    "large": "${{driverAssetsPath}}/images/large.png",
+    "small": "${{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      515
+    ],
+    "productId": [
+      4096,
+      8192,
+      12288
+    ],
+    "zwaveAllianceProductId": 2731,
+    "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2731/FGS-2x3-EN-T-v1.2.pdf",
+    "learnmode": {
+      "image": "${{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your Fibaro Double Switch 2 three times, you can also do this with the S1 input.",
+        "nl": "Druk driemaal op de knop van uw Fibaro Dubbele Schakelaar 2, u kunt dit ook met de S1 input doen."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "defaultConfiguration": [
+      {
+        "id": 28,
+        "size": 1,
+        "value": 15
+      },
+      {
+        "id": 29,
+        "size": 1,
+        "value": 15
+      }
+    ],
+    "multiChannelNodes": {
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power"
+        ],
+        "icon": "/drivers/FGS-223/assets/icon.svg",
+        "name": {
+          "en": "Right Switch 2 (S2/Q2)",
+          "nl": "Rechter Schakelaar 2 (S2/Q2)"
+        },
+        "settings": []
+      }
+    }
+  }
+}
