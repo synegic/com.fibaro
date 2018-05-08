@@ -1,0 +1,261 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Smoke sensor",
+      "nl": "Rook sensor"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "id": "smoke_sensitivity",
+        "type": "dropdown",
+        "label": {
+          "en": "Smoke Sensitivity",
+          "nl": "Rook Gevoeligheid"
+        },
+        "value": "2",
+        "hint": {
+          "en": "Determine the sensitivity of the smoke alarm.\nIt is not recommended to change this value.",
+          "nl": "Bepaal de gevoeligheid van het rookalarm\nHet is niet aan te raden om deze waarde te veranderen."
+        },
+        "zwave": {
+          "index": 1,
+          "size": 1
+        },
+        "values": [
+          {
+            "id": "1",
+            "label": {
+              "en": "Low",
+              "nl": "Laag"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Middle",
+              "nl": "Middel"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "High",
+              "nl": "Hoog"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Temperature sensor",
+      "nl": "Temperatuursensor"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "$extends": "reportInterval",
+        "$id": "temperature_report_interval",
+        "value": 1,
+        "zwave": {
+          "index": 20,
+          "size": 2
+        },
+        "attr": {
+          "min": 0,
+          "max": 8640
+        }
+      },
+      {
+        "$extends": "reportThreshold",
+        "$id": "temperature_report_hysteresis",
+        "value": 10,
+        "zwave": {
+          "index": 21,
+          "size": 1
+        },
+        "attr": {
+          "min": 1,
+          "max": 100
+        }
+      },
+      {
+        "$extends": "highThreshold",
+        "$id": "temperature_alarm_treshold",
+        "value": 55,
+        "zwave": {
+          "index": 30,
+          "size": 1
+        },
+        "attr": {
+          "min": 1,
+          "max": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Visual and acoustic notifications",
+      "nl": "Visuele en acoestische notificaties"
+    },
+    "collapsed": false,
+    "children": [
+      {
+        "id": "visual_notification",
+        "type": "dropdown",
+        "label": {
+          "en": "Visual Notification",
+          "nl": "Visuele Meldingen"
+        },
+        "value": "0",
+        "hint": {
+          "en": "Determine the behaviour of the LED.",
+          "nl": "Bepaal het gedrag van de LED."
+        },
+        "zwave": {
+          "index": 3,
+          "size": 1
+        },
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "No Notifications",
+              "nl": "Geen Meldingen"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "Casing Opened",
+              "nl": "Behuizing Geopend"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Temperature too high",
+              "nl": "Temperatuur te hoog"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "Casing Opened and Temperature too high",
+              "nl": "Behuizing Geopend en Temperatuur te hoog"
+            }
+          },
+          {
+            "id": "4",
+            "label": {
+              "en": "Lack of Z-Wave Range",
+              "nl": "Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "5",
+            "label": {
+              "en": "Casing Opened and Lack of Z-Wave Range",
+              "nl": "Behuizing Geopend en Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "6",
+            "label": {
+              "en": "Temperature too high and Lack of Z-Wave Range",
+              "nl": "Temperatuur te hoog en Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "7",
+            "label": {
+              "en": "All notifications above",
+              "nl": "Alle meldingen hierboven"
+            }
+          }
+        ]
+      },
+      {
+        "id": "acoustic_notification",
+        "type": "dropdown",
+        "label": {
+          "en": "Acoutic Notification",
+          "nl": "Akoestische Meldingen"
+        },
+        "value": "0",
+        "hint": {
+          "en": "Determine the accoustic behaviour.",
+          "nl": "Bepaal het acoustische gedrag."
+        },
+        "zwave": {
+          "index": 4,
+          "size": 1
+        },
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "No Notifications",
+              "nl": "Geen Meldingen"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "Casing Opened",
+              "nl": "Behuizing Geopend"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Temperature too high",
+              "nl": "Temperatuur te hoog"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "Casing Opened and Temperature too high",
+              "nl": "Behuizing Geopend en Temperatuur te hoog"
+            }
+          },
+          {
+            "id": "4",
+            "label": {
+              "en": "Lack of Z-Wave Range",
+              "nl": "Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "5",
+            "label": {
+              "en": "Casing Opened and Lack of Z-Wave Range",
+              "nl": "Behuizing Geopend en Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "6",
+            "label": {
+              "en": "Temperature too high and Lack of Z-Wave Range",
+              "nl": "Temperatuur te hoog en Te weinig Z-Wave Bereik"
+            }
+          },
+          {
+            "id": "7",
+            "label": {
+              "en": "All notifications above",
+              "nl": "Alle meldingen hierboven"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
