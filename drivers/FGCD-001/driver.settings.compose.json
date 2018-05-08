@@ -34,7 +34,7 @@
     "type": "group",
     "label": {
       "en": "Temperature sensor",
-      "nl": "Temperatuurssensor"
+      "nl": "Temperatuursensor"
     },
     "collapsed": true,
     "children": [
@@ -82,8 +82,8 @@
   {
     "type": "group",
     "label": {
-      "en": "LED and acoustic notifications",
-      "nl": "LED en akoestische notificaties"
+      "en": "Visual and acoustic notifications",
+      "nl": "Visuele en akoestische notificaties"
     },
     "collapsed": true,
     "children": [
@@ -98,15 +98,15 @@
           {
             "id": "0",
             "label": {
-              "en": "No Notifications",
-              "nl": "Geen Meldingen"
+              "en": "No notifications",
+              "nl": "Geen meldingen"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Casing Opened",
-              "nl": "Behuizing Geopend"
+              "en": "Casing opened",
+              "nl": "Behuizing geopend"
             }
           },
           {
@@ -119,8 +119,8 @@
           {
             "id": "4",
             "label": {
-              "en": "Lack of Z-Wave Range",
-              "nl": "Te weinig Z-Wave Bereik"
+              "en": "Lack of Z-Wave range",
+              "nl": "Te weinig Z-Wave bereik"
             }
           }
         ],
@@ -130,8 +130,8 @@
         "id": "acoustic_notification",
         "type": "dropdown",
         "label": {
-          "en": "Acoutic Notification",
-          "nl": "Akoestische Meldingen"
+          "en": "Acoutic notification",
+          "nl": "Akoestische meldingen"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the accoustic behaviour.",
@@ -145,15 +145,15 @@
           {
             "id": "0",
             "label": {
-              "en": "No Notifications",
-              "nl": "Geen Meldingen"
+              "en": "No notifications",
+              "nl": "Geen meldingen"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Casing Opened",
-              "nl": "Behuizing Geopend"
+              "en": "Casing opened",
+              "nl": "Behuizing geopend"
             }
           },
           {
@@ -166,8 +166,8 @@
           {
             "id": "4",
             "label": {
-              "en": "Lack of Z-Wave Range",
-              "nl": "Te weinig Z-Wave Bereik"
+              "en": "Lack of Z-Wave range",
+              "nl": "Te weinig Z-Wave bereik"
             }
           }
         ],
