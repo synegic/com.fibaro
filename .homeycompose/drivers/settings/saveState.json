@@ -1,12 +1,12 @@
 {
   "type": "checkbox",
   "label": {
-    "en": "Save Power-off State",
-    "nl": "Onthoud Stroom-eraf Status"
+    "en": "Save power-off state",
+    "nl": "Onthoud stroom-eraf status"
   },
   "hint": {
-    "en": "This parameter determines whether or not the device saves its last state when power is disconnected",
-    "nl": "Deze parameter bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald"
+    "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves its last state when power is disconnected.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald."
   },
   "zwave": {
     "index": 16,
