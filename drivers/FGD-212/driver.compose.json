@@ -1,0 +1,57 @@
+{
+  "id": "FGD-212",
+  "name": {
+    "en": "Dimmer 2"
+  },
+  "class": "light",
+  "capabilities": [
+    "dim",
+    "measure_power",
+    "meter_power",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "SetOnDim": false
+    }
+  },
+  "images": {
+    "large": "${{driverAssetsPath}}/images/large.png",
+    "small": "${{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      258
+    ],
+    "productId": [
+      4096,
+      8192,
+      12288
+    ],
+    "zwaveAllianceProductId": 2836,
+    "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2836/FGD-212-EN-T-v1.3.pdf",
+    "learnmode": {
+      "image": "${{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your Fibaro Dimmer 2 three times",
+        "nl": "Druk driemaal op de knop op uw Fibaro Dimmer 2"
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "defaultConfiguration": [
+      {
+        "id": 23,
+        "size": 1,
+        "value": 0
+      },
+      {
+        "id": 28,
+        "size": 1,
+        "value": 1
+      }
+    ]
+  }
+}
