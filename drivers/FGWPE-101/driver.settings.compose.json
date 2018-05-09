@@ -244,8 +244,8 @@
                     {
                         "id": "0",
                         "label": {
-                            "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
-                            "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
+                            "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off.",
+                            "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort."
                         }
                     },
                     {

@@ -5578,8 +5578,8 @@
                 {
                   "id": "0",
                   "label": {
-                    "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
-                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
+                    "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off.",
+                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort."
                   }
                 },
                 {
@@ -5675,8 +5675,8 @@
         "learnmode": {
           "image": "/drivers/FGWPx-102-PLUS/assets/learnmode.svg",
           "instruction": {
-            "en": "Insert the Wall Plug in a socket or press the button on your Fibaro Wall Plug three times",
-            "nl": "Stop de Tussenstekker in het stopcontact of druk driemaal op de knop op de Tussenstekker"
+            "en": "Insert the {{driverNameEN}} in a socket or press the button on your Fibaro Wall Plug three times",
+            "nl": "Stop de {{driverNameNL}} in het stopcontact of druk driemaal op de knop op de Tussenstekker"
           }
         },
         "associationGroups": [
@@ -5708,8 +5708,8 @@
                 "nl": "Altijd aan"
               },
               "hint": {
-                "en": "This parameter determines if the device is always on. Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push",
-                "nl": "Deze parameter bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames"
+                "en": "This parameter (1) determines if the device is always on. When this parameter is enabled the device will remain always on and stop reacting to the B-button and alarm frames",
+                "nl": "Deze parameter (1) bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal het apparaat constant aan zijn, en niet meer reageren op de B-knop en alarm frames."
               },
               "zwave": {
                 "index": 1,
@@ -5718,6 +5718,11 @@
               "value": false
             },
             {
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "value": true,
               "id": "save_state",
               "type": "checkbox",
               "label": {
@@ -5725,14 +5730,9 @@
                 "nl": "Onthoud Stroom-eraf Status"
               },
               "hint": {
-                "en": "This parameter determines whether or not the device saves its last state when power is disconnected",
-                "nl": "Deze parameter bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald"
-              },
-              "zwave": {
-                "index": 2,
-                "size": 1
-              },
-              "value": true
+                "en": "This parameter (2) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+                "nl": "Deze parameter (2) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+              }
             }
           ]
         },
@@ -5825,8 +5825,8 @@
                 "nl": "inclusief eigen verbruik"
               },
               "hint": {
-                "en": "This parameter determines whether or not the kWh usage of the device itself is added to the power usage.",
-                "nl": "Deze parameter bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
+                "en": "This parameter (15) determines whether or not the kWh usage of the device itself is added to the power usage.",
+                "nl": "Deze parameter (15) bepaalt of het kWh verbruik van het apparaat bij het totaalverbruik wordt opgeteld."
               },
               "zwave": {
                 "index": 15,
@@ -5900,22 +5900,22 @@
               },
               "value": "0",
               "hint": {
-                "en": "Defines the color of the LED ring in on state",
-                "nl": "De kleur van de LED ring wanneer aan"
+                "en": "This parameter (41) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (41) beoaakt de kleur van de LED ring wanneer het apparaat aan staat."
               },
               "values": [
                 {
                   "id": "1",
                   "label": {
                     "en": "Changes in predefined steps according to power load",
-                    "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
+                    "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
                   }
                 },
                 {
                   "id": "2",
                   "label": {
                     "en": "Changes continuously according to power load using full spectrum of LED color",
-                    "nl": "Verandert continu afhankelijk van het stroom verbruik"
+                    "nl": "Verandert continu afhankelijk van het stroomverbruik"
                   }
                 },
                 {
@@ -5989,15 +5989,15 @@
               },
               "value": "0",
               "hint": {
-                "en": "Defines the color of the LED ring in off state",
-                "nl": "Kleur van de LED ring wanneer uit"
+                "en": "This parameter (42) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (42) bepaalt de kleur van de LED ring wanneer het apparaat uit staat."
               },
               "values": [
                 {
                   "id": "1",
                   "label": {
-                    "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off",
-                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort"
+                    "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off.",
+                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroomverbruik hoort."
                   }
                 },
                 {
@@ -6073,7 +6073,7 @@
               "type": "dropdown",
               "label": {
                 "en": "Control association group 2",
-                "nl": "Controlle associatie groep 2"
+                "nl": "Controller associatie groep 2"
               },
               "zwave": {
                 "index": 20,
@@ -6081,22 +6081,22 @@
               },
               "value": "0",
               "hint": {
-                "en": "What will devices do, that are specified in association group 2, when pressing the b-button",
-                "nl": "Wat doen apparaten, die gespecificeerd zijn in associatie groep 2, wanneer je op de b-knop drukt"
+                "en": "This parameter (20) determines what the association group 2 device behaviour is when the B-button is pressed.",
+                "nl": "Deze parameter (20) bepaalt wat de apparaten in de 2e associatie groep doen wanneer de B-knop wordt ingedrukt."
               },
               "values": [
                 {
                   "id": "0",
                   "label": {
-                    "en": "Wallplug off, device(s) also off. Wallplug on, device(s) also on",
-                    "nl": "Muurplug uit, apparaat(en) ook uit. Muurplug aan, apparaat(en) ook aan"
+                    "en": "{{driverNameEN}} off, device(s) also off. {{driverNameEN}} on, device(s) also on",
+                    "nl": "{{driverNameNL}} uit, apparaat(en) ook uit. {{driverNameNL}} aan, apparaat(en) ook aan"
                   }
                 },
                 {
                   "id": "1",
                   "label": {
-                    "en": "Wallplug off, device(s) on. Wallplug on, device(s) off",
-                    "nl": "Muurplug uit, apparaat(en) aan. Muurplug aan, apparaat(en) uit"
+                    "en": "{{driverNameEN}} off, device(s) on. {{driverNameEN}} on, device(s) off",
+                    "nl": "{{driverNameNL}} uit, apparaat(en) aan. {{driverNameNL}} aan, apparaat(en) uit"
                   }
                 }
               ]
