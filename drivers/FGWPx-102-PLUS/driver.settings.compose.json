@@ -147,7 +147,7 @@
         "value": "0",
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) defines the color of the LED ring in on state.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) beoaakt de kleur van de LED ring wanneer het apparaat aan staat."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de kleur van de LED ring wanneer het apparaat aan staat."
         },
         "values": [
           {
@@ -327,8 +327,8 @@
         },
         "value": "0",
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines what the association group 2 device behaviour is when the B-button is pressed.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat de apparaten in de 2e associatie groep doen wanneer de B-knop wordt ingedrukt."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the devices associated to group 2 when the B-button is pressed.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de apparaten in associatie groep 2 wanneer de B-knop ingedrukt word."
         },
         "values": [
           {

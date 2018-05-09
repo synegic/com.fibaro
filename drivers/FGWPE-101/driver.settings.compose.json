@@ -156,14 +156,14 @@
                         "id": "0",
                         "label": {
                             "en": "Changes in predefined steps according to power load",
-                            "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
+                            "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
                         }
                     },
                     {
                         "id": "1",
                         "label": {
                             "en": "Changes continuously according to power load using full spectrum of LED color",
-                            "nl": "Verandert continu afhankelijk van het stroom verbruik"
+                            "nl": "Verandert continu afhankelijk van het stroomverbruik"
                         }
                     },
                     {
@@ -245,7 +245,7 @@
                         "id": "0",
                         "label": {
                             "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off.",
-                            "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort."
+                            "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroomverbruik hoort."
                         }
                     },
                     {
