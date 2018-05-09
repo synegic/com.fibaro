@@ -116,7 +116,7 @@
                 "$id": "watt_kwh_report_interval",
                 "zwave": {
                     "index": 43,
-                    "size": 1,
+                    "size": 2,
                     "signed": false
                 },
                 "attr": {
