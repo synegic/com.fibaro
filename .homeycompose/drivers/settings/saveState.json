@@ -1,12 +1,12 @@
 {
   "type": "checkbox",
   "label": {
-    "en": "Save power-off state",
-    "nl": "Onthoud stroom-eraf status"
+    "en": "Restore state after power failure",
+    "nl": "Herstel status na stroomonderbreking"
   },
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves its last state when power is disconnected.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
   },
   "zwave": {
     "index": 16,
