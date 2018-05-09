@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "This parameter ({{zwaveParameterIndex}}) determines the command sent when this sensor/alarm deactivates.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveerd."
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is gedeactiveerd."
   },
   "zwave": {
     "index": 16,

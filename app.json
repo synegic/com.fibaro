@@ -207,8 +207,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (51) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (51) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (51) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (51) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -267,7 +267,7 @@
               },
               "hint": {
                 "en": "This parameter (53) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (53) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (53) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "attr": {
                 "min": -1000,
@@ -407,8 +407,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (30) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (30) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             }
@@ -435,7 +435,7 @@
               },
               "hint": {
                 "en": "This parameter (12) determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter (12) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveerd."
+                "nl": "Deze parameter (12) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is geactiveerd."
               },
               "attr": {
                 "min": 0,
@@ -456,7 +456,7 @@
               },
               "hint": {
                 "en": "This parameter (13) determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter (13) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveerd."
+                "nl": "Deze parameter (13) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is gedeactiveerd."
               },
               "attr": {
                 "min": 0,
@@ -771,8 +771,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (1) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             }
@@ -824,8 +824,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (12) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (12) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -847,7 +847,7 @@
               },
               "hint": {
                 "en": "This parameter (73) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (73) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (73) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "type": "number"
             },
@@ -1314,8 +1314,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (1) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             }
@@ -1367,8 +1367,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (12) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (12) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -1390,7 +1390,7 @@
               },
               "hint": {
                 "en": "This parameter (73) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (73) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (73) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "type": "number"
             },
@@ -1840,8 +1840,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (12) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (12) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             }
@@ -1872,8 +1872,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (1) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             }
@@ -2118,8 +2118,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (51) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (51) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (51) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (51) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -2157,7 +2157,7 @@
               },
               "hint": {
                 "en": "This parameter (66) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "attr": {
                 "min": -1000,
@@ -2208,8 +2208,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (30) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (30) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (30) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             }
@@ -2331,8 +2331,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             },
@@ -2350,7 +2350,7 @@
               "value": "0",
               "hint": {
                 "en": "This parameter (8) determines when the motion should be active.",
-                "nl": "Deze parameter (8) bepaalt wanneer het bewegings alarm actief moet zijn."
+                "nl": "Deze parameter (8) bepaalt wanneer het bewegingsalarm actief moet zijn."
               },
               "values": [
                 {
@@ -2403,8 +2403,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (60) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -2469,7 +2469,7 @@
               },
               "hint": {
                 "en": "This parameter (66) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "type": "number"
             },
@@ -2544,8 +2544,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (60) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -2641,8 +2641,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "type": "number"
             },
@@ -2943,8 +2943,8 @@
                 "max": 65534
               },
               "hint": {
-                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of ambient lux 100%.",
-                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde lager dan 100% zijn."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of \"ambient lux 100%\".",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat, daarnaast moet de waarde onder de waarde van \"ambient lux 100%\" blijven."
               }
             },
             {
@@ -2965,8 +2965,8 @@
                 "max": 65535
               },
               "hint": {
-                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of ambient lux 1%.",
-                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde hoger dan 1% zijn."
+                "en": "The parameter (83) is relevant only when the parameter \"LED brightness\" is set to 0, and must be above the value of \"ambient lux 1%\".",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat, daarnaast moet de waarde onder de waarde van \"ambient lux 1%\" blijven.."
               }
             },
             {
@@ -3050,7 +3050,7 @@
               },
               "hint": {
                 "en": "This parameter (14) determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveerd."
+                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is geactiveerd."
               },
               "attr": {
                 "min": 0,
@@ -3072,7 +3072,7 @@
               },
               "hint": {
                 "en": "This parameter (16) determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveerd."
+                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is gedeactiveerd."
               },
               "attr": {
                 "min": 0,
@@ -3305,8 +3305,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "zwave": {
                 "index": 6,
@@ -3384,8 +3384,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (60) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -3440,7 +3440,7 @@
               },
               "hint": {
                 "en": "This parameter (66) determines the value to be added to the measured values.",
-                "nl": "Deze parameter (66) bepaalt de waarde die wordt toegevoegd aan de gemeten waarden."
+                "nl": "Deze parameter (66) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
               },
               "zwave": {
                 "index": 66,
@@ -3512,8 +3512,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (60) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (60) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (60) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (60) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "zwave": {
                 "index": 40,
@@ -3627,8 +3627,8 @@
                 "nl": "Annuleringsperiode (s)"
               },
               "hint": {
-                "en": "This parameter (6) sets the time after which the alarm will be cancelled",
-                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+                "en": "This parameter (6) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (6) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
               },
               "attr": {
                 "min": 1,
@@ -3981,8 +3981,8 @@
               },
               "value": 100,
               "hint": {
-                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of ambient lux 100%.",
-                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde lager dan 100% zijn."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of \"ambient lux 100%\".",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat, daarnaast moet de waarde onder de waarde van \"ambient lux 100%\" blijven."
               }
             },
             {
@@ -4002,8 +4002,8 @@
               },
               "value": 1000,
               "hint": {
-                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of ambient lux 1%.",
-                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde hoger dan 1% zijn."
+                "en": "The parameter (83) is relevant only when the parameter \"LED brightness\" is set to 0, and must be above the value of \"ambient lux 1%\".",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat, daarnaast moet de waarde onder de waarde van \"ambient lux 1%\" blijven.."
               }
             }
           ]
@@ -4065,7 +4065,7 @@
               },
               "hint": {
                 "en": "This parameter (14) determines the command sent when this sensor/alarm activates.",
-                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurt wanneer dit alarm/deze sensor is geactiveerd."
+                "nl": "Deze parameter (14) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is geactiveerd."
               },
               "zwave": {
                 "index": 14,
@@ -4086,7 +4086,7 @@
               },
               "hint": {
                 "en": "This parameter (16) determines the command sent when this sensor/alarm deactivates.",
-                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuur wanneer dit alarm/deze sensor is gedactiveerd."
+                "nl": "Deze parameter (16) bepaalt welk activatiecommando er wordt verstuurd wanneer dit alarm/deze sensor is gedeactiveerd."
               },
               "zwave": {
                 "index": 16,
@@ -4943,8 +4943,8 @@
                 "nl": "Altijd aan"
               },
               "hint": {
-                "en": "This parameter (1) determines if the device is always on. Once activated, will keep a connected device constantly on, will stop reacting to alarm frames and B-button push.",
-                "nl": "Deze parameter (1) bepaalt of het apparaat altijd aan is. Wanneer geactiveert zal de plug constant aan zijn, en niet meer reageren op de B-knop en alarm frames."
+                "en": "This parameter (1) determines if the device is always on. When this parameter is enabled the device will remain always on and stop reacting to the B-button and alarm frames",
+                "nl": "Deze parameter (1) bepaalt of het apparaat altijd aan is. Wanneer geactiveerd zal het apparaat constant aan zijn, en niet meer reageren op de B-knop en alarm frames."
               },
               "zwave": {
                 "index": 1,
@@ -4956,12 +4956,12 @@
               "id": "save_state",
               "type": "checkbox",
               "label": {
-                "en": "Save power-off state",
-                "nl": "Onthoud stroom-eraf status"
+                "en": "Restore state after power failure",
+                "nl": "Herstel status na stroomonderbreking"
               },
               "hint": {
-                "en": "This parameter (16) determines whether or not the device saves its last state when power is disconnected.",
-                "nl": "Deze parameter (16) bepaalt of het apparaat onthoud zijn laatste status was wanneer stroom eraf word gehaald."
+                "en": "This parameter (16) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+                "nl": "Deze parameter (16) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
               },
               "zwave": {
                 "index": 16,
@@ -5017,8 +5017,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (40) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (40) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (40) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (40) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },
@@ -5062,7 +5062,7 @@
               },
               "hint": {
                 "en": "This parameter (49) determines whether or not the kWh usage of the device itself is added to the power usage.",
-                "nl": "Deze parameter (49) bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
+                "nl": "Deze parameter (49) bepaalt of het kWh verbruik van het apparaat bij het totaalvebruik wordt opgeteld."
               },
               "zwave": {
                 "index": 49,
@@ -5088,8 +5088,8 @@
                 "nl": "Rapportage drempel"
               },
               "hint": {
-                "en": "This parameter (40) determines the minimum value change before reporting changes to Homey.",
-                "nl": "Deze parameter (40) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+                "en": "This parameter (40) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (40) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
               },
               "type": "number"
             },

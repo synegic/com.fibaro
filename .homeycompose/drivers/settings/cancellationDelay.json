@@ -5,8 +5,8 @@
     "nl": "Annuleringsperiode (s)"
   },
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) sets the time after which the alarm will be cancelled",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd waarna het alarm wordt gedeactiveerd"
+    "en": "This parameter ({{zwaveParameterIndex}}) sets the time after which the alarm will be cancelled.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
   },
   "zwave": {
     "index": 6,

@@ -84,7 +84,7 @@
                 },
                 "hint": {
                     "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the kWh usage of the device itself is added to the power usage.",
-                    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het kWh verbruik van het apparaat bij het totaal gebruikt wordt opgetelt."
+                    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het kWh verbruik van het apparaat bij het totaalvebruik wordt opgeteld."
                 },
                 "zwave": {
                     "index": 49,

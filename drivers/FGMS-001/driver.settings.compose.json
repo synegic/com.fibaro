@@ -70,7 +70,7 @@
         "value": "0",
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines when the motion should be active.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wanneer het bewegings alarm actief moet zijn."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wanneer het bewegingsalarm actief moet zijn."
         },
         "values": [
           {

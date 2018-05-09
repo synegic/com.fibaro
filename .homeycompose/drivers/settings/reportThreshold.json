@@ -5,8 +5,8 @@
     "nl": "Rapportage drempel"
   },
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum value change before reporting changes to Homey.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in waarde voordat deze naar Homey wordt gestuurd."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum change in value before reporting changes to Homey.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
   },
   "zwave": {
     "index": 40,
