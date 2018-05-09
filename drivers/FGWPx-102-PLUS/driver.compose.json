@@ -1,7 +1,7 @@
 {
-  "id": "FWGPx-102-PLUS",
   "name": {
-    "en": "Wall plug (Z-Wave plus)"
+    "en": "Wall plug (Z-Wave plus)",
+    "nl": "Tussenstekker (Z-Wave plus)"
   },
   "class": "socket",
   "capabilities": [
