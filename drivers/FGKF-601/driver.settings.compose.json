@@ -177,28 +177,28 @@
           {
             "id": "0",
             "label": {
-              "en": "Single press: toggle state",
-              "nl": "Eenmaal drukken: schakel status"
+              "en": "Single press: toggle state.",
+              "nl": "Eenmaal drukken: schakel status."
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Single press: toggle state, double press: full brightness",
-              "nl": "Eenmaal drukken: schakel status, tweemaal drukken: volle helderheid"
+              "en": "Single press: toggle state, double press: full brightness.",
+              "nl": "Eenmaal drukken: schakel status, tweemaal drukken: volle helderheid."
             }
           },
           {
             "id": "2",
             "label": {
-              "en": "Single press: turn on, double press: turn off",
-              "nl": "Eenmaal drukken: schakel aan, tweemaal drukken: sckakel uit"
+              "en": "Single press: turn on, double press: turn off.",
+              "nl": "Eenmaal drukken: schakel aan, tweemaal drukken: sckakel uit."
             }
           }
         ],
         "hint": {
-          "en": "Determine the behaviour of the KeyFob with regard to its association groups.",
-          "nl": "Bepaal het gedrag van de KeyFob met betrekking tot zijn associatie groepen."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the KeyFob with regard to its association groups.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de KeyFob met betrekking tot zijn associatie groepen."
         }
       },
       {

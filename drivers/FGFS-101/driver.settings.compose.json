@@ -112,7 +112,8 @@
         "$id": "temperature_measure_interval",
         "zwave": {
           "index": 10,
-          "size": 2
+          "size": 2,
+          "signed": false
         },
         "attr": {
           "min": 0,
@@ -150,7 +151,7 @@
       },
       {
         "$extends": "lowThreshold",
-        "$id": "low_temperature_trreshold",
+        "$id": "low_temperature_treshold",
         "zwave": {
           "index": 50,
           "size": 2
@@ -164,7 +165,7 @@
       },
       {
         "$extends": "highThreshold",
-        "$id": "high_temperature_trreshold",
+        "$id": "high_temperature_treshold",
         "zwave": {
           "index": 51,
           "size": 2
