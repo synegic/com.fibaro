@@ -98,6 +98,39 @@
         }
       },
       {
+        "type": "number",
+        "label": {
+          "en": "Time till lock",
+          "nl": "Tijd tot vergrendeling"
+        },
+        "value": 1,
+        "attr": {
+          "min": 0,
+          "max": 1791
+        },
+        "zwave": {
+          "index": 2,
+          "size": 2
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of inactivity after which the device will lock itself.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt hoe lang het apparaat inactief moet zijn voordat deze vergrendeld word."
+        }
+      },
+      {
+        "$extends": "buttonSequence",
+        "$id": "sequence_lock",
+        "label": {
+          "en": "Lock sequence",
+          "nl": "Vergrendel reeks"
+        },
+        "zwave": {
+          "index": 1,
+          "size": 2,
+          "signed": false
+        }
+      },
+      {
         "$extends": "buttonSequence",
         "$id": "sequence_1",
         "zwave": {
@@ -166,7 +199,7 @@
         "type": "dropdown",
         "label": {
           "en": "Association groups operating mode",
-          "nl": "Associatie groepen werkingsmodus"
+          "nl": "Associatie groepen besturingsmodus"
         },
         "zwave": {
           "index": 10,
@@ -177,28 +210,28 @@
           {
             "id": "0",
             "label": {
-              "en": "Single press: toggle state.",
-              "nl": "Eenmaal drukken: schakel status."
+              "en": "Single press: toggle state",
+              "nl": "Eenmaal drukken: schakel status"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Single press: toggle state, double press: full brightness.",
-              "nl": "Eenmaal drukken: schakel status, tweemaal drukken: volle helderheid."
+              "en": "Single press: toggle state, double press: full brightness",
+              "nl": "Eenmaal drukken: schakel status, tweemaal drukken: volle helderheid"
             }
           },
           {
             "id": "2",
             "label": {
-              "en": "Single press: turn on, double press: turn off.",
-              "nl": "Eenmaal drukken: schakel aan, tweemaal drukken: sckakel uit."
+              "en": "Single press: turn on, double press: turn off",
+              "nl": "Eenmaal drukken: schakel aan, tweemaal drukken: sckakel uit"
             }
           }
         ],
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the KeyFob with regard to its association groups.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de KeyFob met betrekking tot zijn associatie groepen."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the {{driverNameEN}} with regard to its association groups.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de {{driverNameNL}} met betrekking tot zijn associatie groepen."
         }
       },
       {

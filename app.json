@@ -2701,7 +2701,7 @@
               },
               "zwave": {
                 "index": 21,
-                "size": 1
+                "size": 0
               },
               "id": "square_scenes",
               "type": "dropdown",
@@ -2741,7 +2741,7 @@
               },
               "zwave": {
                 "index": 22,
-                "size": 1
+                "size": 0
               },
               "id": "circle_scenes",
               "type": "dropdown",
@@ -2781,7 +2781,7 @@
               },
               "zwave": {
                 "index": 23,
-                "size": 1
+                "size": 0
               },
               "id": "cross_scenes",
               "type": "dropdown",
@@ -2821,7 +2821,7 @@
               },
               "zwave": {
                 "index": 24,
-                "size": 1
+                "size": 0
               },
               "id": "triangle_scenes",
               "type": "dropdown",
@@ -2861,7 +2861,7 @@
               },
               "zwave": {
                 "index": 25,
-                "size": 1
+                "size": 0
               },
               "id": "minus_scenes",
               "type": "dropdown",
@@ -2901,7 +2901,7 @@
               },
               "zwave": {
                 "index": 26,
-                "size": 1
+                "size": 0
               },
               "id": "plus_scenes",
               "type": "dropdown",
@@ -2947,7 +2947,7 @@
             {
               "zwave": {
                 "index": 9,
-                "size": 1
+                "size": 0
               },
               "id": "sequence_timeout",
               "type": "number",
@@ -2969,7 +2969,7 @@
             {
               "zwave": {
                 "index": 3,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_1",
@@ -2988,7 +2988,7 @@
             {
               "zwave": {
                 "index": 4,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_2",
@@ -3007,7 +3007,7 @@
             {
               "zwave": {
                 "index": 5,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_3",
@@ -3026,7 +3026,7 @@
             {
               "zwave": {
                 "index": 6,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_4",
@@ -3045,7 +3045,7 @@
             {
               "zwave": {
                 "index": 7,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_5",
@@ -3064,7 +3064,7 @@
             {
               "zwave": {
                 "index": 8,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "sequence_6",
@@ -3099,7 +3099,7 @@
               },
               "zwave": {
                 "index": 10,
-                "size": 1
+                "size": 0
               },
               "value": "0",
               "values": [
@@ -3137,7 +3137,7 @@
               },
               "zwave": {
                 "index": 11,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_square",
@@ -3159,7 +3159,7 @@
               },
               "zwave": {
                 "index": 12,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_circle",
@@ -3181,7 +3181,7 @@
               },
               "zwave": {
                 "index": 13,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_cross",
@@ -3203,7 +3203,7 @@
               },
               "zwave": {
                 "index": 14,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_triangle",
@@ -3225,7 +3225,7 @@
               },
               "zwave": {
                 "index": 15,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_minus",
@@ -3247,7 +3247,7 @@
               },
               "zwave": {
                 "index": 16,
-                "size": 2,
+                "size": 0,
                 "signed": false
               },
               "id": "value_group_plus",

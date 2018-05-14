@@ -13,6 +13,9 @@ class FibaroKeyfob extends ZwaveDevice {
         this._sequenceFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-sequence').registerRunListener(this._sequenceRunListener).register();
 
         // Parsing of sequences before sending to Keyfob
+        this.registerSetting('sequence_lock', (newValue) => {
+            return this.sequenceParser(newValue);
+        });
 		this.registerSetting('sequence_1', (newValue) => {
 			return this.sequenceParser(newValue);
 		});
@@ -32,28 +35,21 @@ class FibaroKeyfob extends ZwaveDevice {
             return this.sequenceParser(newValue);
         });
 
-        if (this.node && typeof this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE !== 'undefined') {
-            this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE.on('report', (command, report) => {
+        this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
+            if (report &&
+                report.hasOwnProperty('Scene Number') &&
+                report.hasOwnProperty('Properties1') &&
+                report.Properties1.hasOwnProperty('Key Attributes')) {
 
-                this.log('Button(s) pressed');
-
-                if (command.name === 'CENTRAL_SCENE_NOTIFICATION') {
-                    if (report &&
-                        report.hasOwnProperty('Scene Number') &&
-                        report.hasOwnProperty('Properties1') &&
-                        report.Properties1.hasOwnProperty('Key Attributes')) {
-
-                        if (report['Scene Number'] <= 6) {
-                            this.log(`Singular button press. Button: ${report['Scene Number'].toString()}, scene: ${report.Properties1['Key Attributes']}`);
-                            this._sceneFlowTrigger.trigger(this, null, {button: report['Scene Number'].toString(), scene: report.Properties1['Key Attributes']});
-                        } else {
-                            this.log(`Sequence of buttons pressed. Sequence: ${report['Scene Number'].toString()}`);
-                            this._sequenceFlowTrigger.trigger(this, null, {sequence: report['Scene Number'].toString()});
-                        }
-                    }
+                if (report['Scene Number'] <= 6) {
+                    this.log(`Singular button press. Button: ${report['Scene Number'].toString()}, scene: ${report.Properties1['Key Attributes']}`);
+                    this._sceneFlowTrigger.trigger(this, null, {button: report['Scene Number'].toString(), scene: report.Properties1['Key Attributes']});
+                } else {
+                    this.log(`Sequence of buttons pressed. Sequence: ${report['Scene Number'].toString()}`);
+                    this._sequenceFlowTrigger.trigger(this, null, {sequence: report['Scene Number'].toString()});
                 }
-            })
-        }
+            }
+        });
 	}
 
 	customSaveMessage(oldSettings, newSettings, changedKeysArr) {
