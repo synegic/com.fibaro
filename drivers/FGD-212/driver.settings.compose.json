@@ -16,8 +16,12 @@
         },
         "value": true,
         "hint": {
-          "en": "Scene activation is required for using scene triggers. Enabling scene activation functionality may cause slight delay in response to external switches and sending associations. Default value: true.",
-          "nl": "Scene activation moet aan staan om scene triggers te gebruiken. Scene activation aanzetten kan vertragingen veroorzaken met externe schakkelaars en bij het sturen van associations.  Standaard waarde: true."
+          "en": "This parameter ({{zwaveParameterIndex}}) enables scene activation. Scene activation is required for using scene triggers. Enabling scene activation functionality may cause slight delay in response to external switches and sending associations.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) stelt de scene activation in. Scene activation moet aan staan om scene triggers te gebruiken. Scene activation aanzetten kan vertragingen veroorzaken met externe schakkelaars en bij het sturen van geassocieerde apparaten."
+        },
+        "zwave": {
+          "index": 28,
+          "size": 1
         }
       },
       {
@@ -29,8 +33,12 @@
         },
         "value": false,
         "hint": {
-          "en": "Set the brightness level to max on double click (disable or enable).",
-          "nl": "Stel helderheid in op maximaal bij dubbel klikken."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not double clicking sets the brightness level to maximum.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de helderheid naar maximaal geschakelt wordt bij dubbel klikken."
+        },
+        "zwave": {
+          "index": 23,
+          "size": 1
         }
       },
       {
@@ -42,8 +50,12 @@
         },
         "value": false,
         "hint": {
-          "en": "Determine if the Dimmer 2 dims or only goes on/off.",
-          "nl": "Bepaald of de Dimmer 2 dimt of alleen aan/uit gaat."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines if the Dimmer 2 dims or only goes on/off.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de Dimmer 2 dimt of alleen aan/uit gaat."
+        },
+        "zwave": {
+          "index": 32,
+          "size": 1
         }
       },
       {
@@ -55,8 +67,12 @@
         },
         "value": false,
         "hint": {
-          "en": "Switch no. 2 controls the Dimmer 2 additionally (in 3-way switch mode), function disabled for parameter 20 set to 2 (roller blind switch).",
-          "nl": "Schakelaar 2 schakelt ook Dimmer 2, functie uitgeschakeld wanneer Schakelaar Type = Rolgordijn."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether switch no. 2 also controls the Dimmer 2 additionally.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of schakelaar 2 schakelt ook Dimmer 2 bediend."
+        },
+        "zwave": {
+          "index": 26,
+          "size": 1
         }
       },
       {
@@ -68,8 +84,12 @@
         },
         "value": false,
         "hint": {
-          "en": "Functionality of S1 becomes the functionality of S2, and vice versa.",
-          "nl": "Omwisselen van functionaliteit tussen schakelaar 1 en schakelaar 2."
+          "en": "This parameter ({{zwaveParameterIndex}}) switches the functionality of S1 to become the functionality of S2, and vice versa.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) zorgt voor het omwisselen van functionaliteit tussen schakelaar 1 en schakelaar 2."
+        },
+        "zwave": {
+          "index": 29,
+          "size": 1
         }
       },
       {
@@ -81,8 +101,12 @@
         },
         "value": "0",
         "hint": {
-          "en": "Choose between momentary switch and toggle switch.",
-          "nl": "Kies tussen kortstondige schakelaar en tuimelschakelaar."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether this device behaves like a momentary switch or a toggle switch.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zich gedraag als een kortstondige schakelaar of een tuimelschakelaar."
+        },
+        "zwave": {
+          "index": 20,
+          "size": 1
         },
         "values": [
           {
@@ -121,8 +145,12 @@
           "max": 99
         },
         "hint": {
-          "en": "Switching on the Dimmer 2 (S1 single click) will always set this brightness level.",
-          "nl": "Het aanzetten van de Dimmer 2 (S1 enkele klik) altijd dit helderheidsniveau hanteren."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not switching on the Dimmer 2 (S1 single click) will always set this brightness level.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het aanzetten van de Dimmer 2 (S1 enkele klik) altijd dit helderheidsniveau instelt."
+        },
+        "zwave": {
+          "index": 19,
+          "size": 1
         }
       },
       {
@@ -138,8 +166,12 @@
           "max": 32767
         },
         "hint": {
-          "en": "This parameter allows to automatically switch off the device after specified time from switching on the light source. It may be useful when the Dimmer 2 is installed in the stairway. 0 - Function disabled (default) 1-32767 - time to turn off measured in seconds (1s-9.1h). Range: 0 - 32767, default value: 0.",
-          "nl": "Deze parameter laat de schakelaar automatisch uitschakelen na de ingestelde tijd, stel 0 in om dit uit te schakelen. Bereik: 0 - 32767, standaard waarde: 0."
+          "en": "This parameter ({{zwaveParameterIndex}}) allows to automatically switch off the device after specified time from switching on the light source. It may be useful when the Dimmer 2 is installed in the stairway.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) laat de schakelaar automatisch uitschakelen na de ingestelde tijd."
+        },
+        "zwave": {
+          "index": 10,
+          "size": 2
         }
       }
     ]
@@ -165,8 +197,12 @@
           "max": 98
         },
         "hint": {
-          "en": "This parameter sets the minimal brightness level. Range: 1 - 98, default value: 1.",
-          "nl": "Deze parameter zet het minimale helderheidsniveau. Bereik: 1 - 98, standaard waarde: 1."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimal brightness level.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het minimale helderheidsniveau."
+        },
+        "zwave": {
+          "index": 1,
+          "size": 1
         }
       },
       {
@@ -182,16 +218,20 @@
           "max": 99
         },
         "hint": {
-          "en": "This parameter sets the miniaml brightness level. Range: 2 - 99, default value: 99.",
-          "nl": "Deze parameter zet het maximale helderheidsniveau. Bereik: 2 - 99, standaard waarde: 99."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the miniaml brightness level.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het maximale helderheidsniveau."
+        },
+        "zwave": {
+          "index": 2,
+          "size": 1
         }
       },
       {
         "id": "dimming_step_auto",
         "type": "number",
         "label": {
-          "en": "The percentage of a dimming step at automatic control",
-          "nl": "Percentage van dim stap bij automatische besturing"
+          "en": "Dim step size with automatic control",
+          "nl": "Stapgrootte dimmen bij automatische besturing"
         },
         "value": 1,
         "attr": {
@@ -199,8 +239,12 @@
           "max": 99
         },
         "hint": {
-          "en": "The percentage (1-99) of a dimming step at automatic control. Range: 1 - 99, default value: 1.",
-          "nl": "Het percentage (1-99) per dim stap bij automatische besturing. Bereik: 1 - 99, standaard waarde: 1."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at automatic control.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt Het percentageper dim stap bij automatische besturing."
+        },
+        "zwave": {
+          "index": 5,
+          "size": 1
         }
       },
       {
@@ -216,8 +260,12 @@
           "max": 255
         },
         "hint": {
-          "en": "Time of a dimming step at automatic control for 1 to 255 (1s - 2,55s). Range: 0 - 255, default value: 1.",
-          "nl": "Tijd per dim stap bij automatische besturing van 1 to 255 (1s - 2,55s). Bereik: 0 - 255, standaard waarde: 1."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step at automatic control.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd per dim stap bij automatische besturing."
+        },
+        "zwave": {
+          "index": 6,
+          "size": 2
         }
       },
       {
@@ -233,8 +281,12 @@
           "max": 99
         },
         "hint": {
-          "en": "The percentage (1-99) of a dimming step at manual control. Range: 1 - 99, default value: 1.",
-          "nl": "Het percentage (1-99) per dim stap bij handmatige bediening. Bereik: 1 - 99, standaard waarde: 1."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at manual control.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt Het percentageper dim stap bij handmatige besturing."
+        },
+        "zwave": {
+          "index": 7,
+          "size": 1
         }
       },
       {
@@ -250,8 +302,12 @@
           "max": 255
         },
         "hint": {
-          "en": "Time of a dimming step at manual control for 1 to 255 (1s - 2,55s). Range: 0 - 255, default value: 5.",
-          "nl": "Tijd per dim stap bij handmatige bediening van 1 to 255 (1s - 2,55s). Bereik: 0 - 255, standaard waarde: 5."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step at manual control.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd per dim stap bij handmatige besturing."
+        },
+        "zwave": {
+          "index": 8,
+          "size": 2
         }
       }
     ]
@@ -265,21 +321,16 @@
     "collapsed": true,
     "children": [
       {
-        "id": "save_state",
-        "type": "checkbox",
-        "label": {
-          "en": "Save Power-off State",
-          "nl": "Onthoud Stroom-eraf Status"
-        },
-        "hint": {
-          "en": "Saves its last state when power is disconnected. Default value: checked.",
-          "nl": "Onthoud zijn laatste status wanneer stroom eraf word gehaald. Standaard waarde: aangevinkt."
-        },
-        "value": true
+        "$extends": "saveState",
+        "$id": "save_state",
+        "zwave": {
+          "index": 9,
+          "size": 1
+        }
       },
       {
-        "id": "watt_report",
-        "type": "number",
+        "$extends": "reportThreshold",
+        "$id": "watt_report",
         "label": {
           "en": "Wattage Report Threshold",
           "nl": "Wattage Verzending Drempel"
@@ -289,31 +340,27 @@
           "min": 0,
           "max": 100
         },
-        "hint": {
-          "en": "Determine how much the wattage must change (percentage), before the updated value will be send. Range: 0 - 100, default value: 10.",
-          "nl": "Bepaal hoeveel wattage moet veranderen (percentage), zodat de nieuwe waarde wordt verstuurd. Bereik: 0 - 100, standaard waarde: 10."
+        "zwave": {
+          "index": 50,
+          "size": 1
         }
       },
       {
+        "$extends": "reportInterval",
         "id": "watt_interval",
         "type": "number",
         "label": {
           "en": "Wattage Report Interval",
           "nl": "Wattage Verzending Interval"
         },
-        "value": 3600,
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "hint": {
-          "en": "Determine on which interval (in seconds) the value will be send, the timer is reset on every report. Range: 0 (off), 1 - 32767, default value: 3600.",
-          "nl": "Bepaal op welk interval (in seconden) de waarde word verzonden, de timer wordt bij elke verzending gereset. Bereik: 0 (uit), 1 - 32767, standaard waarde: 3600."
+        "zwave": {
+          "index": 52,
+          "size": 2
         }
       },
       {
-        "id": "kwh_report",
-        "type": "number",
+        "$extends": "reportThreshold",
+        "$id": "kwh_report",
         "label": {
           "en": "kWh Report Threshold",
           "nl": "kWh Verzending Drempel"
@@ -324,9 +371,9 @@
           "max": 2.55,
           "step": 0.01
         },
-        "hint": {
-          "en": "Determine how much the kWh must change before it will be send. Range: 0 (off), 0.01 - 2.55 kWh, default value: 0.1.",
-          "nl": "Bepaal hoeveel de kWh moet veranderen voor het verzonden wordt. Bereik: 0 (uit), 0,01 - 2,55 kWh, standaard waarde: 0.1."
+        "zwave": {
+          "index": 53,
+          "size": 2
         }
       },
       {
@@ -338,8 +385,12 @@
         },
         "value": false,
         "hint": {
-          "en": "Determine if the usage of the Dimmer 2 itself is added to the kWh total. Default value: false.",
-          "nl": "Bepaal of het verbruik van de Dimmer 2 zelf wordt toegevoegd aan het kWh totaal. Standaard waarde: false."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines if the usage of the Dimmer 2 itself is added to the kWh total.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het verbruik van de Dimmer 2 zelf wordt toegevoegd aan het kWh totaal."
+        },
+        "zwave": {
+          "index": 54,
+          "size": 1
         }
       }
     ]
@@ -361,8 +412,12 @@
         },
         "value": "0",
         "hint": {
-          "en": "Activate auto Calibration (goes automatically to \"Readout\"). Default value: Readout.",
-          "nl": "Activeer auto calibratie (gaat automatische naar \"Uitlezing\"). Standaard waarde: Uitlezing."
+          "en": "This parameter ({{zwaveParameterIndex}}) activates auto Calibration.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) activeert auto calibratie."
+        },
+        "zwave": {
+          "index": 13,
+          "size": 1
         },
         "values": [
           {
@@ -397,8 +452,12 @@
         },
         "value": "1",
         "hint": {
-          "en": "Time required to warm up the filament of halogen bulb. Default value: Short soft-start (0.1s).",
-          "nl": "Tijd nodig vor het opwarmen van het filament van een halogeen lamp. Standaard waarde: Korte soft-start (0.1s)."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time required to warm up the filament of halogen bulb.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd nodig vor het opwarmen van het filament van een halogeen lamp."
+        },
+        "zwave": {
+          "index": 34,
+          "size": 1
         },
         "values": [
           {
