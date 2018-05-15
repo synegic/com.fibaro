@@ -13,7 +13,11 @@ class FibaroKeyfob extends ZwaveDevice {
         this._sequenceFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-sequence').registerRunListener(this._sequenceRunListener).register();
 
         // Parsing of sequences before sending to Keyfob
+        this.registerSetting('lock_timeout', (newValue) => {
+            this._enableLockMode({lock_timeout: newValue});
+        });
         this.registerSetting('sequence_lock', (newValue) => {
+            this._enableLockMode({sequence_lock: newValue});
             return this.sequenceParser(newValue);
         });
 		this.registerSetting('sequence_1', (newValue) => {
@@ -56,6 +60,42 @@ class FibaroKeyfob extends ZwaveDevice {
 	    return {
 	        en: 'To save the settings you need to wake up the Keyfob:\\n1: press O and -,\\n2: press the Δ button repeatedly until the LED is green;\\n3: press + to wake up.',
             nl: 'Om de instellingen op te slaan moet je de Keyfob wakker maken: \\n1: druk op O en -,\\n2: druk herhaaldelijk op de Δ knop totdat de LED groen is;\\n3: druk op + om wakker te maken.'
+        }
+    }
+
+    _enableLockMode(newValueObj) {
+	    if ( (typeof newValueObj.lock_timeout === 'number' &&
+                newValueObj.lock_timeout > 0 &&
+                this.getSetting('sequence_lock')) ||
+            (typeof newValueObj.sequence_lock === 'string' &&
+                this.getSetting('lock_timeout') > 0)) {
+	                this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+                        Level: {
+                            'Local Protection State': 1,
+                        },
+                        Level2: {
+                            'RF Protection State': 0
+                        }
+                    }, (err, result) => {
+	                    if (err) this.log(err);
+	                    if (result === 'TRANSMIT_COMPLETE_OK') {
+	                        this.log('Succesfully set protection command');
+                        }
+                    });
+        } else {
+            this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+                Level: {
+                    'Local Protection State': 0,
+                },
+                Level2: {
+                    'RF Protection State': 0
+                }
+            }, (err, result) => {
+                if (err) this.log(err);
+                if (result === 'TRANSMIT_COMPLETE_OK') {
+                    this.log('Succesfully unset protection command');
+                }
+            });
         }
     }
 

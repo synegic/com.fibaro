@@ -98,6 +98,7 @@
         }
       },
       {
+        "id": "lock_timeout",
         "type": "number",
         "label": {
           "en": "Time till lock",
@@ -230,8 +231,8 @@
           }
         ],
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the {{driverNameEN}} with regard to its association groups.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de {{driverNameNL}} met betrekking tot zijn associatie groepen."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the {{driverNameEn}} with regard to its association groups.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de {{driverNameNl}} met betrekking tot zijn associatie groepen."
         }
       },
       {

@@ -334,15 +334,15 @@
           {
             "id": "0",
             "label": {
-              "en": "{{driverNameEN}} off, device(s) also off. {{driverNameEN}} on, device(s) also on",
-              "nl": "{{driverNameNL}} uit, apparaat(en) ook uit. {{driverNameNL}} aan, apparaat(en) ook aan"
+              "en": "{{driverNameEn}} off, device(s) also off. {{driverNameEn}} on, device(s) also on",
+              "nl": "{{driverNameNl}} uit, apparaat(en) ook uit. {{driverNameNl}} aan, apparaat(en) ook aan"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "{{driverNameEN}} off, device(s) on. {{driverNameEN}} on, device(s) off",
-              "nl": "{{driverNameNL}} uit, apparaat(en) aan. {{driverNameNL}} aan, apparaat(en) uit"
+              "en": "{{driverNameEn}} off, device(s) on. {{driverNameEn}} on, device(s) off",
+              "nl": "{{driverNameNl}} uit, apparaat(en) aan. {{driverNameNl}} aan, apparaat(en) uit"
             }
           }
         ]

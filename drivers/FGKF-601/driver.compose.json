@@ -23,8 +23,8 @@
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2064/FGKF-601-EN-T-v1.0_30.11.2016.pdf",
     "learnmode": {
       "instruction": {
-        "en": "Press any button on the {{driverNameEN}} 3 times.",
-        "nl": "Druk driemaal op een willekeurige knop op de {{driverNameNL}}."
+        "en": "Press any button on the {{driverNameEn}} 3 times.",
+        "nl": "Druk driemaal op een willekeurige knop op de {{driverNameNl}}."
       }
     },
     "unlearnmode": {
