@@ -8,8 +8,12 @@
     },
     "value": "0",
     "hint": {
-      "en": "Value should be set to Fibar Command Class if the module operates in Venetian Blind mode",
-      "nl": "Waarde moet ingesteld staan op Fibar Command Class wanneer module werkt in jaloezie modus"
+      "en": "This parameter ({{zwaveParameterIndex}}) determines whether the values are sent in Fibar Command Class or Z-Wave Command Class mode.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat waardes verzend in Fibar Command Class of Z-Wave Command Class modus."
+    },
+    "zwave": {
+      "index": 3,
+      "size": 1
     },
     "values": [
       {
@@ -27,63 +31,21 @@
     ]
   },
   {
-    "id": "operating_mode",
-    "type": "dropdown",
-    "label": {
-      "en": "Roller Shutter operating mode",
-      "nl": "Roller Shutter modus"
-    },
-    "value": "1",
-    "values": [
-      {
-        "id": "0",
-        "label": {
-          "en": "Roller Blind Mode, without positioning",
-          "nl": "Rolluik modus, zonder positionering"
-        }
-      },
-      {
-        "id": "1",
-        "label": {
-          "en": "Roller Blind Mode, with positioning",
-          "nl": "Rolluik modus, met positionering"
-        }
-      },
-      {
-        "id": "2",
-        "label": {
-          "en": "Venetian Blind Mode, with positioning",
-          "nl": "Jaloezie modus, met positionering"
-        }
-      },
-      {
-        "id": "3",
-        "label": {
-          "en": "Gate Mode, without positioning",
-          "nl": "Poort modus, zonder positionering"
-        }
-      },
-      {
-        "id": "4",
-        "label": {
-          "en": "Gate Mode, with positioning",
-          "nl": "Poort modus, met positionering"
-        }
-      }
-    ]
+    "$extends": "operatingMode",
+    "$id": "operating_mode"
   },
   {
-    "id": "switch_type",
-    "type": "dropdown",
-    "label": {
-      "en": "Switch type",
-      "nl": "Schakel type"
-    },
+    "$extends": "operatingDevice",
+    "$id": "switch_type",
     "value": "0",
     "hint": {
-      "en": "Relevant when in Roller Blind or Venetian Blind Mode",
-      "nl": "Relevant wanneer in Rolluik of Jaloezie modus"
+      "en": "This parameter ({{zwaveParameterIndex}}) determines what switch is connected to this device.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat voor een schakelaar het apparaat activeert."
     },
+    "zwave": {
+      "index": 14,
+      "size": 1
+    }
     "values": [
       {
         "id": "0",
@@ -106,37 +68,45 @@
     ]
   },
   {
-    "id": "power_level_change",
-    "type": "number",
-    "label": {
-      "en": "Minimum power level change (%) needed before an update report is send",
-      "nl": "Minimale verandering in stroomverbruik (%) nodig voor het verzenden van een update"
-    },
+    "$extends": "reportThreshold",
+    "$id": "power_level_change",
     "value": 10,
     "attr": {
       "min": 1,
       "max": 100
+    },
+    "zwave": {
+      "index": 40,
+      "size": 1
     }
   },
   {
-    "id": "periodic_power_level_reports",
-    "type": "number",
-    "label": {
-      "en": "Periodic power level reports",
-      "nl": "Periodieke stroomverbruik updates"
-    },
-    "value": 3600,
+    "$extends": "reportInterval",
+    "$id": "periodic_power_level_reports",
     "attr": {
-      "min": -32767,
-      "max": 32767
+      "min": 0,
+      "max": 65534
+    },
+    "zwave": {
+      "index": 42,
+      "size": 2,
+      "signed": false
     }
   },
   {
     "id": "start_calibration",
     "type": "checkbox",
     "label": {
-      "en": "Start calibration on save",
-      "nl": "Start kalibratie bij opslaan"
+      "en": "Start calibration",
+      "nl": "Start kalibratie"
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) starts the calibration procedure on save.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) start de kalibratieprocedure na het opslaan."
+    },
+    "zwave": {
+      "index": 29,
+      "size": 1
     },
     "value": false
   },
@@ -144,8 +114,12 @@
     "id": "invert_direction",
     "type": "checkbox",
     "label": {
-      "en": "Invert shutter movement direction",
-      "nl": "Keer rolluik beweging om"
+      "en": "Invert movement",
+      "nl": "Keer de beweging om"
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) inverts the shutter movement direction.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) keert de rolluik bewegingsdirectie om."
     },
     "value": false
   },
@@ -154,20 +128,30 @@
     "type": "dropdown",
     "label": {
       "en": "Scene or association mode",
-      "nl": "Scene of associatie modus"
+      "nl": "Scene of associatie modus."
     },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines whether this device is in scene or association mode.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat in scene of associatie modus staat."
+    },
+    "zwave": {
+      "index": 50,
+      "size": 1
+    }
     "value": "0",
     "values": [
       {
         "id": "0",
         "label": {
-          "en": "Association activated"
+          "en": "Association activated",
+          "nl": "Associatie geactiveerd"
         }
       },
       {
         "id": "1",
         "label": {
-          "en": "Scenes activated"
+          "en": "Scenes activated",
+          "nl": "Scenes geactiveerd"
         }
       }
     ]
