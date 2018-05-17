@@ -13,20 +13,30 @@ class FibaroKeyfob extends ZwaveDevice {
         this._sequenceFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-sequence').registerRunListener(this._sequenceRunListener).register();
 
         // Parsing of sequences before sending to Keyfob
-        this.registerSetting('lock_timeout', async (newValue) => {
+        this.registerSetting('lock_timeout', async (oldValue, newValue) => {
             try {
+                let requestTimeout = setTimeout(() => {
+                    Promise.reject('Device Sleeping');
+                }, 500);
                 await this._enableLockMode({lock_timeout: newValue});
+                clearTimeout(requestTimeout);
                 return newValue;
             } catch (err) {
                 this.error(err);
+                return oldValue;
             }
         });
-        this.registerSetting('sequence_lock', async (newValue) => {
+        this.registerSetting('sequence_lock', async (oldValue, newValue) => {
             try {
+                let requestTimeout = setTimeout(() => {
+                    Promise.reject('Device Sleeping');
+                }, 500);
                 await this._enableLockMode({sequence_lock: newValue});
+                clearTimeout(requestTimeout);
                 return this.sequenceParser(newValue);
             } catch (err) {
                 this.error(err);
+                return oldValue;
             }
         });
 		this.registerSetting('sequence_1', (newValue) => {
