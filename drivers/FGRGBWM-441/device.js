@@ -142,15 +142,34 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
             try {
                 await this._sendColor(red, 2);
-                this.currentRGB.r = red;
                 await this._sendColor(green, 3);
-                this.currentRGB.g = green;
                 await this._sendColor(blue, 4);
-                this.currentRGB.b = blue;
                 await this._sendColor(white, 5);
-                this.currentRGB.a = white;
             } catch (err) {
                 this.log(err);
+            }
+
+            return Promise.resolve();
+        });
+
+        this.registerCapabilityListener('light_mode', async (value, opts) => {
+            if (value === 'color') {
+                await this._sendColor(this.currentRGB.r, 2);
+                await this._sendColor(this.currentRGB.g, 3);
+                await this._sendColor(this.currentRGB.b, 4);
+                await this._sendColor(this.currentRGB.a, 5);
+            } else if (value === 'temperature') {
+                let rgb = this._tempToRGB(this.getCapabilityValue('light_temperature'));
+
+                let red = (rgb.r / 255) * 99;
+                let green = (rgb.g / 255) * 99;
+                let blue = (rgb.b / 255) * 99;
+                let white = (rgb.a / 255) * 99;
+
+                await this._sendColor(red, 2);
+                await this._sendColor(green, 3);
+                await this._sendColor(blue, 4);
+                await this._sendColor(white, 5);
             }
 
             return Promise.resolve();
