@@ -13,13 +13,21 @@ class FibaroKeyfob extends ZwaveDevice {
         this._sequenceFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-sequence').registerRunListener(this._sequenceRunListener).register();
 
         // Parsing of sequences before sending to Keyfob
-        this.registerSetting('lock_timeout', (newValue) => {
-            this._enableLockMode({lock_timeout: newValue});
-            return newValue;
+        this.registerSetting('lock_timeout', async (newValue) => {
+            try {
+                await this._enableLockMode({lock_timeout: newValue});
+                return newValue;
+            } catch (err) {
+                this.error(err);
+            }
         });
-        this.registerSetting('sequence_lock', (newValue) => {
-            this._enableLockMode({sequence_lock: newValue});
-            return this.sequenceParser(newValue);
+        this.registerSetting('sequence_lock', async (newValue) => {
+            try {
+                await this._enableLockMode({sequence_lock: newValue});
+                return this.sequenceParser(newValue);
+            } catch (err) {
+                this.error(err);
+            }
         });
 		this.registerSetting('sequence_1', (newValue) => {
 			return this.sequenceParser(newValue);
@@ -64,14 +72,13 @@ class FibaroKeyfob extends ZwaveDevice {
         }
     }
 
-    _enableLockMode(newValueObj) {
+    async _enableLockMode(newValueObj) {
 	    if ((typeof newValueObj.lock_timeout === 'number' &&
-            newValueObj.lock_timeout > 0 &&
-            this.getSetting('sequence_lock')) ||
-            (typeof newValueObj.sequence_lock === 'string' &&
-            this.getSetting('lock_timeout') > 0)) {
-                try {
-                    this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+                newValueObj.lock_timeout > 0 &&
+                this.getSetting('sequence_lock')) ||
+                (typeof newValueObj.sequence_lock === 'string' &&
+                this.getSetting('lock_timeout') > 0)) {
+                    return await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
                         Level: {
                             'Local Protection State': 1,
                         },
@@ -79,24 +86,17 @@ class FibaroKeyfob extends ZwaveDevice {
                             'RF Protection State': 0
                         }
                     });
-                } catch (err) {
-                    this.error(err);
-                }
         } else {
-	        try {
-                this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
-                    Level: {
-                        'Local Protection State': 0,
-                    },
-                    Level2: {
-                        'RF Protection State': 0
-                    }
-                });
-            } catch (err) {
-                this.error(err);
-            }
-        }
-    }
+            return await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+                Level: {
+                    'Local Protection State': 0,
+                },
+                Level2: {
+                    'RF Protection State': 0
+                }
+            });
+	    }
+	}
 
 	sequenceParser(sequence) {
         // if gesture is disabled return 0 as value
