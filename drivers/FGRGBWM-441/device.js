@@ -84,13 +84,20 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             if (this.getCapabilityValue('light_mode') === 'temperature' && !newValue['light_hue'] && !newValue['light_saturation']) {
                 let originalHSV = this._tempToHSV(this.getCapabilityValue('light_temperature'));
                 let rgb = zwaveUtils.convertHSVToRGB({hue: originalHSV.h / 360, saturation: originalHSV.s, value: newValue.dim});
+                let rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
 
-                red = (rgb.red / 255) * 99;
-                green = (rgb.green / 255) * 99;
-                blue = (rgb.blue / 255) * 99;
-                // TODO: Figure out alpha
-                // white = (rgb.a / 255) * 99;
+                if (this.getSetting('strip_type') === 'rgbw') {
+                    red = (rgbw.red / 255) * 99;
+                    green = (rgbw.green / 255) * 99;
+                    blue = (rgbw.blue / 255) * 99;
+                    white = (rgbw.white / 255) * 99;
+                } else {
+                    red = (rgb.red / 255) * 99;
+                    green = (rgb.green / 255) * 99;
+                    blue = (rgb.blue / 255) * 99;
+                }
             }
+
             // Light mode color or saturation/hue changed
             else if (this.getCapabilityValue('light_mode') === 'color' || newValue['light_hue'] || newValue['light_saturation']) {
                 newValue['light_hue'] ? hue = newValue['light_hue'] : hue = this.getCapabilityValue('light_hue');
@@ -98,12 +105,18 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 newValue['dim'] ? value = newValue['dim'] : value = this.getCapabilityValue('dim');
 
                 let rgb = zwaveUtils.convertHSVToRGB({hue, saturation, value});
+                let rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
 
-                red = (rgb.red / 255) * 99;
-                green = (rgb.green / 255) * 99;
-                blue = (rgb.blue / 255) * 99;
-                // TODO: Figure out alpha
-                // white = (rgb.a / 255) * 99;
+                if (this.getSetting('strip_type') === 'rgbw') {
+                    red = (rgbw.red / 255) * 99;
+                    green = (rgbw.green / 255) * 99;
+                    blue = (rgbw.blue / 255) * 99;
+                    white = (rgbw.white / 255) * 99;
+                } else {
+                    red = (rgb.red / 255) * 99;
+                    green = (rgb.green / 255) * 99;
+                    blue = (rgb.blue / 255) * 99;
+                }
             }
 
             try {
@@ -113,9 +126,11 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.currentRGB.g = green;
                 await this._sendColor(blue, 4);
                 this.currentRGB.b = blue;
-                // TODO: Figure out alpha
-                // await this._sendColor(white, 5);
-                // this.currentRGB.a = white;
+
+                if (typeof white === 'number') {
+                    await this._sendColor(white, 5);
+                    this.currentRGB.a = white;
+                }
             } catch (err) {
                 this.log(err);
             }
@@ -129,21 +144,29 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         ================================================================
          */
         this.registerCapabilityListener('light_temperature', async (value, opts) => {
-            this.setCapabilityValue('light_mode', 'temperature');
+            let red, green, blue, white;
             let rgb = this._tempToRGB(value);
+            let rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
 
-            let red = (rgb.red / 255) * 99;
-            let green = (rgb.green / 255) * 99;
-            let blue = (rgb.blue / 255) * 99;
-            // TODO: Figure out alpha
-            // let white = (rgb.a / 255) * 99;
+            if (this.getSetting('strip_type') === 'rgbw') {
+                red = (rgbw.red / 255) * 99;
+                green = (rgbw.green / 255) * 99;
+                blue = (rgbw.blue / 255) * 99;
+                white = (rgbw.white / 255) * 99;
+            } else {
+                red = (rgb.red / 255) * 99;
+                green = (rgb.green / 255) * 99;
+                blue = (rgb.blue / 255) * 99;
+            }
 
             try {
                 await this._sendColor(red, 2);
                 await this._sendColor(green, 3);
                 await this._sendColor(blue, 4);
-                // TODO: Figure out alpha
-                // await this._sendColor(white, 5);
+
+                if (typeof white === 'number') {
+                    await this._sendColor(white, 5);
+                }
             } catch (err) {
                 this.log(err);
             }
@@ -158,19 +181,28 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 await this._sendColor(this.currentRGB.b, 4);
                 await this._sendColor(this.currentRGB.a, 5);
             } else if (value === 'temperature') {
+                let red, green, blue, white;
                 let rgb = this._tempToRGB(this.getCapabilityValue('light_temperature'));
+                let rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
 
-                let red = (rgb.red / 255) * 99;
-                let green = (rgb.green / 255) * 99;
-                let blue = (rgb.blue / 255) * 99;
-                // TODO: Figure out alpha
-                // let white = (rgb.a / 255) * 99;
+                if (this.getSetting('strip_type') === 'rgbw') {
+                    red = (rgbw.red / 255) * 99;
+                    green = (rgbw.green / 255) * 99;
+                    blue = (rgbw.blue / 255) * 99;
+                    white = (rgbw.white / 255) * 99;
+                } else {
+                    red = (rgb.red / 255) * 99;
+                    green = (rgb.green / 255) * 99;
+                    blue = (rgb.blue / 255) * 99;
+                }
 
                 await this._sendColor(red, 2);
                 await this._sendColor(green, 3);
                 await this._sendColor(blue, 4);
-                // TODO: Figure out alpha
-                // await this._sendColor(white, 5);
+
+                if (typeof white === 'number') {
+                    await this._sendColor(white, 5);
+                }
             }
 
             return Promise.resolve();
@@ -289,18 +321,29 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         if (args.device !== this) return Promise.reject('Not the right device');
         if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Random colors only available in RGB(W) mode');
         if (args.hasOwnProperty('range')) {
+            let red, green, blue, white;
             let rgb = zwaveUtils.convertHSVToRGB({hue: (Math.random() * 100) / 100, saturation: 1, value: this.getCapabilityValue('dim')});
+            let rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
+
+            // Adjust color values to 0 - 100 scale
+            rgbw.red = (rgbw.red / 255) * 99;
+            rgbw.green = (rgbw.green / 255) * 99;
+            rgbw.blue = (rgbw.blue / 255) * 99;
+            rgbw.white = (rgbw.white / 255) * 99;
+
+            rgb.red = (rgb.red / 255) * 99;
+            rgb.green = (rgb.green / 255) * 99;
+            rgb.blue = (rgb.blue / 255) * 99;
 
             if (args.range === 'rgb') {
                 this._sendColor(rgb.red, 2);
                 this._sendColor(rgb.green, 3);
                 this._sendColor(rgb.blue, 4);
             } else if (args.range === 'rgbw' && this.getSetting('strip_type') === 'rgbw') {
-                this._sendColor(rgb.red, 2);
-                this._sendColor(rgb.green, 3);
-                this._sendColor(rgb.blue, 4);
-                // TODO: figure out alpha
-                // this._sendColor(rgb.a, 5);
+                this._sendColor(rgbw.red, 2);
+                this._sendColor(rgbw.green, 3);
+                this._sendColor(rgbw.blue, 4);
+                this._sendColor(rgbw.white, 5);
             } else if (args.range === 'rgb-w' && this.getSetting('strip_type') === 'rgbw') {
                 let randomDecision = Math.round(Math.random());
 
@@ -308,8 +351,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                     this._sendColor(0, 2);
                     this._sendColor(0, 3);
                     this._sendColor(0, 4);
-                    // TODO: figure out alpha
-                    // this._sendColor(rgb.a, 5);
+                    this._sendColor(rgbw.white, 5);
                 } else {
                     this._sendColor(rgb.red, 2);
                     this._sendColor(rgb.green, 3);
@@ -322,41 +364,83 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 args.range.indexOf('w') >= 0 ? option = Math.round(Math.random() * 4) : option = Math.round(Math.random() * 3);
 
                 switch (option) {
-                    case 0: rgb.red = 99 * (this.getCapabilityValue('dim') || 1); break;
-                    case 1: rgb.green = 99 * (this.getCapabilityValue('dim') || 1); break;
-                    case 2: rgb.blue = 99 * (this.getCapabilityValue('dim') || 1); break;
-                    // TODO: figure out alpha
-                    // case 3: rgb.a = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 0:
+                        rgb.red = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(rgb.red, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(0, 5);
+                        break;
+                    case 1:
+                        rgb.green = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(rgb.green, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(0, 5);
+                        break;
+                    case 2:
+                        rgb.blue = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(rgb.blue, 4);
+                        this._sendColor(0, 5);
+                        break;
+                    case 3:
+                        rgbw.white = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(rgbw.white, 5);
+                        break;
                 }
-
-                this._sendColor(rgb.r, 2);
-                this._sendColor(rgb.g, 3);
-                this._sendColor(rgb.b, 4);
-                // TODO: figure out alpha
-                // this._sendColor(rgb.a, 5);
             } else if (args.range.indexOf('r-y-g-c-b-m') >= 0) {
                 let option, hue;
 
                 args.range.indexOf('w') >= 0 ? option = Math.round(Math.random() * 7) : option = Math.round(Math.random() * 6);
 
                 switch (option) {
-                    case 0: rgb.r = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 0:
+                        rgb.red = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(rgb.red, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(0, 5);
+                        break;
                     case 1: hue = .125; break;
-                    case 2: rgb.g = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 2:
+                        rgb.green = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(rgb.green, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(0, 5);
+                        break;
                     case 3: hue = .5; break;
-                    case 4: rgb.b = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 4:
+                        rgb.blue = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(rgb.blue, 4);
+                        this._sendColor(0, 5);
+                        break;
                     case 5: hue = .875; break;
-                    // TODO: figure out alpha
-                    // case 6: rgb.a = 99 * (this.getCapabilityValue('dim') || 1); break;
+                    case 6:
+                        rgbw.white = 99 * (this.getCapabilityValue('dim') || 1);
+                        this._sendColor(0, 2);
+                        this._sendColor(0, 3);
+                        this._sendColor(0, 4);
+                        this._sendColor(rgbw.white, 5);
+                        break;
                 }
 
-                if (hue) rgb = zwaveUtils.convertHSVToRGB({hue: hue, saturation: 1, value: this.getCapabilityValue('dim')});
+                if (hue) {
+                    rgb = zwaveUtils.convertHSVToRGB({hue: hue, saturation: 1, value: this.getCapabilityValue('dim')});
+                    rgbw = this._convertRGBtoRGBW({red: rgb.red, green: rgb.green, blue: rgb.blue});
 
-                this._sendColor(rgb.red, 2);
-                this._sendColor(rgb.green, 3);
-                this._sendColor(rgb.blue, 4);
-                // TODO: figure out alpha
-                // this._sendColor(rgb.a, 5);
+                    this._sendColor((rgbw.red / 255) * 99, 2);
+                    this._sendColor((rgbw.green / 255) * 99, 3);
+                    this._sendColor((rgbw.blue / 255) * 99, 4);
+                    this._sendColor((rgbw.white / 255) * 99, 5);
+                }
             }
         }
     }
@@ -423,6 +507,45 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     Helper methods
     ================================================================
      */
+    _convertRGBtoRGBW({red, green, blue}) {
+        // Determine the maximum value between R, G, B
+        let colorMax = Math.max(red, Math.max(green,  blue));
+
+        // If the max is 0 immediately return true black
+        if (colorMax === 0) return {red: 0, green: 0, blue: 0, white: 0};
+
+        // Calculate colour hues
+        let multiplier = 255 / colorMax;
+        let redHue = red * multiplier;
+        let greenHue = green * multiplier;
+        let blueHue = blue * multiplier;
+
+        // Calculate the luminance
+        let trueMax = Math.max(redHue, Math.max(greenHue, blueHue));
+        let trueMin = Math.min(redHue, Math.min(greenHue, blueHue));
+        let luminance = ((trueMax + trueMin) / 2) - 127.5 * (2 / multiplier);
+
+        // Calculate output values
+        let redOutput = red - luminance;
+        let greenOutput = green - luminance;
+        let blueOutput = blue - luminance;
+        let whiteOutput = luminance;
+
+        // Limit output values to 0 - 255
+        if (redOutput < 0) redOutput = 0;
+        if (greenOutput < 0) greenOutput = 0;
+        if (blueOutput < 0) blueOutput = 0;
+        if (whiteOutput < 0) whiteOutput = 0;
+
+        if (redOutput > 255) redOutput = 255;
+        if (greenOutput > 255) greenOutput = 255;
+        if (blueOutput > 255) blueOutput = 255;
+        if (whiteOutput > 255) whiteOutput = 255;
+
+        // Return RGBW value
+        return {red: redOutput, green: greenOutput, blue: blueOutput, white: whiteOutput};
+    }
+
     _valueToVolt(value) {
         return Math.round(value / 99 * 100) / 10;
     }
