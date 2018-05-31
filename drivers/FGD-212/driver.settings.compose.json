@@ -34,7 +34,7 @@
         "value": false,
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not double clicking sets the brightness level to maximum.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de helderheid naar maximaal geschakelt wordt bij dubbel klikken."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de helderheid naar maximaal wordt gezet bij tweemaal drukken."
         },
         "zwave": {
           "index": 23,
@@ -67,8 +67,8 @@
         },
         "value": false,
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines whether switch no. 2 also controls the Dimmer 2 additionally.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of schakelaar 2 schakelt ook Dimmer 2 bediend."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not input 2 additionally controls the output 2.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of ingang 2 schakelt ook uitgang 2 bediend."
         },
         "zwave": {
           "index": 26,
@@ -79,13 +79,13 @@
         "id": "switch_s1_and_s2",
         "type": "checkbox",
         "label": {
-          "en": "Switch S1 and S2",
-          "nl": "Wissel S1 en S2 om"
+          "en": "Switch input 1 and input 2",
+          "nl": "Wissel input 1 en input 2 om"
         },
         "value": false,
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) switches the functionality of S1 to become the functionality of S2, and vice versa.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) zorgt voor het omwisselen van functionaliteit tussen schakelaar 1 en schakelaar 2."
+          "en": "This parameter ({{zwaveParameterIndex}}) switches the functionality of input 1 to become the functionality of input 2, and vice versa.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) zorgt voor het omwisselen van functionaliteit tussen ingange 1 en ingang 2."
         },
         "zwave": {
           "index": 29,
@@ -102,7 +102,7 @@
         "value": "0",
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether this device behaves like a momentary switch or a toggle switch.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zich gedraag als een kortstondige schakelaar of een tuimelschakelaar."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zich gedraagt als een kortstondige schakelaar of een tuimelschakelaar."
         },
         "zwave": {
           "index": 20,
@@ -145,8 +145,8 @@
           "max": 99
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not switching on the Dimmer 2 (S1 single click) will always set this brightness level.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het aanzetten van de Dimmer 2 (S1 enkele klik) altijd dit helderheidsniveau instelt."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not switching on the Dimmer 2 (input 1 single click) will always set this brightness level.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het aanzetten van de Dimmer 2 (ingang 1, enkele klik) altijd dit helderheidsniveau instelt."
         },
         "zwave": {
           "index": 19,
@@ -166,7 +166,7 @@
           "max": 32767
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) allows to automatically switch off the device after specified time from switching on the light source. It may be useful when the Dimmer 2 is installed in the stairway.",
+          "en": "This parameter ({{zwaveParameterIndex}}) allows to automatically switch off the device after specified time from switching on the light source.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) laat de schakelaar automatisch uitschakelen na de ingestelde tijd."
         },
         "zwave": {
@@ -218,7 +218,7 @@
           "max": 99
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the miniaml brightness level.",
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the maximum brightness level.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het maximale helderheidsniveau."
         },
         "zwave": {
@@ -240,7 +240,7 @@
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at automatic control.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt Het percentageper dim stap bij automatische besturing."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het percentage per dim stap bij automatische besturing."
         },
         "zwave": {
           "index": 5,
@@ -282,7 +282,7 @@
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at manual control.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt Het percentageper dim stap bij handmatige besturing."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het percentage per dim stap bij handmatige besturing."
         },
         "zwave": {
           "index": 7,
@@ -385,8 +385,8 @@
         },
         "value": false,
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines if the usage of the Dimmer 2 itself is added to the kWh total.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het verbruik van de Dimmer 2 zelf wordt toegevoegd aan het kWh totaal."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines if the usage of the {{driverNameEn}} itself is added to the kWh total.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het verbruik van de {{driverNameNl}} zelf wordt toegevoegd aan het kWh totaal."
         },
         "zwave": {
           "index": 54,
@@ -412,7 +412,7 @@
         },
         "value": "0",
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) activates auto Calibration.",
+          "en": "This parameter ({{zwaveParameterIndex}}) activates auto calibration.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) activeert auto calibratie."
         },
         "zwave": {
