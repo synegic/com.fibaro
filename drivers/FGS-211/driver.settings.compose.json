@@ -3,12 +3,12 @@
     "id": "auto_off",
     "type": "checkbox",
     "label": {
-      "en": "Auto-off Behaviour",
+      "en": "Auto-off behaviour",
       "nl": "Automatisch uit gedrag"
     },
     "hint": {
-      "en": "This parameter (3) determines whether or not pressing the switch a second time will immediately turn of the Relay.",
-      "nl": "Deze parameter (3) bepaalt of het tweemaal indrukken van de schakelaar het relais direct uitschakelt."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not pressing the switch a second time will immediately turn of the relay.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het tweemaal indrukken van de schakelaar het relais direct uitschakelt."
     },
     "zwave": {
       "index": 3,
@@ -20,12 +20,12 @@
     "id": "auto_off_relay",
     "type": "number",
     "label": {
-      "en": "Auto-off Relay",
-      "nl": "Automatisch uit Relais"
+      "en": "Auto-off relay",
+      "nl": "Automatisch uit relais"
     },
     "hint": {
-      "en": "This parameter (4) determines the time after which the Relay will turn off automatically.",
-      "nl": "Deze parameter (4) bepaalt de tijd waarna het Relais automatisch uit gaat."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the relay will turn off automatically.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd waarna het relais automatisch uit gaat."
     },
     "zwave": {
       "index": 4,
@@ -41,8 +41,8 @@
     "$extends": "operatingDevice",
     "$id": "switch_type",
     "hint": {
-      "en": "This parameter (14) determines what device triggers the Relay Switch.",
-      "nl": "Deze parameter (14) bepaalt wat voor apparaat de Relais Schakelaar activeert."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines what device triggers the {{driverNameEn}}.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat voor apparaat de {{driverNameNl}} activeert."
     },
     "zwave": {
       "index": 14,
