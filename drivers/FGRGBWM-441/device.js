@@ -228,19 +228,31 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         this.registerCapability('light_mode', 'BASIC');
         this.registerCapability('measure_voltage.input1', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 2,
-            reportParser: (report) => this._reportParser(report, 2)
+            reportParser: (report) => this._reportParser(report, 2),
+            reportParserV2: (report) => this._reportParser(report, 2),
+            reportParserV3: (report) => this._reportParser(report, 2),
+            reportParserV4: (report) => this._reportParser(report, 2),
         });
         this.registerCapability('measure_voltage.input2', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 2,
-            reportParser: (report) => this._reportParser(report, 3)
+            reportParser: (report) => this._reportParser(report, 3),
+            reportParserV2: (report) => this._reportParser(report, 3),
+            reportParserV3: (report) => this._reportParser(report, 3),
+            reportParserV4: (report) => this._reportParser(report, 3),
         });
         this.registerCapability('measure_voltage.input3', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 2,
-            reportParser: (report) => this._reportParser(report, 4)
+            reportParser: (report) => this._reportParser(report, 4),
+            reportParserV2: (report) => this._reportParser(report, 4),
+            reportParserV3: (report) => this._reportParser(report, 4),
+            reportParserV4: (report) => this._reportParser(report, 4),
         });
         this.registerCapability('measure_voltage.input4', 'SWITCH_MULTILEVEL', {
             multiChannelNodeId: 2,
-            reportParser: (report) => this._reportParser(report, 5)
+            reportParser: (report) => this._reportParser(report, 5),
+            reportParserV2: (report) => this._reportParser(report, 5),
+            reportParserV3: (report) => this._reportParser(report, 5),
+            reportParserV4: (report) => this._reportParser(report, 5),
         });
 
         /*

@@ -5688,7 +5688,7 @@
                 "nl": "Transitie modus"
               },
               "hint": {
-                "en": "This parameter (8) determines the what transition mode is used.",
+                "en": "This parameter (8) determines what transition mode is used.",
                 "nl": "Deze parameter (8) bepaalt welke transitie modus er wordt gebruikt."
               },
               "zwave": {
@@ -5766,7 +5766,7 @@
               },
               "hint": {
                 "en": "This parameter (11) determines in which time range mode 2 should work.",
-                "nl": "Deze parameter (11) bepaalt in welk tijdeenheid bereik mode 2 werkt."
+                "nl": "Deze parameter (11) bepaalt in welk tijdsbereik mode 2 werkt."
               },
               "zwave": {
                 "index": 11,
@@ -6094,7 +6094,7 @@
                 "nl": "Onthoud status na stroomonderbreking"
               },
               "hint": {
-                "en": "This parameter (16) determines whether or not the device restores it's last known state after power disruption.",
+                "en": "This parameter (16) determines whether or not the device restores its last known state after power disruption.",
                 "nl": "Deze parameter (16) bepaalt of het apparaat de laatst bekende status herstelt na stroomonderbreking."
               },
               "zwave": {
