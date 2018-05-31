@@ -29,8 +29,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Smoke Sensor three times",
-        "nl": "Druk driemaal op de knop op de Fibaro Rookmelder"
+        "en": "Press the button on the {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
       }
     },
     "zwaveAllianceProductId": 1049

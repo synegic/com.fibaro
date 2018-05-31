@@ -100,13 +100,13 @@
         "id": "tamper_alarm",
         "type": "dropdown",
         "label": {
-          "en": "Tamper Alarm",
-          "nl": "Sabotage Alarm"
+          "en": "Tamper alarm",
+          "nl": "Sabotage alarm"
         },
         "value": "1",
         "hint": {
-          "en": "Determine the behaviour of the tamper alarm.",
-          "nl": "Bepaal het gedrag van het sabotage alarm."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the tamper alarm.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van het sabotage alarm."
         },
         "zwave": {
           "index": 89,
@@ -155,8 +155,8 @@
         },
         "value": "3",
         "hint": {
-          "en": "Determine the behaviour of the Visual and Acoustic alarm when alarm is triggerd",
-          "nl": "Bepaal het gedrag van Visuele en Akoestische melding bij het geven van een alarm"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the visual and acoustic alarm when the alarm is triggerd.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de visuele en akoestische melding bij het af gaan van het alarm."
         },
         "zwave": {
           "index": 2,
