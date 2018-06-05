@@ -16,8 +16,8 @@
     }
   },
   "images": {
-    "large": "${{driverAssetsPath}}/images/large.png",
-    "small": "${{driverAssetsPath}}/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -34,8 +34,8 @@
     "learnmode": {
       "image": "${{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Dimmer 2 three times",
-        "nl": "Druk driemaal op de knop op uw Fibaro Dimmer 2"
+        "en": "Press the button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
       }
     },
     "associationGroups": [

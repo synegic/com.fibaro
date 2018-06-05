@@ -34,7 +34,7 @@
         "value": false,
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not double clicking sets the brightness level to maximum.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de helderheid naar maximaal wordt gezet bij tweemaal drukken."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de helderheid naar maximaal wordt ingesteld bij tweemaal drukken."
         },
         "zwave": {
           "index": 23,
@@ -50,8 +50,8 @@
         },
         "value": false,
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines if the Dimmer 2 dims or only goes on/off.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de Dimmer 2 dimt of alleen aan/uit gaat."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines if the {{driverNameEn}} has the ability to dim.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de {{driverNameNl}} kan dimmen."
         },
         "zwave": {
           "index": 32,
@@ -136,7 +136,7 @@
         "id": "forced_brightness_level",
         "type": "number",
         "label": {
-          "en": "Forced Brightness",
+          "en": "Forced brightness",
           "nl": "Geforceerde helderheid"
         },
         "value": 0,
@@ -157,8 +157,8 @@
         "id": "timer_functionality",
         "type": "number",
         "label": {
-          "en": "Timer functionality (auto - off) in seconds",
-          "nl": "Automatisch uitschakelen na (seconden)"
+          "en": "Timer functionality",
+          "nl": "Timer automatisch uitschakelen"
         },
         "value": 0,
         "attr": {
@@ -239,7 +239,7 @@
           "max": 99
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at automatic control.",
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step when controlled automatically.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het percentage per dim stap bij automatische besturing."
         },
         "zwave": {
@@ -260,7 +260,7 @@
           "max": 255
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step at automatic control.",
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step when controlled automatically.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd per dim stap bij automatische besturing."
         },
         "zwave": {
@@ -281,7 +281,7 @@
           "max": 99
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step at manual control.",
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the percentage of a dimming step when controlled manually.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het percentage per dim stap bij handmatige besturing."
         },
         "zwave": {
@@ -302,7 +302,7 @@
           "max": 255
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step at manual control.",
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the time of a dimming step when controlled manually.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd per dim stap bij handmatige besturing."
         },
         "zwave": {
@@ -332,8 +332,8 @@
         "$extends": "reportThreshold",
         "$id": "watt_report",
         "label": {
-          "en": "Wattage Report Threshold",
-          "nl": "Wattage Verzending Drempel"
+          "en": "Wattage report threshold",
+          "nl": "Wattage verzending drempel"
         },
         "value": 10,
         "attr": {
@@ -350,8 +350,8 @@
         "id": "watt_interval",
         "type": "number",
         "label": {
-          "en": "Wattage Report Interval",
-          "nl": "Wattage Verzending Interval"
+          "en": "Wattage report interval",
+          "nl": "Wattage verzending interval"
         },
         "zwave": {
           "index": 52,
@@ -362,8 +362,8 @@
         "$extends": "reportThreshold",
         "$id": "kwh_report",
         "label": {
-          "en": "kWh Report Threshold",
-          "nl": "kWh Verzending Drempel"
+          "en": "kWh report threshold",
+          "nl": "kWh verzending drempel"
         },
         "value": 0.1,
         "attr": {
@@ -380,8 +380,8 @@
         "id": "self_measurement",
         "type": "checkbox",
         "label": {
-          "en": "Include Own Usage",
-          "nl": "Inclusief Eigen Verbruik"
+          "en": "Include own usage",
+          "nl": "Inclusief eigen verbruik"
         },
         "value": false,
         "hint": {

@@ -7,8 +7,8 @@
         "nl": "Dimmer 2 scene (pulsdruk)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type: \"Momentary switch\" is selected.",
-        "nl": "Deze kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk schakelaar\" is geselecteerd."
+        "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Momentary switch\".",
+        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Pulsdruk schakelaar\" is ingesteld."
       },
       "args": [
         {
@@ -89,8 +89,8 @@
         "nl": "Dimmer 2 scene (tuimel)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type: \"Toggle switch\" is selected.",
-        "nl": "Deze kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel schakelaar\" is geselecteerd."
+        "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Toggle switch\".",
+        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Tuimel schakelaar\" is ingesteld."
       },
       "args": [
         {
@@ -157,8 +157,8 @@
         "nl": "Dimmer 2 scene (rolgordijn)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type: \"Roller shutter switch\" is selected.",
-        "nl": "Deze kaart word alleen geactiveerd als de instelling Schakelaar type: \"Rolgordijn schakelaar\" is geselecteerd."
+        "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Roller shutter switch\".",
+        "nl": "Deze Flow Trigger word alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Rolgordijn schakelaar\" is ingesteld."
       },
       "args": [
         {
@@ -228,8 +228,8 @@
         "nl": "Stel geforceerde helderheid in"
       },
       "hint": {
-        "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.\nRange: 1 - 99 percentage of brightness.",
-        "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit.\nBereik: 1 - 99 helderheids percentage."
+        "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
+        "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
       },
       "args": [
         {
@@ -302,8 +302,8 @@
         "nl": "Stel automatisch uitschakelen in"
       },
       "hint": {
-        "en": "This parameter determines if and after which time period (seconds) the device should automatically turn off.\nRange: 1 - 32767.\n0 function disabled.\nDefault: 0.",
-        "nl": "Deze parameter bepaalt of en na welke tijd (seconden) het apparaat automatisch wordt uitgeschakeld.\nBereik: 1 - 32767.\n0 functie uitgeschakeld.\nStandaard: 0."
+        "en": "This Flow Action determines the time after which the device will automatically power off.",
+        "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
       },
       "args": [
         {

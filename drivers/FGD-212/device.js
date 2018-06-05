@@ -63,26 +63,21 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
         } else return Promise.reject('unknown_error');
     }
 
-    _dimDurationRunListener(args, state) {
+    async _dimDurationRunListener(args, state) {
         if (!args.hasOwnProperty('dimming_duration')) return Promise.reject('dimming_duration_property_missing');
         if (typeof args.dimming_duration !== 'number') return Promise.reject('dimming_duration_is_not_a_number');
         if (args.brightness_level > 1) return Promise.reject('brightness_level_out_of_range');
         if (args.dimming_duration > 127) return Promise.reject('dimming_duration_out_of_range');
 
         if (this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL) {
-            this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({
+            return await this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({
                 Value: new Buffer([Math.round(args.brightness_level * 99)]),
                 'Dimming Duration': new Buffer([args.dimming_duration + (args.duration_unit * 127)]),
-            }, (err, result) => {
-                if (err) return Promise.reject(err);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    return Promise.resolve();
-                } else return Promise.reject('non_OK_response');
             });
         } else return Promise.reject('unknown_error');
     }
 
-    _setTimerRunListener(args, state) {
+    async _setTimerRunListener(args, state) {
         if (!args.hasOwnProperty('set_timer_functionality')) return Promise.reject('set_timer_property_missing');
         if (typeof args.set_timer_functionality !== 'number') return Promise.reject('set_timer_is_not_a_number');
         if (args.set_timer_functionality > 32767) return Promise.reject('set_timer_out_of_range');
@@ -99,31 +94,20 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
             args.hasOwnProperty('set_timer_functionality') &&
             value) {
 
-            this.node.CommandClass.COMMAND_CLASS_CONFIGURATION.CONFIGURATION_SET({
+            return await this.node.CommandClass.COMMAND_CLASS_CONFIGURATION.CONFIGURATION_SET({
                 'Parameter Number': 10,
                 Level: {
                     Size: 2,
                     Default: false,
                 },
                 'Configuration Value': value,
-            }, (err, result) => {
-                if (err) return Promise.reject(err);
-                if (result === 'TRANSMIT_COMPLETE_OK') {
-                    this.setSettings({timer_functionality: args.set_timer_functionality});
-                    return Promise.resolve();
-                }
-                return Promise.reject('non_OK_response');
             });
         } else return Promise.reject('unknown_error');
     }
 
-    _resetMeterRunListener(args, state) {
+    async _resetMeterRunListener(args, state) {
 	    if (this.node.CommandClass.COMMAND_CLASS_METER) {
-            this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {
-                if (err) return Promise.reject(err);
-                if (result === 'TRANSMIT_COMPLETE_OK') return Promise.resolve();
-                else return Promise.reject('non_OK_response');
-            });
+            return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
         } else return Promise.reject('unknown_error');
     }
 
