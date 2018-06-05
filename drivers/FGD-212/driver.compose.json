@@ -32,7 +32,7 @@
     "zwaveAllianceProductId": 2836,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2836/FGD-212-EN-T-v1.3.pdf",
     "learnmode": {
-      "image": "${{driverAssetsPath}}/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Press the button on your {{driverNameEn}} three times",
         "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
