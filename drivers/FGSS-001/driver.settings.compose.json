@@ -12,7 +12,8 @@
         "$id": "smoke_sensitivity",
         "zwave": {
           "index": 82,
-          "size": 1
+          "size": 1,
+          "signed": false
         }
       },
       {

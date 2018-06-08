@@ -6108,6 +6108,301 @@
       ]
     },
     {
+      "id": "FGSS-001",
+      "name": {
+        "en": "Smoke Sensor",
+        "nl": "Rookmelder"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_heat",
+        "alarm_smoke",
+        "alarm_tamper",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/FGSS-001/assets/images/large.png",
+        "small": "/drivers/FGSS-001/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          3072
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "learnmode": {
+          "image": "/drivers/FGSS-001/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on the Smoke Sensor three times",
+            "nl": "Druk driemaal op de knop op de Rookmelder"
+          }
+        },
+        "zwaveAllianceProductId": 1049
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Smoke sensor",
+            "nl": "Rookmelder"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 82,
+                "size": 1,
+                "signed": false
+              },
+              "id": "smoke_sensitivity",
+              "value": 15,
+              "label": {
+                "en": "Sensitivity",
+                "nl": "Gevoeligheid"
+              },
+              "hint": {
+                "en": "This parameter (82) sets the sensitivity for this sensor.",
+                "nl": "Deze parameter (82) bepaalt de gevoeligheid van deze sensor."
+              },
+              "attr": {
+                "min": 8,
+                "max": 255
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 1,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "value": 0,
+              "id": "smoke_alarm_cancellation_delay",
+              "label": {
+                "en": "Cancellation delay (s)",
+                "nl": "Annuleringsperiode (s)"
+              },
+              "hint": {
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature sensor",
+            "nl": "Temperatuursensor"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 20,
+              "id": "temperature_report_hysteresis",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 10,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 17280
+              },
+              "value": 17280,
+              "id": "temperature_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (10) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 81,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 54,
+              "id": "temperature_alarm_threshold",
+              "label": {
+                "en": "High value alarm threshold",
+                "nl": "Drempel waarde voor het te hoge waarden alarm"
+              },
+              "hint": {
+                "en": "This parameter (81) determines the threshold at which the high value alarm will go off.",
+                "nl": "Deze parameter (81) bepaalt de drempel waarboven het hoge waarden alarm afgaat."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 73,
+                "size": 2
+              },
+              "id": "temperature_offset",
+              "value": 0,
+              "label": {
+                "en": "Offset",
+                "nl": "Correctie"
+              },
+              "hint": {
+                "en": "This parameter (73) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (73) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
+              },
+              "attr": {
+                "min": -1000,
+                "max": 1000
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Tamper alarm",
+            "nl": "Sabotage alarm"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "tamper_alarm",
+              "type": "dropdown",
+              "label": {
+                "en": "Tamper alarm",
+                "nl": "Sabotage alarm"
+              },
+              "value": "1",
+              "hint": {
+                "en": "This parameter (89) determines the behaviour of the tamper alarm.",
+                "nl": "Deze parameter (89) bepaalt het gedrag van het sabotage alarm."
+              },
+              "zwave": {
+                "index": 89,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Inactive",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Active, with cancellation",
+                    "nl": "Ingeschakeld, met annulering"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Active, without cancellation",
+                    "nl": "Ingeschakeld, zonder annulering"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED and acoustic notifications",
+            "nl": "LED en akoestische notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_and_acoustic_alarm",
+              "type": "dropdown",
+              "label": {
+                "en": "LED indicator and acoustic alarm",
+                "nl": "LED indicatie en akoestisch alarm"
+              },
+              "value": "3",
+              "hint": {
+                "en": "This parameter (2) determines the behaviour of the visual and acoustic alarm when the alarm is triggerd.",
+                "nl": "Deze parameter (2) bepaalt het gedrag van de visuele en akoestische melding bij het af gaan van het alarm."
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Acoustic and visual alarms inactive",
+                    "nl": "Akoestisch en visueel alarm uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Only visual alarm active",
+                    "nl": "Alleen visueel alarm ingeschakeld"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Only acoustic alarm active",
+                    "nl": "Alleen akoestisch alarm ingeschakeld"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Acoustic and visual alarms active",
+                    "nl": "Akoestisch en visueel alarm ingeschakeld"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Wall Plug",
         "nl": "Tussenstekker"

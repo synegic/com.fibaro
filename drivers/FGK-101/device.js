@@ -15,13 +15,11 @@ class FibaroDoorSensor extends ZwaveDevice {
 				getOnOnline: true,
 			},
 		});
-		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL');
+		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', {
+			getOnStart: false,
+		});
 		this.registerCapability('measure_battery', 'BATTERY');
 
-		this.registerSetting('input_alarm_cancellation_delay');
-		this.registerSetting('led_status');
-		this.registerSetting('type_input');
-		this.registerSetting('temperature_measure_hystersis');
 	}
 
 }
