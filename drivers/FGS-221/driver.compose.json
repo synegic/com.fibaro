@@ -31,8 +31,8 @@
     "learnmode": {
       "image": "${{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Double Relay Switch three times",
-        "nl": "Druk driemaal op de knop op uw Fibaro Dubbele Relais Schakelaar"
+        "en": "Press the button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op uw {{driverNameNl}}"
       }
     },
     "associationGroups": [
