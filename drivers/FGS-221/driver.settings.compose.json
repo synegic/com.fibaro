@@ -34,20 +34,7 @@
     }
   },
   {
-    "id": "save_power_state",
-    "type": "checkbox",
-    "label": {
-      "en": "Save power state",
-      "nl": "Onthoud power status"
-    },
-    "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves it state when power is disconnected.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat zijn staat opslaat als de stroom eraf gehaald wordt."
-    },
-    "zwave": {
-      "index": 16,
-      "size": 1
-    },
-    "value": true
+    "$extends": "saveState",
+    "id": "save_power_state"
   }
 ]

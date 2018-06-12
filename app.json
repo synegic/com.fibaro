@@ -389,576 +389,6 @@
       ]
     },
     {
-      "id": "FGD-212",
-      "name": {
-        "en": "Dimmer 2"
-      },
-      "class": "light",
-      "capabilities": [
-        "dim",
-        "measure_power",
-        "meter_power",
-        "onoff"
-      ],
-      "capabilitiesOptions": {
-        "onoff": {
-          "SetOnDim": false
-        }
-      },
-      "images": {
-        "large": "/drivers/FGD-212/assets/images/large.png",
-        "small": "/drivers/FGD-212/assets/images/small.png"
-      },
-      "zwave": {
-        "manufacturerId": 271,
-        "productTypeId": [
-          258
-        ],
-        "productId": [
-          4096,
-          8192,
-          12288
-        ],
-        "zwaveAllianceProductId": 2836,
-        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2836/FGD-212-EN-T-v1.3.pdf",
-        "learnmode": {
-          "image": "/drivers/FGD-212/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press the button on your Dimmer 2 three times",
-            "nl": "Druk driemaal op de knop op de Dimmer 2"
-          }
-        },
-        "associationGroups": [
-          1
-        ],
-        "defaultConfiguration": [
-          {
-            "id": 23,
-            "size": 1,
-            "value": 0
-          },
-          {
-            "id": 28,
-            "size": 1,
-            "value": 1
-          }
-        ]
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Button behaviour",
-            "nl": "Gedrag knoppen"
-          },
-          "collapsed": false,
-          "children": [
-            {
-              "id": "scene_activation",
-              "type": "checkbox",
-              "label": {
-                "en": "Scene activation",
-                "nl": "Scene activation"
-              },
-              "value": true,
-              "hint": {
-                "en": "This parameter (28) enables scene activation. Scene activation is required for using scene triggers. Enabling scene activation functionality may cause slight delay in response to external switches and sending associations.",
-                "nl": "Deze parameter (28) stelt de scene activation in. Scene activation moet aan staan om scene triggers te gebruiken. Scene activation aanzetten kan vertragingen veroorzaken met externe schakkelaars en bij het sturen van geassocieerde apparaten."
-              },
-              "zwave": {
-                "index": 28,
-                "size": 1
-              }
-            },
-            {
-              "id": "double_click",
-              "type": "checkbox",
-              "label": {
-                "en": "Double click",
-                "nl": "Dubbel klik"
-              },
-              "value": false,
-              "hint": {
-                "en": "This parameter (23) determines whether or not double clicking sets the brightness level to maximum.",
-                "nl": "Deze parameter (23) bepaalt of de helderheid naar maximaal wordt ingesteld bij tweemaal drukken."
-              },
-              "zwave": {
-                "index": 23,
-                "size": 1
-              }
-            },
-            {
-              "id": "force_no_dim",
-              "type": "checkbox",
-              "label": {
-                "en": "Dim function off",
-                "nl": "Dim functie uit"
-              },
-              "value": false,
-              "hint": {
-                "en": "This parameter (32) determines if the Dimmer 2 has the ability to dim.",
-                "nl": "Deze parameter (32) bepaalt of de Dimmer 2 kan dimmen."
-              },
-              "zwave": {
-                "index": 32,
-                "size": 1
-              }
-            },
-            {
-              "id": "3_way_switch",
-              "type": "checkbox",
-              "label": {
-                "en": "3-way switch function",
-                "nl": "Hotelschakeling Functie"
-              },
-              "value": false,
-              "hint": {
-                "en": "This parameter (26) determines whether or not input 2 additionally controls the output 2.",
-                "nl": "Deze parameter (26) bepaalt of het schakelen van ingang 2 ook uitgang 2 bediend."
-              },
-              "zwave": {
-                "index": 26,
-                "size": 1
-              }
-            },
-            {
-              "id": "switch_s1_and_s2",
-              "type": "checkbox",
-              "label": {
-                "en": "Switch input 1 and input 2",
-                "nl": "Wissel input 1 en input 2 om"
-              },
-              "value": false,
-              "hint": {
-                "en": "This parameter (29) switches the functionality of input 1 to become the functionality of input 2, and vice versa.",
-                "nl": "Deze parameter (29) zorgt voor het omwisselen van functionaliteit tussen ingang 1 en ingang 2."
-              },
-              "zwave": {
-                "index": 29,
-                "size": 1
-              }
-            },
-            {
-              "id": "switch_type",
-              "type": "dropdown",
-              "label": {
-                "en": "Switch type",
-                "nl": "Schakelaar type"
-              },
-              "value": "0",
-              "hint": {
-                "en": "This parameter (20) determines whether this device behaves like a momentary switch or a toggle switch.",
-                "nl": "Deze parameter (20) bepaalt of dit apparaat zich gedraagt als een kortstondige schakelaar of een tuimelschakelaar."
-              },
-              "zwave": {
-                "index": 20,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Momentary switch",
-                    "nl": "Pulsdruk schakelaar"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Toggle switch",
-                    "nl": "Tuimel schakelaar"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Roller blind Switch (UP | DOWN)",
-                    "nl": "Rolgordijn schakelaar (OP | NEER)"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "forced_brightness_level",
-              "type": "number",
-              "label": {
-                "en": "Forced brightness",
-                "nl": "Geforceerde helderheid"
-              },
-              "value": 0,
-              "attr": {
-                "min": 0,
-                "max": 99
-              },
-              "hint": {
-                "en": "This parameter (19) determines whether or not switching on the Dimmer 2 (input 1 single click) will always set this brightness level.",
-                "nl": "Deze parameter (19) bepaalt of het aanzetten van de Dimmer 2 (ingang 1, enkele klik) altijd dit helderheidsniveau instelt."
-              },
-              "zwave": {
-                "index": 19,
-                "size": 1
-              }
-            },
-            {
-              "id": "timer_functionality",
-              "type": "number",
-              "label": {
-                "en": "Timer functionality",
-                "nl": "Timer automatisch uitschakelen"
-              },
-              "value": 0,
-              "attr": {
-                "min": 0,
-                "max": 32767
-              },
-              "hint": {
-                "en": "This parameter (10) allows to automatically switch off the device after specified time from switching on the light source.",
-                "nl": "Deze parameter (10) laat de schakelaar automatisch uitschakelen na de ingestelde tijd."
-              },
-              "zwave": {
-                "index": 10,
-                "size": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Dimming",
-            "nl": "Dimmen"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "id": "minimum_brightness",
-              "type": "number",
-              "label": {
-                "en": "Minimum brightness level",
-                "nl": "Minimale helderheidsniveau"
-              },
-              "value": 1,
-              "attr": {
-                "min": 1,
-                "max": 98
-              },
-              "hint": {
-                "en": "This parameter (1) determines the minimal brightness level.",
-                "nl": "Deze parameter (1) bepaalt het minimale helderheidsniveau."
-              },
-              "zwave": {
-                "index": 1,
-                "size": 1
-              }
-            },
-            {
-              "id": "maximum_brightness",
-              "type": "number",
-              "label": {
-                "en": "Maximum brightness level",
-                "nl": "Maximaal helderheidsniveau"
-              },
-              "value": 99,
-              "attr": {
-                "min": 2,
-                "max": 99
-              },
-              "hint": {
-                "en": "This parameter (2) determines the maximum brightness level.",
-                "nl": "Deze parameter (2) bepaalt het maximale helderheidsniveau."
-              },
-              "zwave": {
-                "index": 2,
-                "size": 1
-              }
-            },
-            {
-              "id": "dimming_step_auto",
-              "type": "number",
-              "label": {
-                "en": "Dim step size with automatic control",
-                "nl": "Stapgrootte dimmen bij automatische besturing"
-              },
-              "value": 1,
-              "attr": {
-                "min": 1,
-                "max": 99
-              },
-              "hint": {
-                "en": "This parameter (5) determines the percentage of a dimming step when controlled automatically.",
-                "nl": "Deze parameter (5) bepaalt het percentage per dim stap bij automatische besturing."
-              },
-              "zwave": {
-                "index": 5,
-                "size": 1
-              }
-            },
-            {
-              "id": "time_dimming_step_auto",
-              "type": "number",
-              "label": {
-                "en": "Time of a dimming step at automatic control",
-                "nl": "Tijd per dim stap bij automatische besturing"
-              },
-              "value": 1,
-              "attr": {
-                "min": 0,
-                "max": 255
-              },
-              "hint": {
-                "en": "This parameter (6) determines the time of a dimming step when controlled automatically.",
-                "nl": "Deze parameter (6) bepaalt de tijd per dim stap bij automatische besturing."
-              },
-              "zwave": {
-                "index": 6,
-                "size": 2
-              }
-            },
-            {
-              "id": "dimming_step_manual",
-              "type": "number",
-              "label": {
-                "en": "The percentage of a dimming step at manual control",
-                "nl": "Percentage van dim stap bij handmatige bediening"
-              },
-              "value": 1,
-              "attr": {
-                "min": 1,
-                "max": 99
-              },
-              "hint": {
-                "en": "This parameter (7) determines the percentage of a dimming step when controlled manually.",
-                "nl": "Deze parameter (7) bepaalt het percentage per dim stap bij handmatige besturing."
-              },
-              "zwave": {
-                "index": 7,
-                "size": 1
-              }
-            },
-            {
-              "id": "time_dimming_step_manual",
-              "type": "number",
-              "label": {
-                "en": "Time of a dimming step at manual control",
-                "nl": "Tijd per dim stap bij handmatige bediening"
-              },
-              "value": 5,
-              "attr": {
-                "min": 0,
-                "max": 255
-              },
-              "hint": {
-                "en": "This parameter (8) determines the time of a dimming step when controlled manually.",
-                "nl": "Deze parameter (8) bepaalt de tijd per dim stap bij handmatige besturing."
-              },
-              "zwave": {
-                "index": 8,
-                "size": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Power",
-            "nl": "Stroom"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "zwave": {
-                "index": 9,
-                "size": 1
-              },
-              "id": "save_state",
-              "type": "checkbox",
-              "label": {
-                "en": "Restore state after power failure",
-                "nl": "Herstel status na stroomonderbreking"
-              },
-              "hint": {
-                "en": "This parameter (9) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
-                "nl": "Deze parameter (9) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
-              },
-              "value": true
-            },
-            {
-              "label": {
-                "en": "Wattage report threshold",
-                "nl": "Wattage verzending drempel"
-              },
-              "value": 10,
-              "attr": {
-                "min": 0,
-                "max": 100
-              },
-              "zwave": {
-                "index": 50,
-                "size": 1
-              },
-              "id": "watt_report",
-              "hint": {
-                "en": "This parameter (50) determines the minimum change in value before reporting changes to Homey.",
-                "nl": "Deze parameter (50) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
-              },
-              "type": "number"
-            },
-            {
-              "id": "watt_interval",
-              "type": "number",
-              "label": {
-                "en": "Wattage report interval",
-                "nl": "Wattage verzending interval"
-              },
-              "zwave": {
-                "index": 52,
-                "size": 2
-              },
-              "value": 3600,
-              "hint": {
-                "en": "This parameter (52) determines the time between reports to Homey, independent of value changes.",
-                "nl": "Deze parameter (52) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
-              },
-              "attr": {
-                "min": 0,
-                "max": 32767
-              }
-            },
-            {
-              "label": {
-                "en": "kWh report threshold",
-                "nl": "kWh verzending drempel"
-              },
-              "value": 0.1,
-              "attr": {
-                "min": 0,
-                "max": 2.55,
-                "step": 0.01
-              },
-              "zwave": {
-                "index": 53,
-                "size": 2
-              },
-              "id": "kwh_report",
-              "hint": {
-                "en": "This parameter (50) determines the minimum change in value before reporting changes to Homey.",
-                "nl": "Deze parameter (50) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
-              },
-              "type": "number"
-            },
-            {
-              "id": "self_measurement",
-              "type": "checkbox",
-              "label": {
-                "en": "Include own usage",
-                "nl": "Inclusief eigen verbruik"
-              },
-              "value": false,
-              "hint": {
-                "en": "This parameter (54) determines if the usage of the Dimmer 2 itself is added to the kWh total.",
-                "nl": "Deze parameter (54) bepaalt of het verbruik van de Dimmer 2 zelf wordt toegevoegd aan het kWh totaal."
-              },
-              "zwave": {
-                "index": 54,
-                "size": 1
-              }
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Other",
-            "nl": "Overige"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "id": "force_auto_calibration",
-              "type": "radio",
-              "label": {
-                "en": "Force auto-calibration",
-                "nl": "Forceer auto-kalibratie"
-              },
-              "value": "0",
-              "hint": {
-                "en": "This parameter (13) activates auto calibration.",
-                "nl": "Deze parameter (13) activeert auto calibratie."
-              },
-              "zwave": {
-                "index": 13,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Readout",
-                    "nl": "Uitlezing"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Auto-calibrate without Bypass",
-                    "nl": "Auto-calibratie zonder Bypass"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Auto-calibrate with Bypass",
-                    "nl": "Auto-calibratie met Bypass"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "soft_start",
-              "type": "dropdown",
-              "label": {
-                "en": "Soft-start functionality",
-                "nl": "Soft-start functionaliteit"
-              },
-              "value": "1",
-              "hint": {
-                "en": "This parameter (34) determines the time required to warm up the filament of halogen bulb.",
-                "nl": "Deze parameter (34) bepaalt de tijd nodig vor het opwarmen van het filament van een halogeen lamp."
-              },
-              "zwave": {
-                "index": 34,
-                "size": 1
-              },
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "No soft-start",
-                    "nl": "Geen soft-start"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Short soft-start (0.1s) (default)",
-                    "nl": "Korte soft-start (0.1s) (standaard)"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "Long soft-start (0.5s)",
-                    "nl": "Lange soft-start (0.5s)"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "FGDW-002",
       "name": {
         "en": "Door/Window sensor 2",
@@ -1777,7 +1207,7 @@
                 "steps": 0.1
               },
               "value": 15,
-              "id": "low_temperature_trreshold",
+              "id": "low_temperature_treshold",
               "label": {
                 "en": "Low value alarm threshold",
                 "nl": "Drempel waarde voor het te lage waarden alarm"
@@ -1799,7 +1229,7 @@
                 "steps": 0.1
               },
               "value": 35,
-              "id": "high_temperature_trreshold",
+              "id": "high_temperature_treshold",
               "label": {
                 "en": "High value alarm threshold",
                 "nl": "Drempel waarde voor het te hoge waarden alarm"
@@ -3133,6 +2563,752 @@
       ]
     },
     {
+      "id": "FGKF-601",
+      "name": {
+        "en": "Keyfob"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/FGKF-601/assets/images/large.png",
+        "small": "/drivers/FGKF-601/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          4097
+        ],
+        "productId": [
+          4096
+        ],
+        "zwaveAllianceProductId": 2064,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2064/FGKF-601-EN-T-v1.0_30.11.2016.pdf",
+        "learnmode": {
+          "instruction": {
+            "en": "Press any button on the Keyfob 3 times.",
+            "nl": "Druk driemaal op een willekeurige knop op de Keyfob."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Press O and – shortly at the same time, then press Δ or X shortly until the LED is green, finally press + to confirm the removal.",
+            "nl": "Druk O en – tegelijkertijd kort in, druk vervolgens kort op Δ of X tot de LED groen is, druk als laatste stap + kort in om het verwijderen te bevestigen."
+          }
+        },
+        "associationGroups": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "Lifeline reports the device status and allows for assigning a single device only (main controller by default).",
+              "nl": "Lifeline rapporteert de status van het apparaat en staat maar 1 geassocieerd apparaat toe."
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "Square (□) - on/off is assigned to clicking the □ button and is used to turn on/off associated devices.",
+              "nl": "Vierkant (□) - aan/uit is toegewezen aan het klikken van de □ en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "3": {
+            "hint": {
+              "en": "Square (□) - multilevel is assigned to clicking and holding the □ button and is used to turn on/off and change level of associated devices.",
+              "nl": "Vierkant (□) - multilevel is toegewezen aan het klikken en vasthouden van de □ knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          },
+          "4": {
+            "hint": {
+              "en": "Circle (○) - on/off is assigned to clicking the ○ button and is used to turn on/off associated devices.",
+              "nl": "Cirkel (○) - aan/uit is toegewezen aan het klikken van de ○ en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "5": {
+            "hint": {
+              "en": "Circle (○) - multilevel is assigned to clicking and holding the ○ button and is used to turn on/off and change level of associated devices.",
+              "nl": "Cirkel (○) - multilevel is toegewezen aan het klikken en vasthouden van de ○ knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          },
+          "6": {
+            "hint": {
+              "en": "Cross (x) - on/off is assigned to clicking the ⨉ button and is used to turn on/off associated devices.",
+              "nl": "Kruis (x) - aan/uit is toegewezen aan het klikken van de ⨉ en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "7": {
+            "hint": {
+              "en": "Cross (x) - multilevel is assigned to clicking and holding the ⨉ button and is used to turn on/off and change level of associated devices.",
+              "nl": "Kruis (x) - multilevel is toegewezen aan het klikken en vasthouden van de ⨉ knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          },
+          "8": {
+            "hint": {
+              "en": "Triangle (△) - on/off is assigned to clicking the △ button and is used to turn on/off associated devices.",
+              "nl": "Driehoek (△) - aan/uit is toegewezen aan het klikken van de △ en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "9": {
+            "hint": {
+              "en": "Triangle (△) - multilevel is assigned to clicking and holding the △ button and is used to turn on/off and change level of associated devices.",
+              "nl": "Driehoek (△) - multilevel is toegewezen aan het klikken en vasthouden van de △ knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          },
+          "10": {
+            "hint": {
+              "en": "Minus (-) - on/off is assigned to clicking the - button and is used to turn on/off associated devices.",
+              "nl": "Min (-) - aan/uit is toegewezen aan het klikken van de - en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "11": {
+            "hint": {
+              "en": "Minus (-) - multilevel is assigned to clicking and holding the - button and is used to turn on/off and change level of associated devices.",
+              "nl": "Min (-) - multilevel is toegewezen aan het klikken en vasthouden van de - knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          },
+          "12": {
+            "hint": {
+              "en": "Plus (+) - on/off is assigned to clicking the + button and is used to turn on/off associated devices.",
+              "nl": "Plus (+) - aan/uit is toegewezen aan het klikken van de + en wordt gebruikt voor het aan/uit schakelen van geassocieerde apparaten."
+            }
+          },
+          "13": {
+            "hint": {
+              "en": "Plus (+) - multilevel is assigned to clicking and holding the + button and is used to turn on/off and change level of associated devices.",
+              "nl": "Plus (+) - multilevel is toegewezen aan het klikken en vasthouden van de + knop en wordt gebruikt voor het aan/uit schakelen en niveau veranderen van geassocieerde apparaten."
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Buttons",
+            "nl": "Knoppen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "label": {
+                "en": "Square (□) button",
+                "nl": "Vierkante (□) knop"
+              },
+              "zwave": {
+                "index": 21,
+                "size": 1
+              },
+              "id": "square_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Circle (○) button",
+                "nl": "Cirkel (○) knop"
+              },
+              "zwave": {
+                "index": 22,
+                "size": 1
+              },
+              "id": "circle_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Cross (x) button",
+                "nl": "Kruis (x) knop"
+              },
+              "zwave": {
+                "index": 23,
+                "size": 1
+              },
+              "id": "cross_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Triangle (△) button",
+                "nl": "Driehoek (△) knop"
+              },
+              "zwave": {
+                "index": 24,
+                "size": 1
+              },
+              "id": "triangle_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Minus (-) button",
+                "nl": "Min (-) knop"
+              },
+              "zwave": {
+                "index": 25,
+                "size": 1
+              },
+              "id": "minus_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Plus (+) button",
+                "nl": "Plus (+) knop"
+              },
+              "zwave": {
+                "index": 26,
+                "size": 1
+              },
+              "id": "plus_scenes",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (21) defines which button interactions can trigger a Flow. Using the 2x and 3x pressed options introduces a slight delay in Flow triggering.",
+                "nl": "Deze parameter (21) bepaalt welke knop interacties een Flow kunnen triggeren. Bij het gebruik van de 2x en 3x drukken ontstaat er een kleine vertraging bij het triggeren van Flows."
+              },
+              "value": "9",
+              "values": [
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Pressed 1x and hold/release.",
+                    "nl": "1x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "11",
+                  "label": {
+                    "en": "Pressed 1x, 2x and hold/released.",
+                    "nl": "1x, 2x ingedrukt en lang drukken/loslaten."
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "Pressed 1x, 2x, 3x and hold/released.",
+                    "nl": "1x, 2x, 3x ingedrukt en lang drukken/loslaten."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Sequences",
+            "nl": "Reeksen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 9,
+                "size": 1
+              },
+              "id": "sequence_timeout",
+              "type": "number",
+              "label": {
+                "en": "Timeout",
+                "nl": "Vertraging"
+              },
+              "value": 1,
+              "attr": {
+                "min": 0.5,
+                "max": 3,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (9) determines the maximum time between events before timeout.",
+                "nl": "Deze parameter (9) bepaalt de maximale tijd tussen acties voordat er een timeout plaatsvindt."
+              }
+            },
+            {
+              "id": "lock_timeout",
+              "type": "number",
+              "label": {
+                "en": "Time till lock",
+                "nl": "Tijd tot vergrendeling"
+              },
+              "value": 1,
+              "attr": {
+                "min": 0,
+                "max": 1791
+              },
+              "zwave": {
+                "index": 2,
+                "size": 2
+              },
+              "hint": {
+                "en": "This parameter (2) determines the time of inactivity after which the device will lock itself.",
+                "nl": "Deze parameter (2) bepaalt hoe lang het apparaat inactief moet zijn voordat deze vergrendeld word."
+              }
+            },
+            {
+              "label": {
+                "en": "Lock sequence",
+                "nl": "Vergrendel reeks"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_lock",
+              "type": "text",
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 3,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_1",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 4,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_2",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 5,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_3",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 6,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_4",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 7,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_5",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 8,
+                "size": 2,
+                "signed": false
+              },
+              "id": "sequence_6",
+              "type": "text",
+              "label": {
+                "en": "Sequence",
+                "nl": "Reeks"
+              },
+              "value": "0",
+              "pattern": "^0$|^[1-6];([1-6];)?([1-6];)?([1-6];)?[1-6];?",
+              "hint": {
+                "en": "This parameter (1) sets a button sequence in the device. Separate button numbers by a semicolon ( ; ), use 2 to 5 buttons. No duplicate sequences are allowed. 0 = sequence disabled. Buttons are numbered from left to right, from top to bottom (1 - 6).",
+                "nl": "Deze parameter (1) stelt een reeks in op het apparaat. Scheid knop nummers door een puntkomma ( ; ), gebruik 2 tot 5 knoppen. 2x dezelfde reeks is niet toegestaan. 0 = reeks uitgeschakeld. Knoppen zijn genummerd van links naar rechts, van boven naar beneden (1 - 6)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Association Group Button Values",
+            "nl": "Associatie Groep Knop Waarden"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "group_operating_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Association groups operating mode",
+                "nl": "Associatie groepen besturingsmodus"
+              },
+              "zwave": {
+                "index": 10,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Single press: toggle state",
+                    "nl": "Eenmaal drukken: schakel status"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Single press: toggle state, double press: full brightness",
+                    "nl": "Eenmaal drukken: schakel status, tweemaal drukken: volle helderheid"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Single press: turn on, double press: turn off",
+                    "nl": "Eenmaal drukken: schakel aan, tweemaal drukken: sckakel uit"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (10) determines the behaviour of the Keyfob with regard to its association groups.",
+                "nl": "Deze parameter (10) bepaalt het gedrag van de Keyfob met betrekking tot zijn associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 2 and 3 (□)",
+                "nl": "Groep 2 en 3 (□)"
+              },
+              "zwave": {
+                "index": 11,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_square",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 4 and 5 (○)",
+                "nl": "Groep 4 en 5 (○)"
+              },
+              "zwave": {
+                "index": 12,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_circle",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 6 and 7 (x)",
+                "nl": "Groep 6 en 7 (x)"
+              },
+              "zwave": {
+                "index": 13,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_cross",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 8 and 9 (△)",
+                "nl": "Groep 8 en 9 (△)"
+              },
+              "zwave": {
+                "index": 14,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_triangle",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 10 and 11 (-)",
+                "nl": "Groep 10 en 11 (-)"
+              },
+              "zwave": {
+                "index": 15,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_minus",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            },
+            {
+              "label": {
+                "en": "Group 12 and 13 (+)",
+                "nl": "Groep 12 en 13 (+)"
+              },
+              "zwave": {
+                "index": 16,
+                "size": 2,
+                "signed": false
+              },
+              "id": "value_group_plus",
+              "type": "number",
+              "value": 255,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (11) determines the value that is send to the listed association groups.",
+                "nl": "Deze parameter (11) bepaalt de waarde die wordt verzonden naar de gespecificeerde associatie groepen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Motion Sensor",
         "nl": "Bewegingssensor"
@@ -3858,8 +4034,8 @@
                 "max": 65534
               },
               "hint": {
-                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of ambient lux 100%.",
-                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde lager dan 100% zijn."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of the \"Ambient lux to set LED to 100%\" setting.",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat daarnaast moet deze waarde lager zijn dan de waarde van de \"Omgevings lux waar LED helderheid 100% is\" instelling."
               }
             },
             {
@@ -3880,8 +4056,8 @@
                 "max": 65535
               },
               "hint": {
-                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of ambient lux 1%.",
-                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde hoger dan 1% zijn."
+                "en": "The parameter (83) is relevant only when the parameter \"LED brightness\" is set to 0, and must be higher than the value of the \"Ambient lux to set LED to 1%\" setting.",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat daarnaast moet deze waarde hoger zijn dan de waarde van de \"Omgevings lux waar LED helderheid 1% is\" instelling."
               }
             },
             {
@@ -4896,8 +5072,8 @@
               },
               "value": 100,
               "hint": {
-                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of ambient lux 100%.",
-                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde lager dan 100% zijn."
+                "en": "The parameter (82) is relevant only when the parameter \"LED brightness\" is set to 0, and must be below the value of the \"Ambient lux to set LED to 100%\" setting.",
+                "nl": "Deze parameter (82) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat daarnaast moet deze waarde lager zijn dan de waarde van de \"Omgevings lux waar LED helderheid 100% is\" instelling."
               }
             },
             {
@@ -4917,8 +5093,8 @@
               },
               "value": 1000,
               "hint": {
-                "en": "The parameter (83) is relevant only when the parameter LED brightness is set to 0, and must be above the value of ambient lux 1%.",
-                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter LED helderheid op 0 staat daarnaast moet de omgevings lux waarde hoger dan 1% zijn."
+                "en": "The parameter (83) is relevant only when the parameter \"LED brightness\" is set to 0, and must be higher than the value of the \"Ambient lux to set LED to 1%\" setting.",
+                "nl": "Deze parameter (83) is alleen relevant wanneer de parameter \"LED helderheid\" op 0 staat daarnaast moet deze waarde hoger zijn dan de waarde van de \"Omgevings lux waar LED helderheid 1% is\" instelling."
               }
             }
           ]
@@ -5075,71 +5251,20 @@
       ]
     },
     {
+      "id": "FGRGBWM-441",
       "name": {
         "en": "RGBW Controller"
       },
-      "zwave": {
-        "manufacturerId": 271,
-        "productTypeId": 2304,
-        "productId": [
-          4096,
-          8192,
-          12288,
-          16384
-        ],
-        "learnmode": {
-          "image": "/drivers/FGRGBWM-441/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press the button on your Fibaro RGBW Controller three times",
-            "nl": "Druk driemaal op de knop op de Fibaro RGBW Controller"
-          }
-        },
-        "associationGroups": [
-          5
-        ],
-        "associationGroupsOptions": {
-          "1": {
-            "hint": {
-              "en": "On/off signals from input 1",
-              "nl": "Aan/uit signalen van ingang 1"
-            }
-          },
-          "2": {
-            "hint": {
-              "en": "On/off signals from input 2",
-              "nl": "Aan/uit signalen van ingang 2"
-            }
-          },
-          "3": {
-            "hint": {
-              "en": "On/off signals from input 3",
-              "nl": "Aan/uit signalen van ingang 3"
-            }
-          },
-          "4": {
-            "hint": {
-              "en": "On/off signals from input 4",
-              "nl": "Aan/uit signalen van ingang 4"
-            }
-          },
-          "5": {
-            "hint": {
-              "en": "This is the controller group, it is not recommended to change this.",
-              "nl": "Dit is de controller groep, het is niet aangeraden deze te wijzigen."
-            }
-          }
-        }
-      },
       "class": "light",
       "capabilities": [
-        "onoff",
         "dim",
         "light_hue",
-        "light_saturation",
-        "light_temperature",
         "light_mode",
         "measure_power",
         "meter_power",
+        "light_saturation",
+        "light_temperature",
+        "onoff",
         "measure_voltage.input1",
         "measure_voltage.input2",
         "measure_voltage.input3",
@@ -5174,6 +5299,10 @@
           }
         }
       },
+      "images": {
+        "large": "/drivers/FGRGBWM-441/assets/images/large.png",
+        "small": "/drivers/FGRGBWM-441/assets/images/small.png"
+      },
       "mobile": {
         "components": [
           {
@@ -5199,608 +5328,1244 @@
           }
         ]
       },
-      "images": {
-        "large": "/drivers/FGRGBWM-441/assets/images/large.png",
-        "small": "/drivers/FGRGBWM-441/assets/images/small.png"
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          2304
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288,
+          16384
+        ],
+        "zwaveAllianceProductId": 1054,
+        "learnmode": {
+          "image": "/drivers/FGRGBWM-441/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on the RGBW Controller three times.",
+            "nl": "Druk driemaal op de knop op de RGBW Controller."
+          }
+        },
+        "associationGroups": [
+          5
+        ],
+        "associationGroupOptions": {
+          "1": {
+            "hint": {
+              "en": "On/off signals from input 1",
+              "nl": "Aan/uit signalen van ingang 1"
+            }
+          },
+          "2": {
+            "hint": {
+              "en": "On/off signals from input 2",
+              "nl": "Aan/uit signalen van ingang 2"
+            }
+          },
+          "3": {
+            "hint": {
+              "en": "On/off signals from input 3",
+              "nl": "Aan/uit signalen van ingang 3"
+            }
+          },
+          "4": {
+            "hint": {
+              "en": "On/off signals from input 4",
+              "nl": "Aan/uit signalen van ingang 4"
+            }
+          },
+          "5": {
+            "hint": {
+              "en": "This is the controller group, it is not recommended to change this.",
+              "nl": "Dit is de controller groep, het is niet aangeraden deze te wijzigen."
+            }
+          }
+        }
       },
-      "id": "FGRGBWM-441",
       "settings": [
         {
-          "id": "strip_type",
-          "type": "dropdown",
+          "type": "group",
           "label": {
-            "en": "LED strip type",
-            "nl": "LED strip type"
+            "en": "LED strip",
+            "nl": "LED strip"
           },
-          "hint": {
-            "en": "What kind of LED strip is connected to the RGBW controller.",
-            "nl": "Welk soort LED strip is er aangesloten aan de RGBW controller."
-          },
-          "value": "rgbw",
-          "values": [
+          "collapsed": false,
+          "children": [
             {
-              "id": "scr",
+              "id": "strip_type",
+              "type": "dropdown",
               "label": {
-                "en": "Red LED",
-                "nl": "Rode LED"
-              }
-            },
-            {
-              "id": "scg",
-              "label": {
-                "en": "Green LED",
-                "nl": "Groene LED"
-              }
-            },
-            {
-              "id": "scb",
-              "label": {
-                "en": "Blue LED",
-                "nl": "Blauwe LED"
-              }
-            },
-            {
-              "id": "scw",
-              "label": {
-                "en": "White LED",
-                "nl": "Witte LED"
-              }
-            },
-            {
-              "id": "cct",
-              "label": {
-                "en": "Color temperature (blue and white channel)",
-                "nl": "Kleurtemperatuur (blauwe en witte kanaal)"
-              }
-            },
-            {
-              "id": "rgb",
-              "label": {
-                "en": "Red, green and blue (RGB)",
-                "nl": "Rood, groen en blauw (RGB)"
-              }
-            },
-            {
-              "id": "rgbw",
-              "label": {
-                "en": "Red, green, blue and white (RGBW)",
-                "nl": "Rood, groen, blauw en wit (RGBW)"
-              }
-            },
-            {
-              "id": "other",
-              "label": {
-                "en": "Other/none",
-                "nl": "Anders/geen"
-              }
+                "en": "LED strip type",
+                "nl": "LED strip type"
+              },
+              "hint": {
+                "en": "This setting determines what kind of LED strip is connected to the RGBW Controller.",
+                "nl": "Deze instelling bepaalt wat voor soort LED strip er is aangesloten op de RGBW Controller."
+              },
+              "value": "rgbw",
+              "values": [
+                {
+                  "id": "scr",
+                  "label": {
+                    "en": "Red LED",
+                    "nl": "Rode LED"
+                  }
+                },
+                {
+                  "id": "scg",
+                  "label": {
+                    "en": "Green LED",
+                    "nl": "Groene LED"
+                  }
+                },
+                {
+                  "id": "scb",
+                  "label": {
+                    "en": "Blue LED",
+                    "nl": "Blauwe LED"
+                  }
+                },
+                {
+                  "id": "scw",
+                  "label": {
+                    "en": "White LED",
+                    "nl": "Witte LED"
+                  }
+                },
+                {
+                  "id": "cct",
+                  "label": {
+                    "en": "Color temperature (blue and white channel)",
+                    "nl": "Kleurtemperatuur (blauwe en witte kanaal)"
+                  }
+                },
+                {
+                  "id": "rgb",
+                  "label": {
+                    "en": "Red, green and blue (RGB)",
+                    "nl": "Rood, groen en blauw (RGB)"
+                  }
+                },
+                {
+                  "id": "rgbw",
+                  "label": {
+                    "en": "Red, green, blue and white (RGBW)",
+                    "nl": "Rood, groen, blauw en wit (RGBW)"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "Other/none",
+                    "nl": "Anders/geen"
+                  }
+                }
+              ]
             }
           ]
         },
         {
-          "id": "rgbw_white_temperature",
+          "type": "group",
+          "label": {
+            "en": "Brightness",
+            "nl": "Helderheid"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "maximum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Maximum brightness",
+                "nl": "Maximale helderheid"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the maximum brightness the module will output.",
+                "nl": "Deze parameter (12) bepaalt de maximale helderheid van de module."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 3,
+                "max": 255
+              },
+              "value": 255
+            },
+            {
+              "id": "minimum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Minimum brightness",
+                "nl": "Minimale helderheid"
+              },
+              "hint": {
+                "en": "This parameter (13) determines the minimum brightness the module will output.",
+                "nl": "Deze parameter (13) bepaalt de minimale helderheid van de module."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 2,
+                "max": 254
+              },
+              "value": 2
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "White LED",
+            "nl": "Witte LED"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "rgbw_white_temperature",
+              "type": "checkbox",
+              "label": {
+                "en": "Temperature with white LED",
+                "nl": "Temperatuur met witte LED"
+              },
+              "hint": {
+                "en": "Determines whether the white LED will also be used for color temperature, only related to RGBW strips.",
+                "nl": "Bepaalt of de witte LED ook wordt gebruikt bij kleurtemperatuur, alleen van toepassing bij RGBW strips."
+              },
+              "value": true
+            },
+            {
+              "id": "white_temperature",
+              "type": "dropdown",
+              "label": {
+                "en": "White temperature (Kelvin)",
+                "nl": "Wit temperatuur (Kelvin)"
+              },
+              "hint": {
+                "en": "Determine the temperature of the white LED. Only related to RGBW strips.",
+                "nl": "Bepaalt de temperatuur van de witte LED. Alleen van toepassing bij RGBW strips."
+              },
+              "value": "ww",
+              "values": [
+                {
+                  "id": "eww",
+                  "label": {
+                    "en": "Extra warm white (2200K - 2400K)",
+                    "nl": "Extra warm wit (2200K - 2400K)"
+                  }
+                },
+                {
+                  "id": "ww",
+                  "label": {
+                    "en": "Warm white (2600K - 2800K)",
+                    "nl": "Warm wit (2600K - 2800K)"
+                  }
+                },
+                {
+                  "id": "nw",
+                  "label": {
+                    "en": "Neutral white (3200K - 4500K)",
+                    "nl": "Neutraal wit (3200K - 4500K)"
+                  }
+                },
+                {
+                  "id": "cw",
+                  "label": {
+                    "en": "Cold white (>5000K)",
+                    "nl": "Koud wit (>5000K)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "calibrate_white",
+              "type": "number",
+              "label": {
+                "en": "Calibrate white LED",
+                "nl": "Kalibreer witte LED"
+              },
+              "hint": {
+                "en": "Calibrate when the white LED will be at its brightest with color temperature.",
+                "nl": "Kalibreer op welk punt de witte LED het felst schijnt met kleur temperatuur."
+              },
+              "attr": {
+                "min": -25,
+                "max": 25
+              },
+              "value": 0
+            },
+            {
+              "id": "white_saturation",
+              "type": "number",
+              "label": {
+                "en": "Saturation to white LED",
+                "nl": "Verzadiging naar witte LED"
+              },
+              "hint": {
+                "en": "Determine under what saturation level it will transition to the white LED. 0 = No transition to white LED.",
+                "nl": "Bepaal onder welk verzadigingsniveau het over zal gaan op de witte LED. 0 = Geen overgang naar witte LED."
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 10
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Colour",
+            "nl": "Kleur"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "color_pallet",
+              "type": "dropdown",
+              "label": {
+                "en": "Used color pallet",
+                "nl": "Gebruikte kleurenpallet"
+              },
+              "hint": {
+                "en": "Determine what color pallet is being used.",
+                "nl": "Bepaal welk kleurenpallet wordt gebruikt."
+              },
+              "value": "accurate",
+              "values": [
+                {
+                  "id": "none",
+                  "label": {
+                    "en": "None",
+                    "nl": "Geen"
+                  }
+                },
+                {
+                  "id": "accurate",
+                  "label": {
+                    "en": "Accurate colors",
+                    "nl": "Nauwkeurige kleuren"
+                  }
+                },
+                {
+                  "id": "huestrip",
+                  "label": {
+                    "en": "Philips Hue strip (plus)",
+                    "nl": "Philips Hue strip (plus)"
+                  }
+                },
+                {
+                  "id": "huee27v3",
+                  "label": {
+                    "en": "Philips Hue bulb (v3, enhanced color)",
+                    "nl": "Philips Hue lamp (v3, verbeterde kleur)"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Transitions",
+            "nl": "Transities"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "transition_mode",
+              "type": "radio",
+              "label": {
+                "en": "Transition mode",
+                "nl": "Transitie modus"
+              },
+              "hint": {
+                "en": "This parameter (8) determines what transition mode is used.",
+                "nl": "Deze parameter (8) bepaalt welke transitie modus er wordt gebruikt."
+              },
+              "zwave": {
+                "index": 8,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Time based steps (mode 1)",
+                    "nl": "Tijd gebaseerde stappen (mode 1)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Fixed time (mode 2)",
+                    "nl": "Vaste tijd (mode 2)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "mode1_steps",
+              "type": "number",
+              "label": {
+                "en": "Transistion step size (mode 1)",
+                "nl": "Transitie stap grote (mode 1)"
+              },
+              "hint": {
+                "en": "This parameter (9) sets the size of the steps taken when making a transition.",
+                "nl": "Deze parameter (9) bepaalt de grote van de stappen bij het maken van de transitie."
+              },
+              "zwave": {
+                "index": 9,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "value": 1
+            },
+            {
+              "id": "mode1_time",
+              "type": "number",
+              "label": {
+                "en": "Transition step time (mode 1)",
+                "nl": "Transitie stap tijd (mode 1)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time that each step takes when making a transition.",
+                "nl": "Deze parameter (10) bepaalt de tijd voor elke stap bij het maken van een transitie."
+              },
+              "zwave": {
+                "index": 10,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 60000
+              },
+              "value": 10
+            },
+            {
+              "id": "mode2_range",
+              "type": "dropdown",
+              "label": {
+                "en": "Time range (mode 2)",
+                "nl": "Tijd bereik (mode 2)"
+              },
+              "hint": {
+                "en": "This parameter (11) determines in which time range mode 2 should work.",
+                "nl": "Deze parameter (11) bepaalt in welk tijdsbereik mode 2 werkt."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1,
+                "signed": false
+              },
+              "value": "64",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Milliseconds",
+                    "nl": "Milliseconden"
+                  }
+                },
+                {
+                  "id": "64",
+                  "label": {
+                    "en": "Seconds",
+                    "nl": "Seconden"
+                  }
+                },
+                {
+                  "id": "128",
+                  "label": {
+                    "en": "Seconds times 10",
+                    "nl": "Seconden keer 10"
+                  }
+                },
+                {
+                  "id": "192",
+                  "label": {
+                    "en": "Minutes",
+                    "nl": "Minuten"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "mode2_transition_time",
+              "type": "number",
+              "label": {
+                "en": "Transition time (mode 2)",
+                "nl": "Transitie tijd (mode 2)"
+              },
+              "hint": {
+                "en": "This parameter (11) determines the amount of time that it takes to transition from beginning to the end.",
+                "nl": "Deze parameter (11) bepaalt de tijd van de transitie van het begin tot aan het eind."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 63
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "input_threshold",
+              "type": "number",
+              "label": {
+                "en": "Input threshold",
+                "nl": "Ingang drempel"
+              },
+              "hint": {
+                "en": "This parameter (43) determines the amount of voltage on the input(s) that needs to change before being reported.",
+                "nl": "Deze parameter (43) bepaalt hoeveel het voltage op de ingang(en) moet veranderen voor een update wordt verzonden."
+              },
+              "zwave": {
+                "index": 43,
+                "size": 1
+              },
+              "attr": {
+                "min": 0.1,
+                "max": 10,
+                "step": 0.1
+              },
+              "value": 0.5
+            },
+            {
+              "id": "input_config_1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 configuration",
+                "nl": "Ingang 1 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (43) determines what is (optionally) connected to input 1 of the RGBW controller.",
+                "nl": "Deze parameter (43) bepaalt wat er (optioneel) aangesloten is op ingang 1 van de RGBW controller."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Analog (0 - 10v)",
+                    "nl": "Analoog (0 - 10v)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 configuration",
+                "nl": "Ingang 2 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (43) determines what is (optionally) connected to input 2 of the RGBW controller.",
+                "nl": "Deze parameter (43) bepaalt wat er (optioneel) aangesloten is op ingang 2 van de RGBW controller."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Analog (0 - 10v)",
+                    "nl": "Analoog (0 - 10v)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 configuration",
+                "nl": "Ingang 3 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (43) determines what is (optionally) connected to input 3 of the RGBW controller.",
+                "nl": "Deze parameter (43) bepaalt wat er (optioneel) aangesloten is op ingang 3 van de RGBW controller."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Analog (0 - 10v)",
+                    "nl": "Analoog (0 - 10v)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_4",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 4 configuration",
+                "nl": "Ingang 4 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (43) determines what is (optionally) connected to input 4 of the RGBW controller.",
+                "nl": "Deze parameter (43) bepaalt wat er (optioneel) aangesloten is op ingang 4 van de RGBW controller."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Analog (0 - 10v)",
+                    "nl": "Analoog (0 - 10v)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "watt_report_interval",
+              "type": "number",
+              "label": {
+                "en": "Watt report interval",
+                "nl": "Watt update interval"
+              },
+              "hint": {
+                "en": "This parameter (44) determines on what interval the Wattage update needs to be send if the value has changed.",
+                "nl": "Deze parameter (44) bepaalt op welk interval een Wattage update verzonden wordt als de waarde is veranderd."
+              },
+              "zwave": {
+                "index": 44,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "value": 30
+            },
+            {
+              "id": "kwh_threshold",
+              "type": "number",
+              "label": {
+                "en": "kWh threshold",
+                "nl": "kWh drempel"
+              },
+              "hint": {
+                "en": "This parameter (45) determines the minimal kWh value change before an update is send.",
+                "nl": "Deze parameter (45) bepaalt de minimale kWh waarde verandering voor het word verzonden."
+              },
+              "zwave": {
+                "index": 45,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 2.55,
+                "step": 0.01
+              },
+              "value": 0.1
+            },
+            {
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Save power-off state",
+                "nl": "Onthoud status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether or not the device restores its last known state after power disruption.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat de laatst bekende status herstelt na stroomonderbreking."
+              },
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGS-221",
+      "name": {
+        "en": "Double Relay Switch"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGS-221/assets/images/large.png",
+        "small": "/drivers/FGS-221/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          265,
+          4106,
+          8202,
+          12298
+        ],
+        "learnmode": {
+          "image": "/drivers/FGS-221/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Double Relay Switch three times",
+            "nl": "Druk driemaal op de knop op uw Double Relay Switch"
+          }
+        },
+        "associationGroups": [
+          3
+        ],
+        "multiChannelNodes": {
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "onoff"
+            ],
+            "icon": "/drivers/FGS-221/assets/icon-2.svg",
+            "name": {
+              "en": "Relay 2 (S2 & Q2)",
+              "nl": "Relais 2 (S2 & Q2)"
+            },
+            "settings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "id": "auto_off",
           "type": "checkbox",
           "label": {
-            "en": "Temperature with white LED",
-            "nl": "Temperatuur met witte LED"
+            "en": "Auto-off behaviour",
+            "nl": "Automatisch uit gedrag"
           },
           "hint": {
-            "en": "Determines whether the white LED will also be used for color temperature, only related to RGBW strips.",
-            "nl": "Bepaalt of de witte LED ook wordt gebruikt bij kleurtemperatuur, alleen van toepassing bij RGBW strips."
+            "en": "This parameter (3) determines if pressing the switch a second time will immediately turn off the relays.",
+            "nl": "Deze parameter (3) bepaalt of het tweemaal indrukken van de schakelaar de relais direct uitschakelt."
           },
-          "value": true
+          "value": false
         },
         {
-          "id": "white_temperature",
-          "type": "dropdown",
-          "label": {
-            "en": "White temperature (Kelvin)",
-            "nl": "Wit temperatuur (Kelvin)"
+          "zwave": {
+            "index": 4,
+            "size": 2,
+            "signed": false
           },
-          "hint": {
-            "en": "Determine the temperature of the white LED. Only related to RGBW strips.",
-            "nl": "Bepaalt de temperatuur van de witte LED. Alleen van toepassing bij RGBW strips."
-          },
-          "value": "ww",
-          "values": [
-            {
-              "id": "eww",
-              "label": {
-                "en": "Extra warm white (2200K - 2400K)",
-                "nl": "Extra warm wit (2200K - 2400K)"
-              }
-            },
-            {
-              "id": "ww",
-              "label": {
-                "en": "Warm white (2600K - 2800K)",
-                "nl": "Warm wit (2600K - 2800K)"
-              }
-            },
-            {
-              "id": "nw",
-              "label": {
-                "en": "Neutral white (3200K - 4500K)",
-                "nl": "Neutraal wit (3200K - 4500K)"
-              }
-            },
-            {
-              "id": "cw",
-              "label": {
-                "en": "Cold white (>5000K)",
-                "nl": "Koud wit (>5000K)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "calibrate_white",
+          "id": "auto_off_relay_1",
           "type": "number",
           "label": {
-            "en": "Calibrate white LED",
-            "nl": "Kalibreer witte LED"
+            "en": "Auto-off delay",
+            "nl": "Vertraging automatisch uitschakelen"
           },
           "hint": {
-            "en": "Calibrate when the white LED will be at its brightest with color temperature. Range: -25 to 25",
-            "nl": "Kalibreer op welk punt de witte LED het felst schijnt met kleur temperatuur. Bereik: -25 tot 25"
+            "en": "This parameter (4) determines the time after which the relay will automatically turn off.",
+            "nl": "Deze parameter (4) bepaalt de tijd waarna het relais automatisch uit gaat."
           },
           "attr": {
-            "min": -25,
-            "max": 25
+            "min": 0,
+            "max": 65535
           },
           "value": 0
         },
         {
-          "id": "white_saturation",
+          "zwave": {
+            "index": 5,
+            "size": 2,
+            "signed": false
+          },
+          "id": "auto_off_relay_2",
           "type": "number",
           "label": {
-            "en": "Saturation to white LED",
-            "nl": "Verzadiging naar witte LED"
+            "en": "Auto-off delay",
+            "nl": "Vertraging automatisch uitschakelen"
           },
           "hint": {
-            "en": "Determine under what saturation level it will transition to the white LED. 0 = No transition to white LED.",
-            "nl": "Bepaal onder welk verzadigingsniveau het over zal gaan op de witte LED. 0 = Geen overgang naar witte LED."
+            "en": "This parameter (4) determines the time after which the relay will automatically turn off.",
+            "nl": "Deze parameter (4) bepaalt de tijd waarna het relais automatisch uit gaat."
           },
           "attr": {
             "min": 0,
-            "max": 100
+            "max": 65535
           },
-          "value": 10
+          "value": 0
         },
         {
-          "id": "transition_mode",
-          "type": "radio",
+          "id": "switch_type",
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "type": "dropdown",
           "label": {
-            "en": "Transition mode",
-            "nl": "Transitie modus"
+            "en": "Switch type",
+            "nl": "Schakelaar type"
           },
           "hint": {
-            "en": "Select what transition mode is being using.",
-            "nl": "Selecteer welke transitie modus er wordt gebruikt."
+            "en": "This parameter (14) determines what device is operating the switch.",
+            "nl": "Deze parameter (14) bepaalt welk apparaat de schakelaar bestuurt."
           },
-          "value": "0",
+          "value": "1",
           "values": [
             {
               "id": "0",
               "label": {
-                "en": "Time based steps (mode 1)",
-                "nl": "Tijd gebaseerde stappen (mode 1)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "Fixed time (mode 2)",
-                "nl": "Vaste tijd (mode 2)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "mode1_steps",
-          "type": "number",
-          "label": {
-            "en": "Transistion step size (mode 1)",
-            "nl": "Transitie stap grote (mode 1)"
-          },
-          "hint": {
-            "en": "Sets the size of the steps taken when making a transition. Range: 1 - 255",
-            "nl": "Zet de grote van de stappen bij het maken van de transitie. Bereik: 1 - 255"
-          },
-          "attr": {
-            "min": 1,
-            "max": 255
-          },
-          "value": 1
-        },
-        {
-          "id": "mode1_time",
-          "type": "number",
-          "label": {
-            "en": "Transition step time (mode 1)",
-            "nl": "Transitie stap tijd (mode 1)"
-          },
-          "hint": {
-            "en": "Sets the time (in milli-seconds) that each step takes when making a transition. Range: 0 (immediate), 1 - 60000",
-            "nl": "Zet de tijd (in milli-seconden) dat elke stap maakt bij het maken van een transitie. Bereik: 0 (meteen), 1 - 60000"
-          },
-          "attr": {
-            "min": 0,
-            "max": 60000
-          },
-          "value": 10
-        },
-        {
-          "id": "mode2_range",
-          "type": "dropdown",
-          "label": {
-            "en": "Time range (mode 2)",
-            "nl": "Tijd bereik (mode 2)"
-          },
-          "hint": {
-            "en": "Choose in which time range mode 2 should work",
-            "nl": "Kies in welk tijd bereik mode 2 werkt"
-          },
-          "value": "64",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Milliseconds",
-                "nl": "Milliseconden"
-              }
-            },
-            {
-              "id": "64",
-              "label": {
-                "en": "Seconds",
-                "nl": "Seconden"
-              }
-            },
-            {
-              "id": "128",
-              "label": {
-                "en": "Seconds times 10",
-                "nl": "Seconden keer 10"
-              }
-            },
-            {
-              "id": "192",
-              "label": {
-                "en": "Minutes",
-                "nl": "Minuten"
-              }
-            }
-          ]
-        },
-        {
-          "id": "mode2_transition_time",
-          "type": "number",
-          "label": {
-            "en": "Transition time (mode 2)",
-            "nl": "Transitie tijd (mode 2)"
-          },
-          "hint": {
-            "en": "Sets the amount of time that it takes to transition from beginning to the end. 0 = no transition",
-            "nl": "Zet hoeveelheid tijd de transitie duurt van begin naar einde. 0 = geen transitie"
-          },
-          "attr": {
-            "min": 0,
-            "max": 63
-          },
-          "value": 3
-        },
-        {
-          "id": "maximum_brightness",
-          "type": "number",
-          "label": {
-            "en": "Maximum brightness",
-            "nl": "Maximale helderheid"
-          },
-          "hint": {
-            "en": "Sets the maximum brightness the module will output. Range: 3 - 255",
-            "nl": "Zet de maximale helderheid van de module. Bereik: 3 - 255"
-          },
-          "attr": {
-            "min": 3,
-            "max": 255
-          },
-          "value": 255
-        },
-        {
-          "id": "minimum_brightness",
-          "type": "number",
-          "label": {
-            "en": "Minimum brightness",
-            "nl": "Minimale helderheid"
-          },
-          "hint": {
-            "en": "Sets the minimum brightness of the module. Range: 2 - 254",
-            "nl": "Zet de minimale helderheid van de module. Bereik: 2 - 254"
-          },
-          "attr": {
-            "min": 2,
-            "max": 254
-          },
-          "value": 2
-        },
-        {
-          "id": "input_config_1",
-          "type": "dropdown",
-          "label": {
-            "en": "Input 1 configuration",
-            "nl": "Ingang 1 configuratie"
-          },
-          "hint": {
-            "en": "Determine what is (optionally) connected to input 1 of the RGBW controller.",
-            "nl": "Bepaal wat er (optioneel) aangesloten is op ingang 1 van de RGBW controller."
-          },
-          "value": "1",
-          "values": [
-            {
-              "id": "8",
-              "label": {
-                "en": "Analog (0 - 10v)",
-                "nl": "Analoog (0 - 10v)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
                 "en": "Momentary switch",
-                "nl": "Kortstondige schakelaar"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Toggle switch (toggle state)",
-                "nl": "Tuimel schakelaar (schakel status)"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Toggle switch (switch state based)",
-                "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "input_config_2",
-          "type": "dropdown",
-          "label": {
-            "en": "Input 2 configuration",
-            "nl": "Ingang 2 configuratie"
-          },
-          "hint": {
-            "en": "Determine what is (optionally) connected to input 2 of the RGBW controller.",
-            "nl": "Bepaal wat er (optioneel) aangesloten is op ingang 2 van de RGBW controller."
-          },
-          "value": "1",
-          "values": [
-            {
-              "id": "8",
-              "label": {
-                "en": "Analog (0 - 10v)",
-                "nl": "Analoog (0 - 10v)"
+                "nl": "Puls schakelaar"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Momentary switch",
-                "nl": "Kortstondige schakelaar"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Toggle switch (toggle state)",
-                "nl": "Tuimel schakelaar (schakel status)"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Toggle switch (switch state based)",
-                "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
               }
             }
           ]
         },
         {
-          "id": "input_config_3",
-          "type": "dropdown",
-          "label": {
-            "en": "Input 3 configuration",
-            "nl": "Ingang 3 configuratie"
-          },
-          "hint": {
-            "en": "Determine what is (optionally) connected to input 3 of the RGBW controller.",
-            "nl": "Bepaal wat er (optioneel) aangesloten is op ingang 3 van de RGBW controller."
-          },
-          "value": "1",
-          "values": [
-            {
-              "id": "8",
-              "label": {
-                "en": "Analog (0 - 10v)",
-                "nl": "Analoog (0 - 10v)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "Momentary switch",
-                "nl": "Kortstondige schakelaar"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Toggle switch (toggle state)",
-                "nl": "Tuimel schakelaar (schakel status)"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Toggle switch (switch state based)",
-                "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "input_config_4",
-          "type": "dropdown",
-          "label": {
-            "en": "Input 4 configuration",
-            "nl": "Ingang 4 configuratie"
-          },
-          "hint": {
-            "en": "Determine what is (optionally) connected to input 4 of the RGBW controller.",
-            "nl": "Bepaal wat er (optioneel) aangesloten is op ingang 4 van de RGBW controller."
-          },
-          "value": "1",
-          "values": [
-            {
-              "id": "8",
-              "label": {
-                "en": "Analog (0 - 10v)",
-                "nl": "Analoog (0 - 10v)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "Momentary switch",
-                "nl": "Kortstondige schakelaar"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "Toggle switch (toggle state)",
-                "nl": "Tuimel schakelaar (schakel status)"
-              }
-            },
-            {
-              "id": "6",
-              "label": {
-                "en": "Toggle switch (switch state based)",
-                "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "save_state",
+          "id": "save_power_state",
           "type": "checkbox",
           "label": {
-            "en": "Save power-off state",
-            "nl": "Onthoud status na stroomonderbreking"
+            "en": "Restore state after power failure",
+            "nl": "Herstel status na stroomonderbreking"
           },
           "hint": {
-            "en": "Restores last known state after power disruption",
-            "nl": "Herstel laatst bekende status na stroomonderbreking"
+            "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+            "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+          },
+          "zwave": {
+            "index": 16,
+            "size": 1
           },
           "value": true
+        }
+      ]
+    },
+    {
+      "id": "FGSS-001",
+      "name": {
+        "en": "Smoke Sensor",
+        "nl": "Rookmelder"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_heat",
+        "alarm_smoke",
+        "alarm_tamper",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/FGSS-001/assets/images/large.png",
+        "small": "/drivers/FGSS-001/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          3072
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "learnmode": {
+          "image": "/drivers/FGSS-001/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on the Smoke Sensor three times",
+            "nl": "Druk driemaal op de knop op de Rookmelder"
+          }
         },
+        "zwaveAllianceProductId": 1049
+      },
+      "settings": [
         {
-          "id": "input_threshold",
-          "type": "number",
+          "type": "group",
           "label": {
-            "en": "Input threshold",
-            "nl": "Ingang drempel"
+            "en": "Smoke sensor",
+            "nl": "Rookmelder"
           },
-          "hint": {
-            "en": "The amount of voltage on the input(s) that needs to change before being reported. Range: 0.1 - 10.0 Volt",
-            "nl": "Hoeveel de voltage op de ingang(en) moet veranderen voor een update wordt verzonden. Bereik: 0,1 - 10,0 Volt"
-          },
-          "attr": {
-            "min": 0.1,
-            "max": 10,
-            "step": 0.1
-          },
-          "value": 0.5
-        },
-        {
-          "id": "watt_report_interval",
-          "type": "number",
-          "label": {
-            "en": "Watt report interval",
-            "nl": "Watt update interval"
-          },
-          "hint": {
-            "en": "On what interval (seconds) does the Wattage update needs to be send if the value has changed. Range: 0 (off), 1 - 65534",
-            "nl": "Op welk interval (seconden) wordt een Wattage update verzonden als de waarde is veranderd. Bereik: 0 (uit), 1 - 65534"
-          },
-          "attr": {
-            "min": 0,
-            "max": 65534
-          },
-          "value": 30
-        },
-        {
-          "id": "kwh_threshold",
-          "type": "number",
-          "label": {
-            "en": "kWh threshold",
-            "nl": "kWh drempel"
-          },
-          "hint": {
-            "en": "How much must the kWh value change before an update is send. Range: 0 (off), 0.01 - 2.54",
-            "nl": "Hoeveel moet de kWh waarde veranderen voor het word verzonden. Bereik: 0 (uit), 0,01 - 2,54"
-          },
-          "attr": {
-            "min": 0,
-            "max": 2.54,
-            "step": 0.01
-          },
-          "value": 0.1
-        },
-        {
-          "id": "color_pallet",
-          "type": "dropdown",
-          "label": {
-            "en": "Used color pallet",
-            "nl": "Gebruikte kleurenpallet"
-          },
-          "hint": {
-            "en": "Determine what color pallet is being used.",
-            "nl": "Bepaal welk kleurenpallet wordt gebruikt."
-          },
-          "value": "accurate",
-          "values": [
+          "collapsed": false,
+          "children": [
             {
-              "id": "none",
+              "zwave": {
+                "index": 82,
+                "size": 1,
+                "signed": false
+              },
+              "id": "smoke_sensitivity",
+              "value": 15,
               "label": {
-                "en": "None",
-                "nl": "Geen"
-              }
+                "en": "Sensitivity",
+                "nl": "Gevoeligheid"
+              },
+              "hint": {
+                "en": "This parameter (82) sets the sensitivity for this sensor.",
+                "nl": "Deze parameter (82) bepaalt de gevoeligheid van deze sensor."
+              },
+              "attr": {
+                "min": 8,
+                "max": 255
+              },
+              "type": "number"
             },
             {
-              "id": "accurate",
+              "zwave": {
+                "index": 1,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "value": 0,
+              "id": "smoke_alarm_cancellation_delay",
               "label": {
-                "en": "Accurate colors",
-                "nl": "Nauwkeurige kleuren"
-              }
+                "en": "Cancellation delay (s)",
+                "nl": "Annuleringsperiode (s)"
+              },
+              "hint": {
+                "en": "This parameter (1) sets the time after which the alarm will be cancelled.",
+                "nl": "Deze parameter (1) bepaalt de tijd waarna het alarm wordt gedeactiveerd."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature sensor",
+            "nl": "Temperatuursensor"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 20,
+              "id": "temperature_report_hysteresis",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
             },
             {
-              "id": "huestrip",
+              "zwave": {
+                "index": 10,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 17280
+              },
+              "value": 17280,
+              "id": "temperature_report_interval",
               "label": {
-                "en": "Philips Hue strip (plus)",
-                "nl": "Philips Hue strip (plus)"
-              }
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (10) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
             },
             {
-              "id": "huee27v3",
+              "zwave": {
+                "index": 81,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 54,
+              "id": "temperature_alarm_threshold",
               "label": {
-                "en": "Philips Hue bulb (v3, enhanced color)",
-                "nl": "Philips Hue lamp (v3, verbeterde kleur)"
-              }
+                "en": "High value alarm threshold",
+                "nl": "Drempel waarde voor het te hoge waarden alarm"
+              },
+              "hint": {
+                "en": "This parameter (81) determines the threshold at which the high value alarm will go off.",
+                "nl": "Deze parameter (81) bepaalt de drempel waarboven het hoge waarden alarm afgaat."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 73,
+                "size": 2
+              },
+              "id": "temperature_offset",
+              "value": 0,
+              "label": {
+                "en": "Offset",
+                "nl": "Correctie"
+              },
+              "hint": {
+                "en": "This parameter (73) determines the value to be added to the measured values.",
+                "nl": "Deze parameter (73) bepaalt de waarde die wordt opgeteld aan de gemeten waarden."
+              },
+              "attr": {
+                "min": -1000,
+                "max": 1000
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Tamper alarm",
+            "nl": "Sabotage alarm"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "tamper_alarm",
+              "type": "dropdown",
+              "label": {
+                "en": "Tamper alarm",
+                "nl": "Sabotage alarm"
+              },
+              "value": "1",
+              "hint": {
+                "en": "This parameter (89) determines the behaviour of the tamper alarm.",
+                "nl": "Deze parameter (89) bepaalt het gedrag van het sabotage alarm."
+              },
+              "zwave": {
+                "index": 89,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Inactive",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Active, with cancellation",
+                    "nl": "Ingeschakeld, met annulering"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Active, without cancellation",
+                    "nl": "Ingeschakeld, zonder annulering"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED and acoustic notifications",
+            "nl": "LED en akoestische notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_and_acoustic_alarm",
+              "type": "dropdown",
+              "label": {
+                "en": "LED indicator and acoustic alarm",
+                "nl": "LED indicatie en akoestisch alarm"
+              },
+              "value": "3",
+              "hint": {
+                "en": "This parameter (2) determines the behaviour of the visual and acoustic alarm when the alarm is triggerd.",
+                "nl": "Deze parameter (2) bepaalt het gedrag van de visuele en akoestische melding bij het af gaan van het alarm."
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Acoustic and visual alarms inactive",
+                    "nl": "Akoestisch en visueel alarm uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Only visual alarm active",
+                    "nl": "Alleen visueel alarm ingeschakeld"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Only acoustic alarm active",
+                    "nl": "Alleen akoestisch alarm ingeschakeld"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Acoustic and visual alarms active",
+                    "nl": "Akoestisch en visueel alarm ingeschakeld"
+                  }
+                }
+              ]
             }
           ]
         }
@@ -5875,8 +6640,8 @@
                 "nl": "Herstel status na stroomonderbreking"
               },
               "hint": {
-                "en": "This parameter (16) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
-                "nl": "Deze parameter (16) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+                "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
               },
               "zwave": {
                 "index": 16,
@@ -6301,8 +7066,8 @@
                 "nl": "Herstel status na stroomonderbreking"
               },
               "hint": {
-                "en": "This parameter (2) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
-                "nl": "Deze parameter (2) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+                "en": "This parameter (2) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (2) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
               }
             }
           ]
@@ -6659,15 +7424,15 @@
                 {
                   "id": "0",
                   "label": {
-                    "en": "{{driverNameEN}} off, device(s) also off. {{driverNameEN}} on, device(s) also on",
-                    "nl": "{{driverNameNL}} uit, apparaat(en) ook uit. {{driverNameNL}} aan, apparaat(en) ook aan"
+                    "en": "Wall plug (Z-Wave plus) off, device(s) also off. Wall plug (Z-Wave plus) on, device(s) also on",
+                    "nl": "Tussenstekker (Z-Wave plus) uit, apparaat(en) ook uit. Tussenstekker (Z-Wave plus) aan, apparaat(en) ook aan"
                   }
                 },
                 {
                   "id": "1",
                   "label": {
-                    "en": "{{driverNameEN}} off, device(s) on. {{driverNameEN}} on, device(s) off",
-                    "nl": "{{driverNameNL}} uit, apparaat(en) aan. {{driverNameNL}} aan, apparaat(en) uit"
+                    "en": "Wall plug (Z-Wave plus) off, device(s) on. Wall plug (Z-Wave plus) on, device(s) off",
+                    "nl": "Tussenstekker (Z-Wave plus) uit, apparaat(en) aan. Tussenstekker (Z-Wave plus) aan, apparaat(en) uit"
                   }
                 }
               ]
@@ -6678,85 +7443,108 @@
     }
   ],
   "flow": {
-    "actions": [
+    "triggers": [
       {
-        "id": "FGD-212_set_brightness",
+        "id": "FGKF-601-scene",
         "title": {
-          "en": "Set forced brightness",
-          "nl": "Stel geforceerde helderheid in"
+          "en": "Keyfob buttons",
+          "nl": "Keyfob knoppen"
         },
         "hint": {
-          "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
-          "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
+          "en": "In order to use \"Pressed 2x/3x\" enable this functionality in the device settings.",
+          "nl": "Om gebruik te maken van \"2x/3x ingedrukt\" schakel deze functionaliteit in via de apparaat instellingen."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=FGD-212"
+            "filter": "driver_id=FGKF-601"
           },
           {
-            "name": "set_forced_brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_dim_duration",
-        "title": {
-          "en": "Change brightness over time",
-          "nl": "Verander helderheid over tijd"
-        },
-        "hint": {
-          "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.\nRange: 0 - 127 seconds or minutes (depending on selection).",
-          "nl": "Verander de helderheid en specificeer the gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid.\nBereik: 0 - 127 seconden of minuten (afhankelijk van de selectie)."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          },
-          {
-            "name": "dimming_duration",
-            "type": "number",
-            "min": 0,
-            "max": 127,
-            "placeholder": {
-              "en": "Duration",
-              "nl": "Tijdsduur"
-            }
-          },
-          {
-            "name": "duration_unit",
+            "name": "button",
             "type": "dropdown",
             "values": [
               {
-                "id": "0",
+                "id": "1",
                 "label": {
-                  "en": "sec",
-                  "nl": "sec"
+                  "en": "Square (□)",
+                  "nl": "Vierkant (□)"
                 }
               },
               {
-                "id": "1",
+                "id": "2",
                 "label": {
-                  "en": "min",
-                  "nl": "min"
+                  "en": "Circle (○)",
+                  "nl": "Cirkel (○)"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Cross (x)",
+                  "nl": "Kruis (x)"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Triangle (△)",
+                  "nl": "Driehoek (△)"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Minus (-)",
+                  "nl": "Min (-)"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Plus (+)",
+                  "nl": "Plus (+)"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed 2x",
+                  "nl": "2x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed 3x",
+                  "nl": "3x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Long press",
+                  "nl": "Lang drukken"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Long press released",
+                  "nl": "Lang drukken gestopt"
                 }
               }
             ]
@@ -6764,44 +7552,502 @@
         ]
       },
       {
-        "id": "FGD-212_set_timer",
+        "id": "FGKF-601-sequence",
         "title": {
-          "en": "Automatically turn off after",
-          "nl": "Stel automatisch uitschakelen in"
+          "en": "Keyfob sequence",
+          "nl": "Keyfob reeks"
         },
         "hint": {
-          "en": "This Flow Action determines the time after which the device will automatically power off.",
-          "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
+          "en": "First configure the sequences in the device settings panel of the Keyfob.",
+          "nl": "Stel eerst reeksen in via de apparaat instellingen van de Keyfob."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=FGD-212"
+            "filter": "driver_id=FGKF-601"
           },
           {
-            "name": "set_timer_functionality",
-            "type": "number",
-            "min": 0,
-            "max": 32767
+            "name": "sequence",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "7",
+                "label": {
+                  "en": "Sequence 1",
+                  "nl": "Reeks 1"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Sequence 2",
+                  "nl": "Reeks 2"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Sequence 3",
+                  "nl": "Reeks 3"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Sequence 4",
+                  "nl": "Reeks 4"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Sequence 5",
+                  "nl": "Reeks 5"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Sequence 6",
+                  "nl": "Reeks 6"
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": "FGD-212_reset_meter",
+        "id": "RGBW_input_on",
+        "title": {
+          "en": "In-/output turned on",
+          "nl": "In-/uitgang aan geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_input_off",
+        "title": {
+          "en": "In-/output turned off",
+          "nl": "In-/uitgang uit geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input1",
+        "title": {
+          "en": "Voltage input 1 changed",
+          "nl": "Voltage ingang 1 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input2",
+        "title": {
+          "en": "Voltage input 2 changed",
+          "nl": "Voltage ingang 2 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input3",
+        "title": {
+          "en": "Voltage input 3 changed",
+          "nl": "Voltage ingang 3 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input4",
+        "title": {
+          "en": "Voltage input 4 changed",
+          "nl": "Voltage ingang 4 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "RGBW_specific",
+        "title": {
+          "en": "Set specific brightness",
+          "nl": "Stel specifieke helderheid in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "r",
+                "label": {
+                  "en": "Red output",
+                  "nl": "Rode uitgang"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "Green output",
+                  "nl": "Groene uitgang"
+                }
+              },
+              {
+                "id": "b",
+                "label": {
+                  "en": "Blue output",
+                  "nl": "Blauwe uitgang"
+                }
+              },
+              {
+                "id": "w",
+                "label": {
+                  "en": "White output",
+                  "nl": "Witte uitgang"
+                }
+              }
+            ]
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "RGBW_random",
+        "title": {
+          "en": "Choose a random color",
+          "nl": "Kies een willekeurige kleur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "range",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "rgb",
+                "label": {
+                  "en": "RGB",
+                  "nl": "RGB"
+                }
+              },
+              {
+                "id": "rgbw",
+                "label": {
+                  "en": "RGB with white",
+                  "nl": "RGB met wit"
+                }
+              },
+              {
+                "id": "rgb-w",
+                "label": {
+                  "en": "RGB or white",
+                  "nl": "RGB of wit"
+                }
+              },
+              {
+                "id": "r-g-b",
+                "label": {
+                  "en": "Primary",
+                  "nl": "Primair"
+                }
+              },
+              {
+                "id": "r-g-b-w",
+                "label": {
+                  "en": "Primary or white",
+                  "nl": "Primair of wit"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m",
+                "label": {
+                  "en": "Primary/secundary",
+                  "nl": "Primair/secundair"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m-w",
+                "label": {
+                  "en": "Primary/secundary or white",
+                  "nl": "Primair/secundair of wit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_animation",
+        "title": {
+          "en": "Choose an animation",
+          "nl": "Kies een animatie"
+        },
+        "hint": {
+          "en": "Animations only work if the mode type is set to RGB(W)",
+          "nl": "Animaties werken alleen als de mode type is ingesteld op RGB(W)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "animation",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "6",
+                "label": {
+                  "en": "Fire",
+                  "nl": "Vuur"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Storm/lightning",
+                  "nl": "Storm/onweer"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Rainbow",
+                  "nl": "Regenboog"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Aurora",
+                  "nl": "Aurora"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Police",
+                  "nl": "Politie"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Random animation",
+                  "nl": "Willekeurige animatie"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Stop animation",
+                  "nl": "Stop animatie"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop animation, back to previous state",
+                  "nl": "Stop animatie, herstel vorige status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRGBWM-441_reset_meter",
         "title": {
           "en": "Reset meter values",
           "nl": "Meter waarden resetten"
         },
         "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
+          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=FGD-212"
+            "filter": "driver_id=FGRGBWM-441"
           }
         ]
       }

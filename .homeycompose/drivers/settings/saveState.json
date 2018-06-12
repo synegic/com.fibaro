@@ -5,8 +5,8 @@
     "nl": "Herstel status na stroomonderbreking"
   },
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
   },
   "zwave": {
     "index": 16,

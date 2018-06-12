@@ -1,28 +1,28 @@
 {
   "type": "dropdown",
   "label": {
-    "en": "Switch Type",
-    "nl": "Schakelaar Type"
+    "en": "Switch type",
+    "nl": "Schakelaar type"
   },
   "hint": {
     "en": "This parameter ({{zwaveParameterIndex}}) determines what device is operating the switch.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk apparaat de schakelaar bestuurt.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk apparaat de schakelaar bestuurt."
   },
   "value": "1",
   "values": [
     {
       "id": "0",
       "label": {
-        "en": "Momentary Switch",
-        "nl": "Puls Schakelaar"
+        "en": "Momentary switch",
+        "nl": "Puls schakelaar"
       }
     },
     {
       "id": "1",
       "label": {
-        "en": "Toggle Switch",
-        "nl": "Tuimel Schakelaar"
+        "en": "Toggle switch",
+        "nl": "Tuimel schakelaar"
       }
     }
   ]
-},
+}
