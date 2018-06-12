@@ -514,7 +514,7 @@
               "value": false,
               "hint": {
                 "en": "This parameter (26) determines whether or not input 2 additionally controls the output 2.",
-                "nl": "Deze parameter (26) bepaalt of ingang 2 schakelt ook uitgang 2 bediend."
+                "nl": "Deze parameter (26) bepaalt of het schakelen van ingang 2 ook uitgang 2 bediend."
               },
               "zwave": {
                 "index": 26,
@@ -531,7 +531,7 @@
               "value": false,
               "hint": {
                 "en": "This parameter (29) switches the functionality of input 1 to become the functionality of input 2, and vice versa.",
-                "nl": "Deze parameter (29) zorgt voor het omwisselen van functionaliteit tussen ingange 1 en ingang 2."
+                "nl": "Deze parameter (29) zorgt voor het omwisselen van functionaliteit tussen ingang 1 en ingang 2."
               },
               "zwave": {
                 "index": 29,

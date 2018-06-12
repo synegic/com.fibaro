@@ -68,7 +68,7 @@
         "value": false,
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not input 2 additionally controls the output 2.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of ingang 2 schakelt ook uitgang 2 bediend."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het schakelen van ingang 2 ook uitgang 2 bediend."
         },
         "zwave": {
           "index": 26,
@@ -85,7 +85,7 @@
         "value": false,
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) switches the functionality of input 1 to become the functionality of input 2, and vice versa.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) zorgt voor het omwisselen van functionaliteit tussen ingange 1 en ingang 2."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) zorgt voor het omwisselen van functionaliteit tussen ingang 1 en ingang 2."
         },
         "zwave": {
           "index": 29,
