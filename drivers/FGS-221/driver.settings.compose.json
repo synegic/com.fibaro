@@ -37,8 +37,8 @@
     "id": "save_power_state",
     "type": "checkbox",
     "label": {
-      "en": "Save Power State",
-      "nl": "Onthoud Power Status"
+      "en": "Save power state",
+      "nl": "Onthoud power status"
     },
     "hint": {
       "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the device saves it state when power is disconnected.",
