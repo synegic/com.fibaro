@@ -22,8 +22,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Double Relay Switch 2 three times",
-        "nl": "Druk driemaal op de knop op de Fibaro Dubbele Relais Schakelaar 2"
+        "en": "Press the button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
       }
     },
     "associationGroups": [
@@ -35,7 +35,7 @@
         "capabilities": [
           "onoff"
         ],
-        "icon": "/drivers/FGS-222/assets/icon-2.svg",
+        "icon": "{{driverAssetsPath}}/icon-2.svg",
         "name": {
           "en": "Relay 2 (S2 & Q2)",
           "nl": "Relais 2 (S2 & Q2)"

@@ -3,7 +3,7 @@
     "id": "auto_off",
     "type": "checkbox",
     "label": {
-      "en": "Auto-off Behaviour",
+      "en": "Auto-off behaviour",
       "nl": "Automatisch uit gedrag"
     },
     "hint": {
@@ -20,12 +20,12 @@
     "id": "auto_off_relay_1",
     "type": "number",
     "label": {
-      "en": "Auto-off Relay 1",
-      "nl": "Automatisch uit Relais 1"
+      "en": "Auto-off relay 1",
+      "nl": "Automatisch uit relais 1"
     },
     "hint": {
-      "en": "Set the time Relay 1 will turn off automatically.\nRange: 0 (off), 1 (0.1s) - 65535 (2,5s)\nDefault: 0 (off)",
-      "nl": "Zet de tijd dat Relais 1 automatisch uit gaat.\nBereik: 0 (uit), 1 (0,1s) - 65535 (6553,5s)\nStandaard: 0 (uit)"
+      "en": "Set the time Relay 1 will turn off automatically.",
+      "nl": "Zet de tijd dat Relais 1 automatisch uit gaat."
     },
     "zwave": {
       "index": 4,
@@ -42,12 +42,12 @@
     "id": "auto_off_relay_2",
     "type": "number",
     "label": {
-      "en": "Auto-off Relay 2",
-      "nl": "Automatisch uit Relais 2"
+      "en": "Auto-off relay 2",
+      "nl": "Automatisch uit relais 2"
     },
     "hint": {
-      "en": "Set the time Relay 2 will turn off automatically.\nRange: 0 (off), 1 (0.1s) - 65535 (2,5s)\nDefault: 0 (off)",
-      "nl": "Zet de tijd dat Relais 2 automatisch uit gaat.\nBereik: 0 (uit), 1 (0,1s) - 65535 (6553,5s)\nStandaard: 0 (uit)"
+      "en": "Set the time Relay 2 will turn off automatically.",
+      "nl": "Zet de tijd dat Relais 2 automatisch uit gaat."
     },
     "zwave": {
       "index": 5,
@@ -64,12 +64,12 @@
     "id": "switch_type",
     "type": "dropdown",
     "label": {
-      "en": "Switch Type",
-      "nl": "Schakelaar Type"
+      "en": "Switch type",
+      "nl": "Schakelaar type"
     },
     "hint": {
-      "en": "What type of switch is connected. (default = Momentary Switch)",
-      "nl": "Wat voor soort schakelaar is aangesloten. (standaard = Puls Schakelaar)"
+      "en": "What type of switch is connected.",
+      "nl": "Wat voor soort schakelaar is aangesloten."
     },
     "zwave": {
       "index": 14,
@@ -97,12 +97,12 @@
     "id": "switch_behaviour",
     "type": "dropdown",
     "label": {
-      "en": "Switch Behaviour",
-      "nl": "Schakelaar Gedrag"
+      "en": "Switch behaviour",
+      "nl": "Schakelaar gedrag"
     },
     "hint": {
-      "en": "How the relay behaves when the switch is toggled. (default = Toggle when switched)",
-      "nl": "Gedrag van het relais als de schakelaar omgezet wordt. (standaard = Wissel als de schakelaar omgezet wordt)"
+      "en": "How the relay behaves when the switch is toggled.",
+      "nl": "Gedrag van het relais als de schakelaar omgezet wordt."
     },
     "zwave": {
       "index": 13,
@@ -130,8 +130,8 @@
     "id": "save_power_state",
     "type": "checkbox",
     "label": {
-      "en": "Save Power State",
-      "nl": "Onthoud Power Status"
+      "en": "Save power state",
+      "nl": "Onthoud power status"
     },
     "hint": {
       "en": "If enabled, it will save the state it was in when power was disconnected",
