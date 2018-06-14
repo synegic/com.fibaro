@@ -1,8 +1,8 @@
 {
   "type": "radio",
   "label": {
-    "en": "Operation device",
-    "nl": "Operatief apparaat"
+    "en": "Switch type",
+    "nl": "Schakelaar type"
   },
   "zwave": {
     "index": 1,
