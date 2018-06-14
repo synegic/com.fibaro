@@ -8,8 +8,8 @@
     },
     "value": 3600,
     "label": {
-      "en": "Battery Poll Interval",
-      "nl": "Batterij Poll Interval"
+      "en": "Battery poll onterval",
+      "nl": "Batterij poll interval"
     },
     "hint": {
       "en": "The amount of seconds between asking the device for a status update.",
@@ -25,12 +25,12 @@
     },
     "value": 300,
     "label": {
-      "en": "Measured Temperature Poll Interval",
-      "nl": "Gemeten Temperatuur Poll Interval"
+      "en": "Measured temperature poll interval",
+      "nl": "Gemeten temperatuur poll interval"
     },
     "hint": {
-      "en": "The amount of seconds between asking the device for a status update.",
-      "nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+      "en": "The amount of seconds between asking the device for its latest measured temperature.",
+      "nl": "Aantal seconden tussen het opvragen van de laatst gemeten temperatuur aan het apparaat."
     }
   },
   {
@@ -42,12 +42,12 @@
     },
     "value": 600,
     "label": {
-      "en": "Target Temperature Poll Interval",
-      "nl": "Doel Temperatuur Poll Interval"
+      "en": "Target temperature poll interval",
+      "nl": "Doel temperatuur poll interval"
     },
     "hint": {
-      "en": "The amount of seconds between asking the device for a status update.",
-      "nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+      "en": "The amount of seconds between asking the device for its target temperature.",
+      "nl": "Aantal seconden tussen het opvragen van de doel temperatuur aan het apparaat."
     }
   }
 ]
