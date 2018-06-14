@@ -11,8 +11,8 @@
         "id": "smoke_sensitivity",
         "type": "dropdown",
         "label": {
-          "en": "Smoke Sensitivity",
-          "nl": "Rook Gevoeligheid"
+          "en": "Smoke sensitivity",
+          "nl": "Rook gevoeligheid"
         },
         "value": "2",
         "hint": {
@@ -126,15 +126,15 @@
           {
             "id": "0",
             "label": {
-              "en": "No Notifications",
-              "nl": "Geen Meldingen"
+              "en": "No notifications",
+              "nl": "Geen meldingen"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Casing Opened",
-              "nl": "Behuizing Geopend"
+              "en": "Casing opened",
+              "nl": "Behuizing geopend"
             }
           },
           {
@@ -147,29 +147,29 @@
           {
             "id": "3",
             "label": {
-              "en": "Casing Opened and Temperature too high",
-              "nl": "Behuizing Geopend en Temperatuur te hoog"
+              "en": "Casing opened and temperature too high",
+              "nl": "Behuizing geopend en temperatuur te hoog"
             }
           },
           {
             "id": "4",
             "label": {
-              "en": "Lack of Z-Wave Range",
-              "nl": "Te weinig Z-Wave Bereik"
+              "en": "Lack of Z-Wave range",
+              "nl": "Te weinig Z-Wave bereik"
             }
           },
           {
             "id": "5",
             "label": {
-              "en": "Casing Opened and Lack of Z-Wave Range",
-              "nl": "Behuizing Geopend en Te weinig Z-Wave Bereik"
+              "en": "Casing opened and lack of Z-Wave range",
+              "nl": "Behuizing geopend en te weinig Z-Wave bereik"
             }
           },
           {
             "id": "6",
             "label": {
-              "en": "Temperature too high and Lack of Z-Wave Range",
-              "nl": "Temperatuur te hoog en Te weinig Z-Wave Bereik"
+              "en": "Temperature too high and lack of Z-Wave range",
+              "nl": "Temperatuur te hoog en te weinig Z-Wave bereik"
             }
           },
           {
@@ -185,8 +185,8 @@
         "id": "acoustic_notification",
         "type": "dropdown",
         "label": {
-          "en": "Acoutic Notification",
-          "nl": "Akoestische Meldingen"
+          "en": "Acoutic notification",
+          "nl": "Akoestische meldingen"
         },
         "value": "0",
         "hint": {
@@ -201,15 +201,15 @@
           {
             "id": "0",
             "label": {
-              "en": "No Notifications",
-              "nl": "Geen Meldingen"
+              "en": "No notifications",
+              "nl": "Geen meldingen"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Casing Opened",
-              "nl": "Behuizing Geopend"
+              "en": "Casing opened",
+              "nl": "Behuizing geopend"
             }
           },
           {
@@ -222,29 +222,29 @@
           {
             "id": "3",
             "label": {
-              "en": "Casing Opened and Temperature too high",
-              "nl": "Behuizing Geopend en Temperatuur te hoog"
+              "en": "Casing opened and temperature too high",
+              "nl": "Behuizing geopend en temperatuur te hoog"
             }
           },
           {
             "id": "4",
             "label": {
-              "en": "Lack of Z-Wave Range",
-              "nl": "Te weinig Z-Wave Bereik"
+              "en": "Lack of Z-Wave range",
+              "nl": "Te weinig Z-Wave bereik"
             }
           },
           {
             "id": "5",
             "label": {
-              "en": "Casing Opened and Lack of Z-Wave Range",
-              "nl": "Behuizing Geopend en Te weinig Z-Wave Bereik"
+              "en": "Casing Oopened and lack of Z-Wave range",
+              "nl": "Behuizing geopend en te weinig Z-Wave bereik"
             }
           },
           {
             "id": "6",
             "label": {
-              "en": "Temperature too high and Lack of Z-Wave Range",
-              "nl": "Temperatuur te hoog en Te weinig Z-Wave Bereik"
+              "en": "Temperature too high and lack of Z-Wave range",
+              "nl": "Temperatuur te hoog en te weinig Z-Wave bereik"
             }
           },
           {

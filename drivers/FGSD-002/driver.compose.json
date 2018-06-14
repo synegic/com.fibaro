@@ -12,8 +12,8 @@
     "measure_temperature"
   ],
   "images": {
-    "large": "${{driverAssetsPath}}/images/large.png",
-    "small": "${{driverAssetsPath}}/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -28,10 +28,10 @@
     "zwaveAllianceProductId": 2837,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2837/FGSD-002-EN-A-v1.1.pdf",
     "learnmode": {
-      "image": "${{driverAssetsPath}}/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Smoke Detector three times",
-        "nl": "Druk driemaal op de knop op de Fibaro Rookmelder"
+        "en": "Press the button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
       }
     },
     "associationGroups": [
