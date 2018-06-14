@@ -11,7 +11,6 @@ class Button extends ZwaveDevice {
 			if(state && args &&
 				state.hasOwnProperty('scene') &&
 				args.hasOwnProperty('scene')) {
-					this.log(`Received state scene: ${state.scene}, expected args scene: ${args.scene}`);
 					return callback(null, state.scene === args.scene);
             }
 		});
@@ -23,10 +22,8 @@ class Button extends ZwaveDevice {
 				if (report &&
 					report.Properties1.hasOwnProperty('Key Attributes')) {
 					const buttonValue = {scene: report.Properties1['Key Attributes']};
-					this.log(`Scene parameter: ${buttonValue.scene} should equal `);
 					if (buttonValue.scene === 'Key Released') {
 						if (debouncer === 0) {
-                            this.log(`Device: ${this}, tokens: null, state: ${buttonValue}`);
                             this._onButtonTrigger.trigger(this, null, buttonValue);
 
 							debouncer++;

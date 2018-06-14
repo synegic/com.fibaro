@@ -25,8 +25,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the Fibaro Button 6 times",
-        "nl": "Druk 6 keer op de Fibaro Druk Knop"
+        "en": "Press the {{driverNameEn}} 6 times",
+        "nl": "Druk 6 keer op de {{driverNameNl}}"
       }
     },
     "associationGroups": [

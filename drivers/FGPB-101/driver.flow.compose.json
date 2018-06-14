@@ -3,8 +3,8 @@
     {
       "id": "FGPB-101",
       "title": {
-        "en": "Push Button",
-        "nl": "Druk Knop"
+        "en": "Push button",
+        "nl": "Druk knop"
       },
       "args": [
         {
@@ -49,15 +49,15 @@
             {
               "id": "Key Held Down",
               "label": {
-                "en": "Long Press (triggers every half second)",
-                "nl": "Lang Drukken (activeert elke halve seconde)"
+                "en": "Long press (triggers every half second)",
+                "nl": "Lang drukken (activeert elke halve seconde)"
               }
             },
             {
               "id": "Key Released",
               "label": {
-                "en": "Long Press Released",
-                "nl": "Lang Drukken Gestopt"
+                "en": "Long press released",
+                "nl": "Lang drukken gestopt"
               }
             }
           ]
