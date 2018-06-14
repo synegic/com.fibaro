@@ -389,6 +389,317 @@
       ]
     },
     {
+      "id": "FGD-211",
+      "name": {
+        "en": "Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGD-211/assets/images/large.png",
+        "small": "/drivers/FGD-211/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          256
+        ],
+        "productId": [
+          260,
+          262,
+          263,
+          265,
+          4106,
+          8202,
+          12298
+        ],
+        "zwaveAllianceProductId": 88,
+        "learnmode": {
+          "image": "/drivers/FGD-211/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Dimmer three times",
+            "nl": "Druk driemaal op de knop van uw Dimmer"
+          }
+        },
+        "associationGroups": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 19,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 41,
+            "size": 1,
+            "value": 1
+          }
+        ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Button behaviour",
+            "nl": "Gedrag knoppen"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "double_click",
+              "type": "checkbox",
+              "label": {
+                "en": "Double click",
+                "nl": "Dubbel klik"
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (15) determines whether or not double clicking sets the brightness level to maximum.",
+                "nl": "Deze parameter (15) bepaalt of de helderheid naar maximaal wordt ingesteld bij tweemaal drukken."
+              },
+              "zwave": {
+                "index": 15,
+                "size": 1
+              }
+            },
+            {
+              "id": "3_way_switch",
+              "type": "checkbox",
+              "label": {
+                "en": "3-way switch function",
+                "nl": "Hotelschakeling functie"
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (17) determines whether or not input 2 additionally controls the output 2.",
+                "nl": "Deze parameter (17) bepaalt of ingang 2 schakelt ook uitgang 2 bedient."
+              },
+              "zwave": {
+                "index": 17,
+                "size": 1
+              }
+            },
+            {
+              "id": "switch_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type",
+                "nl": "Schakelaar type"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (14) determines whether this device behaves like a momentary switch or a toggle switch.",
+                "nl": "Deze parameter (14) bepaalt of dit apparaat zich gedraagt als een kortstondige schakelaar of een tuimelschakelaar."
+              },
+              "zwave": {
+                "index": 14,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdruk schakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimel schakelaar"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Roller blind Switch (UP | DOWN)",
+                    "nl": "Rolgordijn schakelaar (OP | NEER)"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "minimum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Minimum brightness level",
+                "nl": "Minimale helderheidsniveau"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (13) determines the minimal brightness level.",
+                "nl": "Deze parameter (13) bepaalt het minimale helderheidsniveau."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1
+              }
+            },
+            {
+              "id": "maximum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Maximum brightness level",
+                "nl": "Maximaal helderheidsniveau"
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (12) determines the miniaml brightness level.",
+                "nl": "Deze parameter (12) bepaalt het maximale helderheidsniveau."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1
+              }
+            },
+            {
+              "id": "dimming_step_auto",
+              "type": "number",
+              "label": {
+                "en": "Dim step size with automatic control",
+                "nl": "Stapgrootte dimmen bij automatische besturing"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (8) determines the percentage of a dimming step at automatic control.",
+                "nl": "Deze parameter (8) bepaalt het percentage per dim stap bij automatische besturing."
+              },
+              "zwave": {
+                "index": 8,
+                "size": 1
+              }
+            },
+            {
+              "id": "time_dimming_step_auto",
+              "type": "number",
+              "label": {
+                "en": "Time of a dimming step at automatic control",
+                "nl": "Tijd per dim stap bij automatische besturing"
+              },
+              "value": 1,
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time of a dimming step at automatic control.",
+                "nl": "Deze parameter (10) bepaalt de tijd per dim stap bij automatische besturing."
+              },
+              "zwave": {
+                "index": 10,
+                "size": 2
+              }
+            },
+            {
+              "id": "dimming_step_manual",
+              "type": "number",
+              "label": {
+                "en": "The percentage of a dimming step at manual control",
+                "nl": "Percentage van dim stap bij handmatige bediening"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (11) determines the percentage of a dimming step at manual control.",
+                "nl": "Deze parameter (11) bepaalt het percentage per dim stap bij handmatige besturing."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1
+              }
+            },
+            {
+              "id": "time_dimming_step_manual",
+              "type": "number",
+              "label": {
+                "en": "Time of a dimming step at manual control",
+                "nl": "Tijd per dim stap bij handmatige bediening"
+              },
+              "value": 5,
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (9) determines the time of a dimming step at manual control.",
+                "nl": "Deze parameter (9) bepaalt de tijd per dim stap bij handmatige besturing."
+              },
+              "zwave": {
+                "index": 9,
+                "size": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore state after power failure",
+                "nl": "Herstel status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+              },
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FGDW-002",
       "name": {
         "en": "Door/Window sensor 2",
@@ -6417,8 +6728,177 @@
             "nl": "Herstel status na stroomonderbreking"
           },
           "hint": {
-            "en": "This parameter (16) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
-            "nl": "Deze parameter (16) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+            "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+            "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+          },
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "FGS-221",
+      "name": {
+        "en": "Double Relay Switch"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGS-221/assets/images/large.png",
+        "small": "/drivers/FGS-221/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          512
+        ],
+        "productId": [
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          265,
+          4106,
+          8202,
+          12298
+        ],
+        "learnmode": {
+          "image": "/drivers/FGS-221/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Double Relay Switch three times",
+            "nl": "Druk driemaal op de knop op uw Double Relay Switch"
+          }
+        },
+        "associationGroups": [
+          3
+        ],
+        "multiChannelNodes": {
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "onoff"
+            ],
+            "icon": "/drivers/FGS-221/assets/icon-2.svg",
+            "name": {
+              "en": "Relay 2 (S2 & Q2)",
+              "nl": "Relais 2 (S2 & Q2)"
+            },
+            "settings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "id": "auto_off",
+          "type": "checkbox",
+          "label": {
+            "en": "Auto-off behaviour",
+            "nl": "Automatisch uit gedrag"
+          },
+          "hint": {
+            "en": "This parameter (3) determines if pressing the switch a second time will immediately turn off the relays.",
+            "nl": "Deze parameter (3) bepaalt of het tweemaal indrukken van de schakelaar de relais direct uitschakelt."
+          },
+          "value": false
+        },
+        {
+          "zwave": {
+            "index": 4,
+            "size": 2,
+            "signed": false
+          },
+          "id": "auto_off_relay_1",
+          "type": "number",
+          "label": {
+            "en": "Auto-off delay",
+            "nl": "Vertraging automatisch uitschakelen"
+          },
+          "hint": {
+            "en": "This parameter (4) determines the time after which the relay will automatically turn off.",
+            "nl": "Deze parameter (4) bepaalt de tijd waarna het relais automatisch uit gaat."
+          },
+          "attr": {
+            "min": 0,
+            "max": 65535
+          },
+          "value": 0
+        },
+        {
+          "zwave": {
+            "index": 5,
+            "size": 2,
+            "signed": false
+          },
+          "id": "auto_off_relay_2",
+          "type": "number",
+          "label": {
+            "en": "Auto-off delay",
+            "nl": "Vertraging automatisch uitschakelen"
+          },
+          "hint": {
+            "en": "This parameter (4) determines the time after which the relay will automatically turn off.",
+            "nl": "Deze parameter (4) bepaalt de tijd waarna het relais automatisch uit gaat."
+          },
+          "attr": {
+            "min": 0,
+            "max": 65535
+          },
+          "value": 0
+        },
+        {
+          "id": "switch_type",
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          },
+          "hint": {
+            "en": "This parameter (14) determines what device is operating the switch.",
+            "nl": "Deze parameter (14) bepaalt welk apparaat de schakelaar bestuurt."
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Puls schakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
+              }
+            }
+          ]
+        },
+        {
+          "id": "save_power_state",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore state after power failure",
+            "nl": "Herstel status na stroomonderbreking"
+          },
+          "hint": {
+            "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+            "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+          },
+          "zwave": {
+            "index": 16,
+            "size": 1
           },
           "value": true
         }
