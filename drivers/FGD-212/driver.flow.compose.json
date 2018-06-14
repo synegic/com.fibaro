@@ -8,7 +8,7 @@
       },
       "hint": {
         "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Momentary switch\".",
-        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Pulsdruk schakelaar\" is ingesteld."
+        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Pulsdrukschakelaar\" is ingesteld."
       },
       "args": [
         {
@@ -90,7 +90,7 @@
       },
       "hint": {
         "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Toggle switch\".",
-        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Tuimel schakelaar\" is ingesteld."
+        "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Tuimelschakelaar\" is ingesteld."
       },
       "args": [
         {
@@ -250,8 +250,8 @@
         "nl": "Verander helderheid over tijd"
       },
       "hint": {
-        "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.\nRange: 0 - 127 seconds or minutes (depending on selection).",
-        "nl": "Verander de helderheid en specificeer the gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid.\nBereik: 0 - 127 seconden of minuten (afhankelijk van de selectie)."
+        "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
+        "nl": "Verander de helderheid en specificeer the gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
       },
       "args": [
         {

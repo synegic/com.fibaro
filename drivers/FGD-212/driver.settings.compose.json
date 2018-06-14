@@ -63,12 +63,12 @@
         "type": "checkbox",
         "label": {
           "en": "3-way switch function",
-          "nl": "Hotelschakeling Functie"
+          "nl": "Hotelschakeling functie"
         },
         "value": false,
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not input 2 additionally controls the output 2.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het schakelen van ingang 2 ook uitgang 2 bediend."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het schakelen van ingang 2 ook uitgang 2 bedient."
         },
         "zwave": {
           "index": 26,
@@ -102,7 +102,7 @@
         "value": "0",
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines whether this device behaves like a momentary switch or a toggle switch.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zich gedraagt als een kortstondige schakelaar of een tuimelschakelaar."
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zich gedraagt als een pulsdrukschakelaar of een tuimelschakelaar."
         },
         "zwave": {
           "index": 20,
@@ -113,14 +113,14 @@
             "id": "0",
             "label": {
               "en": "Momentary switch",
-              "nl": "Pulsdruk schakelaar"
+              "nl": "Pulsdrukschakelaar"
             }
           },
           {
             "id": "1",
             "label": {
               "en": "Toggle switch",
-              "nl": "Tuimel schakelaar"
+              "nl": "Tuimelschakelaar"
             }
           },
           {
@@ -333,7 +333,7 @@
         "$id": "watt_report",
         "label": {
           "en": "Wattage report threshold",
-          "nl": "Wattage verzending drempel"
+          "nl": "Rapportage drempel wattage"
         },
         "value": 10,
         "attr": {
@@ -351,7 +351,7 @@
         "type": "number",
         "label": {
           "en": "Wattage report interval",
-          "nl": "Wattage verzending interval"
+          "nl": "Rapportage interval wattage"
         },
         "zwave": {
           "index": 52,
@@ -363,7 +363,7 @@
         "$id": "kwh_report",
         "label": {
           "en": "kWh report threshold",
-          "nl": "kWh verzending drempel"
+          "nl": "Rapportage drempel kWh"
         },
         "value": 0.1,
         "attr": {
@@ -381,7 +381,7 @@
         "type": "checkbox",
         "label": {
           "en": "Include own usage",
-          "nl": "Inclusief eigen verbruik"
+          "nl": "Meet eigen verbruik"
         },
         "value": false,
         "hint": {

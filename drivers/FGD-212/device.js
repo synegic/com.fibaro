@@ -4,12 +4,12 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 class FibaroDimmerTwoDevice extends ZwaveDevice {
 
-	onMeshInit() {
+	async onMeshInit() {
 	    this._momentaryTrigger = new Homey.FlowCardTriggerDevice('FGD-212_momentary', this._switchTriggersRunListener.bind(this));
 		this._toggleTrigger = new Homey.FlowCardTriggerDevice('FGD-212_toggle', this._switchTriggersRunListener.bind(this));
 		this._rollerTrigger = new Homey.FlowCardTriggerDevice('FGD-212_roller', this._switchTriggersRunListener.bind(this));
 
-		this._brightnessAction = new Homey.FlowCardAction('FGD-212_set_brightness', this._setBrightnessRunListener.bind(this));
+		this._brightnessAction = new Homey.FlowCardAction('FGD-212_set_brightness', await this._setBrightnessRunListener.bind(this));
 		this._dimDurationAction = new Homey.FlowCardAction('FGD-212_dim_duration', this._dimDurationRunListener.bind(this));
 		this._setTimerAction = new Homey.FlowCardAction('FGD-212_set_timer', this._setTimerRunListener.bind(this));
 		this._resetMeterAction = new Homey.FlowCardAction('FGD-212_reset_meter', this._resetMeterRunListener.bind(this));
@@ -37,7 +37,7 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		});
 	}
 
-	_setBrightnessRunListener(args, state) {
+	async _setBrightnessRunListener(args, state) {
 		if (!args.hasOwnProperty('set_forced_brightness_level')) return Promise.reject('set_forced_brightness_level_property_missing');
 		if (typeof args.set_forced_brightness_level !== 'number') return Promise.reject('forced_brightness_level_is_not_a_number');
 		if (args.set_forced_brightness_level > 1) return Promise.reject('forced_brightness_level_out_of_range');
@@ -46,18 +46,13 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 			const value = Math.round(args.set_forced_brightness_level * 99);
 
 			if (this.node.CommandClass.COMMAND_CLASS_CONFIGURATION) {
-				this.node.CommandClass.COMMAND_CLASS_CONFIGURATION.CONFIGURATION_SET({
+				return await this.node.CommandClass.COMMAND_CLASS_CONFIGURATION.CONFIGURATION_SET({
 					'Parameter Number': 19,
 					Level: {
 						Size: 1,
 						Default: false,
 					},
 					'Configuration Value': new Buffer([value]),
-				}, (err, result) => {
-					if (err) return Promise.reject(err);
-					if (result === 'TRANSMIT_COMPLETE_OK') {
-						return Promise.resolve();
-					} return Promise.reject('non_OK_response');
 				});
 			} else return Promise.reject('configuration_command_unavailable');
 		} else return Promise.reject('unknown_error');
