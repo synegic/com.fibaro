@@ -27,8 +27,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Hold your hand in front of the Fibaro Swipe for about 7 seconde (until you hear two short beeps). Then perform a swipe up gesture",
-        "nl": "Houd uw hand voor ongeveer 7 seconden voor de Fibaro Swipe (totdat u twee korte piepjes hoort). Maak daarna het \"Veeg omhoog\" gebaar"
+        "en": "Hold your hand in front of the {{driverNameEn}} for about 7 seconde (until you hear two short beeps). Then perform a swipe up gesture",
+        "nl": "Houd uw hand voor ongeveer 7 seconden voor de {{driverNameNl}} (totdat u twee korte piepjes hoort). Maak daarna het \"Veeg omhoog\" gebaar"
       }
     },
     "associationGroups": [
