@@ -118,8 +118,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on your Fibaro Universal Binary Sensor three times.",
-        "nl": "Druk driemaal op de knop van uw Fibaro Universal binary Sensor."
+        "en": "Press the button on your {{driverNameEn}} three times.",
+        "nl": "Druk driemaal op de knop van uw {{driverNameNl}}."
       }
     },
     "associationGroups": [

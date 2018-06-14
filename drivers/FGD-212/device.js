@@ -54,8 +54,8 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 					},
 					'Configuration Value': new Buffer([value]),
 				});
-			} else return Promise.reject('configuration_command_unavailable');
-		} else return Promise.reject('unknown_error');
+			} return Promise.reject('configuration_command_unavailable');
+		} return Promise.reject('unknown_error');
 	}
 
 	async _dimDurationRunListener(args, state) {

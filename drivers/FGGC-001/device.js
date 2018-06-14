@@ -140,19 +140,19 @@ class FibaroSwipeDevice extends ZwaveDevice {
        ===================================================================
         */
 		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
-            const swiped = {
-                direction: report['Scene Number'].toString(),
-                scene: report.Properties1['Key Attributes'],
-            };
+			const swiped = {
+				direction: report['Scene Number'].toString(),
+				scene: report.Properties1['Key Attributes'],
+			};
 
-            if (report['Scene Number'] >= 1 && report['Scene Number'] <= 4) {
-                this._directionTrigger.trigger(this, null, swiped);
-            } else if (report['Scene Number'] >= 5 && report['Scene Number'] <= 6) {
-                this._roundTrigger.trigger(this, null, swiped);
-            } else {
-                this._sequenceTrigger.trigger(this, null, swiped);
-            }
-        });
+			if (report['Scene Number'] >= 1 && report['Scene Number'] <= 4) {
+				this._directionTrigger.trigger(this, null, swiped);
+			} else if (report['Scene Number'] >= 5 && report['Scene Number'] <= 6) {
+				this._roundTrigger.trigger(this, null, swiped);
+			} else {
+				this._sequenceTrigger.trigger(this, null, swiped);
+			}
+		});
 	}
 
 	async onSettings(oldSettings, newSettings, changedKeys, callback) {
