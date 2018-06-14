@@ -1,0 +1,46 @@
+{
+  "id": "FGCD-001",
+  "name": {
+    "en": "CO Sensor",
+    "nl": "CO Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "alarm_co",
+    "alarm_heat",
+    "measure_temperature"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      4609
+    ],
+    "productId": [
+      4096
+    ],
+    "zwaveAllianceProductId": 2336,
+    "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your Fibaro CO Sensor three times",
+        "nl": "Druk driemaal op de knop bovenop de Fibaro CO Sensor"
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "associationGroupsOptions": {
+      "1": {
+        "hint": {
+          "en": "“Lifeline” reports the device status and allows for assigning single device only (main controller by default)."
+        }
+      }
+    }
+  }
+}
