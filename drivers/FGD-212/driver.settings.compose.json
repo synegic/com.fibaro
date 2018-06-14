@@ -333,7 +333,7 @@
         "$id": "watt_report",
         "label": {
           "en": "Wattage report threshold",
-          "nl": "Rapportage drempel wattage"
+          "nl": "Wattage rapportage drempel"
         },
         "value": 10,
         "attr": {
@@ -351,7 +351,7 @@
         "type": "number",
         "label": {
           "en": "Wattage report interval",
-          "nl": "Rapportage interval wattage"
+          "nl": "Wattage rapportage interval"
         },
         "zwave": {
           "index": 52,
@@ -363,7 +363,7 @@
         "$id": "kwh_report",
         "label": {
           "en": "kWh report threshold",
-          "nl": "Rapportage drempel kWh"
+          "nl": "kWh rapportage drempel"
         },
         "value": 0.1,
         "attr": {

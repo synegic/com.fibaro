@@ -251,7 +251,7 @@
       },
       "hint": {
         "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
-        "nl": "Verander de helderheid en specificeer the gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
+        "nl": "Verander de helderheid en specificeer de gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
       },
       "args": [
         {
