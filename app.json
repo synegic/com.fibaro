@@ -45,6 +45,350 @@
   },
   "drivers": [
     {
+      "id": "FGCD-001",
+      "name": {
+        "en": "CO Sensor",
+        "nl": "CO Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "alarm_co",
+        "alarm_heat",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/FGCD-001/assets/images/large.png",
+        "small": "/drivers/FGCD-001/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          4609
+        ],
+        "productId": [
+          4096
+        ],
+        "zwaveAllianceProductId": 2336,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
+        "learnmode": {
+          "image": "/drivers/FGCD-001/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Fibaro CO Sensor three times",
+            "nl": "Druk driemaal op de knop bovenop de Fibaro CO Sensor"
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": "“Lifeline” reports the device status and allows for assigning single device only (main controller by default)."
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "CO sensor",
+            "nl": "CO sensor"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 23,
+                "size": 1
+              },
+              "id": "co_sensor_activation",
+              "value": true,
+              "label": {
+                "en": "Activate sensor",
+                "nl": "Activeer sensor"
+              },
+              "hint": {
+                "en": "This parameter (23) enables/disables this sensor.",
+                "nl": "Deze parameter (23) schakelt deze sensor in/uit."
+              },
+              "type": "checkbox"
+            },
+            {
+              "zwave": {
+                "index": 25,
+                "size": 1
+              },
+              "attr": {
+                "min": 2,
+                "max": 6
+              },
+              "value": 2,
+              "id": "co_report_threshold",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (25) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (25) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature sensor",
+            "nl": "Temperatuursensor"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 21,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 20
+              },
+              "value": 2,
+              "id": "temperature_report_hysteresis",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (25) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (25) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 20,
+                "size": 2
+              },
+              "attr": {
+                "min": 1,
+                "max": 2880
+              },
+              "value": 0,
+              "id": "temperature_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (20) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (20) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 22,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 85
+              },
+              "value": 55,
+              "id": "temperature_alarm_treshold",
+              "label": {
+                "en": "High value alarm threshold",
+                "nl": "Drempel waarde voor het te hoge waarden alarm"
+              },
+              "hint": {
+                "en": "This parameter (22) determines the threshold at which the high value alarm will go off.",
+                "nl": "Deze parameter (22) bepaalt de drempel waarboven het hoge waarden alarm afgaat."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Visual and acoustic notifications",
+            "nl": "Visuele en akoestische notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No notifications",
+                    "nl": "Geen meldingen"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Casing opened",
+                    "nl": "Behuizing geopend"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Temperature too high",
+                    "nl": "Temperatuur te hoog"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Lack of Z-Wave range",
+                    "nl": "Te weinig Z-Wave bereik"
+                  }
+                }
+              ],
+              "value": "0",
+              "id": "visual_notification",
+              "label": {
+                "en": "LED light style",
+                "nl": "LED licht stijl"
+              },
+              "hint": {
+                "en": "This parameter (3) determines the way in which the LED behaves after events have been detected.",
+                "nl": "Deze parameter (3) bepaalt het gedrag van de LED wanneer er een statusverandering is gedetecteerd."
+              },
+              "type": "dropdown"
+            },
+            {
+              "id": "acoustic_notification",
+              "type": "dropdown",
+              "label": {
+                "en": "Acoutic notification",
+                "nl": "Akoestische meldingen"
+              },
+              "hint": {
+                "en": "This parameter (4) determines the accoustic behaviour.",
+                "nl": "Deze parameter (4) bepaalt het acoustische gedrag."
+              },
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No notifications",
+                    "nl": "Geen meldingen"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Casing opened",
+                    "nl": "Behuizing geopend"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Temperature too high",
+                    "nl": "Temperatuur te hoog"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Lack of Z-Wave range",
+                    "nl": "Te weinig Z-Wave bereik"
+                  }
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Associations",
+            "nl": "Associaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 7,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "2nd group sent as secure",
+                    "nl": "2e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "3rd group sent as secure",
+                    "nl": "3e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "4th group sent as secure",
+                    "nl": "4e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "5th group sent as secure",
+                    "nl": "5e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "16",
+                  "label": {
+                    "en": "6th group sent as secure",
+                    "nl": "6e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "32",
+                  "label": {
+                    "en": "7th group sent as secure",
+                    "nl": "7e groep beveiligd verzenden"
+                  }
+                }
+              ],
+              "id": "secure_mode_associaton",
+              "value": "3",
+              "label": {
+                "en": "Associations in Z-Wave network Security Mode",
+                "nl": "Associaties in Z-Wave netwerk Security Modus"
+              },
+              "hint": {
+                "en": "This parameter (7) defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode.",
+                "nl": "Deze instelling (7) bepaalt hoe commando's worden verstuurd naar de desbetreffende associatie groep: als beveiligd of niet-beveiligd."
+              },
+              "type": "dropdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FGDW-002",
       "name": {
         "en": "Door/Window sensor 2",
