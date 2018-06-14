@@ -41,8 +41,8 @@
     "$extends": "operatingDevice",
     "$id": "switch_type",
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines what device triggers the {{driverNameEn}}.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat voor apparaat de {{driverNameNl}} activeert."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the type of switch connected to input 1 of the {{driverNameEn}}.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert het type schakelaar dat is aangesloten op ingang 1 van de {{driverNameNl}}."
     },
     "zwave": {
       "index": 14,
@@ -52,15 +52,15 @@
       {
         "id": "0",
         "label": {
-          "en": "Momentary Switch",
-          "nl": "Puls Schakelaar"
+          "en": "Momentary switch",
+          "nl": "Pulsdrukschakelaar"
         }
       },
       {
         "id": "1",
         "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
+          "en": "Toggle switch",
+          "nl": "Tuimelschakelaar"
         }
       }
     ],
