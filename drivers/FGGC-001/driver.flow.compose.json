@@ -7,8 +7,8 @@
         "nl": "Gebaar richting"
       },
       "hint": {
-        "en": "For this Flow card to work the double gesture setting needs to be enabled in the device's settings.",
-        "nl": "Om deze Flow kaart te laten werken moet het dubbele gebaar geactiveerd zijn in de apparaat instellingen."
+        "en": "For this Flow Trigger to work the double gesture setting needs to be enabled in the device's settings.",
+        "nl": "Om deze Flow Trigger te laten werken moet het dubbele gebaar geactiveerd zijn in de apparaat instellingen."
       },
       "args": [
         {
@@ -180,8 +180,8 @@
             {
               "id": "13",
               "label": {
-                "en": "Inclusion/exlusion Gesture",
-                "nl": "Voeg toe/verwijder Gebaar"
+                "en": "Inclusion/exlusion gesture",
+                "nl": "Voeg toe/verwijder gebaar"
               }
             }
           ]
