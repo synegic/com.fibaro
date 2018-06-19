@@ -24,8 +24,8 @@
       "nl": "Automatisch uit relais 1"
     },
     "hint": {
-      "en": "Set the time Relay 1 will turn off automatically.",
-      "nl": "Zet de tijd dat Relais 1 automatisch uit gaat."
+      "en": "Set the time relay 1 will turn off automatically.",
+      "nl": "Zet de tijd dat relais 1 automatisch uit gaat."
     },
     "zwave": {
       "index": 4,
@@ -46,8 +46,8 @@
       "nl": "Automatisch uit relais 2"
     },
     "hint": {
-      "en": "Set the time Relay 2 will turn off automatically.",
-      "nl": "Zet de tijd dat Relais 2 automatisch uit gaat."
+      "en": "Set the time relay 2 will turn off automatically.",
+      "nl": "Zet de tijd dat relais 2 automatisch uit gaat."
     },
     "zwave": {
       "index": 5,
@@ -61,37 +61,12 @@
     "value": 0
   },
   {
+    "$extends": "switchType",
     "id": "switch_type",
-    "type": "dropdown",
-    "label": {
-      "en": "Switch type",
-      "nl": "Schakelaar type"
-    },
-    "hint": {
-      "en": "What type of switch is connected.",
-      "nl": "Wat voor soort schakelaar is aangesloten."
-    },
     "zwave": {
       "index": 14,
       "size": 1
-    },
-    "value": "1",
-    "values": [
-      {
-        "id": "0",
-        "label": {
-          "en": "Momentary Switch",
-          "nl": "Puls Schakelaar"
-        }
-      },
-      {
-        "id": "1",
-        "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
-        }
-      }
-    ]
+    }
   },
   {
     "id": "switch_behaviour",
@@ -101,8 +76,8 @@
       "nl": "Schakelaar gedrag"
     },
     "hint": {
-      "en": "How the relay behaves when the switch is toggled.",
-      "nl": "Gedrag van het relais als de schakelaar omgezet wordt."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the {{driverNameEn}} when the switch is toggled.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de {{driverNameNl}} wanneer de schakelaar omgezet wordt."
     },
     "zwave": {
       "index": 13,
@@ -127,20 +102,7 @@
     ]
   },
   {
-    "id": "save_power_state",
-    "type": "checkbox",
-    "label": {
-      "en": "Save power state",
-      "nl": "Onthoud power status"
-    },
-    "hint": {
-      "en": "If enabled, it will save the state it was in when power was disconnected",
-      "nl": "Als aan, zal hij de status onthouden waar het in was als het van de stroom word gehaald"
-    },
-    "zwave": {
-      "index": 16,
-      "size": 1
-    },
-    "value": true
+    "$extends": "saveState",
+    "id": "save_power_state"
   }
 ]

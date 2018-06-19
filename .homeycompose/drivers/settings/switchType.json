@@ -14,14 +14,14 @@
       "id": "0",
       "label": {
         "en": "Momentary switch",
-        "nl": "Puls schakelaar"
+        "nl": "Pulsdrukschakelaar"
       }
     },
     {
       "id": "1",
       "label": {
         "en": "Toggle switch",
-        "nl": "Tuimel schakelaar"
+        "nl": "Tuimelschakelaar"
       }
     }
   ]
