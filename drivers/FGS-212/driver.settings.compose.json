@@ -7,8 +7,8 @@
       "nl": "Automatisch uit gedrag"
     },
     "hint": {
-      "en": "This parameter (3) determines whether or not pressing the switch a second time will immediately turn of the Relay.",
-      "nl": "Deze parameter (3) bepaalt of het tweemaal indrukken van de schakelaar het relais direct uitschakelt."
+      "en": "This parameter (3) determines whether or not pressing the switch a second time will immediately turn of the {{driverNameEn}}.",
+      "nl": "Deze parameter (3) bepaalt of het tweemaal indrukken van de schakelaar de {{driverNameNl}} direct uitschakelt."
     },
     "zwave": {
       "index": 3,
@@ -24,8 +24,8 @@
       "nl": "Automatisch uit Relais"
     },
     "hint": {
-      "en": "This parameter (4) determines the time after which the Relay will turn off automatically.",
-      "nl": "Deze parameter (4) bepaalt de tijd waarna het Relais automatisch uit gaat."
+      "en": "This parameter (4) determines the time after which the {{driverNameEn}} will turn off automatically.",
+      "nl": "Deze parameter (4) bepaalt de tijd waarna de {{driverNameNl}} automatisch uit gaat."
     },
     "zwave": {
       "index": 4,
@@ -38,33 +38,12 @@
     "value": 0
   },
   {
-    "$extends": "operatingDevice",
+    "$extends": "switchType",
     "$id": "switch_type",
-    "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines what device triggers the Relay Switch.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat voor apparaat de Relais Schakelaar activeert."
-    },
     "zwave": {
       "index": 14,
       "size": 1
-    },
-    "values": [
-      {
-        "id": "0",
-        "label": {
-          "en": "Momentary Switch",
-          "nl": "Puls Schakelaar"
-        }
-      },
-      {
-        "id": "1",
-        "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
-        }
-      }
-    ],
-    "value": "1"
+    }
   },
   {
     "$extends": "saveState",
