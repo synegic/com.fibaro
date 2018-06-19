@@ -3,7 +3,7 @@
 		"type": "group",
 		"label": {
 			"en": "Temperature sensor",
-			"nl": "Temperatuurssensor",
+			"nl": "Temperatuurssensor"
 		},
 		"collapsed": false,
 		"children": [

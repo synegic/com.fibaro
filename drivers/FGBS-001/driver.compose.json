@@ -11,7 +11,7 @@
     "measure_temperature.sensor1",
     "measure_temperature.sensor2",
     "measure_temperature.sensor3",
-    "measure_temperature.sensor4",
+    "measure_temperature.sensor4"
   ],
   "capabilitiesOptions": {
     "alarm_generic.contact1": {
