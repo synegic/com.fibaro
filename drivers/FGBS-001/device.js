@@ -6,7 +6,6 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroUniversalBinarySensor extends ZwaveDevice {
 
 	onMeshInit() {
-
 		/*
         =========================================================================
          Initializing Flow triggers/conditions/actions
@@ -51,9 +50,9 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
     	=========================================================================
          */
 		this.registerMultiChannelReportListener(1, 'SENSOR_BINARY', 'SENSOR_BINARY_REPORT', (report) => {
-        	const result = report['Sensor Value'] === 'detected an event';
-        	this.setCapabilityValue('alarm_generic.contact1', result);
-        	return result;
+			const result = report['Sensor Value'] === 'detected an event';
+			this.setCapabilityValue('alarm_generic.contact1', result);
+			return result;
 		});
 		this.registerMultiChannelReportListener(2, 'SENSOR_BINARY', 'SENSOR_BINARY_REPORT', (report) => {
 			const result = report['Sensor Value'] === 'detected an event';
@@ -81,7 +80,7 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
     	=========================================================================
          */
 		this.registerCapability('measure_temperature.sensor1', 'SENSOR_MULTILEVEL', {
-        	multiChannelNodeId: 3,
+			multiChannelNodeId: 3,
 			reportParser: (report) => this._temperatureReportParser(report, 1),
 		});
 		this.registerCapability('measure_temperature.sensor2', 'SENSOR_MULTILEVEL', {
@@ -101,13 +100,13 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 	}
 
 	_alarmGenericReportParser(report, sensorNumber) {
-	    let sceneIdOn;
-	    let sceneIdOff;
-	    let onTrigger;
-	    let offTrigger;
-	    let switchTrigger;
+		let sceneIdOn;
+		let sceneIdOff;
+		let onTrigger;
+		let offTrigger;
+		let switchTrigger;
 
-	    switch (sensorNumber) {
+		switch (sensorNumber) {
 			case 1: sceneIdOn = 10;
 				sceneIdOff = 11;
 				onTrigger = this._onTrigger;
@@ -148,9 +147,9 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 	}
 
 	_temperatureReportParser(report, sensorNumber) {
-	    let temperatureTrigger;
+		let temperatureTrigger;
 
-	    switch (sensorNumber) {
+		switch (sensorNumber) {
 			case 1: temperatureTrigger = this._temperatureTrigger; break;
 			case 2: temperatureTrigger = this._temperatureTrigger2; break;
 			case 3: temperatureTrigger = this._temperatureTrigger3; break;
