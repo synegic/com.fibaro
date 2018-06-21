@@ -2,8 +2,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Smoke sensor",
-      "nl": "Rook sensor"
+      "en": "Smokecsensor",
+      "nl": "Rookmelder"
     },
     "collapsed": false,
     "children": [
@@ -16,8 +16,8 @@
         },
         "value": "2",
         "hint": {
-          "en": "Determine the sensitivity of the smoke alarm.\nIt is not recommended to change this value.",
-          "nl": "Bepaal de gevoeligheid van het rookalarm\nHet is niet aan te raden om deze waarde te veranderen."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the sensitivity of the smoke alarm.\nIt is not recommended to change this value.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de gevoeligheid van het rookalarm\nHet is niet aan te raden om deze waarde te veranderen."
         },
         "zwave": {
           "index": 1,
@@ -102,7 +102,7 @@
     "type": "group",
     "label": {
       "en": "Visual and acoustic notifications",
-      "nl": "Visuele en acoestische notificaties"
+      "nl": "Visuele en akoestische notificaties"
     },
     "collapsed": false,
     "children": [
@@ -110,13 +110,13 @@
         "id": "visual_notification",
         "type": "dropdown",
         "label": {
-          "en": "Visual Notification",
-          "nl": "Visuele Meldingen"
+          "en": "Visual notification",
+          "nl": "Visuele meldingen"
         },
         "value": "0",
         "hint": {
-          "en": "Determine the behaviour of the LED.",
-          "nl": "Bepaal het gedrag van de LED."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the behaviour of the LED.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het gedrag van de LED."
         },
         "zwave": {
           "index": 3,
@@ -190,8 +190,8 @@
         },
         "value": "0",
         "hint": {
-          "en": "Determine the accoustic behaviour.",
-          "nl": "Bepaal het acoustische gedrag."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the accoustic behaviour.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het akoestische gedrag."
         },
         "zwave": {
           "index": 4,
