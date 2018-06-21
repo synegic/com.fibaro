@@ -5,8 +5,8 @@
     "nl": "Vertraging automatisch uitschakelen"
   },
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the relay will automatically turn off.",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd waarna het relais automatisch uit gaat."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the {{driverNameEn}} will automatically turn off.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd waarna de {{driverNameNl}} automatisch uit gaat."
   },
   "attr": {
     "min": 0,
