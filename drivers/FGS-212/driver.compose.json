@@ -39,8 +39,8 @@
           ],
           "icon": "{{driverAssetsPath}}/icon-2.svg",
           "name": {
-            "en": "Input 2 (S2)",
-            "nl": "Ingang 2 (S2)"
+            "en": "Relay 2 (S2)",
+            "nl": "Relais 2 (S2)"
           },
           "settings": []
         }
