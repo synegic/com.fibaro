@@ -2,7 +2,7 @@
   {
     "type": "group",
     "label": {
-      "en": "Smokecsensor",
+      "en": "Smokesensor",
       "nl": "Rookmelder"
     },
     "collapsed": false,
@@ -16,8 +16,8 @@
         },
         "value": "2",
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the sensitivity of the smoke alarm.\nIt is not recommended to change this value.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de gevoeligheid van het rookalarm\nHet is niet aan te raden om deze waarde te veranderen."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the sensitivity of the smoke alarm. It is not recommended to change this value.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de gevoeligheid van het rookalarm. Het is niet aan te raden om deze waarde te veranderen."
         },
         "zwave": {
           "index": 1,
