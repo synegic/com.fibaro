@@ -1,14 +1,15 @@
 [
   {
     "$extends": "autoOff",
-    "id": "auto_off",
+    "id": "auto_off"
   },
   {
     "$extends": "autoOffDelay",
     "id": "auto_off_relay",
     "zwave": {
       "index": 4,
-      "size": 2
+      "size": 2,
+      "signed": false
     }
   },
   {
