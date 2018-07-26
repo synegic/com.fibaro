@@ -29,8 +29,8 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Press the button on, or the left switch (S1) of, your Fibaro Single Switch 2 three times",
-        "nl": "Druk driemaal op de knop op, of de linker schakelaar (S1) van, de Fibaro Enkele Schakelaar 2"
+        "en": "Press the button on, or the left switch of your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op de knop op de linker schakelaar van {{driverNameNl}}"
       }
     },
     "defaultConfiguration": [

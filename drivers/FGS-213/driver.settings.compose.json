@@ -11,8 +11,8 @@
     "$extends": "operatingDevice",
     "$id": "20",
     "hint": {
-      "en": "This parameter (20) determines determines what device triggers the Switch.",
-      "nl": "Deze parameter (20) bepaalt wat voor apparaat de Schakelaar omzet."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines determines what device triggers the switch.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt wat voor apparaat de schakelaar omzet."
     },
     "zwave": {
       "index": 20,
@@ -81,12 +81,12 @@
         "id": "51",
         "type": "number",
         "label": {
-          "en": "Wattage Report, Minimum Time",
-          "nl": "Wattage Verzending, Minimale Tijd"
+          "en": "Wattage report, minimum Time",
+          "nl": "Wattage verzending, minimale Tijd"
         },
         "hint": {
-          "en": "This parameter (51) determines the minimum time between reports sent to Homey.",
-          "nl": "Deze parameter (51) bepaalt de minimum tijd tussen rapportages naar Homey."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum time between reports sent to Homey.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum tijd tussen rapportages naar Homey."
         },
         "zwave": {
           "index": 51,
@@ -143,8 +143,8 @@
           "nl": "inclusief eigen verbruik"
         },
         "hint": {
-          "en": "This parameter (60) determines whether or not the power usage of this device is included in the kWh reports.",
-          "nl": "Deze parameter (60) bepaalt of het stroomverbruik van dit apparaat meegenomen wordt in de kWh rapportages."
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the power usage of this device is included in the kWh reports.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het stroomverbruik van dit apparaat meegenomen wordt in de kWh rapportages."
         },
         "zwave": {
           "index": 60,

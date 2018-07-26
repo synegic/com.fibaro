@@ -20,26 +20,21 @@ class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
         	return kWh;
 		});
 
-        if (this.node &&
-			typeof this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE !== 'undefined') {
-        		this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE.on('report', (command, report) => {
-        			if (command.hasOwnProperty('name') && command.name === 'CENTRAL_SCENE_NOTIFICAITON') {
-        				if (report.hasOwnProperty('Properties1') &&
-							report.Properties1.hasOwnProperty('Key Attributes') &&
-							report.hasOwnProperty('Scene Number')) {
-        						const data = {
-        							scene: report.Properties1['Key Attributes'],
-								};
+        this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_REPORT', (command, report) => {
+            if (report.hasOwnProperty('Properties1') &&
+                report.Properties1.hasOwnProperty('Key Attributes') &&
+                report.hasOwnProperty('Scene Number')) {
+                const data = {
+                    scene: report.Properties1['Key Attributes'],
+                };
 
-								if (report['Scene Number'] === 1) {
-									this._S1Trigger.trigger(this, null, data);
-								} else if (report['Scene Number'] === 2) {
-                                    this._S2Trigger.trigger(this, null, data);
-								}
-						}
-					}
-				});
-		}
+                if (report['Scene Number'] === 1) {
+                    this._S1Trigger.trigger(this, null, data);
+                } else if (report['Scene Number'] === 2) {
+                    this._S2Trigger.trigger(this, null, data);
+                }
+            }
+		});
     }
 
     _switchTriggerRunListener(args, state, callback) {

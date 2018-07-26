@@ -14,22 +14,22 @@
             {
               "id": "Key Pressed 1 time",
               "label": {
-                "en": "Pressed/Switched 1x",
-                "nl": "1x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 1x",
+                "nl": "1x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 2 times",
               "label": {
-                "en": "Pressed/Switched 2x",
-                "nl": "2x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 2x",
+                "nl": "2x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 3 times",
               "label": {
-                "en": "Pressed/Switched 3x",
-                "nl": "3x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 3x",
+                "nl": "3x Ingedrukt/geschakeld"
               }
             },
             {
@@ -64,22 +64,22 @@
             {
               "id": "Key Pressed 1 time",
               "label": {
-                "en": "Pressed/Switched 1x",
-                "nl": "1x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 1x",
+                "nl": "1x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 2 times",
               "label": {
-                "en": "Pressed/Switched 2x",
-                "nl": "2x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 2x",
+                "nl": "2x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 3 times",
               "label": {
-                "en": "Pressed/Switched 3x",
-                "nl": "3x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 3x",
+                "nl": "3x Ingedrukt/geschakeld"
               }
             },
             {
