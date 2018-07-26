@@ -14,22 +14,22 @@
             {
               "id": "Key Pressed 1 time",
               "label": {
-                "en": "Pressed/Switched 1x",
-                "nl": "1x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 1x",
+                "nl": "1x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 2 times",
               "label": {
-                "en": "Pressed/Switched 2x",
-                "nl": "2x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 2x",
+                "nl": "2x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 3 times",
               "label": {
-                "en": "Pressed/Switched 3x",
-                "nl": "3x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 3x",
+                "nl": "3x Ingedrukt/geschakeld"
               }
             },
             {
@@ -43,7 +43,7 @@
               "id": "Key Released",
               "label": {
                 "en": "Hold released (momentary switch)",
-                "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                "nl": "Lang ingedrukt los gelaten (kortstondige schakelaar)"
               }
             }
           ]
@@ -64,22 +64,22 @@
             {
               "id": "Key Pressed 1 time",
               "label": {
-                "en": "Pressed/Switched 1x",
-                "nl": "1x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 1x",
+                "nl": "1x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 2 times",
               "label": {
-                "en": "Pressed/Switched 2x",
-                "nl": "2x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 2x",
+                "nl": "2x Ingedrukt/geschakeld"
               }
             },
             {
               "id": "Key Pressed 3 times",
               "label": {
-                "en": "Pressed/Switched 3x",
-                "nl": "3x Ingedrukt/Geschakeld"
+                "en": "Pressed/switched 3x",
+                "nl": "3x Ingedrukt/geschakeld"
               }
             },
             {
@@ -93,7 +93,7 @@
               "id": "Key Released",
               "label": {
                 "en": "Hold released (momentary switch)",
-                "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                "nl": "Lang ingedrukt los gelaten (kortstondige schakelaar)"
               }
             }
           ]
@@ -113,13 +113,7 @@
         "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
         "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=FGS-223"
-        }
-      ]
+      "args": []
     }
   ]
 }

@@ -7,8 +7,8 @@
       "nl": "Schakelaar Type"
     },
     "hint": {
-      "en": "What kind of switch is attached to the module.",
-      "nl": "Wat van type schakelaar is verbonden aan de module."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines what kind of switch is attached to the module.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk type schakelaar is verbonden aan de module."
     },
     "zwave": {
       "index": 20,
@@ -51,12 +51,12 @@
         "id": "save_state",
         "type": "checkbox",
         "label": {
-          "en": "Save Power-off State",
-          "nl": "Onthoud Stroom-eraf Status"
+          "en": "Save power-off state",
+          "nl": "Onthoud status bij stroomuitval"
         },
         "hint": {
-          "en": "Saves its last state when power is disconnected",
-          "nl": "Onthoud zijn laatste status wanneer stroom eraf word gehaald"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not this device saves its last state when power is disconnected",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zijn laatste status onthoud wanneer de stroom eraf word gehaald"
         },
         "zwave": {
           "index": 9,
@@ -68,12 +68,12 @@
         "id": "power_report_interval",
         "type": "number",
         "label": {
-          "en": "Wattage Report Interval",
-          "nl": "Wattage Verzending Interval"
+          "en": "Wattage report interval",
+          "nl": "Wattage verzending interval"
         },
         "hint": {
-          "en": "Sets the interval (in seconds) when all values for Wattage gets send. Range: 0 (Off), 1 - 32000",
-          "nl": "Zet de interval (in seconden) wanneer alle waardes voor Wattage wordt verzonden. Bereik: 0 (Uit), 1 - 32000"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the interval at which all values for wattage gets send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de interval van het versturen van alle waardes voor wattage."
         },
         "zwave": {
           "index": 58,
@@ -89,12 +89,12 @@
         "id": "energie_report_interval",
         "type": "number",
         "label": {
-          "en": "kWh Report Interval",
-          "nl": "kWh Verbruik Verzending Interval"
+          "en": "kWh report interval",
+          "nl": "kWh verbruik verzending interval"
         },
         "hint": {
-          "en": "Sets the interval (in seconds) when all values for kWh gets send. Range: 0 (Off), 1 - 32000",
-          "nl": "Zet de interval (in seconden) wanneer alle waardes voor kWh wordt verzonden. Bereik: 0 (Uit), 1 - 32000"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the interval at which all values for kWh gets send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de interval van het versturen van alle waardes voor kWh."
         },
         "zwave": {
           "index": 59,
@@ -114,8 +114,8 @@
           "nl": "inclusief eigen verbruik"
         },
         "hint": {
-          "en": "Does the power consumption (kWh) of the module itself be added on the total amount?",
-          "nl": "Moet het energie verbruik (kWh) van de module zelf opgeteld worden bij de totale hoeveelheid?"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the power consumption (kWh) of the module itself will be added on the total amount?",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het energie verbruik (kWh) van de module zelf opgeteld wordt bij de totale hoeveelheid?"
         },
         "zwave": {
           "index": 60,
@@ -137,12 +137,12 @@
         "id": "s1_power_report",
         "type": "number",
         "label": {
-          "en": "First Channel, Wattage Report Threshold",
-          "nl": "Eerste kanaal, Wattage Verzending Drempel"
+          "en": "First channel, wattage report threshold",
+          "nl": "Eerste kanaal, wattage verzending drempel"
         },
         "hint": {
-          "en": "How much must the Wattage change (in percentage) before the value is being send. Range: 0 (Off), 1 - 100",
-          "nl": "Hoeveel moet de Wattage zijn veranderd (in percentage) voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 100"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum wattage change before the value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in wattage voor het verzenden van de waarde."
         },
         "zwave": {
           "index": 50,
@@ -158,12 +158,12 @@
         "id": "s1_power_report_interval",
         "type": "number",
         "label": {
-          "en": "First Channel, Wattage Report, Minimum Time",
-          "nl": "Eerste kanaal, Wattage Verzending, Minimale Tijd"
+          "en": "First channel, wattage report, minimum time",
+          "nl": "Eerste kanaal, wattage verzending, minimale tijd"
         },
         "hint": {
-          "en": "This amount of seconds must at least be past, before the value is being send. Range: 0 (Off), 1 - 120",
-          "nl": "Deze hoeveelheid seconden moeten voorbij zijn voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 120"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum amount of time before a new value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
         },
         "zwave": {
           "index": 51,
@@ -179,12 +179,12 @@
         "id": "s1_kwh_report",
         "type": "number",
         "label": {
-          "en": "First Channel, kWh Report Threshold",
-          "nl": "Eerste kanaal, kWh Verzending Drempel"
+          "en": "First channel, kWh report threshold",
+          "nl": "Eerste kanaal, kWh verzending drempel"
         },
         "hint": {
-          "en": "How much must kWh change before the value is being send. Range: 0 (Off), 0.01 - 320",
-          "nl": "Hoeveel moet de kWh zijn veranderd voor de waarde wordt verzonden. Bereik: 0 (Uit), 0.01 - 320"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum kWh change before the value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in kWh voor het verzenden van de waarde."
         },
         "zwave": {
           "index": 53,
@@ -211,12 +211,12 @@
         "id": "s2_power_report",
         "type": "number",
         "label": {
-          "en": "Second Channel, Wattage Report Threshold",
-          "nl": "Tweede Kanaal, Wattage Verzending Drempel"
+          "en": "Second channel, wattage report threshold",
+          "nl": "Tweede kanaal, wattage verzending drempel"
         },
         "hint": {
-          "en": "How much must the Wattage change (in percentage) before the value is being send. Range: 0 (Off), 1 - 100",
-          "nl": "Hoeveel moet de Wattage zijn veranderd (in percentage) voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 100"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum wattage change before the value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in wattage voor het verzenden van de waarde."
         },
         "zwave": {
           "index": 54,
@@ -232,12 +232,12 @@
         "id": "s2_power_report_interval",
         "type": "number",
         "label": {
-          "en": "Second Channel, Wattage Report, Minimum Time",
-          "nl": "Tweede Kanaal, Wattage Verzending, Minimale Tijd"
+          "en": "Second channel, wattage report, minimum time",
+          "nl": "Tweede kanaal, wattage verzending, minimale tijd"
         },
         "hint": {
-          "en": "This amount of seconds must at least be past, before the value is being send. Range: 0 (Off), 1 - 120",
-          "nl": "Deze hoeveelheid seconden moeten voorbij zijn voor de waarde wordt verzonden. Bereik: 0 (Uit), 1 - 120"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum amount of time before a new value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
         },
         "zwave": {
           "index": 55,
@@ -253,12 +253,12 @@
         "id": "s2_kwh_report",
         "type": "number",
         "label": {
-          "en": "Second Channel, kWh Report Threshold",
-          "nl": "Tweede Kanaal, kWh Verzending Drempel"
+          "en": "Second channel, kWh report threshold",
+          "nl": "Tweede kanaal, kWh verzending drempel"
         },
         "hint": {
-          "en": "How much must kWh change before the value is being send. Range: 0 (Off), 0.01 - 320",
-          "nl": "Hoeveel moet de kWh zijn veranderd voor de waarde wordt verzonden. Bereik: 0 (Uit), 0.01 - 320"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum kWh change before the value is being send.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de minimum verandering in kWh voor het verzenden van de waarde."
         },
         "zwave": {
           "index": 57,

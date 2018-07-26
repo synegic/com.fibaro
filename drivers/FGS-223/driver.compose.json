@@ -56,10 +56,10 @@
           "measure_power",
           "meter_power"
         ],
-        "icon": "/drivers/FGS-223/assets/icon.svg",
+        "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {
-          "en": "Right Switch 2 (S2/Q2)",
-          "nl": "Rechter Schakelaar 2 (S2/Q2)"
+          "en": "Right Switch (S2/Q2)",
+          "nl": "Rechter Schakelaar (S2/Q2)"
         },
         "settings": []
       }
