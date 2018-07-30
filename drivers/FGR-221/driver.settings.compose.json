@@ -7,8 +7,8 @@
       "nl": "Schakelaar type ingang"
     },
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines what type of switch is used",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk type schakelaar er wordt gebruikt"
+      "en": "This parameter ({{zwaveParameterIndex}}) determines what type of switch is used.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt welk type schakelaar er wordt gebruikt."
     },
     "zwave": {
       "index": 14,
