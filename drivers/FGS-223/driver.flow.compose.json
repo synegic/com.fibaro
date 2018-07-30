@@ -35,15 +35,15 @@
             {
               "id": "Key Held Down",
               "label": {
-                "en": "Hold switch (momentary switch)",
-                "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                "en": "Hold switch",
+                "nl": "Lang ingedrukt"
               }
             },
             {
               "id": "Key Released",
               "label": {
-                "en": "Hold released (momentary switch)",
-                "nl": "Lang ingedrukt los gelaten (kortstondige schakelaar)"
+                "en": "Hold released)",
+                "nl": "Lang ingedrukt los gelaten"
               }
             }
           ]
@@ -85,15 +85,15 @@
             {
               "id": "Key Held Down",
               "label": {
-                "en": "Hold switch (momentary switch)",
-                "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                "en": "Hold switch",
+                "nl": "Lang ingedrukt"
               }
             },
             {
               "id": "Key Released",
               "label": {
-                "en": "Hold released (momentary switch)",
-                "nl": "Lang ingedrukt los gelaten (kortstondige schakelaar)"
+                "en": "Hold released",
+                "nl": "Lang ingedrukt los gelaten"
               }
             }
           ]

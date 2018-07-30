@@ -26,15 +26,15 @@
       {
         "id": "1",
         "label": {
-          "en": "Toggle Switch (Closed = On, Open = Off)",
-          "nl": "Tuimel Schakelaar (Dicht = Aan, Open = Uit)"
+          "en": "Toggle Switch",
+          "nl": "Tuimel Schakelaar"
         }
       },
       {
         "id": "2",
         "label": {
-          "en": "Toggle Switch (Changes State)",
-          "nl": "Tuimel Schakelaar (Veranderd Status)"
+          "en": "Toggle Switch",
+          "nl": "Tuimel Schakelaar"
         }
       }
     ]
@@ -55,8 +55,8 @@
           "nl": "Onthoud status bij stroomuitval"
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not this device saves its last state when power is disconnected",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zijn laatste status onthoud wanneer de stroom eraf word gehaald"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not this device saves its last state when power is disconnected.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of dit apparaat zijn laatste status onthoud wanneer de stroom eraf word gehaald."
         },
         "zwave": {
           "index": 9,
@@ -114,8 +114,8 @@
           "nl": "inclusief eigen verbruik"
         },
         "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the power consumption (kWh) of the module itself will be added on the total amount?",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het energie verbruik (kWh) van de module zelf opgeteld wordt bij de totale hoeveelheid?"
+          "en": "This parameter ({{zwaveParameterIndex}}) determines whether or not the power consumption (kWh) of the module itself will be added on the total amount.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het energie verbruik (kWh) van de module zelf opgeteld wordt bij de totale hoeveelheid."
         },
         "zwave": {
           "index": 60,
@@ -128,8 +128,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Input 1 (S1)",
-      "nl": "Ingang 1 (S1)"
+      "en": "Switch 1 (S1)",
+      "nl": "Schakelaar 1 (S1)"
     },
     "collapsed": true,
     "children": [
@@ -137,8 +137,8 @@
         "id": "s1_power_report",
         "type": "number",
         "label": {
-          "en": "First channel, wattage report threshold",
-          "nl": "Eerste kanaal, wattage verzending drempel"
+          "en": "First node, wattage report threshold",
+          "nl": "Eerste node, wattage verzending drempel"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum wattage change before the value is being send.",
@@ -158,8 +158,8 @@
         "id": "s1_power_report_interval",
         "type": "number",
         "label": {
-          "en": "First channel, wattage report, minimum time",
-          "nl": "Eerste kanaal, wattage verzending, minimale tijd"
+          "en": "First node, wattage report, minimum time",
+          "nl": "Eerste node, wattage verzending, minimale tijd"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum amount of time before a new value is being send.",
@@ -179,8 +179,8 @@
         "id": "s1_kwh_report",
         "type": "number",
         "label": {
-          "en": "First channel, kWh report threshold",
-          "nl": "Eerste kanaal, kWh verzending drempel"
+          "en": "First node, kWh report threshold",
+          "nl": "Eerste node, kWh verzending drempel"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum kWh change before the value is being send.",
@@ -202,8 +202,8 @@
   {
     "type": "group",
     "label": {
-      "en": "Input 2 (S2)",
-      "nl": "Ingang 2 (S2)"
+      "en": "Switch 2 (S2)",
+      "nl": "Schakelaar 2 (S2)"
     },
     "collapsed": true,
     "children": [
@@ -211,8 +211,8 @@
         "id": "s2_power_report",
         "type": "number",
         "label": {
-          "en": "Second channel, wattage report threshold",
-          "nl": "Tweede kanaal, wattage verzending drempel"
+          "en": "Second node, wattage report threshold",
+          "nl": "Tweede node, wattage verzending drempel"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum wattage change before the value is being send.",
@@ -232,8 +232,8 @@
         "id": "s2_power_report_interval",
         "type": "number",
         "label": {
-          "en": "Second channel, wattage report, minimum time",
-          "nl": "Tweede kanaal, wattage verzending, minimale tijd"
+          "en": "Second node, wattage report, minimum time",
+          "nl": "Tweede node, wattage verzending, minimale tijd"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum amount of time before a new value is being send.",
@@ -253,8 +253,8 @@
         "id": "s2_kwh_report",
         "type": "number",
         "label": {
-          "en": "Second channel, kWh report threshold",
-          "nl": "Tweede kanaal, kWh verzending drempel"
+          "en": "Second node, kWh report threshold",
+          "nl": "Tweede node, kWh verzending drempel"
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the minimum kWh change before the value is being send.",
