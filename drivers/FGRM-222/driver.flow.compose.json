@@ -7,8 +7,8 @@
         "nl": "Rolluik scene (pulsdruk)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type: \"Momentary\" is selected.",
-        "nl": "Deze kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk\" is geselecteerd."
+        "en": "This Flow Card will only get triggered if the setting Switch type: \"Momentary\" is selected.",
+        "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk\" is geselecteerd."
       },
       "args": [
         {
@@ -89,8 +89,8 @@
         "nl": "Rolluik scene (tuimel)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type: \"Toggle\" is selected.",
-        "nl": "Deze kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel\" is geselecteerd."
+        "en": "This Flow Card will only get triggered if the setting Switch type: \"Toggle\" is selected.",
+        "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel\" is geselecteerd."
       },
       "args": [
         {
@@ -153,12 +153,12 @@
     {
       "id": "FGRM-222-momentary_single-gate_switch",
       "title": {
-        "en": "Shutter scene (Single momentary/Gate)",
-        "nl": "Rolluik scene (Enkele pulsedruk/Poort)"
+        "en": "Shutter scene (Single momentary/gate)",
+        "nl": "Rolluik scene (Enkele pulsedruk/poort)"
       },
       "hint": {
-        "en": "This card will only get triggered if the setting Switch type is \"Single momentary\" or \"Gate mode\" is selected.",
-        "nl": "Deze kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Enkele pulsdruk\" of \"Poort mode\" is geselecteerd."
+        "en": "This Flow Card will only get triggered if the setting Switch type is \"Single momentary\" or \"Gate mode\" is selected.",
+        "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Enkele pulsdruk\" of \"Poort mode\" is geselecteerd."
       },
       "args": [
         {
@@ -209,8 +209,7 @@
       "hint": {
         "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
         "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-      },
-      "args": []
+      }
     }
   ]
 }

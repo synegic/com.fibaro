@@ -45,24 +45,27 @@
     "zwave": {
       "index": 14,
       "size": 1
-    }
+    },
     "values": [
       {
         "id": "0",
         "label": {
-          "en": "Momentary switches"
+          "en": "Double, Momentary switch",
+          "nl": "Dubbele pulsdrukschakelaar "
         }
       },
       {
         "id": "1",
         "label": {
-          "en": "Toggle switches"
+          "en": "Toggle switches",
+          "nl": "Tuimelschakelaars"
         }
       },
       {
         "id": "2",
         "label": {
-          "en": "Single, momentary switch"
+          "en": "Single, momentary switch",
+          "nl": "Enkele pulsdrukschakelaar"
         }
       }
     ]
@@ -137,7 +140,7 @@
     "zwave": {
       "index": 50,
       "size": 1
-    }
+    },
     "value": "0",
     "values": [
       {
