@@ -73,8 +73,8 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('alarm_generic.contact2', 'SCENE_ACTIVATION', {
 			report: 'SCENE_ACTIVATION_SET',
 			reportParser: (report) => this._alarmGenericReportParser(report, 2),
-            reportParserOverride: true,
-        });
+			reportParserOverride: true,
+		});
 
 		/*
     	=========================================================================
@@ -84,23 +84,23 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('measure_temperature.sensor1', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 3,
 			reportParser: (report) => this._temperatureReportParser(report, 1),
-            reportParserOverride: true,
-        });
+			reportParserOverride: true,
+		});
 		this.registerCapability('measure_temperature.sensor2', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 4,
 			reportParser: (report) => this._temperatureReportParser(report, 2),
-            reportParserOverride: true,
-        });
+			reportParserOverride: true,
+		});
 		this.registerCapability('measure_temperature.sensor3', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 5,
 			reportParser: (report) => this._temperatureReportParser(report, 3),
-            reportParserOverride: true,
-        });
+			reportParserOverride: true,
+		});
 		this.registerCapability('measure_temperature.sensor4', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 6,
 			reportParser: (report) => this._temperatureReportParser(report, 4),
-            reportParserOverride: true,
-        });
+			reportParserOverride: true,
+		});
 
 		this.registerSetting('12', (newValue) => new Buffer([Math.round(newValue / 16 * 255)]));
 	}
