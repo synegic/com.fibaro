@@ -31,7 +31,7 @@ class FibaroRollerShutter24Device extends ZwaveDevice {
 			switch (operatingMode) {
 				case '0': this._momentaryTrigger.trigger(this, null, data); break;
 				case '1': this._toggleTrigger.trigger(this, null, data); break;
-				case '2': this._singleGateTrigger.trigger(this, null, data); break;
+				case '2':
 				case '3':
 				case '4': this._singleGateTrigger.trigger(this, null, data); break;
 				default: this.error(`Unknown operating mode ${operatingMode} found`); break;
