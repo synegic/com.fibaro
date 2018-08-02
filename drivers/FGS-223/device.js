@@ -14,7 +14,9 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this._input2FlowTrigger = new Homey.FlowCardTriggerDevice('FGS-223_S2').register()
 			.registerRunListener(this._inputFlowListener.bind(this));
 		this._resetMeterFlowAction = new Homey.FlowCardAction('FGS-223_reset_meter').register()
-			.registerRunListener(this._resetMeterFlowListener.bind(this));
+			.registerRunListener(async (args, state) => {
+				return await this._resetMeterFlowListener(args);
+            });
 
 		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_REPORT', (report) => {
 			if (report.hasOwnProperty('Properties1') &&
@@ -42,16 +44,13 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		return (state.scene === args.scene && args.device === this);
 	}
 
-	_resetMeterFlowListener(args) {
+	async _resetMeterFlowListener(args) {
 		if (args.device === this &&
 			this.node &&
 			this.node.CommandClass.COMMAND_CLASS_METER) {
-			this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {
-				if (err) return false;
-				if (result === 'TRANSMIT_COMPLETE_OK') return true;
-			});
+			return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
 		}
-		return false;
+		return Promise.reject('This device does not support meter resets');
 	}
 
 	_kwhReportParser(newValue) {

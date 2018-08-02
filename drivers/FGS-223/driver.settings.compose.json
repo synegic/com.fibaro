@@ -19,22 +19,22 @@
       {
         "id": "0",
         "label": {
-          "en": "Momentary Switch",
+          "en": "Momentary switch",
           "nl": "Korstondige schakelaar"
         }
       },
       {
         "id": "1",
         "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
+          "en": "Toggle switch",
+          "nl": "Tuimel schakelaar"
         }
       },
       {
         "id": "2",
         "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
+          "en": "Toggle switch",
+          "nl": "Tuimel schakelaar"
         }
       }
     ]
