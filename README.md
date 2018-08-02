@@ -26,7 +26,6 @@ This app adds support for Fibaro devices in Homey.
 * FGWPx-102-PLUS, Wall Plug (Z-Wave Plus)
 * FGKF-601, KeyFob (Z-Wave Plus)
 * FGDW-002, Door/Window Sensor 2
-* FGT-001, Radiator Thermostat
 
 ## Supported devices with some parameters:
 * FGR-221, Roller Shutter
@@ -55,20 +54,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
-### v 1.5.14
+### v 2.0.0
 
-Add basic support for the Heat Controller (FGT-001)
-
-### v 1.5.13
-
-Fixed token examples type
-Added missing device icon
-Fixed bug for RGBW Controller
-
-### v 1.5.12
-
-Make command class notification optional for FGK-101
-Fix switch type and auto-off relay settings for FGS-212
+Complete rewrite and restructuring of the application. This should improve overall stability
 
 ### v 1.5.11
 
