@@ -35,12 +35,12 @@
     },
     "defaultConfiguration": [
       {
-        "index": 28,
+        "id": 28,
         "size": 1,
         "value": 15
       },
       {
-        "index": 29,
+        "id": 29,
         "size": 1,
         "value": 15
       }

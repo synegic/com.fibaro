@@ -881,6 +881,438 @@
             "example": 5
           }
         ]
+      },
+      {
+        "id": "FGRM-222-momentary",
+        "title": {
+          "en": "Shutter scene (momentary)",
+          "nl": "Rolluik scene (pulsdruk)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type: \"Momentary\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed left (S1) 2x",
+                  "nl": "Links (S1) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "22",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "23",
+                "label": {
+                  "en": "Long press right (S2) released",
+                  "nl": "Rechts (S2) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Pressed right (S2) 2x",
+                  "nl": "Rechts (S2) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Pressed right (S2) 3x",
+                  "nl": "Rechts (S2) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "26",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222-toggle",
+        "title": {
+          "en": "Shutter scene (toggle)",
+          "nl": "Rolluik scene (tuimel)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type: \"Toggle\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left (S1) off to on *",
+                  "nl": "Links (S1) uit naar aan *"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Left (S1) on to off *",
+                  "nl": "Links (S1) aan naar uit *"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Switched left (S1) 2x",
+                  "nl": "Links (S1) 2x geschakeld"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Right (S2) off to on *",
+                  "nl": "Rechts (S2) uit naar aan *"
+                }
+              },
+              {
+                "id": "21",
+                "label": {
+                  "en": "Right (S2) on to off *",
+                  "nl": "Rechts (S2) aan naar uit *"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Switched right (S2) 2x",
+                  "nl": "Rechts (S2) 2x geschakeld"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Switched right (S2) 3x",
+                  "nl": "Rechts (S2) 3x geschakeld"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222-momentary_single-gate_switch",
+        "title": {
+          "en": "Shutter scene (Single momentary/gate)",
+          "nl": "Rolluik scene (Enkele pulsedruk/poort)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type is \"Single momentary\" or \"Gate mode\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Enkele pulsdruk\" of \"Poort mode\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed 2x left (S1)",
+                  "nl": "2x ingedrukt links (S1)"
+                }
+              },
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_S1",
+        "title": {
+          "en": "Left Switch (S1)",
+          "nl": "Linker Schakelaar (S1)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch (momentary switch)",
+                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released (momentary switch)",
+                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_S2",
+        "title": {
+          "en": "Right Switch (S2)",
+          "nl": "Rechter Schakelaar (S2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch (momentary switch)",
+                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released (momentary switch)",
+                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_S1",
+        "title": {
+          "en": "Left Switch Scene (S1)",
+          "nl": "Linker Schakelaar Scene (S1)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released",
+                  "nl": "Lang ingedrukt los gelaten"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_S2",
+        "title": {
+          "en": "Right Switch Scene (S2)",
+          "nl": "Right Schakelaar Scene (S2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released",
+                  "nl": "Lang ingedrukt los gelaten"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "conditions": [
@@ -1261,6 +1693,60 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=FGRGBWM-441"
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
           }
         ]
       }
@@ -1843,8 +2329,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/FGD-211/assets/images/large.png",
-        "small": "/drivers/FGD-211/assets/images/small.png"
+        "large": "/drivers/FGD-211/assets/images/large.jpg",
+        "small": "/drivers/FGD-211/assets/images/small.jpg"
       },
       "zwave": {
         "manufacturerId": 271,
@@ -2161,8 +2647,8 @@
         }
       },
       "images": {
-        "large": "/drivers/FGD-212/assets/images/large.png",
-        "small": "/drivers/FGD-212/assets/images/small.png"
+        "large": "/drivers/FGD-212/assets/images/large.jpg",
+        "small": "/drivers/FGD-212/assets/images/small.jpg"
       },
       "zwave": {
         "manufacturerId": 271,
@@ -8328,6 +8814,125 @@
       }
     },
     {
+      "id": "FGR-221",
+      "name": {
+        "en": "Roller Shutter",
+        "nl": "Rolluik"
+      },
+      "class": "windowcoverings",
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/FGR-221/assets/images/large.png",
+        "small": "/drivers/FGR-221/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          768
+        ],
+        "productId": [
+          258,
+          260,
+          261,
+          262,
+          263,
+          4106,
+          8202,
+          12298
+        ],
+        "zwaveAllianceProductId": 38,
+        "learnmode": {
+          "instruction": {
+            "en": "Press either the B-button or the first input on your Roller Shutter three times.",
+            "nl": "Druk driemaal op de B-knop op uw Rolluik, of schakel drie keer met het eerste input apparaat."
+          }
+        },
+        "associationGroups": [
+          3
+        ]
+      },
+      "settings": [
+        {
+          "id": "type_input",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input",
+            "nl": "Schakelaar type ingang"
+          },
+          "hint": {
+            "en": "This parameter (14) determines what type of switch is used.",
+            "nl": "Deze parameter (14) bepaalt welk type schakelaar er wordt gebruikt."
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Monostable switch",
+                "nl": "Puls schakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Single monostable switch",
+                "nl": "Enkele puls schakelaar"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGR-222",
+      "name": {
+        "en": "Roller Shutter 2",
+        "nl": "Rolluik schakelaar 2"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "dim",
+        "measure_power",
+        "windowcoverings_state"
+      ],
+      "images": {
+        "large": "/drivers/FGR-222/assets/images/large.png",
+        "small": "/drivers/FGR-222/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          770
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "learnmode": {
+          "image": "{{driverassetsPath}}/learnmode.svg",
+          "instruction": {
+            "en": "Press the B-button on your Roller Shutter 2 three times.",
+            "nl": "Druk driemaal op de B-knop van uw Rolluik schakelaar 2."
+          }
+        },
+        "associationGroups": [
+          3
+        ]
+      }
+    },
+    {
       "id": "FGRGBWM-441",
       "name": {
         "en": "RGBW Controller"
@@ -9185,6 +9790,278 @@
       ]
     },
     {
+      "id": "FGRM-222",
+      "name": {
+        "en": "Roller Shutter 2 (<2.4)",
+        "nl": "Rolluikschakelaar 2 (<2.4)"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state",
+        "dim",
+        "measure_power",
+        "meter_power"
+      ],
+      "images": {
+        "large": "/drivers/FGRM-222/assets/images/large.png",
+        "small": "/drivers/FGRM-222/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          769
+        ],
+        "productId": [
+          4097,
+          8193,
+          12289
+        ],
+        "learnmode": {
+          "image": "/drivers/FGRM-222/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the B-button on your Roller Shutter 2 (<2.4) three times.",
+            "nl": "Druk driemaal op de B-knop op uw Rolluikschakelaar 2 (<2.4)."
+          }
+        },
+        "associationGroups": [
+          3
+        ]
+      },
+      "settings": [
+        {
+          "id": "reports_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Blind position reports type",
+            "nl": "Rolluik positie rapportage type"
+          },
+          "value": "0",
+          "hint": {
+            "en": "This parameter (3) determines whether the values are sent in Fibar Command Class or Z-Wave Command Class mode.",
+            "nl": "Deze parameter (3) bepaalt of het apparaat waardes verzend in Fibar Command Class of Z-Wave Command Class modus."
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Z-Wave Command Class"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Fibar Command Class"
+              }
+            }
+          ]
+        },
+        {
+          "id": "operating_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating mode",
+            "nl": "Besturingsmodus"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the operating mode for this device.",
+            "nl": "Deze parameter (10) bepaalt de modus van dit apparaat."
+          },
+          "zwave": {
+            "index": 10,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Roller blind mode, without positioning",
+                "nl": "Rolluik modus, zonder positionering"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Roller blind mode, with positioning",
+                "nl": "Rolluik modus, met positionering"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Venetian blind mode, with positioning",
+                "nl": "Jaloezie modus, met positionering"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Gate mode, without positioning",
+                "nl": "Poort modus, zonder positionering"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Gate mode, with positioning",
+                "nl": "Poort modus, met positionering"
+              }
+            }
+          ]
+        },
+        {
+          "value": "0",
+          "hint": {
+            "en": "This parameter (14) determines what switch is connected to this device.",
+            "nl": "Deze parameter (14) bepaalt wat voor een schakelaar het apparaat activeert."
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Double, Momentary switch",
+                "nl": "Dubbele pulsdrukschakelaar "
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switches",
+                "nl": "Tuimelschakelaars"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Single, momentary switch",
+                "nl": "Enkele pulsdrukschakelaar"
+              }
+            }
+          ],
+          "id": "switch_type",
+          "type": "radio",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          }
+        },
+        {
+          "value": 10,
+          "attr": {
+            "min": 1,
+            "max": 100
+          },
+          "zwave": {
+            "index": 40,
+            "size": 1
+          },
+          "id": "power_level_change",
+          "label": {
+            "en": "Report threshold",
+            "nl": "Rapportage drempel"
+          },
+          "hint": {
+            "en": "This parameter (40) determines the minimum change in value before reporting changes to Homey.",
+            "nl": "Deze parameter (40) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+          },
+          "type": "number"
+        },
+        {
+          "attr": {
+            "min": 0,
+            "max": 65534
+          },
+          "zwave": {
+            "index": 42,
+            "size": 2,
+            "signed": false
+          },
+          "id": "periodic_power_level_reports",
+          "value": 3600,
+          "label": {
+            "en": "Report interval (s)",
+            "nl": "Rapportage interval (s)"
+          },
+          "hint": {
+            "en": "This parameter (42) determines the time between reports to Homey, independent of value changes.",
+            "nl": "Deze parameter (42) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+          },
+          "type": "number"
+        },
+        {
+          "id": "start_calibration",
+          "type": "checkbox",
+          "label": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "hint": {
+            "en": "This parameter (29) starts the calibration procedure on save.",
+            "nl": "Deze parameter (29) start de kalibratieprocedure na het opslaan."
+          },
+          "zwave": {
+            "index": 29,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "invert_direction",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert movement",
+            "nl": "Keer de beweging om"
+          },
+          "hint": {
+            "en": "This parameter (29) inverts the shutter movement direction.",
+            "nl": "Deze parameter (29) keert de rolluik bewegingsdirectie om."
+          },
+          "value": false
+        },
+        {
+          "id": "scenes_and_associations",
+          "type": "dropdown",
+          "label": {
+            "en": "Scene or association mode",
+            "nl": "Scene of associatie modus."
+          },
+          "hint": {
+            "en": "This parameter (50) determines whether this device is in scene or association mode.",
+            "nl": "Deze parameter (50) bepaalt of het apparaat in scene of associatie modus staat."
+          },
+          "zwave": {
+            "index": 50,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Association activated",
+                "nl": "Associatie geactiveerd"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Scenes activated",
+                "nl": "Scenes geactiveerd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FGS-211",
       "name": {
         "en": "Relay Switch",
@@ -9470,6 +10347,257 @@
             "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
           },
           "value": true
+        }
+      ]
+    },
+    {
+      "id": "FGS-213",
+      "name": {
+        "en": "Single Switch 2",
+        "nl": "Enkele Schakelaar 2"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGS-213/assets/images/large.png",
+        "small": "/drivers/FGS-213/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          1027
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "zwaveAllianceProductId": 1734,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1734/FGS-2x3-EN-T-v1.0 06.06.2016.pdf",
+        "learnmode": {
+          "image": "/drivers/FGS-213/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on, or the left switch of your Single Switch 2 three times",
+            "nl": "Druk driemaal op de knop op de linker schakelaar van Enkele Schakelaar 2"
+          }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 28,
+            "size": 1,
+            "value": 15
+          },
+          {
+            "id": 29,
+            "size": 1,
+            "value": 15
+          }
+        ],
+        "associationGroups": [
+          1
+        ],
+        "associationGroupsOptions": {
+          "1": {
+            "hint": {
+              "en": " “Lifeline” reports the device status and allows for assigning single device only (main controller by default)."
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "9",
+          "zwave": {
+            "index": 9,
+            "size": 1
+          },
+          "type": "checkbox",
+          "label": {
+            "en": "Restore state after power failure",
+            "nl": "Herstel status na stroomonderbreking"
+          },
+          "hint": {
+            "en": "This parameter (9) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+            "nl": "Deze parameter (9) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+          },
+          "value": true
+        },
+        {
+          "id": "20",
+          "hint": {
+            "en": "This parameter (20) determines determines what device triggers the switch.",
+            "nl": "Deze parameter (20) bepaalt wat voor apparaat de schakelaar omzet."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Momentary Switch",
+                "nl": "Korstondige schakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle Switch",
+                "nl": "Tuimel Schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Toggle Switch",
+                "nl": "Tuimel Schakelaar"
+              }
+            }
+          ],
+          "value": "2",
+          "type": "radio",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "58",
+              "zwave": {
+                "index": 58,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32000
+              },
+              "value": 3600,
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (58) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (58) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "id": "50",
+              "zwave": {
+                "index": 50,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 20,
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (50) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (50) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "id": "51",
+              "type": "number",
+              "label": {
+                "en": "Minimum time between wattage reports",
+                "nl": "Minimale tijd tussen wattage verzending"
+              },
+              "hint": {
+                "en": "This parameter (51) determines the minimum time between reports sent to Homey.",
+                "nl": "Deze parameter (51) bepaalt de minimum tijd tussen rapportages naar Homey."
+              },
+              "zwave": {
+                "index": 51,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 120
+              },
+              "value": 10
+            },
+            {
+              "id": "59",
+              "zwave": {
+                "index": 59,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32000
+              },
+              "value": 3600,
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (58) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (58) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "id": "53",
+              "zwave": {
+                "index": 53,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 320,
+                "step": 0.01
+              },
+              "value": 1,
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (50) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (50) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "id": "60",
+              "type": "checkbox",
+              "label": {
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter (60) determines whether or not the power usage of this device is included in the kWh reports.",
+                "nl": "Deze parameter (60) bepaalt of het stroomverbruik van dit apparaat meegenomen wordt in de kWh rapportages."
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": false
+            }
+          ]
         }
       ]
     },
@@ -9832,6 +10960,350 @@
             "size": 1
           },
           "value": true
+        }
+      ]
+    },
+    {
+      "id": "FGS-223",
+      "name": {
+        "en": "Double Switch 2",
+        "nl": "Dubbele Schakelaar 2"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGS-223/assets/images/large.png",
+        "small": "/drivers/FGS-223/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          515
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "zwaveAllianceProductId": 2731,
+        "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2731/FGS-2x3-EN-T-v1.2.pdf",
+        "learnmode": {
+          "image": "/drivers/FGS-223/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Double Switch 2 three times, this can also be done with the S1 input.",
+            "nl": "Druk driemaal op de knop van uw Dubbele Schakelaar 2, dit kan ook door middel van de S1 input."
+          }
+        },
+        "associationGroups": [
+          1
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 28,
+            "size": 1,
+            "value": 15
+          },
+          {
+            "id": 29,
+            "size": 1,
+            "value": 15
+          }
+        ],
+        "multiChannelNodes": {
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "onoff",
+              "measure_power",
+              "meter_power"
+            ],
+            "icon": "/drivers/FGS-223/assets/icon.svg",
+            "name": {
+              "en": "Right Switch (S2/Q2)",
+              "nl": "Rechter Schakelaar (S2/Q2)"
+            },
+            "settings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "switch_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch Type",
+            "nl": "Schakelaar Type"
+          },
+          "hint": {
+            "en": "This parameter (20) determines what kind of switch is attached to the module.",
+            "nl": "Deze parameter (20) bepaalt welk type schakelaar is verbonden aan de module."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Korstondige schakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Save power-off state",
+                "nl": "Onthoud status bij stroomuitval"
+              },
+              "hint": {
+                "en": "This parameter (9) determines whether or not this device saves its last state when power is disconnected.",
+                "nl": "Deze parameter (9) bepaalt of dit apparaat zijn laatste status onthoud wanneer de stroom eraf word gehaald."
+              },
+              "zwave": {
+                "index": 9,
+                "size": 1
+              },
+              "value": true
+            },
+            {
+              "id": "power_report_interval",
+              "type": "number",
+              "label": {
+                "en": "Wattage report interval",
+                "nl": "Wattage verzending interval"
+              },
+              "hint": {
+                "en": "This parameter (58) determines the interval at which all values for wattage gets send.",
+                "nl": "Deze parameter (58) bepaalt de interval van het versturen van alle waardes voor wattage."
+              },
+              "zwave": {
+                "index": 58,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32000
+              },
+              "value": 3600
+            },
+            {
+              "id": "energie_report_interval",
+              "type": "number",
+              "label": {
+                "en": "kWh report interval",
+                "nl": "kWh verbruik verzending interval"
+              },
+              "hint": {
+                "en": "This parameter (59) determines the interval at which all values for kWh gets send.",
+                "nl": "Deze parameter (59) bepaalt de interval van het versturen van alle waardes voor kWh."
+              },
+              "zwave": {
+                "index": 59,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32000
+              },
+              "value": 3600
+            },
+            {
+              "id": "own_power",
+              "type": "checkbox",
+              "label": {
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter (60) determines whether or not the power consumption (kWh) of the module itself will be added on the total amount.",
+                "nl": "Deze parameter (60) bepaalt of het energie verbruik (kWh) van de module zelf opgeteld wordt bij de totale hoeveelheid."
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Switch 1 (S1)",
+            "nl": "Schakelaar 1 (S1)"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "s1_power_report",
+              "type": "number",
+              "label": {
+                "en": "First node, wattage report threshold",
+                "nl": "Eerste node, wattage verzending drempel"
+              },
+              "hint": {
+                "en": "This parameter (50) determines the minimum wattage change before the value is being send.",
+                "nl": "Deze parameter (50) bepaalt de minimum verandering in wattage voor het verzenden van de waarde."
+              },
+              "zwave": {
+                "index": 50,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 20
+            },
+            {
+              "id": "s1_power_report_interval",
+              "type": "number",
+              "label": {
+                "en": "First node, wattage report, minimum time",
+                "nl": "Eerste node, wattage verzending, minimale tijd"
+              },
+              "hint": {
+                "en": "This parameter (51) determines the minimum amount of time before a new value is being send.",
+                "nl": "Deze parameter (51) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
+              },
+              "zwave": {
+                "index": 51,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 120
+              },
+              "value": 10
+            },
+            {
+              "id": "s1_kwh_report",
+              "type": "number",
+              "label": {
+                "en": "First node, kWh report threshold",
+                "nl": "Eerste node, kWh verzending drempel"
+              },
+              "hint": {
+                "en": "This parameter (53) determines the minimum kWh change before the value is being send.",
+                "nl": "Deze parameter (53) bepaalt de minimum verandering in kWh voor het verzenden van de waarde."
+              },
+              "zwave": {
+                "index": 53,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 320,
+                "step": 0.01
+              },
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Switch 2 (S2)",
+            "nl": "Schakelaar 2 (S2)"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "s2_power_report",
+              "type": "number",
+              "label": {
+                "en": "Second node, wattage report threshold",
+                "nl": "Tweede node, wattage verzending drempel"
+              },
+              "hint": {
+                "en": "This parameter (54) determines the minimum wattage change before the value is being send.",
+                "nl": "Deze parameter (54) bepaalt de minimum verandering in wattage voor het verzenden van de waarde."
+              },
+              "zwave": {
+                "index": 54,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 20
+            },
+            {
+              "id": "s2_power_report_interval",
+              "type": "number",
+              "label": {
+                "en": "Second node, wattage report, minimum time",
+                "nl": "Tweede node, wattage verzending, minimale tijd"
+              },
+              "hint": {
+                "en": "This parameter (55) determines the minimum amount of time before a new value is being send.",
+                "nl": "Deze parameter (55) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
+              },
+              "zwave": {
+                "index": 55,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 120
+              },
+              "value": 10
+            },
+            {
+              "id": "s2_kwh_report",
+              "type": "number",
+              "label": {
+                "en": "Second node, kWh report threshold",
+                "nl": "Tweede node, kWh verzending drempel"
+              },
+              "hint": {
+                "en": "This parameter (57) determines the minimum kWh change before the value is being send.",
+                "nl": "Deze parameter (57) bepaalt de minimum verandering in kWh voor het verzenden van de waarde."
+              },
+              "zwave": {
+                "index": 57,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 320,
+                "step": 0.01
+              },
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -10469,8 +11941,8 @@
         "measure_temperature"
       ],
       "images": {
-        "large": "/drivers/FGT-001/assets/images/large.png",
-        "small": "/drivers/FGT-001/assets/images/small.png"
+        "large": "/drivers/FGT-001/assets/images/large.jpg",
+        "small": "/drivers/FGT-001/assets/images/small.jpg"
       },
       "zwave": {
         "manufacturerId": 271,

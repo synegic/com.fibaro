@@ -56,8 +56,8 @@ class FibaroRollerShutter24Device extends ZwaveDevice {
 	async _resetMeterRunListener(args, state) {
 		if (args.device === this &&
 				this.node.CommandClass.COMMAND_CLASS_METER) {
-					return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
-		} else return Promise.reject('unknown_error');
+			return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
+		} return Promise.reject('unknown_error');
 	}
 
 	_dimSetParser(value) {

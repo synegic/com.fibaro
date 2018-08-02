@@ -14,9 +14,7 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this._input2FlowTrigger = new Homey.FlowCardTriggerDevice('FGS-223_S2').register()
 			.registerRunListener(this._inputFlowListener.bind(this));
 		this._resetMeterFlowAction = new Homey.FlowCardAction('FGS-223_reset_meter').register()
-			.registerRunListener(async (args, state) => {
-				return await this._resetMeterFlowListener(args);
-            });
+			.registerRunListener(async (args, state) => await this._resetMeterFlowListener(args));
 
 		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_REPORT', (report) => {
 			if (report.hasOwnProperty('Properties1') &&

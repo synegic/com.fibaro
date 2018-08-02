@@ -11,8 +11,8 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}/images/large.png",
-    "small": "{{driverAssetsPath}/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -27,7 +27,7 @@
     "zwaveAllianceProductId": 2731,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2731/FGS-2x3-EN-T-v1.2.pdf",
     "learnmode": {
-      "image": "{{driverAssetsPath}/learnmode.svg",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Press the button on your {{driverNameEn}} three times, this can also be done with the S1 input.",
         "nl": "Druk driemaal op de knop van uw {{driverNameNl}}, dit kan ook door middel van de S1 input."
