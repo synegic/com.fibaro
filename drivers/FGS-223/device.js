@@ -17,23 +17,26 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this._resetMeterFlowAction = new Homey.FlowCardAction('FGS-223_reset_meter').register()
 			.registerRunListener(async (args, state) => await this._resetMeterFlowListener(args));
 
-		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_REPORT', (report) => {
-			if (report.hasOwnProperty('Properties1') &&
-                report.Properties1.hasOwnProperty('Key Attributes') &&
-                report.hasOwnProperty('Scene Number')) {
+		if (!this.node.isMultiChannelNode) {
+            this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
+                if (report.hasOwnProperty('Properties1') &&
+                    report.Properties1.hasOwnProperty('Key Attributes') &&
+                    report.hasOwnProperty('Scene Number')) {
 
-            	const state = {
-            		scene: report.Properties1['Key Attributes'],
-				};
+                    const state = {
+                        scene: report.Properties1['Key Attributes'],
+                    };
 
-            	if (report['Scene Number'] === 1) {
-            		this._input1FlowTrigger.trigger(this, null, state);
-				} else if (report['Scene Number'] === 2) {
-					this._input2FlowTrigger.trigger(this, null, state);
-					this.refreshCapabilityValue('onoff', 'SWITCH_BINARY');
-				}
-			}
-		});
+                    if (report['Scene Number'] === 1) {
+                        this._input1FlowTrigger.trigger(this, null, state);
+                    } else if (report['Scene Number'] === 2) {
+                        this._input2FlowTrigger.trigger(this, null, state);
+                    }
+                }
+
+                this.refreshCapabilityValue('onoff', 'SWITCH_BINARY');
+            });
+		}
 
 		this.registerSetting('s1_kwh_report', this._kwhReportParser);
 		this.registerSetting('s2_kwh_report', this._kwhReportParser);
