@@ -1,5 +1,5 @@
 {
-  "trigger": [
+  "triggers": [
     {
       "id": "FGD-212_momentary",
       "title": {
