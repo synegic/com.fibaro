@@ -9166,7 +9166,207 @@
         "associationGroups": [
           3
         ]
-      }
+      },
+      "settings": [
+        {
+          "id": "reports_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Blind position reports type",
+            "nl": "Rolluik positie rapportage type"
+          },
+          "value": "0",
+          "hint": {
+            "en": "This parameter (3) determines whether the values are sent in Fibar Command Class or Z-Wave Command Class mode.",
+            "nl": "Deze parameter (3) bepaalt of het apparaat waardes verzend in Fibar Command Class of Z-Wave Command Class modus."
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Z-Wave Command Class"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Fibar Command Class"
+              }
+            }
+          ]
+        },
+        {
+          "id": "operating_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating mode",
+            "nl": "Besturingsmodus"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the operating mode for this device.",
+            "nl": "Deze parameter (10) bepaalt de modus van dit apparaat."
+          },
+          "zwave": {
+            "index": 10,
+            "size": 1
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Roller blind mode, without positioning",
+                "nl": "Rolluik modus, zonder positionering"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Roller blind mode, with positioning",
+                "nl": "Rolluik modus, met positionering"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Venetian blind mode, with positioning",
+                "nl": "Jaloezie modus, met positionering"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Gate mode, without positioning",
+                "nl": "Poort modus, zonder positionering"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Gate mode, with positioning",
+                "nl": "Poort modus, met positionering"
+              }
+            }
+          ]
+        },
+        {
+          "hint": {
+            "en": "This parameter (14) determines what switch is connected to this device.",
+            "nl": "Deze parameter (14) bepaalt wat voor een schakelaar het apparaat activeert."
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Double, Momentary switch",
+                "nl": "Dubbele pulsdrukschakelaar "
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switches",
+                "nl": "Tuimelschakelaars"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Single, momentary switch",
+                "nl": "Enkele pulsdrukschakelaar"
+              }
+            }
+          ],
+          "id": "switch_type",
+          "type": "radio",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          }
+        },
+        {
+          "value": 10,
+          "attr": {
+            "min": 1,
+            "max": 100
+          },
+          "zwave": {
+            "index": 40,
+            "size": 1
+          },
+          "id": "power_level_change",
+          "label": {
+            "en": "Report threshold",
+            "nl": "Rapportage drempel"
+          },
+          "hint": {
+            "en": "This parameter (40) determines the minimum change in value before reporting changes to Homey.",
+            "nl": "Deze parameter (40) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+          },
+          "type": "number"
+        },
+        {
+          "attr": {
+            "min": 0,
+            "max": 65535
+          },
+          "zwave": {
+            "index": 42,
+            "size": 2,
+            "signed": false
+          },
+          "id": "periodic_power_level_reports",
+          "value": 3600,
+          "label": {
+            "en": "Report interval (s)",
+            "nl": "Rapportage interval (s)"
+          },
+          "hint": {
+            "en": "This parameter (42) determines the time between reports to Homey, independent of value changes.",
+            "nl": "Deze parameter (42) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+          },
+          "type": "number"
+        },
+        {
+          "id": "start_calibration",
+          "type": "checkbox",
+          "label": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "hint": {
+            "en": "This parameter (29) starts the calibration procedure on save.",
+            "nl": "Deze parameter (29) start de kalibratieprocedure na het opslaan."
+          },
+          "zwave": {
+            "index": 29,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "invert_direction",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert movement",
+            "nl": "Keer de beweging om"
+          },
+          "hint": {
+            "en": "This parameter (29) inverts the shutter movement direction.",
+            "nl": "Deze parameter (29) keert de rolluik bewegingsdirectie om."
+          },
+          "value": false
+        }
+      ]
     },
     {
       "id": "FGRGBWM-441",
