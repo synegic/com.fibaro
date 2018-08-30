@@ -6,11 +6,11 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroRollerShutter24Device extends ZwaveDevice {
 
 	onMeshInit() {
-		this._momentaryTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary').register
+		this._momentaryTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary').register()
 			.registerRunListener(this._triggerRunListener.bind(this));
-		this._toggleTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-toggle').register
+		this._toggleTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-toggle').register()
 			.registerRunListener(this._triggerRunListener.bind(this));
-		this._singleGateTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary_single-gate_switch').register
+		this._singleGateTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary_single-gate_switch').register()
 			.registerRunListener(this._triggerRunListener.bind(this));
 
 		this._resetMeterAction = new Homey.FlowCardAction('FGRM-222_reset_meter').register()

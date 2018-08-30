@@ -4,7 +4,9 @@
     "en": "Double Relay Switch 2"
   },
   "class": "socket",
-  "capabilities": [],
+  "capabilities": [
+    "onoff"
+  ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
