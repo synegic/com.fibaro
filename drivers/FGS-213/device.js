@@ -20,7 +20,7 @@ class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
         	return kWh;
 		});
 
-		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (command, report) => {
+		this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
 			if (report.hasOwnProperty('Properties1') &&
                 report.Properties1.hasOwnProperty('Key Attributes') &&
                 report.hasOwnProperty('Scene Number')) {
