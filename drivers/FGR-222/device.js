@@ -53,4 +53,3 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 }
 
 module.exports = FibaroRollerShutter2Device;
-D
