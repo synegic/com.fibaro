@@ -12,7 +12,7 @@
   ],
   "capabilitiesOptions": {
     "onoff": {
-      "SetOnDim": false
+      "setOnDim": false
     }
   },
   "images": {
