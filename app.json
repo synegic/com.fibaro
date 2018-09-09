@@ -4,7 +4,7 @@
     "en": "Fibaro"
   },
   "sdk": 2,
-  "version": "2.0.11",
+  "version": "2.0.10",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -2877,6 +2877,11 @@
       "capabilitiesOptions": {
         "onoff": {
           "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
         }
       },
       "images": {
