@@ -52,9 +52,9 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 	}
 
 	async _setBrightnessRunListener(args, state) {
-		if (!args.hasOwnProperty('set_forced_brightness_level')) throw Error('set_forced_brightness_level_property_missing');
-		if (typeof args.set_forced_brightness_level !== 'number') throw Error('forced_brightness_level_is_not_a_number');
-		if (args.set_forced_brightness_level > 1) throw Error('forced_brightness_level_out_of_range');
+		if (!args.hasOwnProperty('set_forced_brightness_level')) return Promise.reject('set_forced_brightness_level_property_missing');
+		if (typeof args.set_forced_brightness_level !== 'number') return Promise.reject('forced_brightness_level_is_not_a_number');
+		if (args.set_forced_brightness_level > 1) return Promise.reject('forced_brightness_level_out_of_range');
 
 		try {
 			let result = await args.device.configurationSet({
@@ -66,9 +66,9 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		}
 		catch (error) {
 			args.device.log(error.message);
-			throw error;
+			return Promise.reject(error.message);
 		}
-		throw Error('unknown_error');
+		return Promise.reject('unknown_error');
 
 	}
 
@@ -88,8 +88,9 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 	}
 
 	async _setTimerRunListener(args, state) {
-		if (!args.hasOwnProperty('set_timer_functionality')) throw Error('set_timer_property_missing');
-		if (args.set_timer_functionality > 32767) throw Error('set_timer_out_of_range');
+		if (!args.hasOwnProperty('set_timer_functionality')) return Promise.reject('set_timer_property_missing');
+		if (typeof args.set_timer_functionality !== 'number') return Promise.reject('set_timer_is_not_a_number');
+		if (args.set_timer_functionality > 32767) return Promise.reject('set_timer_out_of_range');
 
 		let value = null;
 		try {
@@ -97,7 +98,7 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 			value.writeIntBE(args.set_timer_functionality, 0, 2);
 		}
 		catch (err) {
-			throw Error('failed_to_write_config_value_to_buffer');
+			return Promise.reject('failed_to_write_config_value_to_buffer');
 		}
 
 		try {
@@ -110,9 +111,9 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		}
 		catch (error) {
 			args.device.log(error.message);
-			throw error;
+			return Promise.reject(error.message);
 		}
-		throw Error('unknown_error');
+		return Promise.reject('unknown_error');
 	}
 
 	async _resetMeterRunListener(args, state) {
