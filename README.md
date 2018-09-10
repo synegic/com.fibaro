@@ -1,6 +1,9 @@
 # Fibaro
 This app adds support for Fibaro devices in Homey.
 
+## The Fibaro Universal Binary Sensor is temporarily unavailable in the 2.1.x release
+The FGBS-001 device will be temporarily unavailable until further notice in the beta 2.1.x release cycle, we'll keep you posted!
+
 ## Supported devices with most common parameters:
 * FGD-211, Dimmer
 * FGD-212, Dimmer 2
@@ -53,6 +56,10 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.1.0
+
+Fixed a lot of bugs in the SDK2 rewrite, overall stability of the app should be improved, please report any issues.
 
 ### v 2.0.0
 
