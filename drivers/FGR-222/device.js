@@ -9,7 +9,7 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
 			setParser: this._dimSetParser.bind(this),
 			reportParser: this._dimReportParser.bind(this),
-			reportParserOverride: true
+			reportParserOverride: true,
 		});
 		this.registerCapability('measure_power', 'SENSOR_MULTILEVEL');
 
@@ -43,12 +43,12 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 	}
 
 	_dimReportParser(report) {
-        let invert;
-        typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
+		let invert;
+		typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
 
-        if (typeof report['Value (Raw)'] === 'undefined') return null;
-        if (invert) return (100 - report['Value (Raw)'][0]) / 100;
-        return report['Value (Raw)'][0] / 100;
+		if (typeof report['Value (Raw)'] === 'undefined') return null;
+		if (invert) return (100 - report['Value (Raw)'][0]) / 100;
+		return report['Value (Raw)'][0] / 100;
 	}
 }
 
