@@ -715,6 +715,11 @@
       "capabilitiesOptions": {
         "onoff": {
           "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
         }
       },
       "images": {
