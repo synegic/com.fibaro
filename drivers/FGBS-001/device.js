@@ -58,6 +58,9 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('alarm_generic.contact1', 'BASIC', {
 			multiChannelNodeId: 1,
 			get: 'BASIC_GET',
+			getOpts: {
+				getOnStart: true,
+			},
 			report: 'BASIC_REPORT',
 			reportParser: report => {
 				if (report && report.hasOwnProperty('Value')) {
@@ -84,6 +87,9 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('alarm_generic.contact1', 'BASIC', {
 			multiChannelNodeId: 2,
 			get: 'BASIC_GET',
+			getOpts: {
+				getOnStart: true,
+			},
 			report: 'BASIC_REPORT',
 			reportParser: report => {
 				if (report && report.hasOwnProperty('Value')) {
@@ -114,17 +120,44 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('measure_temperature.sensor1', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 3,
 			get: 'SENSOR_MULTILEVEL_GET',
+			getOpts: {
+				getOnStart: true,
+			},
+			getParser: () => ({
+				'Sensor Type': 'Temperature (version 1)',
+				Properties1: {
+					Scale: 0,
+				},
+			}),
 			reportParser: (report) => this._temperatureReportParser(report, 1),
 			reportParserOverride: true,
 		});
 		this.registerCapability('measure_temperature.sensor2', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 4,
 			get: 'SENSOR_MULTILEVEL_GET',
+			getOpts: {
+				getOnStart: true,
+			},
+			getParser: () => ({
+				'Sensor Type': 'Temperature (version 1)',
+				Properties1: {
+					Scale: 0,
+				},
+			}),
 			reportParser: (report) => this._temperatureReportParser(report, 2),
 			reportParserOverride: true,
 		});
 		this.registerCapability('measure_temperature.sensor3', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 5,
+			getOpts: {
+				getOnStart: true,
+			},
+			getParser: () => ({
+				'Sensor Type': 'Temperature (version 1)',
+				Properties1: {
+					Scale: 0,
+				},
+			}),
 			get: 'SENSOR_MULTILEVEL_GET',
 			reportParser: (report) => this._temperatureReportParser(report, 3),
 			reportParserOverride: true,
@@ -132,6 +165,15 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 		this.registerCapability('measure_temperature.sensor4', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 6,
 			get: 'SENSOR_MULTILEVEL_GET',
+			getOpts: {
+				getOnStart: true,
+			},
+			getParser: () => ({
+				'Sensor Type': 'Temperature (version 1)',
+				Properties1: {
+					Scale: 0,
+				},
+			}),
 			reportParser: (report) => this._temperatureReportParser(report, 4),
 			reportParserOverride: true,
 		});
