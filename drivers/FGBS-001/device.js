@@ -11,10 +11,6 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
          Initializing Flow triggers/conditions/actions
         =========================================================================
          */
-
-		this.enableDebug();
-		this.printNode();
-
 		this._onTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_on').register();
 		this._offTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_off').register();
 		this._switchTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_switch').register();
