@@ -125,8 +125,8 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 					Scale: 0,
 				},
 			}),
+			report: 'SENSOR_MULTILEVEL_REPORT',
 			reportParser: (report) => this._temperatureReportParser(report, 1),
-			reportParserOverride: true,
 		});
 		this.registerCapability('measure_temperature.sensor2', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 4,
@@ -140,11 +140,12 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 					Scale: 0,
 				},
 			}),
+			report: 'SENSOR_MULTILEVEL_REPORT',
 			reportParser: (report) => this._temperatureReportParser(report, 2),
-			reportParserOverride: true,
 		});
 		this.registerCapability('measure_temperature.sensor3', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 5,
+			get: 'SENSOR_MULTILEVEL_GET',
 			getOpts: {
 				getOnStart: true,
 			},
@@ -154,9 +155,8 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 					Scale: 0,
 				},
 			}),
-			get: 'SENSOR_MULTILEVEL_GET',
+			report: 'SENSOR_MULTILEVEL_REPORT',
 			reportParser: (report) => this._temperatureReportParser(report, 3),
-			reportParserOverride: true,
 		});
 		this.registerCapability('measure_temperature.sensor4', 'SENSOR_MULTILEVEL', {
 			multiChannelNodeId: 6,
@@ -170,8 +170,8 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 					Scale: 0,
 				},
 			}),
+			report: 'SENSOR_MULTILEVEL_REPORT',
 			reportParser: (report) => this._temperatureReportParser(report, 4),
-			reportParserOverride: true,
 		});
 
 		this.registerSetting('12', (newValue) => new Buffer([Math.round(newValue / 16 * 255)]));
@@ -187,7 +187,10 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
 			case 4: temperatureTrigger = this._temperatureTrigger4; break;
 		}
 
-		if (report['Sensor Type'] === 'Temperature (version 1)') {
+		if (report &&
+			report.hasOwnProperty('Sensor Type') &&
+			report['Sensor Type'] === 'Temperature (version 1)' &&
+			report.hasOwnProperty('Sensor Value (Parsed)')) {
 
 			const token = {
 				temp: report['Sensor Value (Parsed)'],
