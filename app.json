@@ -44,6 +44,469 @@
     ]
   },
   "flow": {
+    "actions": [
+      {
+        "id": "FGD-21x_dim_startLevelChange",
+        "title": {
+          "en": "Start dim level change",
+          "nl": "Start helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the start of a dim level change in the set direction. \nDuration (for the change in dim-level from 0-100%) can be set by using the transition symbol. \nIf not set, factory default duration is used.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting. \nTransitie duur (voor de transitie in helderheid van 0-100%) kan ingesteld worden met behulp van de transitie symbool. \nWanneer niet ingesteld, dan wordt de standaard duur gebruikt."
+        },
+        "duration": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-211|FGD-212"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Increase dim level",
+                  "nl": "Toenemende helderheid"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Decrease dim level",
+                  "nl": "Afnemende helderheid"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-21x_dim_stopLevelChange",
+        "title": {
+          "en": "Stop dim level change",
+          "nl": "Stop helderheid transitie"
+        },
+        "hint": {
+          "en": "This action card will trigger the stop of a dim level change.",
+          "nl": "Deze actie kaart start een helderheids transitie in de ingestelde richting."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-211|FGD-212"
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_set_brightness",
+        "title": {
+          "en": "Set forced brightness",
+          "nl": "Stel geforceerde helderheid in"
+        },
+        "hint": {
+          "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
+          "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "set_forced_brightness_level",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_dim_duration",
+        "title": {
+          "en": "Change brightness over time",
+          "nl": "Verander helderheid over tijd"
+        },
+        "hint": {
+          "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
+          "nl": "Verander de helderheid en specificeer de gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "brightness_level",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          },
+          {
+            "name": "dimming_duration",
+            "type": "number",
+            "min": 0,
+            "max": 127,
+            "placeholder": {
+              "en": "Duration",
+              "nl": "Tijdsduur"
+            }
+          },
+          {
+            "name": "duration_unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "sec",
+                  "nl": "sec"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "min",
+                  "nl": "min"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_set_timer",
+        "title": {
+          "en": "Automatically turn off after",
+          "nl": "Stel automatisch uitschakelen in"
+        },
+        "hint": {
+          "en": "This Flow Action determines the time after which the device will automatically power off.",
+          "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "set_timer_functionality",
+            "type": "number",
+            "min": 0,
+            "max": 32767
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          }
+        ]
+      },
+      {
+        "id": "RGBW_specific",
+        "title": {
+          "en": "Set specific brightness",
+          "nl": "Stel specifieke helderheid in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "r",
+                "label": {
+                  "en": "Red output",
+                  "nl": "Rode uitgang"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "Green output",
+                  "nl": "Groene uitgang"
+                }
+              },
+              {
+                "id": "b",
+                "label": {
+                  "en": "Blue output",
+                  "nl": "Blauwe uitgang"
+                }
+              },
+              {
+                "id": "w",
+                "label": {
+                  "en": "White output",
+                  "nl": "Witte uitgang"
+                }
+              }
+            ]
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "RGBW_random",
+        "title": {
+          "en": "Choose a random color",
+          "nl": "Kies een willekeurige kleur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "range",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "rgb",
+                "label": {
+                  "en": "RGB",
+                  "nl": "RGB"
+                }
+              },
+              {
+                "id": "rgbw",
+                "label": {
+                  "en": "RGB with white",
+                  "nl": "RGB met wit"
+                }
+              },
+              {
+                "id": "rgb-w",
+                "label": {
+                  "en": "RGB or white",
+                  "nl": "RGB of wit"
+                }
+              },
+              {
+                "id": "r-g-b",
+                "label": {
+                  "en": "Primary",
+                  "nl": "Primair"
+                }
+              },
+              {
+                "id": "r-g-b-w",
+                "label": {
+                  "en": "Primary or white",
+                  "nl": "Primair of wit"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m",
+                "label": {
+                  "en": "Primary/secundary",
+                  "nl": "Primair/secundair"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m-w",
+                "label": {
+                  "en": "Primary/secundary or white",
+                  "nl": "Primair/secundair of wit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_animation",
+        "title": {
+          "en": "Choose an animation",
+          "nl": "Kies een animatie"
+        },
+        "hint": {
+          "en": "Animations only work if the mode type is set to RGB(W)",
+          "nl": "Animaties werken alleen als de mode type is ingesteld op RGB(W)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "animation",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "6",
+                "label": {
+                  "en": "Fire",
+                  "nl": "Vuur"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Storm/lightning",
+                  "nl": "Storm/onweer"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Rainbow",
+                  "nl": "Regenboog"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Aurora",
+                  "nl": "Aurora"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Police",
+                  "nl": "Politie"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Random animation",
+                  "nl": "Willekeurige animatie"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Stop animation",
+                  "nl": "Stop animatie"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop animation, back to previous state",
+                  "nl": "Stop animatie, herstel vorige status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRGBWM-441_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
+          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          }
+        ]
+      }
+    ],
     "triggers": [
       {
         "id": "FGBS-001_i1_on",
@@ -1574,412 +2037,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=FGBS-001"
-          }
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "FGD-212_set_brightness",
-        "title": {
-          "en": "Set forced brightness",
-          "nl": "Stel geforceerde helderheid in"
-        },
-        "hint": {
-          "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
-          "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "set_forced_brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_dim_duration",
-        "title": {
-          "en": "Change brightness over time",
-          "nl": "Verander helderheid over tijd"
-        },
-        "hint": {
-          "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
-          "nl": "Verander de helderheid en specificeer de gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          },
-          {
-            "name": "dimming_duration",
-            "type": "number",
-            "min": 0,
-            "max": 127,
-            "placeholder": {
-              "en": "Duration",
-              "nl": "Tijdsduur"
-            }
-          },
-          {
-            "name": "duration_unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "0",
-                "label": {
-                  "en": "sec",
-                  "nl": "sec"
-                }
-              },
-              {
-                "id": "1",
-                "label": {
-                  "en": "min",
-                  "nl": "min"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_set_timer",
-        "title": {
-          "en": "Automatically turn off after",
-          "nl": "Stel automatisch uitschakelen in"
-        },
-        "hint": {
-          "en": "This Flow Action determines the time after which the device will automatically power off.",
-          "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "set_timer_functionality",
-            "type": "number",
-            "min": 0,
-            "max": 32767
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          }
-        ]
-      },
-      {
-        "id": "RGBW_specific",
-        "title": {
-          "en": "Set specific brightness",
-          "nl": "Stel specifieke helderheid in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "color",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "r",
-                "label": {
-                  "en": "Red output",
-                  "nl": "Rode uitgang"
-                }
-              },
-              {
-                "id": "g",
-                "label": {
-                  "en": "Green output",
-                  "nl": "Groene uitgang"
-                }
-              },
-              {
-                "id": "b",
-                "label": {
-                  "en": "Blue output",
-                  "nl": "Blauwe uitgang"
-                }
-              },
-              {
-                "id": "w",
-                "label": {
-                  "en": "White output",
-                  "nl": "Witte uitgang"
-                }
-              }
-            ]
-          },
-          {
-            "name": "brightness",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          }
-        ]
-      },
-      {
-        "id": "RGBW_random",
-        "title": {
-          "en": "Choose a random color",
-          "nl": "Kies een willekeurige kleur"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "range",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "rgb",
-                "label": {
-                  "en": "RGB",
-                  "nl": "RGB"
-                }
-              },
-              {
-                "id": "rgbw",
-                "label": {
-                  "en": "RGB with white",
-                  "nl": "RGB met wit"
-                }
-              },
-              {
-                "id": "rgb-w",
-                "label": {
-                  "en": "RGB or white",
-                  "nl": "RGB of wit"
-                }
-              },
-              {
-                "id": "r-g-b",
-                "label": {
-                  "en": "Primary",
-                  "nl": "Primair"
-                }
-              },
-              {
-                "id": "r-g-b-w",
-                "label": {
-                  "en": "Primary or white",
-                  "nl": "Primair of wit"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m",
-                "label": {
-                  "en": "Primary/secundary",
-                  "nl": "Primair/secundair"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m-w",
-                "label": {
-                  "en": "Primary/secundary or white",
-                  "nl": "Primair/secundair of wit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "RGBW_animation",
-        "title": {
-          "en": "Choose an animation",
-          "nl": "Kies een animatie"
-        },
-        "hint": {
-          "en": "Animations only work if the mode type is set to RGB(W)",
-          "nl": "Animaties werken alleen als de mode type is ingesteld op RGB(W)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "animation",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "6",
-                "label": {
-                  "en": "Fire",
-                  "nl": "Vuur"
-                }
-              },
-              {
-                "id": "7",
-                "label": {
-                  "en": "Storm/lightning",
-                  "nl": "Storm/onweer"
-                }
-              },
-              {
-                "id": "8",
-                "label": {
-                  "en": "Rainbow",
-                  "nl": "Regenboog"
-                }
-              },
-              {
-                "id": "9",
-                "label": {
-                  "en": "Aurora",
-                  "nl": "Aurora"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Police",
-                  "nl": "Politie"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Random animation",
-                  "nl": "Willekeurige animatie"
-                }
-              },
-              {
-                "id": "1",
-                "label": {
-                  "en": "Stop animation",
-                  "nl": "Stop animatie"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Stop animation, back to previous state",
-                  "nl": "Stop animatie, herstel vorige status"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGRGBWM-441_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
-          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ]
-      },
-      {
-        "id": "FGRM-222_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRM-222"
-          }
-        ]
-      },
-      {
-        "id": "FGS-213_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-213"
-          }
-        ]
-      },
-      {
-        "id": "FGS-223_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-223"
           }
         ]
       }
