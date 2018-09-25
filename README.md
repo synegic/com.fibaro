@@ -57,6 +57,10 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.3
+
+Add support for a "Start dim level change" and "Stop dim level change" action card for the FGD-21x devices 
+
 ### v 2.1.2
 
 Updated this log
