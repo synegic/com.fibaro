@@ -1,8 +1,8 @@
 # Fibaro
 This app adds support for Fibaro devices in Homey.
 
-## The Fibaro Universal Binary Sensor is temporarily unavailable in the 2.1.x release
-The FGBS-001 device will be temporarily unavailable until further notice in the beta 2.1.x release cycle, we'll keep you posted!
+## The Fibaro Universal Binary Sensor is available once again from the 2.1.1 release onwards!
+The FGBS-001 device has been re-included in 2.1.1.
 
 ## Supported devices with most common parameters:
 * FGD-211, Dimmer
@@ -43,19 +43,27 @@ The FGBS-001 device will be temporarily unavailable until further notice in the 
 **FGKF-601**
 This device has no wake up interval. After changing settings, wake up the device manually (by using the exclusion button press sequence) to store them on the device.
 
-**FGS-2xx Devices:**  
-Main Device = Also Relay/Switch 1 (S1/Q1)  
+**FGS-2xx Devices:**
+Main Device = Also Relay/Switch 1 (S1/Q1)
 Relay/Switch 2 = Relay/Switch 2 (S2/Q2)
 
-**FGS-223:**  
-Scene cards only triggers with the "Main Node" as device.  
+**FGS-223:**
+Scene cards only triggers with the "Main Node" as device.
 The "Right Switch (S2)" as device doesn't work.
 
-**FGPB-101:**  
-When the app has just started, it can take up to 2 minutes before it reacts.  
+**FGPB-101:**
+When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.1.2
+
+Updated this log
+
+### v 2.1.1
+
+Even more bugs fixed and re-adding of the FGBS-001
 
 ### v 2.1.0
 
@@ -91,11 +99,11 @@ Update smoke sensor fix
 Add possible fix for smoke sensors not triggering on smoke alarm
 
 ### v 1.4.0
-**fixed:**  
-FGD-211, FGD-212: dimmer on/off state not updated   
+**fixed:**
+FGD-211, FGD-212: dimmer on/off state not updated
 **update:**
-FGD-212, FGRGBWM-441, FGRM-222, FGS-2x3, FGWPE-101, FGWPx-102-PLUS: add power meter reset flow card   
-FGD-212: add set timer flow card    
+FGD-212, FGRGBWM-441, FGRM-222, FGS-2x3, FGWPE-101, FGWPx-102-PLUS: add power meter reset flow card
+FGD-212: add set timer flow card
 
 ### v 1.3.1
 FGGC-001: add additional functionality for Swipe
@@ -105,9 +113,9 @@ FGR-222: add dim capability
 FGKF-601: add KeyFob support
 
 ### v 1.2.4
-**fixed:**  
+**fixed:**
 FGMS-001(-PLUS) - Parameter size corrections several parameters
-**update:**  
+**update:**
 FGMS-001(-PLUS) - Add parameters to enable direct triggering (direct association) on motion alarm
 FGMS-001(-PLUS) - Add Battery alarm capability
 FGD-212 - Add 'Change brightness over time' action card
@@ -117,102 +125,102 @@ FGMS-001(-PLUS), FGD-212 - Improved hints (range and default), addition of assoc
 Add Dim for FGRM-222 and setting to invert direction of shutter movement
 
 ### v 1.2.0
-Add "get battery level" on wakeup, to battery devices  
-Add [Full Support](https://github.com/caseda/com.fibaro/commit/1d7e9a794a3938572a57436ee8d5a99d06d3aac7) FGRGBWM-441 - RGBW controller  
-FGRGBWM-441 Update Notes:  
-It is recommended to at least save the settings once.  
+Add "get battery level" on wakeup, to battery devices
+Add [Full Support](https://github.com/caseda/com.fibaro/commit/1d7e9a794a3938572a57436ee8d5a99d06d3aac7) FGRGBWM-441 - RGBW controller
+FGRGBWM-441 Update Notes:
+It is recommended to at least save the settings once.
 For full support (input usage) a re-pair is needed.
 FGD-212 - Add 'Set forced brightness level' action card
 
 ### v 1.1.9
-Fixed settings (range -128 - 127 => 0 - 255)  
-Fixed FGPB-101 not triggering anymore  
+Fixed settings (range -128 - 127 => 0 - 255)
+Fixed FGPB-101 not triggering anymore
 FGMS-001-PLUS/FGS-222 - Textual Update
 
 ### v 1.1.8
 FGK-10 & FGK-10x - Fixed crashes
 
 ### v 1.1.7
-**add support:**  
-FGS-213 - Scene Activation  
-FGS-223 - Scene Activation  
-**update:**  
-Z-Wave Driver (v1.1.2)  
+**add support:**
+FGS-213 - Scene Activation
+FGS-223 - Scene Activation
+**update:**
+Z-Wave Driver (v1.1.2)
 
 ### v 1.1.6
-**update:**  
+**update:**
 FGD-212 - Textual fixes
 
 ### v 1.1.5
-**fixed:**  
-FGFS-101 (Z-Wave Plus) - Reporting  
-**update:**  
+**fixed:**
+FGFS-101 (Z-Wave Plus) - Reporting
+**update:**
 FGD-212 - Power reporting parameters
 
 ### v 1.1.4
-**fixed:**  
+**fixed:**
 FGK-10x (Z-Wave Plus) - Temperature Reporting
 
 ### v 1.1.2/1.1.3
-**update:**  
+**update:**
 New way of error logging.
 
 ### v 1.1.1
-**add support:**  
-FGWPx-102-PLUS  
-FGD-211 - Scene Activation  
+**add support:**
+FGWPx-102-PLUS
+FGD-211 - Scene Activation
 FGD-212 - Scene Activation
 
 ### v 1.1.0
-**fixed:**  
-Removed "Fibaro" from all names  
-FGMS-001-PLUS - Motion and Tamper Trigger report  
+**fixed:**
+Removed "Fibaro" from all names
+FGMS-001-PLUS - Motion and Tamper Trigger report
 FGWPx-101/102 - led ring color now also changes in device's settings
 
-**add support:**  
-FGBS-Universal Binary Sensor  
-FGRGBWM-441 - light temperature (capability)  
-FGS-223 - S2 support re-added  
-FGD-212 - parameter 29 (Switch S1 and S2)  
+**add support:**
+FGBS-Universal Binary Sensor
+FGRGBWM-441 - light temperature (capability)
+FGS-223 - S2 support re-added
+FGD-212 - parameter 29 (Switch S1 and S2)
 FGS-213 - scene activation (S1 switched, S2 switched)
 
 ### v 1.0.12
-**fixed:**  
-FGK-101 - Trigger Report  
-FGSS-001 - Trigger Report  
-FGSD-002 - Trigger Report  
-FGS-213 - Adding  
-FGS-223 - Adding  
-**add support**  
-FGK-101 - Temperature Sensor now possible*  
-FGK-101-PLUS Temperature Sensor now possible*  
+**fixed:**
+FGK-101 - Trigger Report
+FGSS-001 - Trigger Report
+FGSD-002 - Trigger Report
+FGS-213 - Adding
+FGS-223 - Adding
+**add support**
+FGK-101 - Temperature Sensor now possible*
+FGK-101-PLUS Temperature Sensor now possible*
 *only when a temperature module (DS18B20) is attached, and re-inclusion is needed.
 
 ### v 1.0.11
-**fixed:**  
+**fixed:**
 FGFS-101 - can now be used using dc-power and battery
 
 ### v 1.0.10
-**add support (incl. parameter):**  
-FGS-213, FGS-223, FGPB-101, FGR-222  
-**add parameters (incl. dutch translation):**  
-FGGC-001, FGRGBWM-441, FGSD-002, FGSS-001, FGWPE-001  
-**add triggers:**  
-FGGC-001 - All default swipe posibilities  
-FGWPE-001 - LED Ring colour (on status and off status)  
+**add support (incl. parameter):**
+FGS-213, FGS-223, FGPB-101, FGR-222
+**add parameters (incl. dutch translation):**
+FGGC-001, FGRGBWM-441, FGSD-002, FGSS-001, FGWPE-001
+**add triggers:**
+FGGC-001 - All default swipe posibilities
+FGWPE-001 - LED Ring colour (on status and off status)
 FGPB-101 - 1-5x Pressed, Long Press, Long Press Released
 
 ### v1.0.9
-**add support (incl. parameters):**  
+**add support (incl. parameters):**
 FGRM-222
 
 ### v1.0.8
-**add support (incl. parameters):**  
-FGS-211, FGS-212, FGS-221, FGS-222, FGFS-001-PLUS  
-**add parameters (incl. dutch translation):**  
+**add support (incl. parameters):**
+FGS-211, FGS-212, FGS-221, FGS-222, FGFS-001-PLUS
+**add parameters (incl. dutch translation):**
 FGD-211, FGD-212, FGFS-001 (+ PLUS), FGK-001 (+ PLUS)
 
 ### v1.0.7
-**add support:**  
-FGD-211, FGD-212  
+**add support:**
+FGD-211, FGD-212
 add dutch language to existing parameters.
