@@ -4,9 +4,9 @@
   "description": "This app adds support for Fibaro devices in Homey",
   "main": "app.js",
   "dependencies": {
-    "homey-log": "^1.0.5",
-    "homey-meshdriver": "^1.2.24",
-    "tinygradient": "^0.4.0"
+    "homey-log": "^1.0.6",
+    "homey-meshdriver": "^1.2.27",
+    "tinygradient": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {

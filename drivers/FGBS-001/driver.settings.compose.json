@@ -6,14 +6,14 @@
 			"nl": "Ingang configuratie"
 		},
 		"collapsed": false,
-			"children": [
+		"children": [
 			{
 				"$extends": "inputType",
 				"$id": "3",
-			  "label": {
-			    "en": "Type input 1",
-			    "nl": "Type ingang 1"
-			  },
+				"label": {
+					"en": "Type input 1",
+					"nl": "Type ingang 1"
+				},
 				"zwave": {
 					"index": 3,
 					"size": 1
@@ -22,10 +22,10 @@
 			{
 				"$extends": "inputType",
 				"$id": "4",
-			  "label": {
-			    "en": "Type input 2",
-			    "nl": "Type ingang 2"
-			  },
+				"label": {
+					"en": "Type input 2",
+					"nl": "Type ingang 2"
+				},
 				"zwave": {
 					"index": 4,
 					"size": 1

@@ -4,7 +4,7 @@
     "en": "Fibaro"
   },
   "sdk": 2,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -43,7 +43,2268 @@
       }
     ]
   },
+  "flow": {
+    "triggers": [
+      {
+        "id": "FGBS-001_i1_on",
+        "title": {
+          "en": "Input 1 opened",
+          "nl": "Ingang 1 geopend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i1_off",
+        "title": {
+          "en": "Input 1 closed",
+          "nl": "Ingang 1 gesloten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i1_switch",
+        "title": {
+          "en": "Input 1 switched",
+          "nl": "Ingang 1 geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i2_on",
+        "title": {
+          "en": "Input 2 opened",
+          "nl": "Ingang 2 geopend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i2_off",
+        "title": {
+          "en": "Input 2 closed",
+          "nl": "Ingang 2 gesloten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i2_switch",
+        "title": {
+          "en": "Input 2 switched",
+          "nl": "Ingang 2 geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_temp1",
+        "title": {
+          "en": "Temperature 1 has changed",
+          "nl": "Temperatuur 1 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_temp2",
+        "title": {
+          "en": "Temperature 2 has changed",
+          "nl": "Temperatuur 2 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_temp3",
+        "title": {
+          "en": "Temperature 3 has changed",
+          "nl": "Temperatuur 3 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_temp4",
+        "title": {
+          "en": "Temperature 4 has changed",
+          "nl": "Temperatuur 4 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_momentary",
+        "title": {
+          "en": "Dimmer 2 scene (momentary)",
+          "nl": "Dimmer 2 scene (pulsdruk)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Momentary switch\".",
+          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Pulsdrukschakelaar\" is ingesteld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "26",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed left (S1) 2x",
+                  "nl": "Links (S1) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Pressed right (S2) 2x",
+                  "nl": "Rechts (S2) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Pressed right (S2) 3x",
+                  "nl": "Rechts (S2) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "22",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "23",
+                "label": {
+                  "en": "Long press right (S2) released",
+                  "nl": "Rechts (S2) lang drukken gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_toggle",
+        "title": {
+          "en": "Dimmer 2 scene (toggle)",
+          "nl": "Dimmer 2 scene (tuimel)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Toggle switch\".",
+          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Tuimelschakelaar\" is ingesteld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "11",
+                "label": {
+                  "en": "Left (S1) on to off",
+                  "nl": "Links (S1) aan naar uit"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left (S1) off to on",
+                  "nl": "Links (S1) uit naar aan"
+                }
+              },
+              {
+                "id": "21",
+                "label": {
+                  "en": "Right (S2) on to off",
+                  "nl": "Rechts (S2) aan naar uit"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Right (S2) off to on",
+                  "nl": "Rechts (S2) uit naar aan"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Switched left (S1) 2x",
+                  "nl": "Links (S1) 2x geschakeld"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Switched right (S2) 2x",
+                  "nl": "Rechts (S2) 2x geschakeld"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Switched right (S2) 3x",
+                  "nl": "Rechts (S2) 3x geschakeld"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_roller",
+        "title": {
+          "en": "Dimmer 2 scene (roller shutter)",
+          "nl": "Dimmer 2 scene (rolgordijn)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Roller shutter switch\".",
+          "nl": "Deze Flow Trigger word alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Rolgordijn schakelaar\" is ingesteld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed 2x (left (S1) or right (S2))",
+                  "nl": "2x ingedrukt (links (S1) of rechts (S2))"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Pressed 3x (left (S1) or right (S2))",
+                  "nl": "3x ingedrukt (links (S1) of rechts (S2))"
+                }
+              },
+              {
+                "id": "17",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "18",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press released (left (S1) or right (S2))",
+                  "nl": "Lang drukken gestopt (links (S1) of rechts (S2))"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fggc-001_swipe_direction",
+        "title": {
+          "en": "Gesture direction",
+          "nl": "Gebaar richting"
+        },
+        "hint": {
+          "en": "For this Flow Trigger to work the double gesture setting needs to be enabled in the device's settings.",
+          "nl": "Om deze Flow Trigger te laten werken moet het dubbele gebaar geactiveerd zijn in de apparaat instellingen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGGC-001"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Up",
+                  "nl": "Omhoog"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Down",
+                  "nl": "Omlaag"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Left",
+                  "nl": "Links"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Right",
+                  "nl": "Rechts"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "1 time",
+                  "nl": "1 keer"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "2 times",
+                  "nl": "2 keer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fggc-001_swipe_round",
+        "title": {
+          "en": "Gesture circular",
+          "nl": "Gebaar rondgaand"
+        },
+        "hint": {
+          "en": "When using the circular gesture it will trigger the \"Keep going round\" scene only once, and it will trigger the \"Going round stopped\" once the circular gesture is stopped.",
+          "nl": "Bij het gebruik van het rondgaande gebaar zal de \"Rond blijven gaan\" scene maar 1 keer worden geactiveerd, daarnaast activeert het uiteindelijk 1 keer de \"Rond gaan gestopt\" scene, wanneer het rondgaande gebaar wordt gestopt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGGC-001"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "5",
+                "label": {
+                  "en": "Clockwise",
+                  "nl": "Met klok mee"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Counter clockwise",
+                  "nl": "Tegen klok in"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Keep going round",
+                  "nl": "Rond blijven gaan"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Going round stopped",
+                  "nl": "Rond gaan gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fggc-001_swipe_sequence",
+        "title": {
+          "en": "Gesture sequence",
+          "nl": "Gebaren reeks"
+        },
+        "hint": {
+          "en": "Set the gesture sequences in the device's settings.",
+          "nl": "Stel de gebaren reeksen in bij de apparaat instellingen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGGC-001"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "7",
+                "label": {
+                  "en": "Sequence 1",
+                  "nl": "Reeks 1"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Sequence 2",
+                  "nl": "Reeks 2"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Sequence 3",
+                  "nl": "Reeks 3"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Sequence 4",
+                  "nl": "Reeks 4"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Sequence 5",
+                  "nl": "Reeks 5"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Sequence 6",
+                  "nl": "Reeks 6"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Inclusion/exlusion gesture",
+                  "nl": "Voeg toe/verwijder gebaar"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGKF-601-scene",
+        "title": {
+          "en": "Keyfob buttons",
+          "nl": "Keyfob knoppen"
+        },
+        "hint": {
+          "en": "In order to use \"Pressed 2x/3x\" enable this functionality in the device settings.",
+          "nl": "Om gebruik te maken van \"2x/3x ingedrukt\" schakel deze functionaliteit in via de apparaat instellingen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGKF-601"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Square (□)",
+                  "nl": "Vierkant (□)"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Circle (○)",
+                  "nl": "Cirkel (○)"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Cross (x)",
+                  "nl": "Kruis (x)"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Triangle (△)",
+                  "nl": "Driehoek (△)"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Minus (-)",
+                  "nl": "Min (-)"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Plus (+)",
+                  "nl": "Plus (+)"
+                }
+              }
+            ]
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed 2x",
+                  "nl": "2x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed 3x",
+                  "nl": "3x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Long press",
+                  "nl": "Lang drukken"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Long press released",
+                  "nl": "Lang drukken gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGKF-601-sequence",
+        "title": {
+          "en": "Keyfob sequence",
+          "nl": "Keyfob reeks"
+        },
+        "hint": {
+          "en": "First configure the sequences in the device settings panel of the Keyfob.",
+          "nl": "Stel eerst reeksen in via de apparaat instellingen van de Keyfob."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGKF-601"
+          },
+          {
+            "name": "sequence",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "7",
+                "label": {
+                  "en": "Sequence 1",
+                  "nl": "Reeks 1"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Sequence 2",
+                  "nl": "Reeks 2"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Sequence 3",
+                  "nl": "Reeks 3"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Sequence 4",
+                  "nl": "Reeks 4"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Sequence 5",
+                  "nl": "Reeks 5"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Sequence 6",
+                  "nl": "Reeks 6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGPB-101",
+        "title": {
+          "en": "Push button",
+          "nl": "Druk knop"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGPB-101"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed 1x",
+                  "nl": "1x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed 2x",
+                  "nl": "2x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed 3x",
+                  "nl": "3x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 4 times",
+                "label": {
+                  "en": "Pressed 4x",
+                  "nl": "4x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Pressed 5 times",
+                "label": {
+                  "en": "Pressed 5x",
+                  "nl": "5x ingedrukt"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Long press (triggers every half second)",
+                  "nl": "Lang drukken (activeert elke halve seconde)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Long press released",
+                  "nl": "Lang drukken gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_input_on",
+        "title": {
+          "en": "In-/output turned on",
+          "nl": "In-/uitgang aan geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_input_off",
+        "title": {
+          "en": "In-/output turned off",
+          "nl": "In-/uitgang uit geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input1",
+        "title": {
+          "en": "Voltage input 1 changed",
+          "nl": "Voltage ingang 1 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input2",
+        "title": {
+          "en": "Voltage input 2 changed",
+          "nl": "Voltage ingang 2 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input3",
+        "title": {
+          "en": "Voltage input 3 changed",
+          "nl": "Voltage ingang 3 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "RGBW_volt_input4",
+        "title": {
+          "en": "Voltage input 4 changed",
+          "nl": "Voltage ingang 4 veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222-momentary",
+        "title": {
+          "en": "Shutter scene (momentary)",
+          "nl": "Rolluik scene (pulsdruk)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type: \"Momentary\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed left (S1) 2x",
+                  "nl": "Links (S1) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "22",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "23",
+                "label": {
+                  "en": "Long press right (S2) released",
+                  "nl": "Rechts (S2) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Pressed right (S2) 2x",
+                  "nl": "Rechts (S2) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Pressed right (S2) 3x",
+                  "nl": "Rechts (S2) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "26",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222-toggle",
+        "title": {
+          "en": "Shutter scene (toggle)",
+          "nl": "Rolluik scene (tuimel)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type: \"Toggle\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left (S1) off to on *",
+                  "nl": "Links (S1) uit naar aan *"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Left (S1) on to off *",
+                  "nl": "Links (S1) aan naar uit *"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Switched left (S1) 2x",
+                  "nl": "Links (S1) 2x geschakeld"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Right (S2) off to on *",
+                  "nl": "Rechts (S2) uit naar aan *"
+                }
+              },
+              {
+                "id": "21",
+                "label": {
+                  "en": "Right (S2) on to off *",
+                  "nl": "Rechts (S2) aan naar uit *"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Switched right (S2) 2x",
+                  "nl": "Rechts (S2) 2x geschakeld"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Switched right (S2) 3x",
+                  "nl": "Rechts (S2) 3x geschakeld"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222-momentary_single-gate_switch",
+        "title": {
+          "en": "Shutter scene (Single momentary/gate)",
+          "nl": "Rolluik scene (Enkele pulsedruk/poort)"
+        },
+        "hint": {
+          "en": "This Flow Card will only get triggered if the setting Switch type is \"Single momentary\" or \"Gate mode\" is selected.",
+          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Enkele pulsdruk\" of \"Poort mode\" is geselecteerd."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed 2x left (S1)",
+                  "nl": "2x ingedrukt links (S1)"
+                }
+              },
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_S1",
+        "title": {
+          "en": "Left Switch (S1)",
+          "nl": "Linker Schakelaar (S1)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch (momentary switch)",
+                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released (momentary switch)",
+                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_S2",
+        "title": {
+          "en": "Right Switch (S2)",
+          "nl": "Rechter Schakelaar (S2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch (momentary switch)",
+                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released (momentary switch)",
+                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_S1",
+        "title": {
+          "en": "Left Switch Scene (S1)",
+          "nl": "Linker Schakelaar Scene (S1)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released",
+                  "nl": "Lang ingedrukt los gelaten"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_S2",
+        "title": {
+          "en": "Right Switch Scene (S2)",
+          "nl": "Right Schakelaar Scene (S2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Key Pressed 1 time",
+                "label": {
+                  "en": "Pressed/switched 1x",
+                  "nl": "1x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 2 times",
+                "label": {
+                  "en": "Pressed/switched 2x",
+                  "nl": "2x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Pressed 3 times",
+                "label": {
+                  "en": "Pressed/switched 3x",
+                  "nl": "3x Ingedrukt/geschakeld"
+                }
+              },
+              {
+                "id": "Key Held Down",
+                "label": {
+                  "en": "Hold switch",
+                  "nl": "Lang ingedrukt"
+                }
+              },
+              {
+                "id": "Key Released",
+                "label": {
+                  "en": "Hold released",
+                  "nl": "Lang ingedrukt los gelaten"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "FGBS-001_i1",
+        "title": {
+          "en": "Input 1 !{{is open|is closed}}",
+          "nl": "Ingang 1 !{{is geopend|is gesloten}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-001_i2",
+        "title": {
+          "en": "Input 2 !{{is open|is closed}}",
+          "nl": "Ingang 2 !{{is geopend|is gesloten}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-001"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "FGD-212_set_brightness",
+        "title": {
+          "en": "Set forced brightness",
+          "nl": "Stel geforceerde helderheid in"
+        },
+        "hint": {
+          "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
+          "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "set_forced_brightness_level",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_dim_duration",
+        "title": {
+          "en": "Change brightness over time",
+          "nl": "Verander helderheid over tijd"
+        },
+        "hint": {
+          "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
+          "nl": "Verander de helderheid en specificeer de gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "brightness_level",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          },
+          {
+            "name": "dimming_duration",
+            "type": "number",
+            "min": 0,
+            "max": 127,
+            "placeholder": {
+              "en": "Duration",
+              "nl": "Tijdsduur"
+            }
+          },
+          {
+            "name": "duration_unit",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "sec",
+                  "nl": "sec"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "min",
+                  "nl": "min"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_set_timer",
+        "title": {
+          "en": "Automatically turn off after",
+          "nl": "Stel automatisch uitschakelen in"
+        },
+        "hint": {
+          "en": "This Flow Action determines the time after which the device will automatically power off.",
+          "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          },
+          {
+            "name": "set_timer_functionality",
+            "type": "number",
+            "min": 0,
+            "max": 32767
+          }
+        ]
+      },
+      {
+        "id": "FGD-212_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGD-212"
+          }
+        ]
+      },
+      {
+        "id": "RGBW_specific",
+        "title": {
+          "en": "Set specific brightness",
+          "nl": "Stel specifieke helderheid in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "r",
+                "label": {
+                  "en": "Red output",
+                  "nl": "Rode uitgang"
+                }
+              },
+              {
+                "id": "g",
+                "label": {
+                  "en": "Green output",
+                  "nl": "Groene uitgang"
+                }
+              },
+              {
+                "id": "b",
+                "label": {
+                  "en": "Blue output",
+                  "nl": "Blauwe uitgang"
+                }
+              },
+              {
+                "id": "w",
+                "label": {
+                  "en": "White output",
+                  "nl": "Witte uitgang"
+                }
+              }
+            ]
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": "%",
+            "labelMultiplier": 100
+          }
+        ]
+      },
+      {
+        "id": "RGBW_random",
+        "title": {
+          "en": "Choose a random color",
+          "nl": "Kies een willekeurige kleur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "range",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "rgb",
+                "label": {
+                  "en": "RGB",
+                  "nl": "RGB"
+                }
+              },
+              {
+                "id": "rgbw",
+                "label": {
+                  "en": "RGB with white",
+                  "nl": "RGB met wit"
+                }
+              },
+              {
+                "id": "rgb-w",
+                "label": {
+                  "en": "RGB or white",
+                  "nl": "RGB of wit"
+                }
+              },
+              {
+                "id": "r-g-b",
+                "label": {
+                  "en": "Primary",
+                  "nl": "Primair"
+                }
+              },
+              {
+                "id": "r-g-b-w",
+                "label": {
+                  "en": "Primary or white",
+                  "nl": "Primair of wit"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m",
+                "label": {
+                  "en": "Primary/secundary",
+                  "nl": "Primair/secundair"
+                }
+              },
+              {
+                "id": "r-y-g-c-b-m-w",
+                "label": {
+                  "en": "Primary/secundary or white",
+                  "nl": "Primair/secundair of wit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_animation",
+        "title": {
+          "en": "Choose an animation",
+          "nl": "Kies een animatie"
+        },
+        "hint": {
+          "en": "Animations only work if the mode type is set to RGB(W)",
+          "nl": "Animaties werken alleen als de mode type is ingesteld op RGB(W)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          },
+          {
+            "name": "animation",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "6",
+                "label": {
+                  "en": "Fire",
+                  "nl": "Vuur"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Storm/lightning",
+                  "nl": "Storm/onweer"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Rainbow",
+                  "nl": "Regenboog"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Aurora",
+                  "nl": "Aurora"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Police",
+                  "nl": "Politie"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Random animation",
+                  "nl": "Willekeurige animatie"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Stop animation",
+                  "nl": "Stop animatie"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop animation, back to previous state",
+                  "nl": "Stop animatie, herstel vorige status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGRGBWM-441_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
+          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-441"
+          }
+        ]
+      },
+      {
+        "id": "FGRM-222_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRM-222"
+          }
+        ]
+      },
+      {
+        "id": "FGS-213_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-213"
+          }
+        ]
+      },
+      {
+        "id": "FGS-223_reset_meter",
+        "title": {
+          "en": "Reset meter values",
+          "nl": "Meter waarden resetten"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGS-223"
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
+    {
+      "id": "FGBS-001",
+      "name": {
+        "en": "Universal Binary Sensor",
+        "nl": "Universal Binary Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic.contact1",
+        "alarm_generic.contact2",
+        "measure_temperature.sensor1",
+        "measure_temperature.sensor2",
+        "measure_temperature.sensor3",
+        "measure_temperature.sensor4"
+      ],
+      "capabilitiesOptions": {
+        "alarm_generic.contact1": {
+          "title": {
+            "en": "Input 1",
+            "nl": "Ingang 1"
+          }
+        },
+        "alarm_generic.contact2": {
+          "title": {
+            "en": "Input 2",
+            "nl": "Ingang 2"
+          }
+        },
+        "measure_temperature.sensor1": {
+          "title": {
+            "en": "Temperature Sensor 1",
+            "nl": "Temperatuur Sensor 1"
+          }
+        },
+        "measure_temperature.sensor2": {
+          "title": {
+            "en": "Temperature Sensor 2",
+            "nl": "Temperatuur Sensor 2"
+          }
+        },
+        "measure_temperature.sensor3": {
+          "title": {
+            "en": "Temperature Sensor 3",
+            "nl": "Temperatuur Sensor 3"
+          }
+        },
+        "measure_temperature.sensor4": {
+          "title": {
+            "en": "Temperature Sensor 4",
+            "nl": "Temperatuur Sensor 4"
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/FGBS-001/assets/images/large.png",
+        "small": "/drivers/FGBS-001/assets/images/small.png"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": []
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "alarm_generic.contact1",
+              "alarm_generic.contact2",
+              "measure_temperature.sensor1",
+              "measure_temperature.sensor2",
+              "measure_temperature.sensor3",
+              "measure_temperature.sensor4"
+            ],
+            "options": {
+              "icons": {
+                "alarm_generic.contact1": "/drivers/FGBS-001/assets/switch.svg",
+                "alarm_generic.contact2": "/drivers/FGBS-001/assets/switch.svg"
+              },
+              "alarm_generic.contact1": {
+                "noblink": true,
+                "label": {
+                  "true": {
+                    "en": "Open",
+                    "nl": "Open"
+                  },
+                  "false": {
+                    "en": "Closed",
+                    "nl": "Gesloten"
+                  }
+                }
+              },
+              "alarm_generic.contact2": {
+                "noblink": true,
+                "label": {
+                  "true": {
+                    "en": "Open",
+                    "nl": "Open"
+                  },
+                  "false": {
+                    "en": "Closed",
+                    "nl": "Gesloten"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": 1281,
+        "productId": [
+          265,
+          4098,
+          8194,
+          12290
+        ],
+        "learnmode": {
+          "image": "/drivers/FGBS-001/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on your Universal Binary Sensor three times.",
+            "nl": "Druk driemaal op de knop van uw Universal Binary Sensor."
+          }
+        },
+        "associationGroups": [
+          3
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 12,
+            "size": 1,
+            "value": 8
+          }
+        ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Input configuration",
+            "nl": "Ingang configuratie"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "label": {
+                "en": "Type input 1",
+                "nl": "Type ingang 1"
+              },
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "id": "3",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (3) determines what kind of input type is connected.",
+                "nl": "Deze parameter (3) bepaalt wat van ingang type er is aangesloten."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally open",
+                    "nl": "Maakcontact"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally closed",
+                    "nl": "Verbreekcontact"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ]
+            },
+            {
+              "label": {
+                "en": "Type input 2",
+                "nl": "Type ingang 2"
+              },
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "id": "4",
+              "type": "dropdown",
+              "hint": {
+                "en": "This parameter (3) determines what kind of input type is connected.",
+                "nl": "Deze parameter (3) bepaalt wat van ingang type er is aangesloten."
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally open",
+                    "nl": "Maakcontact"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally closed",
+                    "nl": "Verbreekcontact"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature sensor",
+            "nl": "Temperatuurssensor"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 10,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "value": 20,
+              "id": "10",
+              "label": {
+                "en": "Measuring interval (s)",
+                "nl": "Meet interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time between sensor measurements.",
+                "nl": "Deze parameter (10) bepaalt de tijd tussen het meten van sensorwaarden."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 11,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "value": 200,
+              "id": "11",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (11) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (11) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 12,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 16,
+                "step": 0.1
+              },
+              "value": 0.5,
+              "id": "12",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (12) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "FGCD-001",
       "name": {
@@ -11178,1733 +13439,5 @@
         }
       ]
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "FGD-212_momentary",
-        "title": {
-          "en": "Dimmer 2 scene (momentary)",
-          "nl": "Dimmer 2 scene (pulsdruk)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Momentary switch\".",
-          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Pulsdrukschakelaar\" is ingesteld."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "16",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "26",
-                "label": {
-                  "en": "Pressed right (S2) 1x",
-                  "nl": "Rechts (S2) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed left (S1) 2x",
-                  "nl": "Links (S1) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Pressed right (S2) 2x",
-                  "nl": "Rechts (S2) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Pressed right (S2) 3x",
-                  "nl": "Rechts (S2) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "12",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S1) lang drukken"
-                }
-              },
-              {
-                "id": "22",
-                "label": {
-                  "en": "Long press right (S2)",
-                  "nl": "Rechts (S2) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press left (S1) released",
-                  "nl": "Links (S1) lang drukken gestopt"
-                }
-              },
-              {
-                "id": "23",
-                "label": {
-                  "en": "Long press right (S2) released",
-                  "nl": "Rechts (S2) lang drukken gestopt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_toggle",
-        "title": {
-          "en": "Dimmer 2 scene (toggle)",
-          "nl": "Dimmer 2 scene (tuimel)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Toggle switch\".",
-          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Tuimelschakelaar\" is ingesteld."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "11",
-                "label": {
-                  "en": "Left (S1) on to off",
-                  "nl": "Links (S1) aan naar uit"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Left (S1) off to on",
-                  "nl": "Links (S1) uit naar aan"
-                }
-              },
-              {
-                "id": "21",
-                "label": {
-                  "en": "Right (S2) on to off",
-                  "nl": "Rechts (S2) aan naar uit"
-                }
-              },
-              {
-                "id": "20",
-                "label": {
-                  "en": "Right (S2) off to on",
-                  "nl": "Rechts (S2) uit naar aan"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Switched left (S1) 2x",
-                  "nl": "Links (S1) 2x geschakeld"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Switched right (S2) 2x",
-                  "nl": "Rechts (S2) 2x geschakeld"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Switched right (S2) 3x",
-                  "nl": "Rechts (S2) 3x geschakeld"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_roller",
-        "title": {
-          "en": "Dimmer 2 scene (roller shutter)",
-          "nl": "Dimmer 2 scene (rolgordijn)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get triggered if the value of the \"switch type\" setting is set to: \"Roller shutter switch\".",
-          "nl": "Deze Flow Trigger word alleen geactiveerd als de waarde van de \"schakelaar type\" instelling op: \"Rolgordijn schakelaar\" is ingesteld."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "10",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Pressed right (S2) 1x",
-                  "nl": "Rechts (S2) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed 2x (left (S1) or right (S2))",
-                  "nl": "2x ingedrukt (links (S1) of rechts (S2))"
-                }
-              },
-              {
-                "id": "15",
-                "label": {
-                  "en": "Pressed 3x (left (S1) or right (S2))",
-                  "nl": "3x ingedrukt (links (S1) of rechts (S2))"
-                }
-              },
-              {
-                "id": "17",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S1) lang drukken"
-                }
-              },
-              {
-                "id": "18",
-                "label": {
-                  "en": "Long press right (S2)",
-                  "nl": "Rechts (S2) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press released (left (S1) or right (S2))",
-                  "nl": "Lang drukken gestopt (links (S1) of rechts (S2))"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fggc-001_swipe_direction",
-        "title": {
-          "en": "Gesture direction",
-          "nl": "Gebaar richting"
-        },
-        "hint": {
-          "en": "For this Flow Trigger to work the double gesture setting needs to be enabled in the device's settings.",
-          "nl": "Om deze Flow Trigger te laten werken moet het dubbele gebaar geactiveerd zijn in de apparaat instellingen."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGGC-001"
-          },
-          {
-            "name": "direction",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Up",
-                  "nl": "Omhoog"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Down",
-                  "nl": "Omlaag"
-                }
-              },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Left",
-                  "nl": "Links"
-                }
-              },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Right",
-                  "nl": "Rechts"
-                }
-              }
-            ]
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "1 time",
-                  "nl": "1 keer"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "2 times",
-                  "nl": "2 keer"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fggc-001_swipe_round",
-        "title": {
-          "en": "Gesture circular",
-          "nl": "Gebaar rondgaand"
-        },
-        "hint": {
-          "en": "When using the circular gesture it will trigger the \"Keep going round\" scene only once, and it will trigger the \"Going round stopped\" once the circular gesture is stopped.",
-          "nl": "Bij het gebruik van het rondgaande gebaar zal de \"Rond blijven gaan\" scene maar 1 keer worden geactiveerd, daarnaast activeert het uiteindelijk 1 keer de \"Rond gaan gestopt\" scene, wanneer het rondgaande gebaar wordt gestopt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGGC-001"
-          },
-          {
-            "name": "direction",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "5",
-                "label": {
-                  "en": "Clockwise",
-                  "nl": "Met klok mee"
-                }
-              },
-              {
-                "id": "6",
-                "label": {
-                  "en": "Counter clockwise",
-                  "nl": "Tegen klok in"
-                }
-              }
-            ]
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Keep going round",
-                  "nl": "Rond blijven gaan"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Going round stopped",
-                  "nl": "Rond gaan gestopt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fggc-001_swipe_sequence",
-        "title": {
-          "en": "Gesture sequence",
-          "nl": "Gebaren reeks"
-        },
-        "hint": {
-          "en": "Set the gesture sequences in the device's settings.",
-          "nl": "Stel de gebaren reeksen in bij de apparaat instellingen."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGGC-001"
-          },
-          {
-            "name": "direction",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "7",
-                "label": {
-                  "en": "Sequence 1",
-                  "nl": "Reeks 1"
-                }
-              },
-              {
-                "id": "8",
-                "label": {
-                  "en": "Sequence 2",
-                  "nl": "Reeks 2"
-                }
-              },
-              {
-                "id": "9",
-                "label": {
-                  "en": "Sequence 3",
-                  "nl": "Reeks 3"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Sequence 4",
-                  "nl": "Reeks 4"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Sequence 5",
-                  "nl": "Reeks 5"
-                }
-              },
-              {
-                "id": "12",
-                "label": {
-                  "en": "Sequence 6",
-                  "nl": "Reeks 6"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Inclusion/exlusion gesture",
-                  "nl": "Voeg toe/verwijder gebaar"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGKF-601-scene",
-        "title": {
-          "en": "Keyfob buttons",
-          "nl": "Keyfob knoppen"
-        },
-        "hint": {
-          "en": "In order to use \"Pressed 2x/3x\" enable this functionality in the device settings.",
-          "nl": "Om gebruik te maken van \"2x/3x ingedrukt\" schakel deze functionaliteit in via de apparaat instellingen."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGKF-601"
-          },
-          {
-            "name": "button",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Square (□)",
-                  "nl": "Vierkant (□)"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Circle (○)",
-                  "nl": "Cirkel (○)"
-                }
-              },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Cross (x)",
-                  "nl": "Kruis (x)"
-                }
-              },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Triangle (△)",
-                  "nl": "Driehoek (△)"
-                }
-              },
-              {
-                "id": "5",
-                "label": {
-                  "en": "Minus (-)",
-                  "nl": "Min (-)"
-                }
-              },
-              {
-                "id": "6",
-                "label": {
-                  "en": "Plus (+)",
-                  "nl": "Plus (+)"
-                }
-              }
-            ]
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed 1x",
-                  "nl": "1x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed 2x",
-                  "nl": "2x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed 3x",
-                  "nl": "3x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Long press",
-                  "nl": "Lang drukken"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Long press released",
-                  "nl": "Lang drukken gestopt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGKF-601-sequence",
-        "title": {
-          "en": "Keyfob sequence",
-          "nl": "Keyfob reeks"
-        },
-        "hint": {
-          "en": "First configure the sequences in the device settings panel of the Keyfob.",
-          "nl": "Stel eerst reeksen in via de apparaat instellingen van de Keyfob."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGKF-601"
-          },
-          {
-            "name": "sequence",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "7",
-                "label": {
-                  "en": "Sequence 1",
-                  "nl": "Reeks 1"
-                }
-              },
-              {
-                "id": "8",
-                "label": {
-                  "en": "Sequence 2",
-                  "nl": "Reeks 2"
-                }
-              },
-              {
-                "id": "9",
-                "label": {
-                  "en": "Sequence 3",
-                  "nl": "Reeks 3"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Sequence 4",
-                  "nl": "Reeks 4"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Sequence 5",
-                  "nl": "Reeks 5"
-                }
-              },
-              {
-                "id": "12",
-                "label": {
-                  "en": "Sequence 6",
-                  "nl": "Reeks 6"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGPB-101",
-        "title": {
-          "en": "Push button",
-          "nl": "Druk knop"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGPB-101"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed 1x",
-                  "nl": "1x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed 2x",
-                  "nl": "2x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed 3x",
-                  "nl": "3x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 4 times",
-                "label": {
-                  "en": "Pressed 4x",
-                  "nl": "4x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Pressed 5 times",
-                "label": {
-                  "en": "Pressed 5x",
-                  "nl": "5x ingedrukt"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Long press (triggers every half second)",
-                  "nl": "Lang drukken (activeert elke halve seconde)"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Long press released",
-                  "nl": "Lang drukken gestopt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "RGBW_input_on",
-        "title": {
-          "en": "In-/output turned on",
-          "nl": "In-/uitgang aan geschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "input",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Input 1",
-                  "nl": "Ingang 1"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Input 2",
-                  "nl": "Ingang 2"
-                }
-              },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Input 3",
-                  "nl": "Ingang 3"
-                }
-              },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Input 4",
-                  "nl": "Ingang 4"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "RGBW_input_off",
-        "title": {
-          "en": "In-/output turned off",
-          "nl": "In-/uitgang uit geschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "input",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "1",
-                "label": {
-                  "en": "Input 1",
-                  "nl": "Ingang 1"
-                }
-              },
-              {
-                "id": "2",
-                "label": {
-                  "en": "Input 2",
-                  "nl": "Ingang 2"
-                }
-              },
-              {
-                "id": "3",
-                "label": {
-                  "en": "Input 3",
-                  "nl": "Ingang 3"
-                }
-              },
-              {
-                "id": "4",
-                "label": {
-                  "en": "Input 4",
-                  "nl": "Ingang 4"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "RGBW_volt_input1",
-        "title": {
-          "en": "Voltage input 1 changed",
-          "nl": "Voltage ingang 1 veranderd"
-        },
-        "hint": {
-          "en": "This will only trigger if the input type is set to analog",
-          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "volt",
-            "type": "number",
-            "title": {
-              "en": "Volt"
-            },
-            "example": 5
-          }
-        ]
-      },
-      {
-        "id": "RGBW_volt_input2",
-        "title": {
-          "en": "Voltage input 2 changed",
-          "nl": "Voltage ingang 2 veranderd"
-        },
-        "hint": {
-          "en": "This will only trigger if the input type is set to analog",
-          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "volt",
-            "type": "number",
-            "title": {
-              "en": "Volt"
-            },
-            "example": 5
-          }
-        ]
-      },
-      {
-        "id": "RGBW_volt_input3",
-        "title": {
-          "en": "Voltage input 3 changed",
-          "nl": "Voltage ingang 3 veranderd"
-        },
-        "hint": {
-          "en": "This will only trigger if the input type is set to analog",
-          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "volt",
-            "type": "number",
-            "title": {
-              "en": "Volt"
-            },
-            "example": 5
-          }
-        ]
-      },
-      {
-        "id": "RGBW_volt_input4",
-        "title": {
-          "en": "Voltage input 4 changed",
-          "nl": "Voltage ingang 4 veranderd"
-        },
-        "hint": {
-          "en": "This will only trigger if the input type is set to analog",
-          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "volt",
-            "type": "number",
-            "title": {
-              "en": "Volt"
-            },
-            "example": 5
-          }
-        ]
-      },
-      {
-        "id": "FGRM-222-momentary",
-        "title": {
-          "en": "Shutter scene (momentary)",
-          "nl": "Rolluik scene (pulsdruk)"
-        },
-        "hint": {
-          "en": "This Flow Card will only get triggered if the setting Switch type: \"Momentary\" is selected.",
-          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Pulsdruk\" is geselecteerd."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRM-222"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "12",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S1) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press left (S1) released",
-                  "nl": "Links (S1) lang drukken gestopt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed left (S1) 2x",
-                  "nl": "Links (S1) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "16",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "22",
-                "label": {
-                  "en": "Long press right (S2)",
-                  "nl": "Rechts (S2) lang drukken"
-                }
-              },
-              {
-                "id": "23",
-                "label": {
-                  "en": "Long press right (S2) released",
-                  "nl": "Rechts (S2) lang drukken gestopt"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Pressed right (S2) 2x",
-                  "nl": "Rechts (S2) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Pressed right (S2) 3x",
-                  "nl": "Rechts (S2) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "26",
-                "label": {
-                  "en": "Pressed right (S2) 1x",
-                  "nl": "Rechts (S2) 1x ingedrukt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGRM-222-toggle",
-        "title": {
-          "en": "Shutter scene (toggle)",
-          "nl": "Rolluik scene (tuimel)"
-        },
-        "hint": {
-          "en": "This Flow Card will only get triggered if the setting Switch type: \"Toggle\" is selected.",
-          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Tuimel\" is geselecteerd."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRM-222"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "10",
-                "label": {
-                  "en": "Left (S1) off to on *",
-                  "nl": "Links (S1) uit naar aan *"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Left (S1) on to off *",
-                  "nl": "Links (S1) aan naar uit *"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Switched left (S1) 2x",
-                  "nl": "Links (S1) 2x geschakeld"
-                }
-              },
-              {
-                "id": "20",
-                "label": {
-                  "en": "Right (S2) off to on *",
-                  "nl": "Rechts (S2) uit naar aan *"
-                }
-              },
-              {
-                "id": "21",
-                "label": {
-                  "en": "Right (S2) on to off *",
-                  "nl": "Rechts (S2) aan naar uit *"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Switched right (S2) 2x",
-                  "nl": "Rechts (S2) 2x geschakeld"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Switched right (S2) 3x",
-                  "nl": "Rechts (S2) 3x geschakeld"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGRM-222-momentary_single-gate_switch",
-        "title": {
-          "en": "Shutter scene (Single momentary/gate)",
-          "nl": "Rolluik scene (Enkele pulsedruk/poort)"
-        },
-        "hint": {
-          "en": "This Flow Card will only get triggered if the setting Switch type is \"Single momentary\" or \"Gate mode\" is selected.",
-          "nl": "Deze Flow Kaart wordt alleen geactiveerd als de instelling Schakelaar type: \"Enkele pulsdruk\" of \"Poort mode\" is geselecteerd."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRM-222"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "12",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S1) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press left (S1) released",
-                  "nl": "Links (S1) lang drukken gestopt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed 2x left (S1)",
-                  "nl": "2x ingedrukt links (S1)"
-                }
-              },
-              {
-                "id": "16",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGS-213_S1",
-        "title": {
-          "en": "Left Switch (S1)",
-          "nl": "Linker Schakelaar (S1)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-213"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed/switched 1x",
-                  "nl": "1x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed/switched 2x",
-                  "nl": "2x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed/switched 3x",
-                  "nl": "3x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Hold switch (momentary switch)",
-                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Hold released (momentary switch)",
-                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGS-213_S2",
-        "title": {
-          "en": "Right Switch (S2)",
-          "nl": "Rechter Schakelaar (S2)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-213"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed/switched 1x",
-                  "nl": "1x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed/switched 2x",
-                  "nl": "2x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed/switched 3x",
-                  "nl": "3x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Hold switch (momentary switch)",
-                  "nl": "Lang ingedrukt (kortstondige schakelaar)"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Hold released (momentary switch)",
-                  "nl": "Lang ingedrukt los (kortstondige schakelaar)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGS-223_S1",
-        "title": {
-          "en": "Left Switch Scene (S1)",
-          "nl": "Linker Schakelaar Scene (S1)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-223"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed/switched 1x",
-                  "nl": "1x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed/switched 2x",
-                  "nl": "2x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed/switched 3x",
-                  "nl": "3x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Hold switch",
-                  "nl": "Lang ingedrukt"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Hold released",
-                  "nl": "Lang ingedrukt los gelaten"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGS-223_S2",
-        "title": {
-          "en": "Right Switch Scene (S2)",
-          "nl": "Right Schakelaar Scene (S2)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-223"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "Key Pressed 1 time",
-                "label": {
-                  "en": "Pressed/switched 1x",
-                  "nl": "1x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 2 times",
-                "label": {
-                  "en": "Pressed/switched 2x",
-                  "nl": "2x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Pressed 3 times",
-                "label": {
-                  "en": "Pressed/switched 3x",
-                  "nl": "3x Ingedrukt/geschakeld"
-                }
-              },
-              {
-                "id": "Key Held Down",
-                "label": {
-                  "en": "Hold switch",
-                  "nl": "Lang ingedrukt"
-                }
-              },
-              {
-                "id": "Key Released",
-                "label": {
-                  "en": "Hold released",
-                  "nl": "Lang ingedrukt los gelaten"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "FGD-212_set_brightness",
-        "title": {
-          "en": "Set forced brightness",
-          "nl": "Stel geforceerde helderheid in"
-        },
-        "hint": {
-          "en": "Change the \"set forced brightness\" parameter of your dimmer. If this parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level, 0 will disable this function.",
-          "nl": "Stel de \"geforceerde helderheid\" parameter van een dimmer in. Wanneer deze parameter actief is, zal bij het inschakelen van Dimmer 2 (S1 single click) altijd naar deze helderheid inschakelen, 0 schakelt deze functie uit."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "set_forced_brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_dim_duration",
-        "title": {
-          "en": "Change brightness over time",
-          "nl": "Verander helderheid over tijd"
-        },
-        "hint": {
-          "en": "Change the brightness and specify the transition duration, 0 will change brightness instantly.",
-          "nl": "Verander de helderheid en specificeer de gewenste transitie tijdsduur, 0 is onmiddellijke verandering van helderheid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "brightness_level",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          },
-          {
-            "name": "dimming_duration",
-            "type": "number",
-            "min": 0,
-            "max": 127,
-            "placeholder": {
-              "en": "Duration",
-              "nl": "Tijdsduur"
-            }
-          },
-          {
-            "name": "duration_unit",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "0",
-                "label": {
-                  "en": "sec",
-                  "nl": "sec"
-                }
-              },
-              {
-                "id": "1",
-                "label": {
-                  "en": "min",
-                  "nl": "min"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_set_timer",
-        "title": {
-          "en": "Automatically turn off after",
-          "nl": "Stel automatisch uitschakelen in"
-        },
-        "hint": {
-          "en": "This Flow Action determines the time after which the device will automatically power off.",
-          "nl": "Deze Flow Action bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          },
-          {
-            "name": "set_timer_functionality",
-            "type": "number",
-            "min": 0,
-            "max": 32767
-          }
-        ]
-      },
-      {
-        "id": "FGD-212_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGD-212"
-          }
-        ]
-      },
-      {
-        "id": "RGBW_specific",
-        "title": {
-          "en": "Set specific brightness",
-          "nl": "Stel specifieke helderheid in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "color",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "r",
-                "label": {
-                  "en": "Red output",
-                  "nl": "Rode uitgang"
-                }
-              },
-              {
-                "id": "g",
-                "label": {
-                  "en": "Green output",
-                  "nl": "Groene uitgang"
-                }
-              },
-              {
-                "id": "b",
-                "label": {
-                  "en": "Blue output",
-                  "nl": "Blauwe uitgang"
-                }
-              },
-              {
-                "id": "w",
-                "label": {
-                  "en": "White output",
-                  "nl": "Witte uitgang"
-                }
-              }
-            ]
-          },
-          {
-            "name": "brightness",
-            "type": "range",
-            "min": 0,
-            "max": 1,
-            "step": 0.01,
-            "label": "%",
-            "labelMultiplier": 100
-          }
-        ]
-      },
-      {
-        "id": "RGBW_random",
-        "title": {
-          "en": "Choose a random color",
-          "nl": "Kies een willekeurige kleur"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "range",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "rgb",
-                "label": {
-                  "en": "RGB",
-                  "nl": "RGB"
-                }
-              },
-              {
-                "id": "rgbw",
-                "label": {
-                  "en": "RGB with white",
-                  "nl": "RGB met wit"
-                }
-              },
-              {
-                "id": "rgb-w",
-                "label": {
-                  "en": "RGB or white",
-                  "nl": "RGB of wit"
-                }
-              },
-              {
-                "id": "r-g-b",
-                "label": {
-                  "en": "Primary",
-                  "nl": "Primair"
-                }
-              },
-              {
-                "id": "r-g-b-w",
-                "label": {
-                  "en": "Primary or white",
-                  "nl": "Primair of wit"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m",
-                "label": {
-                  "en": "Primary/secundary",
-                  "nl": "Primair/secundair"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m-w",
-                "label": {
-                  "en": "Primary/secundary or white",
-                  "nl": "Primair/secundair of wit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "RGBW_animation",
-        "title": {
-          "en": "Choose an animation",
-          "nl": "Kies een animatie"
-        },
-        "hint": {
-          "en": "Animations only work if the mode type is set to RGB(W)",
-          "nl": "Animaties werken alleen als de mode type is ingesteld op RGB(W)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "animation",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "6",
-                "label": {
-                  "en": "Fire",
-                  "nl": "Vuur"
-                }
-              },
-              {
-                "id": "7",
-                "label": {
-                  "en": "Storm/lightning",
-                  "nl": "Storm/onweer"
-                }
-              },
-              {
-                "id": "8",
-                "label": {
-                  "en": "Rainbow",
-                  "nl": "Regenboog"
-                }
-              },
-              {
-                "id": "9",
-                "label": {
-                  "en": "Aurora",
-                  "nl": "Aurora"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Police",
-                  "nl": "Politie"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Random animation",
-                  "nl": "Willekeurige animatie"
-                }
-              },
-              {
-                "id": "1",
-                "label": {
-                  "en": "Stop animation",
-                  "nl": "Stop animatie"
-                }
-              },
-              {
-                "id": "0",
-                "label": {
-                  "en": "Stop animation, back to previous state",
-                  "nl": "Stop animatie, herstel vorige status"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGRGBWM-441_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
-          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          }
-        ]
-      },
-      {
-        "id": "FGRM-222_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRM-222"
-          }
-        ]
-      },
-      {
-        "id": "FGS-213_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-213"
-          }
-        ]
-      },
-      {
-        "id": "FGS-223_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-          "nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGS-223"
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
