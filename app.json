@@ -3,6 +3,7 @@
   "name": {
     "en": "Fibaro"
   },
+  "brandColor": "#000000",
   "sdk": 2,
   "version": "2.1.3",
   "compatibility": ">=1.5.6",
@@ -2495,7 +2496,7 @@
                 "min": 1,
                 "max": 2880
               },
-              "value": 0,
+              "value": 1,
               "id": "temperature_report_interval",
               "label": {
                 "en": "Report interval (s)",
@@ -2647,6 +2648,7 @@
                 "index": 7,
                 "size": 1
               },
+              "value": "63",
               "values": [
                 {
                   "id": "1",
@@ -2663,10 +2665,24 @@
                   }
                 },
                 {
+                  "id": "3",
+                  "label": {
+                    "en": "2nd & 3rd group sent as secure",
+                    "nl": "2e & 3e groep beveiligd verzenden"
+                  }
+                },
+                {
                   "id": "4",
                   "label": {
                     "en": "4th group sent as secure",
                     "nl": "4e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "2nd, 3rd & 4th group sent as secure",
+                    "nl": "2e, 3e & 4e groep beveiligd verzenden"
                   }
                 },
                 {
@@ -2677,10 +2693,24 @@
                   }
                 },
                 {
+                  "id": "15",
+                  "label": {
+                    "en": "2nd, 3rd, 4th, 5th & 6th group sent as secure",
+                    "nl": "2e, 3e, 4e, 5e & 6e groep beveiligd verzenden"
+                  }
+                },
+                {
                   "id": "16",
                   "label": {
                     "en": "6th group sent as secure",
                     "nl": "6e groep beveiligd verzenden"
+                  }
+                },
+                {
+                  "id": "31",
+                  "label": {
+                    "en": "2nd, 3rd, 4th, 5th, 6th & 7th group sent as secure",
+                    "nl": "2e, 3e, 4e, 5e, 6e & 7e groep beveiligd verzenden"
                   }
                 },
                 {
@@ -2689,10 +2719,16 @@
                     "en": "7th group sent as secure",
                     "nl": "7e groep beveiligd verzenden"
                   }
+                },
+                {
+                  "id": "63",
+                  "label": {
+                    "en": "2nd, 3rd, 4th, 5th, 6th, 7th & 8th group sent as secure",
+                    "nl": "2e, 3e, 4e, 5e, 6e, 7e & 8e groep beveiligd verzenden"
+                  }
                 }
               ],
               "id": "secure_mode_associaton",
-              "value": "3",
               "label": {
                 "en": "Associations in Z-Wave network Security Mode",
                 "nl": "Associaties in Z-Wave netwerk Security Modus"
@@ -4386,8 +4422,8 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
               "value": 0,
@@ -4408,11 +4444,11 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
-              "value": 15,
+              "value": 1500,
               "id": "low_temperature_treshold",
               "label": {
                 "en": "Low value alarm threshold",
@@ -4430,11 +4466,11 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
-              "value": 35,
+              "value": 3500,
               "id": "high_temperature_treshold",
               "label": {
                 "en": "High value alarm threshold",
@@ -4930,8 +4966,8 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
               "value": 0,
@@ -4952,11 +4988,11 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
-              "value": 15,
+              "value": 1500,
               "id": "low_temperature_threshold",
               "label": {
                 "en": "Low value alarm threshold",
@@ -4974,11 +5010,11 @@
                 "size": 2
               },
               "attr": {
-                "min": -100,
-                "max": 100,
+                "min": -10000,
+                "max": 10000,
                 "steps": 0.1
               },
-              "value": 35,
+              "value": 3500,
               "id": "high_temperature_threshold",
               "label": {
                 "en": "High value alarm threshold",
