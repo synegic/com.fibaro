@@ -23,6 +23,7 @@
     ],
     "productId": [
       4097,
+      4098,
       16385
     ],
     "zwaveAllianceProductId": 2762,
@@ -49,7 +50,7 @@
           "en": "Trigger: Motion alarm - association group, command depends on the configuration. Add Z-wave ID of relay devices.",
           "nl": "Trigger: Bewegingsalarm - associatie groep, commando is afhankelijk van de configuratie. Voeg het Z-wave ID van het te koppelen apparaat toe."
         }
-      }, 
+      },
       "3": {
         "hint": {
           "en": "Trigger: Tamper alarm - association group. Add Z-wave ID of relay devices.",

@@ -6,6 +6,7 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 
 	onMeshInit() {
 		this.registerCapability('windowcoverings_state', 'SWITCH_BINARY');
+
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
 			setParser: this._dimSetParser.bind(this),
 			reportParser: this._dimReportParser.bind(this),
