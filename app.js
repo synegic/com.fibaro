@@ -4,7 +4,6 @@ const Homey = require('homey');
 
 class FibaroApp extends Homey.App {
 	onInit() {
-		this.log(`${Homey.manifest.id} running...`);
 
 		this.actionStartDimLevelChange = new Homey.FlowCardAction('FGD-21x_dim_startLevelChange')
 			.register()

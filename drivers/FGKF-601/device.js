@@ -9,8 +9,8 @@ class FibaroKeyfob extends ZwaveDevice {
 		this.registerCapability('measure_battery', 'BATTERY');
 
 		// Registering flows
-		this._sceneFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-scene').registerRunListener(this._sceneRunListener).register();
-		this._sequenceFlowTrigger = new Homey.FlowCardTriggerDevice('FGKF-601-sequence').registerRunListener(this._sequenceRunListener).register();
+		this._sceneFlowTrigger = this.getDriver().sceneFlowTrigger;
+		this._sequenceFlowTrigger = this.getDriver().sequenceFlowTrigger;
 
 		// Parsing of sequences before sending to Keyfob
 		this.registerSetting('lock_timeout', async (newValue) => {
@@ -53,10 +53,8 @@ class FibaroKeyfob extends ZwaveDevice {
                 report.Properties1.hasOwnProperty('Key Attributes')) {
 
 				if (report['Scene Number'] <= 6) {
-					this.log(`Singular button press. Button: ${report['Scene Number'].toString()}, scene: ${report.Properties1['Key Attributes']}`);
 					this._sceneFlowTrigger.trigger(this, null, { button: report['Scene Number'].toString(), scene: report.Properties1['Key Attributes'] });
 				} else {
-					this.log(`Sequence of buttons pressed. Sequence: ${report['Scene Number'].toString()}`);
 					this._sequenceFlowTrigger.trigger(this, null, { sequence: report['Scene Number'].toString() });
 				}
 			}
@@ -115,7 +113,7 @@ class FibaroKeyfob extends ZwaveDevice {
 		return parsedSequence;
 	}
 
-	_sceneRunListener(args, state, callback) {
+	sceneRunListener(args, state) {
 		if (state &&
             state.hasOwnProperty('button') &&
             state.hasOwnProperty('scene') &&
@@ -123,19 +121,19 @@ class FibaroKeyfob extends ZwaveDevice {
             args.hasOwnProperty('scene') &&
             state.button === args.button &&
             state.scene === args.scene) {
-			return callback(null, true);
+			return Promise.resolve();
 		}
-		return callback(null, false);
+		return Promise.reject();
 	}
 
-	_sequenceRunListener(args, state, callback) {
+	sequenceRunListener(args, state) {
 		if (state &&
             state.hasOwnProperty('sequence') &&
             args.hasOwnProperty('sequence') &&
             state.sequence === args.sequence) {
-			return callback(null, true);
+			return Promise.resolve();
 		}
-		return callback(null, false);
+		return Promise.reject();
 	}
 }
 

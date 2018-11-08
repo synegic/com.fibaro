@@ -14,47 +14,9 @@ class FibaroSwipeDevice extends ZwaveDevice {
        Registering Flow triggers
        ===================================================================
         */
-		this._directionTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_direction')
-			.register()
-			.registerRunListener((args, state, callback) => {
-				if (state && args &&
-                    state.hasOwnProperty('direction') &&
-                    state.hasOwnProperty('scene') &&
-                    args.hasOwnProperty('direction') &&
-                    args.hasOwnProperty('scene') &&
-                    state.direction === args.direction &&
-                    state.scene === args.scene) {
-					return callback(null, true);
-				}
-				return callback(null, false);
-			});
-
-		this._roundTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_round')
-			.register()
-			.registerRunListener((args, state, callback) => {
-				if (state && args &&
-                    state.hasOwnProperty('direction') &&
-                    state.hasOwnProperty('scene') &&
-                    args.hasOwnProperty('direction') &&
-                    args.hasOwnProperty('scene') &&
-                    state.direction === args.direction &&
-                    state.scene === args.scene) {
-					return callback(null, true);
-				}
-				return callback(null, false);
-			});
-
-		this._sequenceTrigger = new Homey.FlowCardTriggerDevice('fggc-001_swipe_sequence')
-			.register()
-			.registerRunListener((args, state, callback) => {
-				if (state && args &&
-                    state.hasOwnProperty('direction') &&
-                    args.hasOwnProperty('direction') &&
-                    state.direction === args.direction) {
-					return callback(null, true);
-				}
-				return callback(null, false);
-			});
+		this._directionTrigger = this.getDriver().directionTrigger;
+		this._roundTrigger = this.getDriver().roundTrigger;
+		this._sequenceTrigger = this.getDriver().sequenceTrigger;
 
 		/*
         ===================================================================
@@ -199,6 +161,42 @@ class FibaroSwipeDevice extends ZwaveDevice {
 		const gesture = sequence.split(';').map(Number);
 		if (gesture.length === 2) gesture.push(0);
 		return new Buffer([gesture[0], gesture[1] * 16 + gesture[2]]);
+	}
+
+	directionRunListener(args, state) {
+		if (state && args &&
+			state.hasOwnProperty('direction') &&
+			state.hasOwnProperty('scene') &&
+			args.hasOwnProperty('direction') &&
+			args.hasOwnProperty('scene') &&
+			state.direction === args.direction &&
+			state.scene === args.scene) {
+            return Promise.resolve();
+		}
+        return Promise.reject();
+	}
+
+    roundRunListener(args, state) {
+        if (state && args &&
+            state.hasOwnProperty('direction') &&
+            state.hasOwnProperty('scene') &&
+            args.hasOwnProperty('direction') &&
+            args.hasOwnProperty('scene') &&
+            state.direction === args.direction &&
+            state.scene === args.scene) {
+            return Promise.resolve();
+        }
+        return Promise.reject();
+    }
+
+    sequenceRunListener(args, state) {
+        if (state && args &&
+            state.hasOwnProperty('direction') &&
+            args.hasOwnProperty('direction') &&
+            state.direction === args.direction) {
+            return Promise.resolve();
+        }
+        return Promise.reject();
 	}
 }
 

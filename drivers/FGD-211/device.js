@@ -6,9 +6,9 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroDimmerDevice extends ZwaveDevice {
 
 	onMeshInit() {
-		this._momentaryTrigger = new Homey.FlowCardTriggerDevice('FGD-211_momentary', this._switchTriggersRunListener.bind(this));
-		this._toggleTrigger = new Homey.FlowCardTriggerDevice('FGD-211_toggle', this._switchTriggersRunListener.bind(this));
-		this._rollerTrigger = new Homey.FlowCardTriggerDevice('FGD-211_roller', this._switchTriggersRunListener.bind(this));
+        this._momentaryTrigger = this.getDriver().momentaryTrigger;
+        this._toggleTrigger = this.getDriver().toggleTrigger;
+        this._rollerTrigger = this.getDriver().rollerTrigger;
 
 		this.registerCapability('onoff', 'SWITCH_MULTILEVEL');
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL');
@@ -28,7 +28,7 @@ class FibaroDimmerDevice extends ZwaveDevice {
 		});
 	}
 
-	_switchTriggersRunListener(args, state) {
+	switchTriggersRunListener(args, state) {
 		return state && args && state.scene === args.scene;
 	}
 }

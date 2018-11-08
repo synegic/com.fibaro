@@ -11,38 +11,18 @@ class FibaroUniversalBinarySensor extends ZwaveDevice {
          Initializing Flow triggers/conditions/actions
         =========================================================================
          */
-		this._onTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_on').register();
-		this._offTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_off').register();
-		this._switchTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_i1_switch').register();
+		this._onTrigger = this.getDriver().onTrigger;
+		this._offTrigger = this.getDriver().offTrigger;
+		this._switchTrigger = this.getDriver().switchTrigger;
 
-		this._i1Condition = new Homey.FlowCardCondition('FGBS-001_i1');
-		this._i1Condition
-			.register()
-			.registerRunListener((args, state) => {
-				if (args.device === this) {
-					return state === this.getCapabilityValue('alarm_generic.contact1');
-				}
-				return false;
-			});
+		this._onTrigger2 = this.getDriver().onTrigger2;
+		this._offTrigger2 = this.getDriver().offTrigger2;
+		this._switchTrigger2 = this.getDriver().switchTrigger2;
 
-		this._onTrigger2 = new Homey.FlowCardTriggerDevice('FGBS-001_i2_on').register();
-		this._offTrigger2 = new Homey.FlowCardTriggerDevice('FGBS-001_i2_off').register();
-		this._switchTrigger2 = new Homey.FlowCardTriggerDevice('FGBS-001_i2_switch').register();
-
-		this._i2Condition = new Homey.FlowCardCondition('FGBS-001_i2');
-		this._i2Condition
-			.register()
-			.registerRunListener((args, state) => {
-				if (args.device === this) {
-					return state === this.getCapabilityValue('alarm_generic.contact2');
-				}
-				return false;
-			});
-
-		this._temperatureTrigger = new Homey.FlowCardTriggerDevice('FGBS-001_temp1').register();
-		this._temperatureTrigger2 = new Homey.FlowCardTriggerDevice('FGBS-001_temp2').register();
-		this._temperatureTrigger3 = new Homey.FlowCardTriggerDevice('FGBS-001_temp3').register();
-		this._temperatureTrigger4 = new Homey.FlowCardTriggerDevice('FGBS-001_temp4').register();
+		this._temperatureTrigger = this.getDriver().temperatureTrigger;
+		this._temperatureTrigger2 = this.getDriver().temperatureTrigger2;
+		this._temperatureTrigger3 = this.getDriver().temperatureTrigger3;
+		this._temperatureTrigger4 = this.getDriver().temperatureTrigger4;
 
 		/*
     	=========================================================================

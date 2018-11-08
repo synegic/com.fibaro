@@ -7,13 +7,7 @@ class Button extends ZwaveDevice {
 
 	onMeshInit() {
 		this.registerCapability('measure_battery', 'BATTERY');
-		this._onButtonTrigger = new Homey.FlowCardTriggerDevice('FGPB-101').register().registerRunListener((args, state, callback) => {
-			if (state && args &&
-				state.hasOwnProperty('scene') &&
-				args.hasOwnProperty('scene')) {
-				return callback(null, state.scene === args.scene);
-			}
-		});
+		this._onButtonTrigger = this.getDriver().onButtonTrigger;
 
 		this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE.on('report', (command, report) => {
 			let debouncer = 0;
@@ -35,6 +29,16 @@ class Button extends ZwaveDevice {
 				}
 			}
 		});
+	}
+
+	buttonRunListener(args, state) {
+        if (state && args &&
+            state.hasOwnProperty('scene') &&
+            args.hasOwnProperty('scene')) {
+            return Promise.resolve();
+        }
+
+        return Promise.reject();
 	}
 
 }
