@@ -6,9 +6,9 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
 
 	onMeshInit() {
-		this._S1Trigger = new Homey.FlowCardTriggerDevice('FGS-213_S1').registerRunListener(this._switchTriggerRunListener).register();
-		this._S2Trigger = new Homey.FlowCardTriggerDevice('FGS-213_S2').registerRunListener(this._switchTriggerRunListener).register();
-		this._resetMeter = new Homey.FlowCardAction('FGS-213_reset_meter').registerRunListener(this._resetMeterRunListener).register();
+		this._S1Trigger = this.getDriver().S1Trigger;
+		this._S2Trigger = this.getDriver().S2Trigger;
+		this._resetMeter = this.getDriver().resetMeter;
 
 		this.registerCapability('onoff', 'SWITCH_BINARY');
 		this.registerCapability('measure_power', 'METER');
@@ -37,14 +37,13 @@ class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
 		});
 	}
 
-	_switchTriggerRunListener(args, state, callback) {
+	switchTriggerRunListener(args, state, callback) {
 		if (state.scene === args.scene) return callback(null, true);
 		return callback(null, false);
 	}
 
-	_resetMeterRunListener(args, state) {
-		if (args.device === this &&
-        	this.node &&
+	resetMeterRunListener(args, state) {
+		if (this.node &&
             this.node.CommandClass &&
             this.node.CommandClass.COMMAND_CLASS_METER) {
 			this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {

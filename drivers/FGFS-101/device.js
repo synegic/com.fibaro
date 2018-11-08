@@ -5,7 +5,6 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroFloodSensor extends ZwaveDevice {
 
 	onMeshInit() {
-		this.log(this.node);
 
 		this.registerCapability('alarm_water', 'SENSOR_ALARM');
 		this.registerCapability('alarm_tamper', 'SENSOR_ALARM');

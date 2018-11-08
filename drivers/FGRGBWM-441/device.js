@@ -42,25 +42,19 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         Registering Flows
         ================================================================
          */
-        this._onFlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_input_on').register()
-            .registerRunListener(this._onOffFlowRunListener);
-        this._offFlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_input_off').register()
-            .registerRunListener(this._onOffFlowRunListener);
+        this._onFlowTrigger = this.getDriver().onFlowTrigger;
+        this._offFlowTrigger = this.getDriver().offFlowTrigger;
 
-        this._input1FlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_volt_input1').register();
-        this._input2FlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_volt_input2').register();
-        this._input3FlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_volt_input3').register();
-        this._input4FlowTrigger = new Homey.FlowCardTriggerDevice('RGBW_volt_input4').register();
+        this._input1FlowTrigger = this.getDriver().input1FlowTrigger;
+        this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
+        this._input3FlowTrigger = this.getDriver().input3FlowTrigger;
+        this._input4FlowTrigger = this.getDriver().input4FlowTrigger;
 
-        this._resetMeterAction = new Homey.FlowCardAction('FGRGBWM-441_reset_meter').register()
-            .registerRunListener(this._resetMeterRunListener.bind(this));
+        this._resetMeterAction = this.getDriver().resetMeterAction;
 
-        this._randomColorAction = new Homey.FlowCardAction('RGBW_random').register()
-            .registerRunListener(this._randomColorRunListener.bind(this));
-        this._specificColorAction = new Homey.FlowCardAction('RGBW_specific').register()
-            .registerRunListener(this._specificColorRunListener.bind(this));
-        this._animationAction = new Homey.FlowCardAction('RGBW_animation').register()
-            .registerRunListener(this._animationRunListener.bind(this));
+        this._randomColorAction = this.getDriver().randomColorAction;
+        this._specificColorAction = this.getDriver().specificColorAction;
+        this._animationAction = this.getDriver().animationAction;
 
         /*
         ================================================================
@@ -116,6 +110,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                red = (rgb.r / 255) * 99;
                green = (rgb.g / 255) * 99;
                blue = (rgb.b / 255) * 99;
+               white = 0;
            }
 
             try {
@@ -392,7 +387,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     Flow related methods
     ================================================================
      */
-    _onOffFlowRunListener(args, state) {
+    onOffFlowRunListener(args, state) {
         if (args && args.hasOwnProperty('input') &&
             state && state.hasOwnProperty('input') &&
             args.input === state.input) {
@@ -401,8 +396,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         return false;
     }
 
-    _resetMeterRunListener(args, state) {
-        if (args.device === this && this.node && typeof this.node.CommandClass.COMMAND_CLASS_METER !== 'undefined') {
+    resetMeterRunListener(args, state) {
+        if (this.node && typeof this.node.CommandClass.COMMAND_CLASS_METER !== 'undefined') {
             this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {
                 if (err) throw new Error(err);
                 return false;
@@ -412,8 +407,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
     }
 
-    async _randomColorRunListener(args, state) {
-        if (args.device !== this) return Promise.reject('Not the right device');
+    async randomColorRunListener(args, state) {
         if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Random colors only available in RGB(W) mode');
         if (args.hasOwnProperty('range')) {
             let rgb = utils.convertHSVToRGB({
@@ -554,8 +548,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
     }
 
-    async _specificColorRunListener(args, state) {
-        if (args.device !== this) return Promise.reject('Not the right device');
+    async specificColorRunListener(args, state) {
         if (args && args.hasOwnProperty('color') && args.hasOwnProperty('brightness')) {
             let multiChannel;
             const stripType = this.getSetting('strip_type');
@@ -583,8 +576,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
     }
 
-    async _animationRunListener(args, state) {
-        if (args.device !== this) return Promise.reject('Not the right device');
+    async animationRunListener(args, state) {
         if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Animations only available in RGB(W) mode');
         if ((this.realInputConfigs.input1 || this.realInputConfigs.input2 || this.realInputConfigs.input3 || this.realInputConfigs.input4) > 8) {
             return Promise.reject('Animations only available without analog input');
@@ -623,7 +615,6 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     Helper methods
     ================================================================
      */
-
     _valueToVolt(value) {
         return Math.round(value / 99 * 100) / 10;
     }

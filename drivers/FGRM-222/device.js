@@ -6,15 +6,11 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroRollerShutter24Device extends ZwaveDevice {
 
 	onMeshInit() {
-		this._momentaryTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary').register()
-			.registerRunListener(this._triggerRunListener.bind(this));
-		this._toggleTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-toggle').register()
-			.registerRunListener(this._triggerRunListener.bind(this));
-		this._singleGateTrigger = new Homey.FlowCardTriggerDevice('FGRM-222-momentary_single-gate_switch').register()
-			.registerRunListener(this._triggerRunListener.bind(this));
+		this._momentaryTrigger = this.getDriver().momentaryTrigger;
+		this._toggleTrigger = this.getDriver().toggleTrigger;
+		this._singleGateTrigger = this.getDriver().singleGateTrigger;
 
-		this._resetMeterAction = new Homey.FlowCardAction('FGRM-222_reset_meter').register()
-			.registerRunListener(this._resetMeterRunListener.bind(this));
+		this._resetMeterAction = this.getDriver().resetMeterAction;
 
 		this.registerCapability('windowcoverings_state', 'SWITCH_BINARY');
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
@@ -50,13 +46,12 @@ class FibaroRollerShutter24Device extends ZwaveDevice {
 		});
 	}
 
-	_triggerRunListener(args, state) {
-		return (args.device === this && args.scene === state.scene);
+	triggerRunListener(args, state) {
+		return (args.scene === state.scene);
 	}
 
-	async _resetMeterRunListener(args, state) {
-		if (args.device === this &&
-				this.node.CommandClass.COMMAND_CLASS_METER) {
+	async resetMeterRunListener(args, state) {
+		if (this.node.CommandClass.COMMAND_CLASS_METER) {
 			return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
 		} return Promise.reject('unknown_error');
 	}

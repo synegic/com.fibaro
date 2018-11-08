@@ -10,12 +10,9 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('meter_power', 'METER');
 
-		this._input1FlowTrigger = new Homey.FlowCardTriggerDevice('FGS-223_S1').register()
-			.registerRunListener(this._inputFlowListener.bind(this));
-		this._input2FlowTrigger = new Homey.FlowCardTriggerDevice('FGS-223_S2').register()
-			.registerRunListener(this._inputFlowListener.bind(this));
-		this._resetMeterFlowAction = new Homey.FlowCardAction('FGS-223_reset_meter').register()
-			.registerRunListener(async (args, state) => await this._resetMeterFlowListener(args));
+		this._input1FlowTrigger = this.getDriver().input1FlowTrigger;
+		this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
+		this._resetMeterFlowAction = this.getDriver().resetMeterFlowAction;
 
 		if (!this.node.isMultiChannelNode) {
 			this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
@@ -42,13 +39,12 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this.registerSetting('s2_kwh_report', this._kwhReportParser);
 	}
 
-	_inputFlowListener(args, state) {
-		return (state.scene === args.scene && args.device === this);
+	inputFlowListener(args, state) {
+		return (state.scene === args.scene);
 	}
 
-	async _resetMeterFlowListener(args) {
-		if (args.device === this &&
-			this.node &&
+	async resetMeterFlowListener(args) {
+		if (this.node &&
 			this.node.CommandClass.COMMAND_CLASS_METER) {
 			return await this.node.CommandClass.COMMAND_CLASS_METER.METER_RESET({});
 		}
