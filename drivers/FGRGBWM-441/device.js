@@ -410,12 +410,12 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     async randomColorRunListener(args, state) {
         if (this.getSetting('strip_type').indexOf('rgb') < 0) return Promise.reject('Random colors only available in RGB(W) mode');
         if (args.hasOwnProperty('range')) {
-            let rgb = utils.convertHSVToRGB({
-                hue: (Math.random() * 100) / 100,
+            let rgb = this._convertHSVToRGB({
+                hue: (Math.random() * (360 - 1) + 1),
                 saturation: 1,
-                value: this.getCapabilityValue('dim')
+                value: this.getCapabilityValue('dim'),
             });
-            let rgbw = this._convertRGBtoRGBW({r: rgb.red, g: rgb.green, b: rgb.blue});
+            let rgbw = this._convertRGBtoRGBW({r: rgb.r, g: rgb.g, b: rgb.b});
 
             // Adjust color values to 0 - 100 scale
             rgbw.red = (rgbw.r / 255) * 99;
@@ -423,9 +423,9 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             rgbw.blue = (rgbw.b / 255) * 99;
             rgbw.white = (rgbw.w / 255) * 99;
 
-            rgb.red = (rgb.red / 255) * 99;
-            rgb.green = (rgb.green / 255) * 99;
-            rgb.blue = (rgb.blue / 255) * 99;
+            rgb.red = (rgb.r / 255) * 99;
+            rgb.green = (rgb.g / 255) * 99;
+            rgb.blue = (rgb.b / 255) * 99;
 
             try {
                 if (args.range === 'rgb') {
@@ -534,7 +534,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
                     if (hue) {
                         rgb = this._convertHSVToRGB({h: hue, s: 1, v: this.getCapabilityValue('dim')});
-                        rgbw = this._convertRGBtoRGBW({r: rgb.red, g: rgb.green, b: rgb.blue});
+                        rgbw = this._convertRGBtoRGBW({r: rgb.r, g: rgb.g, b: rgb.b});
 
                         await this._sendColor((rgbw.r / 255) * 99, 2);
                         await this._sendColor((rgbw.g / 255) * 99, 3);

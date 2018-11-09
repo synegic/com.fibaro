@@ -37,9 +37,8 @@ class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
 		});
 	}
 
-	switchTriggerRunListener(args, state, callback) {
-		if (state.scene === args.scene) return callback(null, true);
-		return callback(null, false);
+	switchTriggerRunListener(args, state) {
+		return state.scene === args.scene;
 	}
 
 	resetMeterRunListener(args, state) {
@@ -50,14 +49,10 @@ class FibaroSingleSwitchTwoDevice extends ZwaveDevice {
 				if (err) return callback(err);
 
 				// If properly transmitted, change the setting and finish flow card
-				if (result === 'TRANSMIT_COMPLETE_OK') {
-					return callback(null, true);
-				}
-				return callback('unknown_response');
+				return result === 'TRANSMIT_COMPLETE_OK';
 			});
-		} else return callback('unknown_error');
+		} else return false;
 	}
-
 }
 
 module.exports = FibaroSingleSwitchTwoDevice;
