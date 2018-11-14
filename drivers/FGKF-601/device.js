@@ -114,26 +114,20 @@ class FibaroKeyfob extends ZwaveDevice {
 	}
 
 	sceneRunListener(args, state) {
-		if (state &&
+		return (state &&
             state.hasOwnProperty('button') &&
             state.hasOwnProperty('scene') &&
             args.hasOwnProperty('button') &&
             args.hasOwnProperty('scene') &&
             state.button === args.button &&
-            state.scene === args.scene) {
-			return Promise.resolve();
-		}
-		return Promise.reject();
+            state.scene === args.scene);
 	}
 
 	sequenceRunListener(args, state) {
-		if (state &&
+		return (state &&
             state.hasOwnProperty('sequence') &&
             args.hasOwnProperty('sequence') &&
-            state.sequence === args.sequence) {
-			return Promise.resolve();
-		}
-		return Promise.reject();
+            state.sequence === args.sequence);
 	}
 }
 
