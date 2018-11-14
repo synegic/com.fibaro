@@ -13,12 +13,12 @@ class FibaroKeyfob extends ZwaveDevice {
 		this._sequenceFlowTrigger = this.getDriver().sequenceFlowTrigger;
 
 		// Parsing of sequences before sending to Keyfob
-		this.registerSetting('lock_timeout', async (newValue) => {
+		this.registerSetting('lock_timeout', (newValue) => {
 			try {
 				const requestTimeout = setTimeout(() => {
 					Promise.reject('device_asleep');
 				}, 5000);
-				await this._enableLockMode({ lock_timeout: newValue });
+				this._enableLockMode({ lock_timeout: newValue });
 				clearTimeout(requestTimeout);
 				return newValue;
 			} catch (err) {
@@ -26,12 +26,12 @@ class FibaroKeyfob extends ZwaveDevice {
 				return this.getSetting('lock_timeout');
 			}
 		});
-		this.registerSetting('sequence_lock', async (newValue) => {
+		this.registerSetting('sequence_lock', (newValue) => {
 			try {
 				const requestTimeout = setTimeout(() => {
 					Promise.reject('device_asleep');
 				}, 5000);
-				await this._enableLockMode({ sequence_lock: newValue });
+				this._enableLockMode({ sequence_lock: newValue });
 				clearTimeout(requestTimeout);
 				return this.sequenceParser(newValue);
 			} catch (err) {
@@ -74,7 +74,7 @@ class FibaroKeyfob extends ZwaveDevice {
                 this.getSetting('sequence_lock')) ||
                 (typeof newValueObj.sequence_lock === 'string' &&
                 this.getSetting('lock_timeout') > 0)) {
-			return await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+	    	await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
 				Level: {
 					'Local Protection State': 1,
 				},
@@ -83,7 +83,8 @@ class FibaroKeyfob extends ZwaveDevice {
 				},
 			});
 		}
-		return await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
+
+		await this.node.CommandClass.COMMAND_CLASS_PROTECTION.PROTECTION_SET({
 			Level: {
 				'Local Protection State': 0,
 			},
