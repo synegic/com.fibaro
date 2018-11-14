@@ -10,7 +10,12 @@ class FibaroFloodSensor extends ZwaveDevice {
 		this.registerCapability('alarm_tamper', 'SENSOR_ALARM');
 
 		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', {
-			multiChannelNodeId: 1
+			multiChannelNodeId: 1,
+			reportParser: report => {
+                if (report['Sensor Type'] !== 'Temperature (version 1)') return null;
+
+                return report['Sensor Value (Parsed)'];
+			}
 		});
 		this.registerCapability('measure_battery', 'BATTERY');
 
