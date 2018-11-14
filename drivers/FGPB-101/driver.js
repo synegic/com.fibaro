@@ -7,7 +7,7 @@ class ButtonDriver extends Homey.Driver {
         super.onInit();
 
         this.onButtonTrigger = new Homey.FlowCardTriggerDevice('FGPB-101').register().registerRunListener((args, state) => {
-            args.device.buttonRunListener(args, state);
+            return args.device.buttonRunListener(args, state);
         });
     }
 }
