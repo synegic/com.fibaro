@@ -57,31 +57,20 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
-### v 2.1.6
-Fixed a bug that wouldn't allow Flows to be triggered by multiple devices
+### v 2.1.1 - 2.1.9
+FGBS-001 now available again
 
-Further improved the color behaviour of the FGRGBWM-441
+Adds support for "Start dim level change" and "Stop dim level change" action cards for the FGD-21x devices
 
-### v 2.1.5
+Added product IDs for multiple devices to ensure they are recognised
+
 Fixed a bug where dim levels above 50% would influence the saturation values of the FGRGBWM-441
 
-### v 2.1.4
-Added product IDs to multiple device to ensure that they're recognised upon pairing.
-Changed large app store image
+Fixed colour behaviour of the FGRGBWM-441
 
-### v 2.1.3
+Fixed a bug that would cause Flows to be unavailable for some devices
 
-Add support for a "Start dim level change" and "Stop dim level change" action card for the FGD-21x devices 
-
-Multitude of fixes based on invalid default values for settings
-
-### v 2.1.2
-
-Updated this log
-
-### v 2.1.1
-
-Even more bugs fixed and re-adding of the FGBS-001
+Fixed a bug that would cause invalid default values for device settings
 
 ### v 2.1.0
 
