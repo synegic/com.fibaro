@@ -17,7 +17,17 @@
       4097
     ],
     "productId": [
-      4096
+      4096,
+      8192,
+      12288,
+      16384,
+      20480,
+      24576,
+      28672,
+      32768,
+      36864,
+      40960,
+      45056
     ],
     "zwaveAllianceProductId": 2064,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2064/FGKF-601-EN-T-v1.0_30.11.2016.pdf",
