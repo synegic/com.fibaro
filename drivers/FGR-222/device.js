@@ -5,7 +5,9 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroRollerShutter2Device extends ZwaveDevice {
 
 	onMeshInit() {
-		this.registerCapability('windowcoverings_state', 'SWITCH_BINARY');
+		this.registerCapability('windowcoverings_state', 'SWITCH_BINARY', {
+			setParser: this._windowCoveringsSetParser.bind(this)
+		});
 
 		this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
 			setParser: this._dimSetParser.bind(this),
@@ -24,6 +26,33 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 			return new Buffer([newValue ? 1 : 0]);
 		});
 	}
+
+	_windowCoveringsSetParser(value) {
+		let invert;
+        typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
+
+        let result = 'off/disable';
+        // Check correct counter value in case of idle
+        if (value === 'idle') {
+            if (this.windowCoveringsPosition === 'on/enable') result = 'off/disable';
+            else if (this.windowCoveringsPosition === 'off/disable') result = 'on/enable';
+        }
+        if (value === 'up') {
+            if (invert) result = 'off/disable';
+            else result = 'on/enable';
+        }
+        if (value === 'down') {
+            if (invert) result = 'on/enable';
+            else result = 'off/disable';
+        }
+
+        // Save latest known position state
+		this.windowCoveringsPosition = result;
+
+        return {
+            'Switch Value': result,
+        };
+    }
 
 	_dimSetParser(value) {
 		let invert;
