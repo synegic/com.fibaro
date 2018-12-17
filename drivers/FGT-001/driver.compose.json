@@ -20,7 +20,17 @@
       4865
     ],
     "productId": [
-      4096
+      4096,
+      8192,
+      12288,
+      16384,
+      20480,
+      24576,
+      28672,
+      32768,
+      36864,
+      40960,
+      45056
     ],
     "zwaveAllianceProductId": 2586,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2586/FGT-001-EN-T-v1.0.pdf",

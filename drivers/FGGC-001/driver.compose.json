@@ -20,7 +20,15 @@
     "productId": [
       4096,
       8192,
-      12288
+      12288,
+      16384,
+      20480,
+      24576,
+      28672,
+      32768,
+      36864,
+      40960,
+      45056
     ],
     "zwaveAllianceProductId": 1655,
     "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1655/FGGC-001-EN-T-v1.0.pdf",
