@@ -57,6 +57,13 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.10
+Fixes an issue with the Roller Shutter module buttons not working.
+
+Added product IDs for multiple devices
+
+MeshDriver updated
+
 ### v 2.1.1 - 2.1.9
 FGBS-001 now available again
 
