@@ -14,12 +14,14 @@
   "zwave": {
     "manufacturerId": 271,
     "productTypeId": [
-      514
+      514,
+      515
     ],
     "productId": [
       4098,
       8194,
-      12290
+      12290,
+      16384
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
