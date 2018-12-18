@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.10",
+  "version": "2.1.11",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -2669,7 +2669,27 @@
         ],
         "productId": [
           4096,
-          4097
+          4097,
+          8192,
+          8193,
+          12288,
+          12289,
+          16384,
+          16385,
+          20480,
+          20481,
+          24576,
+          24577,
+          28672,
+          28673,
+          32768,
+          32769,
+          36864,
+          36865,
+          40960,
+          40961,
+          45056,
+          45057
         ],
         "zwaveAllianceProductId": 2336,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
@@ -3371,7 +3391,14 @@
           4096,
           8192,
           12288,
-          16384
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 2836,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2836/FGD-212-EN-T-v1.3.pdf",
@@ -3938,7 +3965,14 @@
           4096,
           8192,
           12288,
-          12289
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 2181,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2181/FGDW-002-EN-T-v0.3.2.pdf",
@@ -5591,7 +5625,15 @@
         "productId": [
           4096,
           8192,
-          12288
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 1655,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1655/FGGC-001-EN-T-v1.0.pdf",
@@ -6473,7 +6515,15 @@
         "productId": [
           4097,
           8193,
-          12289
+          12289,
+          16385,
+          20481,
+          24577,
+          28673,
+          32769,
+          36865,
+          40961,
+          45057
         ],
         "zwaveAllianceProductId": 1356,
         "learnmode": {
@@ -6815,7 +6865,17 @@
           4097
         ],
         "productId": [
-          4096
+          4096,
+          8192,
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 2064,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2064/FGKF-601-EN-T-v1.0_30.11.2016.pdf",
@@ -8435,7 +8495,26 @@
         "productId": [
           4097,
           4098,
-          16385
+          8193,
+          8194,
+          12289,
+          12290,
+          16385,
+          16386,
+          20481,
+          20482,
+          24577,
+          24578,
+          28673,
+          28674,
+          32769,
+          32770,
+          36865,
+          36866,
+          40961,
+          40962,
+          45057,
+          45058
         ],
         "zwaveAllianceProductId": 2762,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2762/FGMS-001-EN-T-v2.1.pdf",
@@ -9506,7 +9585,15 @@
         "productId": [
           4096,
           8192,
-          12288
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 1944,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1944/FGPB-101-EN-T-v1.0.pdf",
@@ -11290,7 +11377,15 @@
         "productId": [
           4096,
           8192,
-          12288
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 1734,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1734/FGS-2x3-EN-T-v1.0 06.06.2016.pdf",
@@ -11907,7 +12002,15 @@
         "productId": [
           4096,
           8192,
-          12288
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 2731,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2731/FGS-2x3-EN-T-v1.2.pdf",
@@ -12871,7 +12974,17 @@
           4865
         ],
         "productId": [
-          4096
+          4096,
+          8192,
+          12288,
+          16384,
+          20480,
+          24576,
+          28672,
+          32768,
+          36864,
+          40960,
+          45056
         ],
         "zwaveAllianceProductId": 2586,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2586/FGT-001-EN-T-v1.0.pdf",
@@ -13380,7 +13493,25 @@
           4097,
           4099,
           8193,
-          12289
+          8195,
+          12289,
+          12291,
+          16385,
+          16387,
+          20481,
+          20483,
+          24577,
+          24579,
+          28673,
+          28675,
+          32769,
+          32771,
+          36865,
+          36867,
+          40961,
+          40963,
+          45057,
+          45059
         ],
         "zwaveAllianceProductId": 1653,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/1653/FGWPx-102-EN-A-v2.0 29.01.2016-3.pdf",
