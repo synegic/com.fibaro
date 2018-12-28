@@ -57,6 +57,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.12
+Possible fix for the S2 issue on FGS-223
+
 ### v 2.1.11
 Added more than a 100 product IDs across devices.
 
