@@ -14,8 +14,8 @@
         "learnmode": {
             "image": "{{driverAssetsPath}}/learnmode.svg",
             "instruction": {
-                "en": "Insert the Wall Plug in a socket or press the button on your Fibaro Wall Plug three times",
-                "nl": "Stop de Tussenstekker in het stopcontact of druk driemaal op de knop op de Tussenstekker"
+                "en": "Insert the {{driverNameEn}} in a socket or press the button on your {{driverNameEn}} three times",
+                "nl": "Stop de {{driverNameNl}} in het stopcontact of druk driemaal op de knop op de {{driverNameNl}}"
             }
         },
         "associationGroups": [
