@@ -32,6 +32,8 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
         typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
 
         let result = 'off/disable';
+        if (!this.windowCoveringsPosition) this.windowCoveringsPosition = this.getCapabilityValue('windowcoverings_state');
+
         // Check correct counter value in case of idle
         if (value === 'idle') {
             if (this.windowCoveringsPosition === 'on/enable') result = 'off/disable';
