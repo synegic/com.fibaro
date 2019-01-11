@@ -57,6 +57,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.13 - 2.1.15
+Small fixes and performance improvements
+
 ### v 2.1.12
 Possible fix for the S2 issue on FGS-223
 
