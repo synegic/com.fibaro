@@ -648,7 +648,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         return await this.node.MultiChannelNodes[multiChannel].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: value});
     }
 
-    _inputSettingParser(inputNumber, value, settings) {
+    _inputSettingParser(inputNumber, value, newSettings) {
         this.realInputConfigs[`input${inputNumber}`] = parseInt(value) || 1;
 
         if (newSettings.strip_type.indexOf('rgb') < 0 && newSettings.strip_type !== 'cct') {
