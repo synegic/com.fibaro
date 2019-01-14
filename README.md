@@ -57,6 +57,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.16
+Fixed multiple asset and language related issues
+
 ### v 2.1.13 - 2.1.15
 Small fixes and performance improvements
 
