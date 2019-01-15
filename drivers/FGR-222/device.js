@@ -60,9 +60,9 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 		let invert;
 		typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
 
-		if (value >= 1) {
+		if (value > 1) {
 			if (invert) value = 0;
-			else value = 0.99;
+			else value = 1;
 		}
 
 		if (invert) value = (1 - value.toFixed(2)) * 100;
