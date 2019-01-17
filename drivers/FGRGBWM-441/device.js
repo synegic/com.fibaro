@@ -347,39 +347,50 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     }
 
     _convertRGBtoRGBW({r, g, b}) {
-        // Normalize RGB values
+        this.log('================================================================================');
+        this.log(`Input values: r:${r}, g:${g}, b:${b}`);
+
         let normalizedR = r / 255;
         let normalizedG = g / 255;
         let normalizedB = b / 255;
 
-        // Determine the minimum and maximum value between R, G, B
-        const colorMin = Math.min(normalizedR, normalizedG, normalizedB);
-        const colorMax = Math.max(normalizedR, normalizedG, normalizedB);
+        this.log('================================================================================');
+        this.log(`Normalized input values: r:${normalizedR}, g:${normalizedG}, b:${normalizedB}`);
 
-        // Full saturation has no white, return
-        if (colorMax === this.getCapabilityValue('dim')) {
-            return {r, g, b, w: 0};
-        }
+        let colorMax = Math.max(normalizedR, normalizedG, normalizedB);
+        if (colorMax === 0) return {r, g, b, w: 0};
 
-        // Calculate the white intensity
-        let whiteIntensity;
-        if (colorMin / colorMax < 0.5) {
-            whiteIntensity = (colorMin * colorMax) / (colorMax - colorMin);
-        } else {
-            whiteIntensity = colorMax;
-        }
+        let multiplier = 1 / colorMax;
 
-        // Calculate pixel offset to remain colour hue and saturation
-        let pixelGain = (whiteIntensity + colorMax) / colorMin;
+        let hueRed = normalizedR * multiplier;
+        let hueGreen = normalizedG * multiplier;
+        let hueBlue = normalizedB * multiplier;
 
-        let RGBW = {};
+        let maxHue = Math.max(hueRed, hueGreen, hueBlue);
+        let minHue = Math.min(hueRed, hueGreen, hueBlue);
 
-        RGBW.r = pixelGain * (r - whiteIntensity);
-        RGBW.g = pixelGain * (g - whiteIntensity);
-        RGBW.b = pixelGain * (b - whiteIntensity);
-        RGBW.w = whiteIntensity * 255;
+        let normalizedW = ((maxHue + minHue) / 2 - .5) * 2 / multiplier;
 
-        return RGBW;
+        this.log('================================================================================');
+        this.log(`Normalized output values: r:${normalizedR}, g:${normalizedG}, b:${normalizedB}, w:${normalizedW}`);
+        let white = normalizedW * 255;
+        let red = (normalizedR - normalizedW) * 255;
+        let green = (normalizedG - normalizedW) * 255;
+        let blue = (normalizedB - normalizedW) * 255;
+
+        red = this._toRGBSpace(red);
+        green = this._toRGBSpace(green);
+        blue = this._toRGBSpace(blue);
+        white = this._toRGBSpace(white);
+
+        this.log('================================================================================');
+        this.log(`Output values: r:${red}, g:${green}, b:${blue}, w:${white}`);
+        this.log('================================================================================\n\n');
+        return {r: red, g: green, b: blue, w: white};
+    }
+
+    _toRGBSpace(number) {
+        return number > 255 ? 255 : number < 0 ? 0 : number;
     }
 
     /*
