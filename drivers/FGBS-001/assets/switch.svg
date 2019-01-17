@@ -1,11 +1,11 @@
-<svg 
-     version="1.1" 
-     xmlns="http://www.w3.org/2000/svg" 
-     xmlns:xlink="http://www.w3.org/1999/xlink" 
-     width="59px" height="26px" 
-     viewBox="0 0 59 26" preserveAspectRatio="none"> 
-   <g> 
-<image width="59" height="26" xlink:href="data:image/png;base64, 
+<svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="59px" height="26px"
+        viewBox="0 0 59 26" preserveAspectRatio="none">
+    <g>
+        <image width="59" height="26" xlink:href="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAADsAAAAaCAYAAAAJ1SQgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAK
 T2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AU
 kSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXX
@@ -325,7 +325,6 @@ Rfk3orPoJ9g72N7gxSTXjokqS5EbwaIoZnANuzON6GMXTiW/P4tn7FID0Fs4GTtwUJTxFTUXQujV
 feK9i1MxbLC8wf4GZ+erddS5jIc5T9Xj/UDMJGwk5nERXxrEfltnimmxdloG93Ee2yr+V8bKFnAd
 Hxved77G5VDGmTYoeriXTTNVrNkCe7Ev0zErsef7+IEyhBAazl8dwp4MtMRCCOFXbez/VOoIx98B
 AHpKUd5iyNZBAAAAAElFTkSuQmCC
-"/> 
-   </g> 
-</svg>	
-
+"/>
+    </g>
+</svg>
