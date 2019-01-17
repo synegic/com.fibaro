@@ -1,8 +1,9 @@
 # Fibaro
 This app adds support for Fibaro devices in Homey.
 
-## The Fibaro Universal Binary Sensor is available once again from the 2.1.1 release onwards!
-The FGBS-001 device has been re-included in 2.1.1.
+## Known issues
+The FGRGBWM-441 - RGBW controller has issues regarding the white channel
+Some Dual Switches are experiencing issues with their S2 inputs
 
 ## Supported devices with most common parameters:
 * FGD-211, Dimmer
