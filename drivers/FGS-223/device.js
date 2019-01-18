@@ -6,36 +6,50 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 
 	onMeshInit() {
+  	this.enableDebug();
+  	/*
 		this.log('================================================================================');
 		this.log(this.node);
         this.log('================================================================================');
+      */
+      
+    // S1 - on root
+    if( !this.node.isMultiChannelNode ) {
+      this.registerCapability('onoff', 'SWITCH_BINARY');
+  		this._input1FlowTrigger = this.getDriver().input1FlowTrigger;
+  		this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
 
-        this.registerCapability('onoff', 'SWITCH_BINARY');
+  		if (this.hasCommandClass('CENTRAL_SCENE')) {
+  			this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
+  				if (report.hasOwnProperty('Properties1') &&
+                      report.Properties1.hasOwnProperty('Key Attributes') &&
+                      report.hasOwnProperty('Scene Number')) {
+  
+  					const state = {
+  						scene: report.Properties1['Key Attributes'],
+  					};
+  
+  					if (report['Scene Number'] === 1) {
+                          this._input1FlowTrigger.trigger(this, null, state);
+  					} else if (report['Scene Number'] === 2) {
+  						this._input2FlowTrigger.trigger(this, null, state);
+  					}
+  				}
+  			});
+  		}
+    }
+    
+    // S2
+    else {
+      this.registerCapability('onoff', 'BASIC', {
+        report: 'BASIC_SET',
+      });
+    }
+    
 		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('meter_power', 'METER');
 
-		this._input1FlowTrigger = this.getDriver().input1FlowTrigger;
-		this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
 		this._resetMeterFlowAction = this.getDriver().resetMeterFlowAction;
-
-		if (this.hasCommandClass('CENTRAL_SCENE')) {
-			this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
-				if (report.hasOwnProperty('Properties1') &&
-                    report.Properties1.hasOwnProperty('Key Attributes') &&
-                    report.hasOwnProperty('Scene Number')) {
-
-					const state = {
-						scene: report.Properties1['Key Attributes'],
-					};
-
-					if (report['Scene Number'] === 1) {
-                        this._input1FlowTrigger.trigger(this, null, state);
-					} else if (report['Scene Number'] === 2) {
-						this._input2FlowTrigger.trigger(this, null, state);
-					}
-				}
-			});
-		}
 
 		this.registerSetting('s1_kwh_report', this._kwhReportParser);
 		this.registerSetting('s2_kwh_report', this._kwhReportParser);
