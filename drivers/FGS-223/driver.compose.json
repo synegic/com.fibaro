@@ -6,9 +6,9 @@
   },
   "class": "socket",
   "capabilities": [
+    "onoff",
     "measure_power",
-    "meter_power",
-    "onoff"
+    "meter_power"
   ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

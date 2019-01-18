@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.17",
+  "version": "2.1.18",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -11986,9 +11986,9 @@
       },
       "class": "socket",
       "capabilities": [
+        "onoff",
         "measure_power",
-        "meter_power",
-        "onoff"
+        "meter_power"
       ],
       "images": {
         "large": "/drivers/FGS-223/assets/images/large.png",
@@ -12085,15 +12085,15 @@
             {
               "id": "1",
               "label": {
-                "en": "Toggle switch",
-                "nl": "Tuimel schakelaar"
+                "en": "Toggle switch (Closed = on, Open = off)",
+                "nl": "Tuimel schakelaar (Dicht = aan, Open = uit)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "Toggle switch",
-                "nl": "Tuimel schakelaar"
+                "en": "Toggle switch (Changes state)",
+                "nl": "Tuimel schakelaar (Veranderd status)"
               }
             }
           ]

@@ -26,15 +26,15 @@
       {
         "id": "1",
         "label": {
-          "en": "Toggle switch",
-          "nl": "Tuimel schakelaar"
+          "en": "Toggle switch (Closed = on, Open = off)",
+          "nl": "Tuimel schakelaar (Dicht = aan, Open = uit)"
         }
       },
       {
         "id": "2",
         "label": {
-          "en": "Toggle switch",
-          "nl": "Tuimel schakelaar"
+          "en": "Toggle switch (Changes state)",
+          "nl": "Tuimel schakelaar (Veranderd status)"
         }
       }
     ]

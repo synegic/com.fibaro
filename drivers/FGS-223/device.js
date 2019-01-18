@@ -6,7 +6,11 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 
 	onMeshInit() {
-		this.registerCapability('onoff', 'SWITCH_BINARY');
+		this.log('================================================================================');
+		this.log(this.node);
+        this.log('================================================================================');
+
+        this.registerCapability('onoff', 'SWITCH_BINARY');
 		this.registerCapability('measure_power', 'METER');
 		this.registerCapability('meter_power', 'METER');
 
@@ -14,7 +18,7 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 		this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
 		this._resetMeterFlowAction = this.getDriver().resetMeterFlowAction;
 
-		if (!this.node.isMultiChannelNode) {
+		if (this.hasCommandClass('CENTRAL_SCENE')) {
 			this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
 				if (report.hasOwnProperty('Properties1') &&
                     report.Properties1.hasOwnProperty('Key Attributes') &&
@@ -25,13 +29,11 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 					};
 
 					if (report['Scene Number'] === 1) {
-						this._input1FlowTrigger.trigger(this, null, state);
+                        this._input1FlowTrigger.trigger(this, null, state);
 					} else if (report['Scene Number'] === 2) {
 						this._input2FlowTrigger.trigger(this, null, state);
 					}
 				}
-
-				this.refreshCapabilityValue('onoff', 'SWITCH_BINARY');
 			});
 		}
 
@@ -40,7 +42,9 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 	}
 
 	inputFlowListener(args, state) {
-		return (state.scene === args.scene);
+		return (state && args &&
+			state.hasOwnProperty('scene') && args.hasOwnProperty('scene') &&
+			state.scene === args.scene);
 	}
 
 	async resetMeterFlowListener(args) {
