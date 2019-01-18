@@ -3,7 +3,6 @@ This app adds support for Fibaro devices in Homey.
 
 ## Known issues
 The FGRGBWM-441 - RGBW controller has issues regarding the white channel
-Some Dual Switches are experiencing issues with their S2 inputs
 
 ## Supported devices with most common parameters:
 * FGD-211, Dimmer
@@ -57,6 +56,11 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.1.17 - 2.1.18
+Fixed the Fibaro Button Flows
+
+Fixed the Fibaro Double Switch S2 Switch
 
 ### v 2.1.16
 Fixed multiple asset and language related issues

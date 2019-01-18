@@ -29,9 +29,13 @@ class Button extends ZwaveDevice {
 	}
 
 	buttonRunListener(args, state) {
+		this.log(state.scene);
+        this.log(args.scene);
+
         return (state && args &&
             state.hasOwnProperty('scene') &&
-            args.hasOwnProperty('scene'))
+            args.hasOwnProperty('scene') &&
+			state.scene === args.scene)
 	}
 
 }
