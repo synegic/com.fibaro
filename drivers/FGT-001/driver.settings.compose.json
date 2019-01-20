@@ -49,5 +49,22 @@
       "en": "The amount of seconds between asking the device for its target temperature.",
       "nl": "Aantal seconden tussen het opvragen van de doel temperatuur aan het apparaat."
     }
+  },
+  {
+    "id": "poll_interval_thermostat_mode",
+    "type": "number",
+    "attr": {
+      "min": 60,
+      "max": 86400
+    },
+    "value": 600,
+    "label": {
+      "en": "Thermostat mode poll interval",
+      "nl": "Thermostaat mode poll interval"
+    },
+    "hint": {
+      "en": "The amount of seconds between asking the device for its current thermostat mode.",
+      "nl": "Aantal seconden tussen het opvragen van huidige thermostaat mode aan het apparaat."
+    }
   }
 ]

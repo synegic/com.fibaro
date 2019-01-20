@@ -1,14 +1,15 @@
 {
   "id": "FGT-001",
   "name": {
-    "en": "Radiator Thermostat",
-    "nl": "Radiator Thermostaat"
+    "en": "Thermostatic Radiator Head",
+    "nl": "Thermostaatkop"
   },
   "class": "thermostat",
   "capabilities": [
     "measure_battery",
     "target_temperature",
-    "measure_temperature"
+    "measure_temperature",
+    "thermostat_mode"
   ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.jpg",
