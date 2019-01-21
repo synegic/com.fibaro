@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.18",
+  "version": "2.1.19",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -9921,15 +9921,15 @@
           "value": false
         },
         {
-          "id": "invert_direction",
+          "id": "invertWindowCoveringsDirection",
           "type": "checkbox",
           "label": {
             "en": "Invert movement",
             "nl": "Keer de beweging om"
           },
           "hint": {
-            "en": "This parameter (29) inverts the shutter movement direction.",
-            "nl": "Deze parameter (29) keert de rolluik bewegingsdirectie om."
+            "en": "This parameter inverts the shutter movement direction.",
+            "nl": "Deze parameter keert de rolluik bewegingsdirectie om."
           },
           "value": false
         }

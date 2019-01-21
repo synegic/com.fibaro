@@ -57,6 +57,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.19
+Fixed FGR-222 (Fibaro Shutter 2) inversion
+
 ### v 2.1.17 - 2.1.18
 Fixed the Fibaro Button Flows
 
