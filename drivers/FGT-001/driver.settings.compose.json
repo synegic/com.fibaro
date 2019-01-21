@@ -60,11 +60,11 @@
     "value": 600,
     "label": {
       "en": "Thermostat mode poll interval",
-      "nl": "Thermostaat mode poll interval"
+      "nl": "Thermostaat modus poll interval"
     },
     "hint": {
-      "en": "The amount of seconds between asking the device for its current thermostat mode.",
-      "nl": "Aantal seconden tussen het opvragen van huidige thermostaat mode aan het apparaat."
+      "en": "The amount of seconds between asking the device for its current mode.",
+      "nl": "Aantal seconden tussen het opvragen van huidige modus aan het apparaat."
     }
   }
 ]
