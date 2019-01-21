@@ -1,8 +1,8 @@
 {
   "id": "FGT-001",
   "name": {
-    "en": "Thermostatic Radiator Head",
-    "nl": "Thermostaatkop"
+    "en": "Radiator Thermostat",
+    "nl": "Radiator Thermostaat"
   },
   "class": "thermostat",
   "capabilities": [
