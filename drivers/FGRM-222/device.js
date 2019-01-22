@@ -1,23 +1,36 @@
 'use strict';
 
-const Homey = require('homey');
 const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 class FibaroRollerShutter24Device extends ZwaveDevice {
 
 	onMeshInit() {
+        if (!this.getStoreValue('invertMigrated')) {
+            this.setUnavailable('Migrating inversion setting');
+
+            let invert = this.getSetting('invert_direction');
+            this.setSettings({invertWindowCoveringsDirection: invert});
+
+            this.setStoreValue('invertMigrated', true, () => {
+                this.setAvailable();
+            });
+        }
+
+        this.registerCapability('windowcoverings_state', 'SWITCH_BINARY');
+
+        this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
+            setParserV3: this._dimSetParser.bind(this),
+            reportParser: this._dimReportParser.bind(this),
+            reportParserOverride: true,
+        });
+
+        this.registerCapability('measure_power', 'SENSOR_MULTILEVEL');
+        this.registerCapability('meter_power', 'METER');
+
 		this._momentaryTrigger = this.getDriver().momentaryTrigger;
 		this._toggleTrigger = this.getDriver().toggleTrigger;
 		this._singleGateTrigger = this.getDriver().singleGateTrigger;
-
 		this._resetMeterAction = this.getDriver().resetMeterAction;
-
-		this.registerCapability('windowcoverings_state', 'SWITCH_BINARY');
-		this.registerCapability('dim', 'SWITCH_MULTILEVEL', {
-			setParser: this._dimSetParser.bind(this),
-		});
-		this.registerCapability('measure_power', 'SENSOR_MULTILEVEL');
-		this.registerCapability('meter_power', 'METER');
 
 		this.registerReportListener('SCENE_ACTIVATION', 'SCENE_ACTIVATION_SET', (report) => {
 			const data = {
@@ -56,22 +69,32 @@ class FibaroRollerShutter24Device extends ZwaveDevice {
 		} return Promise.reject('unknown_error');
 	}
 
-	_dimSetParser(value) {
-		let invert;
-		typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
+    _dimSetParser(value) {
+        let invert;
+        typeof this.getSetting('invertWindowCoveringsDirection') === 'boolean' ? invert = this.getSetting('invertWindowCoveringsDirection') : false;
 
-		if (value >= 1) {
-			if (invert) value = 0;
-			else value = 0.99;
-		}
+        if (value > 1) {
+            if (invert) value = 0;
+            else value = 1;
+        }
 
-		if (invert) value = (1 - value.toFixed(2)) * 100;
+        if (invert) value = (1 - value.toFixed(2)) * 100;
+        else value *= 100;
 
-		return {
-			Value: value * 100,
-			'Dimming Duration': 'Factory default',
-		};
-	}
+        return {
+            Value: value,
+            'Dimming Duration': 'Factory default',
+        };
+    }
+
+    _dimReportParser(report) {
+        let invert;
+        typeof this.getSetting('invertWindowCoveringsDirection') === 'boolean' ? invert = this.getSetting('invertWindowCoveringsDirection') : false;
+
+        if (typeof report['Value (Raw)'] === 'undefined') return null;
+        if (invert) return (100 - report['Value (Raw)'][0]) / 100;
+        return report['Value (Raw)'][0] / 100;
+    }
 }
 
 module.exports = FibaroRollerShutter24Device;

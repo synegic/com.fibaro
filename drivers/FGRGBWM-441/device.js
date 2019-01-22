@@ -293,6 +293,15 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     /*
     Conversion methods
      */
+
+    /**
+     * Converts HSV values to RGB
+     * @param h the hue between 0 - 360
+     * @param s the saturation between 0 - 100
+     * @param v the value between 0 - 100
+     * @returns RGB Red, Green and Blue values between 0 - 255
+     * @private
+     */
     _convertHSVToRGB({h, s, v}) {
         // Normalise hue, saturation and value
         let workingHue = h / 60;
@@ -323,48 +332,74 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         return rgb;
     }
 
+    /**
+     * Converts RGB values to HSV values
+     * @param r the value for the red channel between 0 - 255
+     * @param g the value for the green channel between 0 - 255
+     * @param b the value for the blue channel between 0 - 255
+     * @returns {Object} Hue between 0 - 360, saturation between 0 - 100, value between 0 - 100
+     * @private
+     */
     _convertRGBToHSV({r, g, b}) {
-        let tempRGB = {r: r/255, g: g/255, b: b/255};
+        this.log('================================================================================');
+        this.log(`Input values: r:${r}, g:${g}, b:${b}`);
+
+        let normalized = this.normalizeRGBValues({r, g, b});
+
+        this.log('================================================================================');
+        this.log(`Normalized input values: r:${normalized.r}, g:${normalized.g}, b:${normalized.b}`);
 
         // Determine the minimum and maximum value between R, G, B
-        let colorMin = Math.min(tempRGB.r, tempRGB.g, tempRGB.b);
-        let colorMax = Math.max(tempRGB.r, tempRGB.g, tempRGB.b);
-
+        let colorMin = Math.min(normalized.r, normalized.g, normalized.b);
+        let colorMax = Math.max(normalized.r, normalized.g, normalized.b);
         let colorDelta = colorMax - colorMin;
+
         let HSV = {};
 
         // Calculate the hue based on which colour has the highest intensity
         if (colorDelta === 0) HSV.h = 0;
-        else if (colorMax === tempRGB.r) HSV.h = 60 * (tempRGB.g - tempRGB.b / colorDelta) % 6;
-        else if (colorMax === tempRGB.g) HSV.h = 60 * (tempRGB.b - tempRGB.r / colorDelta) + 2;
-        else if (colorMax === tempRGB.b) HSV.h = 60 * (tempRGB.r - tempRGB.g / colorDelta) + 4;
+        else if (colorMax === normalized.r) {
+            HSV.h = this.calculateHue(normalized.g, normalized.b, colorDelta, 0);
+        } else if (colorMax === normalized.g) {
+            HSV.h = this.calculateHue(normalized.b, normalized.r, colorDelta, 120);
+        } else if (colorMax === normalized.b) {
+            HSV.h = this.calculateHue(normalized.r, normalized.g, colorDelta, 240);
+        }
 
-        colorMax === 0 ? HSV.s = 0 : HSV.s = (colorDelta / colorMax);
+        colorMax === 0 ? HSV.s = 0 : HSV.s = (colorDelta/colorMax) * 100;
+        HSV.v = colorMax * 100;
 
-        HSV.v = colorMax;
-
+        this.log('================================================================================');
+        this.log(`Output values: H:${HSV.h}, S:${HSV.s}, V:${HSV.v}`);
+        this.log('================================================================================\n\n');
         return HSV;
     }
 
+    /**
+     * Converts RGB colors to RGBW colors
+     * @param r the value for the red channel between 0 - 255
+     * @param g the value for the green channel between 0 - 255
+     * @param b the value for the blue channel between 0 - 255
+     * @returns {Object} Red, Green, Blue and White values between 0 - 255
+     * @private
+     */
     _convertRGBtoRGBW({r, g, b}) {
         this.log('================================================================================');
         this.log(`Input values: r:${r}, g:${g}, b:${b}`);
 
-        let normalizedR = r / 255;
-        let normalizedG = g / 255;
-        let normalizedB = b / 255;
+        let normalized = this.normalizeRGBValues({r, g, b});
 
         this.log('================================================================================');
-        this.log(`Normalized input values: r:${normalizedR}, g:${normalizedG}, b:${normalizedB}`);
+        this.log(`Normalized input values: r:${normalized.r}, g:${normalized.g}, b:${normalized.b}`);
 
-        let colorMax = Math.max(normalizedR, normalizedG, normalizedB);
+        let colorMax = Math.max(normalized.r, normalized.g, normalized.b);
         if (colorMax === 0) return {r, g, b, w: 0};
 
         let multiplier = 1 / colorMax;
 
-        let hueRed = normalizedR * multiplier;
-        let hueGreen = normalizedG * multiplier;
-        let hueBlue = normalizedB * multiplier;
+        let hueRed = normalized.r * multiplier;
+        let hueGreen = normalized.g * multiplier;
+        let hueBlue = normalized.b * multiplier;
 
         let maxHue = Math.max(hueRed, hueGreen, hueBlue);
         let minHue = Math.min(hueRed, hueGreen, hueBlue);
@@ -372,11 +407,11 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         let normalizedW = ((maxHue + minHue) / 2 - .5) * 2 / multiplier;
 
         this.log('================================================================================');
-        this.log(`Normalized output values: r:${normalizedR}, g:${normalizedG}, b:${normalizedB}, w:${normalizedW}`);
+        this.log(`Normalized output values: r:${normalized.r}, g:${normalized.g}, b:${normalized.b}, w:${normalizedW}`);
         let white = normalizedW * 255;
-        let red = (normalizedR - normalizedW) * 255;
-        let green = (normalizedG - normalizedW) * 255;
-        let blue = (normalizedB - normalizedW) * 255;
+        let red = (normalized.r - normalizedW) * 255;
+        let green = (normalized.g - normalizedW) * 255;
+        let blue = (normalized.b - normalizedW) * 255;
 
         red = this._toRGBSpace(red);
         green = this._toRGBSpace(green);
@@ -389,6 +424,39 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         return {r: red, g: green, b: blue, w: white};
     }
 
+    /**
+     * Normalizes RGB values from 0 - 255 to 0 - 1
+     * @param r the value for the red channel between 0 - 255
+     * @param g the value for the green channel between 0 - 255
+     * @param b the value for the blue channel between 0 - 255
+     * @returns {Object} Red, green and blue values between 0 - 1
+     */
+    normalizeRGBValues({r, g, b}) {
+        return {r: r/255, g: g/255, b: b/255}
+    }
+
+    /**
+     * Calculates the hue value given the products to do so
+     * @param segment1 Base for the segment calculation
+     * @param segment2 Number to be substracted from the segment base
+     * @param colorDelta The delta between brightest and lowest colour
+     * @param baseDegrees The base segment degrees
+     * @returns {Number} The hue calculated with the input
+     */
+    calculateHue(segment1, segment2, colorDelta, baseDegrees) {
+        let segment = (segment1 - segment2) / colorDelta;
+        // 0 degrees for red hue, divided by 360 / 6
+        let shift = baseDegrees / 60;
+        if (segment < 0) shift = 360/60;
+        return (segment + shift) * 60;
+    }
+
+    /**
+     * Limits a value between 0 - 255
+     * @param number The number to limit
+     * @returns {Number} A number within range 0 - 255
+     * @private
+     */
     _toRGBSpace(number) {
         return number > 255 ? 255 : number < 0 ? 0 : number;
     }
@@ -662,7 +730,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     _inputSettingParser(inputNumber, value, newSettings) {
         this.realInputConfigs[`input${inputNumber}`] = parseInt(value) || 1;
 
-        if (newSettings.strip_type.indexOf('rgb') < 0 && newSettings.strip_type !== 'cct') {
+        if (newSettings && newSettings.strip_type.indexOf('rgb') < 0 && newSettings.strip_type !== 'cct') {
             this.realInputConfigs[`input${inputNumber}`] += 8;
         }
 

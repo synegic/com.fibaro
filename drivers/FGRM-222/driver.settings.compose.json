@@ -114,15 +114,15 @@
     "value": false
   },
   {
-    "id": "invert_direction",
+    "id": "invertWindowCoveringsDirection",
     "type": "checkbox",
     "label": {
       "en": "Invert movement",
       "nl": "Keer de beweging om"
     },
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) inverts the shutter movement direction.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) keert de rolluik bewegingsdirectie om."
+      "en": "This parameter inverts the shutter movement direction.",
+      "nl": "Deze parameter keert de rolluik bewegingsdirectie om."
     },
     "value": false
   },

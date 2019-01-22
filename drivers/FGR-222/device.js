@@ -5,8 +5,6 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroRollerShutter2Device extends ZwaveDevice {
 
 	onMeshInit() {
-		this.printNode();
-
 		if (!this.getStoreValue('invertMigrated')) {
 			this.setUnavailable('Migrating inversion setting');
 
@@ -41,7 +39,7 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 
 	_dimSetParser(value) {
 		let invert;
-		typeof this.getSetting('invert_direction') === 'boolean' ? invert = this.getSetting('invert_direction') : false;
+		typeof this.getSetting('invertWindowCoveringsDirection') === 'boolean' ? invert = this.getSetting('invertWindowCoveringsDirection') : false;
 
 		if (value > 1) {
 			if (invert) value = 0;

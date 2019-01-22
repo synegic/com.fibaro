@@ -57,6 +57,10 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.20
+Improvements to color parsing for the FGRGBWM-441
+Inversion setting added to the FGRM-222
+
 ### v 2.1.19
 Fixed FGR-222 (Fibaro Shutter 2) inversion
 
