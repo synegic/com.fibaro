@@ -46,8 +46,8 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 			else value = 1;
 		}
 
-		if (invert) value = (1 - value.toFixed(2)) * 100;
-		else value *= 100;
+		if (invert) value = (1 - value.toFixed(2)) * 99;
+		else value *= 99;
 
 		return {
 			Value: value,
@@ -60,8 +60,8 @@ class FibaroRollerShutter2Device extends ZwaveDevice {
 		typeof this.getSetting('invertWindowCoveringsDirection') === 'boolean' ? invert = this.getSetting('invertWindowCoveringsDirection') : false;
 
 		if (typeof report['Value (Raw)'] === 'undefined') return null;
-		if (invert) return (100 - report['Value (Raw)'][0]) / 100;
-		return report['Value (Raw)'][0] / 100;
+		if (invert) return (100 - report['Value (Raw)'][0]) / 99;
+		return report['Value (Raw)'][0] / 99;
 	}
 }
 

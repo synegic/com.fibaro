@@ -75,7 +75,7 @@ class FibaroRollerShutter24Device extends ZwaveDevice {
 
         if (value > 1) {
             if (invert) value = 0;
-            else value = 1;
+            else value = .99;
         }
 
         if (invert) value = (1 - value.toFixed(2)) * 100;

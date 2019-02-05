@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.21",
+  "version": "2.1.22",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -9936,6 +9936,100 @@
       ]
     },
     {
+      "id": "FGR-223",
+      "name": {
+        "en": "Roller Shutter 3",
+        "nl": "Rolluik schakelaar 3"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "dim",
+        "windowcoverings_state",
+        "measure_power",
+        "meter_power"
+      ],
+      "images": {
+        "large": "/drivers/FGR-223/assets/images/large.png",
+        "small": "/drivers/FGR-223/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          771
+        ],
+        "productId": [
+          4096,
+          8192,
+          12288
+        ],
+        "learnmode": {
+          "image": "{{driverassetsPath}}/learnmode.svg",
+          "instruction": {
+            "en": "Press the B-button on your Roller Shutter 3 three times.",
+            "nl": "Druk driemaal op de B-knop van uw Rolluik schakelaar 3."
+          }
+        },
+        "associationGroups": [
+          1,
+          2,
+          3
+        ]
+      },
+      "settings": [
+        {
+          "id": "start_calibration",
+          "type": "checkbox",
+          "label": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "hint": {
+            "en": "This parameter (150) starts the calibration procedure on save.",
+            "nl": "Deze parameter (150) start de kalibratieprocedure na het opslaan."
+          },
+          "zwave": {
+            "index": 150,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "invertInputDirection",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert input",
+            "nl": "Keer de ingangen om"
+          },
+          "hint": {
+            "en": "This parameter (24) inverts the input direction.",
+            "nl": "Deze parameter (24) keert de ingangsdirectie om."
+          },
+          "zwave": {
+            "index": 24,
+            "size": 1
+          },
+          "value": false
+        },
+        {
+          "id": "invertOutputDirection",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert output",
+            "nl": "Keer de uitgangen om"
+          },
+          "hint": {
+            "en": "This parameter (25) inverts the output direction.",
+            "nl": "Deze parameter (25) keert de uitgangsdirectie om."
+          },
+          "zwave": {
+            "index": 25,
+            "size": 1
+          },
+          "value": false
+        }
+      ]
+    },
+    {
       "id": "FGRGBWM-441",
       "name": {
         "en": "RGBW Controller"
@@ -12044,9 +12138,7 @@
           "2": {
             "class": "socket",
             "capabilities": [
-              "onoff",
-              "measure_power",
-              "meter_power"
+              "onoff"
             ],
             "icon": "/drivers/FGS-223/assets/icon.svg",
             "name": {
@@ -12214,27 +12306,6 @@
               "value": 20
             },
             {
-              "id": "s1_power_report_interval",
-              "type": "number",
-              "label": {
-                "en": "First node, wattage report, minimum time",
-                "nl": "Eerste node, wattage verzending, minimale tijd"
-              },
-              "hint": {
-                "en": "This parameter (51) determines the minimum amount of time before a new value is being send.",
-                "nl": "Deze parameter (51) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
-              },
-              "zwave": {
-                "index": 51,
-                "size": 1
-              },
-              "attr": {
-                "min": 0,
-                "max": 120
-              },
-              "value": 10
-            },
-            {
               "id": "s1_kwh_report",
               "type": "number",
               "label": {
@@ -12247,80 +12318,6 @@
               },
               "zwave": {
                 "index": 53,
-                "size": 2
-              },
-              "attr": {
-                "min": 0,
-                "max": 320,
-                "step": 0.01
-              },
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Switch 2 (S2)",
-            "nl": "Schakelaar 2 (S2)"
-          },
-          "collapsed": true,
-          "children": [
-            {
-              "id": "s2_power_report",
-              "type": "number",
-              "label": {
-                "en": "Second node, wattage report threshold",
-                "nl": "Tweede node, wattage verzending drempel"
-              },
-              "hint": {
-                "en": "This parameter (54) determines the minimum wattage change before the value is being send.",
-                "nl": "Deze parameter (54) bepaalt de minimum verandering in wattage voor het verzenden van de waarde."
-              },
-              "zwave": {
-                "index": 54,
-                "size": 1
-              },
-              "attr": {
-                "min": 0,
-                "max": 100
-              },
-              "value": 20
-            },
-            {
-              "id": "s2_power_report_interval",
-              "type": "number",
-              "label": {
-                "en": "Second node, wattage report, minimum time",
-                "nl": "Tweede node, wattage verzending, minimale tijd"
-              },
-              "hint": {
-                "en": "This parameter (55) determines the minimum amount of time before a new value is being send.",
-                "nl": "Deze parameter (55) bepaalt de minimum tijd voordat er een nieuwe waarde wordt verzonden."
-              },
-              "zwave": {
-                "index": 55,
-                "size": 1
-              },
-              "attr": {
-                "min": 0,
-                "max": 120
-              },
-              "value": 10
-            },
-            {
-              "id": "s2_kwh_report",
-              "type": "number",
-              "label": {
-                "en": "Second node, kWh report threshold",
-                "nl": "Tweede node, kWh verzending drempel"
-              },
-              "hint": {
-                "en": "This parameter (57) determines the minimum kWh change before the value is being send.",
-                "nl": "Deze parameter (57) bepaalt de minimum verandering in kWh voor het verzenden van de waarde."
-              },
-              "zwave": {
-                "index": 57,
                 "size": 2
               },
               "attr": {

@@ -8,6 +8,9 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
     onMeshInit() {
         if( !this.node.isMultiChannelNode ) {
             this.registerCapability('onoff', 'SWITCH_BINARY');
+            this.registerCapability('measure_power', 'METER');
+            this.registerCapability('meter_power', 'METER');
+
             this._input1FlowTrigger = this.getDriver().input1FlowTrigger;
             this._input2FlowTrigger = this.getDriver().input2FlowTrigger;
 
@@ -36,13 +39,9 @@ class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
             });
         }
 
-        this.registerCapability('measure_power', 'METER');
-        this.registerCapability('meter_power', 'METER');
-
         this._resetMeterFlowAction = this.getDriver().resetMeterFlowAction;
 
         this.registerSetting('s1_kwh_report', this._kwhReportParser);
-        this.registerSetting('s2_kwh_report', this._kwhReportParser);
     }
 
     inputFlowListener(args, state) {
