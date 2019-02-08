@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.22",
+  "version": "2.1.23",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -9944,7 +9944,6 @@
       "class": "windowcoverings",
       "capabilities": [
         "dim",
-        "windowcoverings_state",
         "measure_power",
         "meter_power"
       ],
@@ -10026,6 +10025,46 @@
             "size": 1
           },
           "value": false
+        },
+        {
+          "hint": {
+            "en": "This parameter (20) determines what switch is connected to this device.",
+            "nl": "Deze parameter (20) bepaalt wat voor een schakelaar het apparaat activeert."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Double, Momentary switch",
+                "nl": "Dubbele pulsdrukschakelaar "
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switches",
+                "nl": "Tuimelschakelaars"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Single, momentary switch",
+                "nl": "Enkele pulsdrukschakelaar"
+              }
+            }
+          ],
+          "id": "switch_type",
+          "type": "radio",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          }
         }
       ]
     },
