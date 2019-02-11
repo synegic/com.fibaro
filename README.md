@@ -34,6 +34,7 @@ The FGRGBWM-441 - RGBW controller has issues regarding the white channel
 * FGR-221, Roller Shutter
 * FGRM-222, Roller Shutter 2
 * FGR-222, Roller Shutter 2 (v2.5)
+* FGR-223, Roller Shutter 3
 
 ## Supported Languages:
 * English
@@ -56,6 +57,15 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.1.24
+Re-added colour flows for the Fibaro Wall Plugs
+
+### v 2.1.23
+Added the FGR-223 Roller Shutter 3
+
+### v 2.1.21 - 2.1.22
+Small bug fixes
 
 ### v 2.1.20
 Improvements to color parsing for the FGRGBWM-441
