@@ -58,6 +58,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.25
+Updated MeshDriver
+
 ### v 2.1.24
 Re-added colour flows for the Fibaro Wall Plugs
 
