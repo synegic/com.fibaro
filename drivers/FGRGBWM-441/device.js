@@ -881,7 +881,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         }
 
         if (this.realInputConfigs[`input${inputNumber}`] === 8) {
-            this[`input${inputNumber}FlowTrigger`].trigger(this, {volt: this._valueToVolt(report['Value (Raw)'][0])}, null);
+            this[`_input${inputNumber}FlowTrigger`].trigger(this, {volt: this._valueToVolt(report['Value (Raw)'][0])}, null);
         }
 
         return this._valueToVolt(report['Value (Raw)'][0]);
