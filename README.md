@@ -58,6 +58,10 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.26 - 2.1.28
+Important MeshDriver updates
+Fixes to the FGRGBWM-441
+
 ### v 2.1.25
 Updated MeshDriver
 
