@@ -12,8 +12,8 @@
     "alarm_water"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zwave": {
     "manufacturerId": 271,
@@ -27,7 +27,7 @@
     ],
     "zwaveAllianceProductId": 994,
     "learnmode": {
-      "image": "/{{driverAssetsPath}}/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/assets/learnmode.svg",
       "instruction": {
         "en": "Press the button on your Fibaro flood sensor three times.",
         "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor."

@@ -64,9 +64,7 @@
       "2": {
         "class": "socket",
         "capabilities": [
-          "onoff",
-          "measure_power",
-          "meter_power"
+          "onoff"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {
