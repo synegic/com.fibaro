@@ -41,8 +41,10 @@
         "nl": "Druk driemaal op de knop van uw {{driverNameNl}}, dit kan ook door middel van de S1 input."
       }
     },
+    "associationGroupsMultiChannel": [
+      1
+    ],
     "associationGroups": [
-      1,
       2,
       3,
       4,
@@ -64,6 +66,8 @@
       "2": {
         "class": "socket",
         "capabilities": [
+          "measure_power",
+          "meter_power",
           "onoff"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
