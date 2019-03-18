@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.28",
+  "version": "2.1.29",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -4866,8 +4866,8 @@
         "alarm_water"
       ],
       "images": {
-        "large": "//drivers/FGFS-101/assets/images/large.png",
-        "small": "//drivers/FGFS-101/assets/images/small.png"
+        "large": "/drivers/FGFS-101/assets/images/large.png",
+        "small": "/drivers/FGFS-101/assets/images/small.png"
       },
       "zwave": {
         "manufacturerId": 271,
@@ -4881,7 +4881,7 @@
         ],
         "zwaveAllianceProductId": 994,
         "learnmode": {
-          "image": "//drivers/FGFS-101/assets/assets/learnmode.svg",
+          "image": "/drivers/FGFS-101/assets/assets/learnmode.svg",
           "instruction": {
             "en": "Press the button on your Fibaro flood sensor three times.",
             "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor."
@@ -12500,8 +12500,10 @@
             "nl": "Druk driemaal op de knop van uw Dubbele Schakelaar 2, dit kan ook door middel van de S1 input."
           }
         },
+        "associationGroupsMultiChannel": [
+          1
+        ],
         "associationGroups": [
-          1,
           2,
           3,
           4,
@@ -12523,6 +12525,8 @@
           "2": {
             "class": "socket",
             "capabilities": [
+              "measure_power",
+              "meter_power",
               "onoff"
             ],
             "icon": "/drivers/FGS-223/assets/icon.svg",
