@@ -33,6 +33,11 @@
         "nl": "Druk driemaal op de knop op de {{driverNameNl}}"
       }
     },
-    "zwaveAllianceProductId": 1049
+    "zwaveAllianceProductId": 1049,
+    "associationGroups": [
+      1,
+      2,
+      3
+    ]
   }
 }
