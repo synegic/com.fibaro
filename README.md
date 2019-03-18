@@ -23,7 +23,7 @@ The FGRGBWM-441 - RGBW controller has issues regarding the white channel
 * FGS-223, Double Switch 2
 * FGSD-002, Smoke Detector (Z-Wave Plus)
 * FGSS-001, Smoke Sensor
-* FGT-001, Head Controller
+* FGT-001, Heat Controller
 * FGCD-001, CO Sensor
 * FGRGBWM-441, RGBW Controller
 * FGWPx-101/102, Wall Plug
