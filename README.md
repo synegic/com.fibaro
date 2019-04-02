@@ -23,6 +23,7 @@ The FGRGBWM-441 - RGBW controller has issues regarding the white channel
 * FGS-223, Double Switch 2
 * FGSD-002, Smoke Detector (Z-Wave Plus)
 * FGSS-001, Smoke Sensor
+* FGT-001, Head Controller
 * FGCD-001, CO Sensor
 * FGRGBWM-441, RGBW Controller
 * FGWPx-101/102, Wall Plug
@@ -57,6 +58,13 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.1.30
+Enhancements to the FGSD-002 Smoke Detector
+
+### v 2.1.29
+Fixes always on setting for FGWPE-101 (not Z-Wave plus)
+Contains fixes for the Fibaro Double Switch 2, measure and meter power on S2 have been brought back
 
 ### v 2.1.26 - 2.1.28
 Important MeshDriver updates
