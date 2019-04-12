@@ -29,15 +29,15 @@
       {
         "id": "1",
         "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
+          "en": "Toggle switch (Persistent positions)",
+          "nl": "Tuimel schakelaar (Vaste posities)"
         }
       },
       {
         "id": "2",
         "label": {
-          "en": "Toggle Switch",
-          "nl": "Tuimel Schakelaar"
+          "en": "Toggle switch (Toggle status on position change)",
+          "nl": "Tuimel schakelaar (Verander status bij elke positieverandering)"
         }
       }
     ],
