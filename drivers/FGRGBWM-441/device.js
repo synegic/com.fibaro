@@ -17,6 +17,11 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             b: 0,
             a: 0,
         };
+        this.currentHSV = {
+            h: 0,
+            s: 0,
+            v: 0
+        };
         this.realInputConfigs = {
             input1: null,
             input2: null,
@@ -73,19 +78,22 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         ================================================================
         */
         this.registerMultipleCapabilityListener(['light_saturation', 'light_hue'], async (newValues, opts) => {
+            this.log('===============================================================================');
+            this.log('HUE OR SATURATION CHANGED, SENDING VALUES');
+            this.log('===============================================================================');
             if (this.getSetting('strip_type') === 'cct') return Promise.reject('no_color_for_cct');
             let red,
                green,
                blue,
                white;
 
-            let hue = (this.getCapabilityValue('light_hue') * 360) || 0;
-            let saturation = (this.getCapabilityValue('light_saturation') * 100) || 0;
+            if (typeof newValues.light_hue === 'number') this.currentHSV.h = newValues.light_hue;
+            if (typeof newValues.light_saturation === 'number') this.currentHSV.s = newValues.light_saturation;
+
+            let hue = (this.currentHSV.h * 360) || 0;
+            let saturation = (this.currentHSV.s * 100) || 0;
             const dim = this.getCapabilityValue('dim') * 100;
             const stripType = this.getSetting('strip_type');
-
-            if (typeof newValues.light_hue === 'number') hue = (newValues.light_hue * 360);
-            if (typeof newValues.light_saturation === 'number') saturation = (newValues.light_saturation * 100);
 
             const hsv = {h: hue, s: saturation, v: dim};
             const rgb = this._convertHSVToRGB(hsv);
@@ -103,18 +111,23 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             }
 
             try {
-                await this._sendColor(red, 2);
                 this.currentRGB.r = red;
-                await this._sendColor(green, 3);
                 this.currentRGB.g = green;
-                await this._sendColor(blue, 4);
                 this.currentRGB.b = blue;
 
+                await this._sendColor(red, 2);
+                await this._sendColor(green, 3);
+                await this._sendColor(blue, 4);
+
                 if (typeof white === 'number') {
-                    await this._sendColor(white, 5);
                     this.currentRGB.a = white;
+                    await this._sendColor(white, 5);
                 }
             } catch (err) {
+                this.currentHSV.h = this.getCapabilityValue('light_hue');
+                this.currentHSV.s = this.getCapabilityValue('light_saturation');
+                this.currentHSV.v = this.getCapabilityValue('dim');
+
                 return Promise.reject(err);
             }
 
@@ -127,6 +140,10 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         ================================================================
          */
         this.registerCapabilityListener('light_temperature', async (value, opts) => {
+            this.log('===============================================================================');
+            this.log('COLOUR TEMP CHANGED, SENDING VALUES');
+            this.log('===============================================================================');
+
             let red,
                 green,
                 blue,
@@ -180,6 +197,10 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         });
 
         this.registerCapabilityListener('light_mode', async (value, opts) => {
+            this.log('===============================================================================');
+            this.log('LIGHT MODE CHANGED, SENDING VALUES');
+            this.log('===============================================================================');
+
             const stripType = this.getSetting('strip_type');
 
             if (value === 'color') {
@@ -189,8 +210,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                     blue,
                     white;
 
-                const hue = this.getCapabilityValue('light_hue') * 360 || 0;
-                const saturation = this.getCapabilityValue('light_saturation') * 100 || 0;
+                const hue = this.currentHSV.h * 360 || 0;
+                const saturation = this.currentHSV.s * 100 || 0;
                 const value = this.getCapabilityValue('dim') * 100;
                 const rgb = this._convertHSVToRGB({h: hue, s: saturation, v: value});
                 const rgbw = this._convertRGBtoRGBW(rgb);
@@ -378,10 +399,16 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
      * @private
      */
     _convertHSVToRGB({h, s, v}) {
+        this.log('== HSV TO RGB ===================================================================');
+        this.log(`Input values: h:${h}, s:${s}, v:${v}`);
+
         // Normalise hue, saturation and value
         let workingHue = h / 60;
         let workingSat = s / 100;
         let workingVal = v / 100;
+
+        this.log('================================================================================');
+        this.log(`Normalized input values: h:${workingHue}, s:${workingSat}, v:${workingVal}`);
 
         // Calculate the in between products needed for RGB conversion
         let chroma = workingVal * workingSat;
@@ -404,6 +431,9 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         rgb.g = Math.round((tempRGB.g + m) * 255);
         rgb.b = Math.round((tempRGB.b + m) * 255);
 
+        this.log('================================================================================');
+        this.log(`Output values: R:${rgb.r}, G:${rgb.g}, B:${rgb.b}`);
+        this.log('================================================================================\n\n');
         return rgb;
     }
 
@@ -416,7 +446,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
      * @private
      */
     _convertRGBToHSV({r, g, b}) {
-        this.log('================================================================================');
+        this.log('== RGB TO HSV ===================================================================');
         this.log(`Input values: r:${r}, g:${g}, b:${b}`);
 
         let normalized = this.normalizeRGBValues({r, g, b});
@@ -459,7 +489,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
      * @private
      */
     _convertRGBtoRGBW({r, g, b}) {
-        this.log('================================================================================');
+        this.log('== RBB TO RGBW ===================================================================');
         this.log(`Input values: r:${r}, g:${g}, b:${b}`);
 
         let normalized = this.normalizeRGBValues({r, g, b});
@@ -829,6 +859,10 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
     }
 
     _reportParser(report, channel) {
+        this.log('===============================================================================');
+        this.log('RECEIVED VALUES');
+        this.log('===============================================================================');
+
         let red,
             green,
             blue,

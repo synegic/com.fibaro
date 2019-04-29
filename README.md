@@ -59,6 +59,14 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.32
+Fixes to FGRGBWM-411 regarding hue and value changes not taking effect
+Fixes to the Smoke Detector, should now fire alarm smoke and alarm heat again
+Fixed no controlls for FGR-221
+
+### v 2.1.31
+Fixes to device icons
+
 ### v 2.1.30
 Enhancements to the FGSD-002 Smoke Detector
 
