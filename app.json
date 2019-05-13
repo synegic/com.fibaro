@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.32",
+  "version": "2.1.33",
   "compatibility": ">=1.5.6",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -11939,15 +11939,15 @@
             {
               "id": "1",
               "label": {
-                "en": "Toggle Switch",
-                "nl": "Tuimel Schakelaar"
+                "en": "Toggle switch (Persistent positions)",
+                "nl": "Tuimel schakelaar (Vaste posities)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "Toggle Switch",
-                "nl": "Tuimel Schakelaar"
+                "en": "Toggle switch (Toggle status on position change)",
+                "nl": "Tuimel schakelaar (Verander status bij elke positieverandering)"
               }
             }
           ],

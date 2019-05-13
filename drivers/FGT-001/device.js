@@ -17,6 +17,11 @@ class RadiatorThermostat extends ZwaveDevice {
         		pollInterval: 'poll_interval_measure_temperature',
 				pollMultiplication: 1000,
 			},
+			reportParser: (report) => {
+                if (report['Sensor Type'] !== 'Temperature (version 1)') return null;
+                return report['Sensor Value (Parsed)'];
+			},
+			reportParserOverride: true
 		});
 		this.registerCapability('target_temperature', 'THERMOSTAT_SETPOINT', {
 			getOpts: {
