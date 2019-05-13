@@ -3055,7 +3055,14 @@
               "en": "“Lifeline” reports the device status and allows for assigning single device only (main controller by default)."
             }
           }
-        }
+        },
+        "defaultConfiguration": [
+          {
+            "id": 2,
+            "size": 1,
+            "value": 3
+          }
+        ]
       },
       "settings": [
         {
