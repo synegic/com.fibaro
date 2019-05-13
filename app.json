@@ -12760,7 +12760,16 @@
           }
         },
         "associationGroups": [
-          1
+          1,
+          2,
+          4
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 2,
+            "size": 1,
+            "value": 2
+          }
         ]
       },
       "settings": [
