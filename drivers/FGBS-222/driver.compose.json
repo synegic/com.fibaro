@@ -1,0 +1,52 @@
+{
+  "id": "FGBS-222",
+  "name": {
+    "en": "Smart Implant"
+  },
+  "class": "sensor",
+  "capabilities": [
+   "alarm_generic.input1",
+   "alarm_generic.input2",
+   "onoff.output1",
+   "onoff.output2",
+   "measure_temperature.internal",
+   "measure_temperature.external1",
+   "measure_temperature.external2",
+   "measure_temperature.external3",
+   "measure_temperature.external4",
+   "measure_temperature.external5",
+   "measure_temperature.external6"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": 1282,
+    "productId": [
+      4096
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press the button on your {{driverNameEn}} three times.",
+        "nl": "Druk driemaal op de knop van uw {{driverNameNl}}."
+      }
+    },
+    "associationGroupsMultiChannel": [ 1,2,3 ],
+    "associationGroups": [ 1,2,3 ],
+    "defaultConfiguration": [
+      {
+        "id": 20,
+        "size": 1,
+        "value": 1
+      },
+      {
+        "id": 21,
+        "size": 1,
+        "value": 1
+      }
+    ]
+  }
+}
