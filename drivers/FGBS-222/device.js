@@ -27,8 +27,11 @@ class FibaroSmartImplant extends ZwaveDevice {
 		// measure_temperature.external6
 		// measure_humidty
 
-		console.log('ROOT NODE', this.node.CommandClass);
-		// console.log('========= NODE 5 =========', this.node.MultiChannelNodes['5'].CommandClass);
+		//console.log('ROOT NODE', this.node.CommandClass);
+
+		Object.keys(this.node.MultiChannelNodes).forEach(id => {
+			console.log(id, Object.keys(this.node.MultiChannelNodes[id].CommandClass))
+		})
 
 		this.registerCapabilityListener('onoff.output1', (value, opts) => {
 			console.log('onoff1', value);
