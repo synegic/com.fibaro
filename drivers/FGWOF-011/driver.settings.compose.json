@@ -84,7 +84,7 @@
                     "en": "Color when on",
                     "nl": "Kleur wanneer aan"
                 },
-                "value": "0",
+                "value": "8",
                 "hint": {
                     "en": "This parameter ({{zwaveParameterIndex}}) defines the color of the LED ring in on state.",
                     "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
