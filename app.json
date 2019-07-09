@@ -13944,7 +13944,6 @@
         "productId": [
           4096
         ],
-        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/FGWDEU-111/assets/learnmode.svg",
           "instruction": {
@@ -14431,6 +14430,7 @@
         "productId": [
           4096
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/FGWDSEU-221/assets/learnmode.svg",
           "instruction": {
