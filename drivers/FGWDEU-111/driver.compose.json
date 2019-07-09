@@ -1,0 +1,44 @@
+{
+  "id": "FGWDEU-111",
+  "name": {
+    "en": "Walli Dimmer"
+  },
+  "class": "light",
+  "capabilities": [
+    "dim",
+    "onoff",
+    "measure_power"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      7169
+    ],
+    "productId": [
+      4096
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press a button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op een knop van uw {{driverNameNl}}"
+      }
+    },
+    "associationGroups": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  }
+}

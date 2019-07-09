@@ -1,0 +1,44 @@
+{
+  "id": "FGWDSEU-221",
+  "name": {
+    "en": "Walli Switch"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "zwave": {
+    "manufacturerId": 271,
+    "productTypeId": [
+      6913
+    ],
+    "productId": [
+      4096
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Press a button on your {{driverNameEn}} three times",
+        "nl": "Druk driemaal op een knop van uw {{driverNameNl}}"
+      }
+    },
+    "multiChannelNodes": {
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "Walli Switch 2",
+          "nl": "Walli Schakelaar 2"
+        },
+        "settings": []
+      }
+    }
+  }
+}

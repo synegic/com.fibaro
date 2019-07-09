@@ -508,6 +508,172 @@
         ]
       },
       {
+        "id": "FGWOF_led_on",
+        "title": {
+          "en": "LED Colour, on state",
+          "nl": "LED Kleur wanneer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWOF-011"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Changes continuously according to power load using full spectrum of LED color",
+                  "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Changes in predefined steps according to power load",
+                  "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGWOF_led_off",
+        "title": {
+          "en": "LED Colour, off state",
+          "nl": "LED Kleur wanneer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWOF-011"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "FGWPE_led_on",
         "title": {
           "en": "LED Colour, On State",
@@ -2633,6 +2799,288 @@
                 "label": {
                   "en": "Hold released",
                   "nl": "Lang ingedrukt los gelaten"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-211_momentary",
+        "title": {
+          "en": "Dimmer scene (momentary)",
+          "nl": "Dimmer scene (pulsdruk)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Momentary switch\".",
+          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Pulsdruk schakelaar\" is ingesteld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDEU-111"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "16",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "26",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed left (S1) 2x",
+                  "nl": "Links (S1) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Pressed right (S2) 2x",
+                  "nl": "Rechts (S2) 2x ingedrukt"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Pressed left (S1) 3x",
+                  "nl": "Links (S1) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Pressed right (S2) 3x",
+                  "nl": "Rechts (S2) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S1) lang drukken"
+                }
+              },
+              {
+                "id": "22",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press left (S1) released",
+                  "nl": "Links (S1) lang drukken gestopt"
+                }
+              },
+              {
+                "id": "23",
+                "label": {
+                  "en": "Long press right (S2) released",
+                  "nl": "Rechts (S2) lang drukken gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-211_toggle",
+        "title": {
+          "en": "Dimmer scene (toggle)",
+          "nl": "Dimmer scene (tuimel)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Toggle Switch\". Extra setting options: * = Bistable switch: same direction, ** = Bistable switch: toggle output",
+          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Tuimel Schakelaar\" is ingesteld. Extra instelling opties: * = Bistabiele schakelaar: zelfde richting, ** = Bistabiele schakelaar: schakelt uitgang"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDEU-111"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "11",
+                "label": {
+                  "en": "Left (S1) on to off *",
+                  "nl": "Links (S1) aan naar uit *"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Left (S1) off to on *",
+                  "nl": "Links (S1) uit naar aan *"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Left (S1) lamp on **",
+                  "nl": "Links (S1) lamp aan **"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Left (S1) lamp off **",
+                  "nl": "Links (S1) lamp uit **"
+                }
+              },
+              {
+                "id": "21",
+                "label": {
+                  "en": "Right (S2) on to off *",
+                  "nl": "Rechts (S2) aan naar uit *"
+                }
+              },
+              {
+                "id": "20",
+                "label": {
+                  "en": "Right (S2) off to on *",
+                  "nl": "Rechts (S2) uit naar aan *"
+                }
+              },
+              {
+                "id": "22",
+                "label": {
+                  "en": "Right (S2) lamp on **",
+                  "nl": "Rechts (S2) lamp aan **"
+                }
+              },
+              {
+                "id": "23",
+                "label": {
+                  "en": "Right (S2) lamp off **",
+                  "nl": "Rechts (S2) lamp uit **"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Switched left (S1) 2x",
+                  "nl": "Links (S1) 2x geschakeld"
+                }
+              },
+              {
+                "id": "24",
+                "label": {
+                  "en": "Switched right (S2) 2x",
+                  "nl": "Rechts (S2) 2x geschakeld"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Switched left (S1) 3x",
+                  "nl": "Links (S1) 3x feschakeld"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Switched right (S2) 3x",
+                  "nl": "Rechts (S2) 3x geschakeld"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGD-211_roller",
+        "title": {
+          "en": "Dimmer scene (roller Shutter)",
+          "nl": "Dimmer scene (rolgordijn)"
+        },
+        "hint": {
+          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Roller shutter switch\".",
+          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Rolgordijn schakelaar\" is ingesteld."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDEU-111"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "10",
+                "label": {
+                  "en": "Pressed left (S1) 1x",
+                  "nl": "Links (S1) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Pressed right (S2) 1x",
+                  "nl": "Rechts (S2) 1x ingedrukt"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Pressed 2x left (S1)",
+                  "nl": "2x ingedrukt links (S1)"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Pressed 3x left (S1)",
+                  "nl": "Links (S1) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "25",
+                "label": {
+                  "en": "Pressed 3x right (S2)",
+                  "nl": "Rechts (S2) 3x ingedrukt"
+                }
+              },
+              {
+                "id": "17",
+                "label": {
+                  "en": "Long press left (S1)",
+                  "nl": "Links (S2) lang drukken"
+                }
+              },
+              {
+                "id": "18",
+                "label": {
+                  "en": "Long press right (S2)",
+                  "nl": "Rechts (S2) lang drukken"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Long press released (left (S1) or right (S2))",
+                  "nl": "Lang drukken gestopt (links (S1) of rechts (S2))"
                 }
               }
             ]
@@ -13474,6 +13922,1174 @@
       ]
     },
     {
+      "id": "FGWDEU-111",
+      "name": {
+        "en": "Walli Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "large": "/drivers/FGWDEU-111/assets/images/large.png",
+        "small": "/drivers/FGWDEU-111/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          7169
+        ],
+        "productId": [
+          4096
+        ],
+        "includeSecure": false,
+        "learnmode": {
+          "image": "/drivers/FGWDEU-111/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press a button on your Walli Dimmer three times",
+            "nl": "Druk driemaal op een knop van uw Walli Dimmer"
+          }
+        },
+        "associationGroups": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Button behaviour",
+            "nl": "Gedrag knoppen"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "double_click",
+              "type": "checkbox",
+              "label": {
+                "en": "Double click",
+                "nl": "Dubbel klik"
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (15) determines whether or not double clicking sets the brightness level to maximum.",
+                "nl": "Deze parameter (15) bepaalt of de helderheid naar maximaal wordt ingesteld bij tweemaal drukken."
+              },
+              "zwave": {
+                "index": 15,
+                "size": 1
+              }
+            },
+            {
+              "id": "3_way_switch",
+              "type": "checkbox",
+              "label": {
+                "en": "3-way switch function",
+                "nl": "Hotelschakeling functie"
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (17) determines whether or not input 2 additionally controls the output 2.",
+                "nl": "Deze parameter (17) bepaalt of ingang 2 schakelt ook uitgang 2 bedient."
+              },
+              "zwave": {
+                "index": 17,
+                "size": 1
+              }
+            },
+            {
+              "id": "switch_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type",
+                "nl": "Schakelaar type"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (14) determines whether this device behaves like a momentary switch or a toggle switch.",
+                "nl": "Deze parameter (14) bepaalt of dit apparaat zich gedraagt als een kortstondige schakelaar of een tuimelschakelaar."
+              },
+              "zwave": {
+                "index": 14,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdruk schakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimel schakelaar"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Roller blind Switch (UP | DOWN)",
+                    "nl": "Rolgordijn schakelaar (OP | NEER)"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "minimum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Minimum brightness level",
+                "nl": "Minimale helderheidsniveau"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (150) determines the minimal brightness level.",
+                "nl": "Deze parameter (150) bepaalt het minimale helderheidsniveau."
+              },
+              "zwave": {
+                "index": 150,
+                "size": 1
+              }
+            },
+            {
+              "id": "maximum_brightness",
+              "type": "number",
+              "label": {
+                "en": "Maximum brightness level",
+                "nl": "Maximaal helderheidsniveau"
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (151) determines the miniaml brightness level.",
+                "nl": "Deze parameter (151) bepaalt het maximale helderheidsniveau."
+              },
+              "zwave": {
+                "index": 151,
+                "size": 1
+              }
+            },
+            {
+              "id": "dimming_step_auto",
+              "type": "number",
+              "label": {
+                "en": "Dim step size with automatic control",
+                "nl": "Stapgrootte dimmen bij automatische besturing"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (154) determines the percentage of a dimming step at automatic control.",
+                "nl": "Deze parameter (154) bepaalt het percentage per dim stap bij automatische besturing."
+              },
+              "zwave": {
+                "index": 154,
+                "size": 1
+              }
+            },
+            {
+              "id": "time_dimming_step_auto",
+              "type": "number",
+              "label": {
+                "en": "Time of a dimming step at automatic control",
+                "nl": "Tijd per dim stap bij automatische besturing"
+              },
+              "value": 1,
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (155) determines the time of a dimming step at automatic control.",
+                "nl": "Deze parameter (155) bepaalt de tijd per dim stap bij automatische besturing."
+              },
+              "zwave": {
+                "index": 155,
+                "size": 2
+              }
+            },
+            {
+              "id": "dimming_step_manual",
+              "type": "number",
+              "label": {
+                "en": "The percentage of a dimming step at manual control",
+                "nl": "Percentage van dim stap bij handmatige bediening"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (156) determines the percentage of a dimming step at manual control.",
+                "nl": "Deze parameter (156) bepaalt het percentage per dim stap bij handmatige besturing."
+              },
+              "zwave": {
+                "index": 156,
+                "size": 1
+              }
+            },
+            {
+              "id": "time_dimming_step_manual",
+              "type": "number",
+              "label": {
+                "en": "Time of a dimming step at manual control",
+                "nl": "Tijd per dim stap bij handmatige bediening"
+              },
+              "value": 5,
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (157) determines the time of a dimming step at manual control.",
+                "nl": "Deze parameter (157) bepaalt de tijd per dim stap bij handmatige besturing."
+              },
+              "zwave": {
+                "index": 157,
+                "size": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore state after power failure",
+                "nl": "Herstel status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+              },
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED notifications",
+            "nl": "LED notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_ring_color_on",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when on",
+                "nl": "Kleur wanneer aan"
+              },
+              "value": "8",
+              "hint": {
+                "en": "This parameter (11) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (11) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED off",
+                    "nl": "LED uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Changes continuously according to power load using full spectrum of LED color",
+                    "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Changes in predefined steps according to power load",
+                    "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_color_off",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when off",
+                "nl": "Kleur wanneer uit"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (12) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (12) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_brightness",
+              "type": "number",
+              "label": {
+                "en": "LED Brightness",
+                "nl": "LED Helderheid"
+              },
+              "hint": {
+                "en": "This parameter (13) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (13) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGWDSEU-221",
+      "name": {
+        "en": "Walli Switch"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "/drivers/FGWDSEU-221/assets/images/large.png",
+        "small": "/drivers/FGWDSEU-221/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          6913
+        ],
+        "productId": [
+          4096
+        ],
+        "learnmode": {
+          "image": "/drivers/FGWDSEU-221/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press a button on your Walli Switch three times",
+            "nl": "Druk driemaal op een knop van uw Walli Switch"
+          }
+        },
+        "multiChannelNodes": {
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "onoff"
+            ],
+            "icon": "/drivers/FGWDSEU-221/assets/icon.svg",
+            "name": {
+              "en": "Walli Switch 2",
+              "nl": "Walli Schakelaar 2"
+            },
+            "settings": []
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "On/off",
+            "nl": "Aan/uit"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore state after power failure",
+                "nl": "Herstel status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+              },
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Scenes",
+            "nl": "Scenes"
+          },
+          "collapsed": false,
+          "children": []
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power (kWh)",
+            "nl": "Stroom (kWh)"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "own_power",
+              "type": "checkbox",
+              "label": {
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter (60) determines whether or not the kWh usage of the device itself is added to the power usage.",
+                "nl": "Deze parameter (60) bepaalt of het kWh verbruik van het apparaat bij het totaalverbruik wordt opgeteld."
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": false
+            },
+            {
+              "zwave": {
+                "index": 61,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0.01,
+                "max": 5.12,
+                "step": 0.01
+              },
+              "value": 0.1,
+              "id": "kwh_report_threshold",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (61) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (61) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 62,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 65535
+              },
+              "value": 3600,
+              "id": "watt_kwh_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (62) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (62) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED notifications",
+            "nl": "LED notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_ring_color_on",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when on",
+                "nl": "Kleur wanneer aan"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (11) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (11) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Changes continuously according to power load using full spectrum of LED color",
+                    "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Changes in predefined steps according to power load",
+                    "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_color_off",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when off",
+                "nl": "Kleur wanneer uit"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (12) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (12) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_brightness",
+              "type": "number",
+              "label": {
+                "en": "LED Brightness",
+                "nl": "LED Helderheid"
+              },
+              "hint": {
+                "en": "This parameter (13) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (13) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Walli Outlet",
+        "nl": "Walli Wandcontactdoos"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": 7937,
+        "productId": [
+          4096
+        ],
+        "learnmode": {
+          "image": "/drivers/FGWOF-011/assets/learnmode.svg",
+          "instruction": {
+            "en": "Connect the wall outlet to a power source and press the pair button on Walli Outlet three times",
+            "nl": "Sluit de spanning aan op de wandcontactdoos en druk driemaal op de knop op van Walli Wandcontactdoos"
+          }
+        },
+        "associationGroups": [
+          1,
+          3
+        ]
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "images": {
+        "large": "/drivers/FGWOF-011/assets/images/large.png",
+        "small": "/drivers/FGWOF-011/assets/images/small.png"
+      },
+      "id": "FGWOF-011",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "On/off",
+            "nl": "Aan/uit"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore state after power failure",
+                "nl": "Herstel status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether after a power failure the device should be restored to the state it had before the power failure.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld."
+              },
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "LED notifications",
+            "nl": "LED notificaties"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_ring_color_on",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when on",
+                "nl": "Kleur wanneer aan"
+              },
+              "value": "8",
+              "hint": {
+                "en": "This parameter (11) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (11) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "Changes continuously according to power load using full spectrum of LED color",
+                    "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Changes in predefined steps according to power load",
+                    "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_color_off",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when off",
+                "nl": "Kleur wanneer uit"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (12) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (12) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_brightness",
+              "type": "number",
+              "label": {
+                "en": "LED Brightness",
+                "nl": "LED Helderheid"
+              },
+              "hint": {
+                "en": "This parameter (13) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (13) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power (kWh)",
+            "nl": "Stroom (kWh)"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "own_power",
+              "type": "checkbox",
+              "label": {
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter (60) determines whether or not the kWh usage of the device itself is added to the power usage.",
+                "nl": "Deze parameter (60) bepaalt of het kWh verbruik van het apparaat bij het totaalverbruik wordt opgeteld."
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": false
+            },
+            {
+              "zwave": {
+                "index": 61,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0.01,
+                "max": 5.12,
+                "step": 0.01
+              },
+              "value": 0.1,
+              "id": "kwh_report_threshold",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (61) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (61) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 62,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 65535
+              },
+              "value": 3600,
+              "id": "watt_kwh_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (62) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (62) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Wall Plug",
         "nl": "Tussenstekker"
@@ -14356,6 +15972,291 @@
                   }
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGWREU-111",
+      "name": {
+        "en": "Walli Roller Shutter",
+        "nl": "Walli Rolluik"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "dim"
+      ],
+      "images": {
+        "large": "/drivers/FGWREU-111/assets/images/large.png",
+        "small": "/drivers/FGWREU-111/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          7425
+        ],
+        "productId": [
+          4096
+        ],
+        "learnmode": {
+          "instruction": {
+            "en": "Press  a button on your Walli Roller Shutter three times.",
+            "nl": "Druk driemaal op een knop op uw Walli Rolluik."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "LED Frame",
+            "nl": "LED Frame"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "led_ring_color_on",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when on",
+                "nl": "Kleur wanneer aan"
+              },
+              "value": "1",
+              "hint": {
+                "en": "This parameter (11) defines the color of the LED ring in on state.",
+                "nl": "Deze parameter (11) bepaalt de kleur van de LED ring wanneer dit apparaat aan staat."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_color_off",
+              "type": "dropdown",
+              "label": {
+                "en": "Color when off",
+                "nl": "Kleur wanneer uit"
+              },
+              "value": "0",
+              "hint": {
+                "en": "This parameter (12) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (12) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "White",
+                    "nl": "Wit"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Red",
+                    "nl": "Rood"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Green",
+                    "nl": "Groen"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Blue",
+                    "nl": "Blauw"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Yellow",
+                    "nl": "Geel"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Cyan",
+                    "nl": "Cyaan"
+                  }
+                },
+                {
+                  "id": "7",
+                  "label": {
+                    "en": "Magenta",
+                    "nl": "Magenta"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "led_ring_brightness",
+              "type": "number",
+              "label": {
+                "en": "LED Brightness",
+                "nl": "LED Helderheid"
+              },
+              "hint": {
+                "en": "This parameter (13) defines the color of the LED ring in off state.",
+                "nl": "Deze parameter (13) bepaalt de kleur van de LED ring wanneer dit apparaat uit staat."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "value": 100
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power (kWh)",
+            "nl": "Stroom (kWh)"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "own_power",
+              "type": "checkbox",
+              "label": {
+                "en": "Include own power consumption",
+                "nl": "inclusief eigen verbruik"
+              },
+              "hint": {
+                "en": "This parameter (60) determines whether or not the kWh usage of the device itself is added to the power usage.",
+                "nl": "Deze parameter (60) bepaalt of het kWh verbruik van het apparaat bij het totaalverbruik wordt opgeteld."
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": false
+            },
+            {
+              "zwave": {
+                "index": 61,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0.01,
+                "max": 5.12,
+                "step": 0.01
+              },
+              "value": 0.1,
+              "id": "kwh_report_threshold",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (61) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (61) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 62,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 65535
+              },
+              "value": 3600,
+              "id": "watt_kwh_report_interval",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (62) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (62) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
             }
           ]
         }
