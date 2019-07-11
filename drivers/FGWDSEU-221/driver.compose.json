@@ -30,27 +30,13 @@
         "nl": "Druk driemaal op een knop van uw {{driverNameNl}}"
       }
     },
-    "associationGroups": [ 1,2,4 ],
-    "associationGroupsMultiChannel": [ 1,2,4 ],
-    "defaultConfiguration": [
-      {
-        "id": 40,
-        "size": 1,
-        "value": 1
-      },
-      {
-        "id": 41,
-        "size": 1,
-        "value": 1
-      }
-    ],
+    "associationGroups": [ 1,2,3 ],
+    "associationGroupsMultiChannel": [ 4,5 ],
     "multiChannelNodes": {
       "2": {
         "class": "socket",
         "capabilities": [
-          "onoff",
-          "measure_power",
-          "meter_power"
+          "onoff"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {

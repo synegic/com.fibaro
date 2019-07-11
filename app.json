@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.34",
+  "version": "2.2.0",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -504,6 +504,172 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=FGS-223"
+          }
+        ]
+      },
+      {
+        "id": "FGWDSEU_led_on",
+        "title": {
+          "en": "LED Colour, on state",
+          "nl": "LED Kleur wanneer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDEU-111&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Changes continuously according to power load using full spectrum of LED color",
+                  "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Changes in predefined steps according to power load",
+                  "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGWDSEU_led_off",
+        "title": {
+          "en": "LED Colour, off state",
+          "nl": "LED Kleur wanneer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDEU-111&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1179,6 +1345,172 @@
                 "label": {
                   "en": "LED Off",
                   "nl": "LED Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGWREU_led_on",
+        "title": {
+          "en": "LED Colour, on state",
+          "nl": "LED Kleur wanneer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWREU-111&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Changes continuously according to power load using full spectrum of LED color",
+                  "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Changes in predefined steps according to power load",
+                  "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGWREU_led_off",
+        "title": {
+          "en": "LED Colour, off state",
+          "nl": "LED Kleur wanneer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWREU-111&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
                 }
               }
             ]
@@ -2965,288 +3297,6 @@
                 "label": {
                   "en": "Hold released",
                   "nl": "Lang ingedrukt los gelaten"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-211_momentary",
-        "title": {
-          "en": "Dimmer scene (momentary)",
-          "nl": "Dimmer scene (pulsdruk)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Momentary switch\".",
-          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Pulsdruk schakelaar\" is ingesteld."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGWDEU-111"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "16",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "26",
-                "label": {
-                  "en": "Pressed right (S2) 1x",
-                  "nl": "Rechts (S2) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed left (S1) 2x",
-                  "nl": "Links (S1) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Pressed right (S2) 2x",
-                  "nl": "Rechts (S2) 2x ingedrukt"
-                }
-              },
-              {
-                "id": "15",
-                "label": {
-                  "en": "Pressed left (S1) 3x",
-                  "nl": "Links (S1) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Pressed right (S2) 3x",
-                  "nl": "Rechts (S2) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "12",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S1) lang drukken"
-                }
-              },
-              {
-                "id": "22",
-                "label": {
-                  "en": "Long press right (S2)",
-                  "nl": "Rechts (S2) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press left (S1) released",
-                  "nl": "Links (S1) lang drukken gestopt"
-                }
-              },
-              {
-                "id": "23",
-                "label": {
-                  "en": "Long press right (S2) released",
-                  "nl": "Rechts (S2) lang drukken gestopt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-211_toggle",
-        "title": {
-          "en": "Dimmer scene (toggle)",
-          "nl": "Dimmer scene (tuimel)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Toggle Switch\". Extra setting options: * = Bistable switch: same direction, ** = Bistable switch: toggle output",
-          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Tuimel Schakelaar\" is ingesteld. Extra instelling opties: * = Bistabiele schakelaar: zelfde richting, ** = Bistabiele schakelaar: schakelt uitgang"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGWDEU-111"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "11",
-                "label": {
-                  "en": "Left (S1) on to off *",
-                  "nl": "Links (S1) aan naar uit *"
-                }
-              },
-              {
-                "id": "10",
-                "label": {
-                  "en": "Left (S1) off to on *",
-                  "nl": "Links (S1) uit naar aan *"
-                }
-              },
-              {
-                "id": "12",
-                "label": {
-                  "en": "Left (S1) lamp on **",
-                  "nl": "Links (S1) lamp aan **"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Left (S1) lamp off **",
-                  "nl": "Links (S1) lamp uit **"
-                }
-              },
-              {
-                "id": "21",
-                "label": {
-                  "en": "Right (S2) on to off *",
-                  "nl": "Rechts (S2) aan naar uit *"
-                }
-              },
-              {
-                "id": "20",
-                "label": {
-                  "en": "Right (S2) off to on *",
-                  "nl": "Rechts (S2) uit naar aan *"
-                }
-              },
-              {
-                "id": "22",
-                "label": {
-                  "en": "Right (S2) lamp on **",
-                  "nl": "Rechts (S2) lamp aan **"
-                }
-              },
-              {
-                "id": "23",
-                "label": {
-                  "en": "Right (S2) lamp off **",
-                  "nl": "Rechts (S2) lamp uit **"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Switched left (S1) 2x",
-                  "nl": "Links (S1) 2x geschakeld"
-                }
-              },
-              {
-                "id": "24",
-                "label": {
-                  "en": "Switched right (S2) 2x",
-                  "nl": "Rechts (S2) 2x geschakeld"
-                }
-              },
-              {
-                "id": "15",
-                "label": {
-                  "en": "Switched left (S1) 3x",
-                  "nl": "Links (S1) 3x feschakeld"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Switched right (S2) 3x",
-                  "nl": "Rechts (S2) 3x geschakeld"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "FGD-211_roller",
-        "title": {
-          "en": "Dimmer scene (roller Shutter)",
-          "nl": "Dimmer scene (rolgordijn)"
-        },
-        "hint": {
-          "en": "This Flow Trigger will only get activated if the switch type setting is set to \"Roller shutter switch\".",
-          "nl": "Deze Flow Trigger wordt alleen geactiveerd als de instelling schakelaar type op \"Rolgordijn schakelaar\" is ingesteld."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGWDEU-111"
-          },
-          {
-            "name": "scene",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "10",
-                "label": {
-                  "en": "Pressed left (S1) 1x",
-                  "nl": "Links (S1) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "11",
-                "label": {
-                  "en": "Pressed right (S2) 1x",
-                  "nl": "Rechts (S2) 1x ingedrukt"
-                }
-              },
-              {
-                "id": "14",
-                "label": {
-                  "en": "Pressed 2x left (S1)",
-                  "nl": "2x ingedrukt links (S1)"
-                }
-              },
-              {
-                "id": "15",
-                "label": {
-                  "en": "Pressed 3x left (S1)",
-                  "nl": "Links (S1) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "25",
-                "label": {
-                  "en": "Pressed 3x right (S2)",
-                  "nl": "Rechts (S2) 3x ingedrukt"
-                }
-              },
-              {
-                "id": "17",
-                "label": {
-                  "en": "Long press left (S1)",
-                  "nl": "Links (S2) lang drukken"
-                }
-              },
-              {
-                "id": "18",
-                "label": {
-                  "en": "Long press right (S2)",
-                  "nl": "Rechts (S2) lang drukken"
-                }
-              },
-              {
-                "id": "13",
-                "label": {
-                  "en": "Long press released (left (S1) or right (S2))",
-                  "nl": "Lang drukken gestopt (links (S1) of rechts (S2))"
                 }
               }
             ]
@@ -14096,7 +14146,8 @@
       "capabilities": [
         "dim",
         "onoff",
-        "measure_power"
+        "measure_power",
+        "meter_power"
       ],
       "images": {
         "large": "/drivers/FGWDEU-111/assets/images/large.png",
@@ -14108,6 +14159,8 @@
         "productId": [
           4096
         ],
+        "includeSecure": false,
+        "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
         "learnmode": {
           "image": "/drivers/FGWDEU-111/assets/learnmode.svg",
           "instruction": {
@@ -14123,7 +14176,7 @@
       },
       "capabilitiesOptions": {
         "onoff": {
-          "setOnDim": false
+          "setOnDim": true
         }
       },
       "settings": [
@@ -14606,32 +14659,17 @@
         "associationGroups": [
           1,
           2,
-          4
+          3
         ],
         "associationGroupsMultiChannel": [
-          1,
-          2,
-          4
-        ],
-        "defaultConfiguration": [
-          {
-            "id": 40,
-            "size": 1,
-            "value": 1
-          },
-          {
-            "id": 41,
-            "size": 1,
-            "value": 1
-          }
+          4,
+          5
         ],
         "multiChannelNodes": {
           "2": {
             "class": "socket",
             "capabilities": [
-              "onoff",
-              "measure_power",
-              "meter_power"
+              "onoff"
             ],
             "icon": "/drivers/FGWDSEU-221/assets/icon.svg",
             "name": {
@@ -14977,7 +15015,9 @@
         "associationGroups": [
           1,
           2
-        ]
+        ],
+        "includeSecure": false,
+        "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues"
       },
       "class": "socket",
       "capabilities": [
@@ -16191,28 +16231,36 @@
       },
       "zwave": {
         "manufacturerId": 271,
-        "productTypeId": [
-          7425
-        ],
+        "productTypeId": 7425,
         "productId": [
           4096
         ],
+        "includeSecure": false,
+        "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
         "learnmode": {
           "instruction": {
             "en": "Press  a button on your Walli Roller Shutter three times.",
             "nl": "Druk driemaal op een knop op uw Walli Rolluik."
           }
         },
+        "associationGroups": [
+          1,
+          2
+        ],
+        "associationGroupsMultiChannel": [
+          1,
+          2
+        ],
         "multiChannelNodes": {
           "2": {
-            "class": "socket",
+            "class": "windowcoverings",
             "capabilities": [
-              "onoff"
+              "dim"
             ],
             "icon": "/drivers/FGWREU-111/assets/icon.svg",
             "name": {
-              "en": "Walli Switch 2",
-              "nl": "Walli Schakelaar 2"
+              "en": "Walli Rollershutter Tilt",
+              "nl": "Walli Rollershutter Hoek"
             },
             "settings": []
           }

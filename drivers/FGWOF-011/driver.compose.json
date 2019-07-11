@@ -16,7 +16,9 @@
                 "nl": "Sluit de spanning aan op de wandcontactdoos en druk driemaal op de knop op van {{driverNameNl}}"
             }
         },
-        "associationGroups": [1, 2]
+        "associationGroups": [1, 2],
+        "includeSecure": false,
+        "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues"
     },
     "class": "socket",
     "capabilities": [

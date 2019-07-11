@@ -8,19 +8,17 @@ class FibaroWalliDimmerDevice extends ZwaveDevice {
 	onMeshInit() {
 		// this.enableDebug();
 
-		console.log(this.node);
+		// console.log(this.node);
 
         this._momentaryTrigger = this.getDriver().momentaryTrigger;
         this._toggleTrigger = this.getDriver().toggleTrigger;
         this._rollerTrigger = this.getDriver().rollerTrigger;
 
-		this.registerCapability('onoff', 'SWITCH_MULTILEVEL', {
-			reportParser: report => { console.log('AFVANGEN', report); }
-		});
+        this.registerCapability('onoff', 'BASIC');
+        this.registerCapability('dim', 'SWITCH_MULTILEVEL');
 
-		this.registerCapability('measure_power', 'METER');
-		
-		this.registerCapability('dim', 'SWITCH_MULTILEVEL');
+        this.registerCapability('measure_power', 'METER');
+        this.registerCapability('meter_power', 'METER');
 	}
 
 	switchTriggersRunListener(args, state) {

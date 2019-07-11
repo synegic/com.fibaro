@@ -14,28 +14,30 @@
   },
   "zwave": {
     "manufacturerId": 271,
-    "productTypeId": [
-      7425
-    ],
+    "productTypeId": 7425,
     "productId": [
       4096
     ],
+    "includeSecure": false,
+    "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
     "learnmode": {
       "instruction": {
         "en": "Press  a button on your {{driverNameEn}} three times.",
         "nl": "Druk driemaal op een knop op uw {{driverNameNl}}."
       }
     },
+    "associationGroups": [ 1,2 ],
+    "associationGroupsMultiChannel": [ 1,2 ],
     "multiChannelNodes": {
       "2": {
-        "class": "socket",
+        "class": "windowcoverings",
         "capabilities": [
-          "onoff"
+          "dim"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {
-          "en": "Walli Switch 2",
-          "nl": "Walli Schakelaar 2"
+          "en": "Walli Rollershutter Tilt",
+          "nl": "Walli Rollershutter Hoek"
         },
         "settings": []
       }

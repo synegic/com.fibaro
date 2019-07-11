@@ -7,7 +7,8 @@
   "capabilities": [
     "dim",
     "onoff",
-    "measure_power"
+    "measure_power",
+    "meter_power"
   ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -19,6 +20,8 @@
     "productId": [
       4096
     ],
+    "includeSecure": false,
+    "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
@@ -30,7 +33,7 @@
   },
   "capabilitiesOptions": {
     "onoff": {
-      "setOnDim": false
+      "setOnDim": true
     }
   }
 }

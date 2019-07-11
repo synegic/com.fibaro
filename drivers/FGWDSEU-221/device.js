@@ -5,9 +5,11 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 class FibaroWalliSwitchDevice extends ZwaveDevice {
 
 	onMeshInit() {
-        this.enableDebug();
-        
-		this.registerCapability('onoff', 'SWITCH_BINARY');
+        if( this.node.isMultiChannelNode ) {
+            this.registerCapability('onoff', 'BASIC');
+        } else {        
+            this.registerCapability('onoff', 'SWITCH_BINARY');
+        }
         this.registerCapability('measure_power', 'METER');
         this.registerCapability('meter_power', 'METER');
 	}
