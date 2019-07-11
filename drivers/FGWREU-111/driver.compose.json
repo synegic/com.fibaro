@@ -25,6 +25,20 @@
         "en": "Press  a button on your {{driverNameEn}} three times.",
         "nl": "Druk driemaal op een knop op uw {{driverNameNl}}."
       }
+    },
+    "multiChannelNodes": {
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "Walli Switch 2",
+          "nl": "Walli Schakelaar 2"
+        },
+        "settings": []
+      }
     }
   }
 }

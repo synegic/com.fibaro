@@ -5,7 +5,9 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_power",
+    "meter_power"
   ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -20,6 +22,7 @@
       4096
     ],
     "includeSecure": false,
+    "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
@@ -27,11 +30,27 @@
         "nl": "Druk driemaal op een knop van uw {{driverNameNl}}"
       }
     },
+    "associationGroups": [ 1,2,4 ],
+    "associationGroupsMultiChannel": [ 1,2,4 ],
+    "defaultConfiguration": [
+      {
+        "id": 40,
+        "size": 1,
+        "value": 1
+      },
+      {
+        "id": 41,
+        "size": 1,
+        "value": 1
+      }
+    ],
     "multiChannelNodes": {
       "2": {
         "class": "socket",
         "capabilities": [
-          "onoff"
+          "onoff",
+          "measure_power",
+          "meter_power"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {

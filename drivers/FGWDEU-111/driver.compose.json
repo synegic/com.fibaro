@@ -15,9 +15,7 @@
   },
   "zwave": {
     "manufacturerId": 271,
-    "productTypeId": [
-      7169
-    ],
+    "productTypeId": 7169,
     "productId": [
       4096
     ],
@@ -28,13 +26,7 @@
         "nl": "Druk driemaal op een knop van uw {{driverNameNl}}"
       }
     },
-    "associationGroups": [
-      1,
-      2,
-      3,
-      4,
-      5
-    ]
+    "associationGroups": [ 1, 2, 3 ]
   },
   "capabilitiesOptions": {
     "onoff": {

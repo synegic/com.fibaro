@@ -10,17 +10,24 @@
       {
         "$extends": "saveState",
         "$id": "save_state"
+      },
+      {
+        "id": "switch_button",
+        "type": "checkbox",
+        "label":{
+          "en": "Change button orientation",
+          "nl": "Wissel knop orientatie"
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) changes the orientation of the buttons. Button 1 will become 2 and vice versa.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) verandert de orientatie van de knoppen. Knop 1 wordt 2 en vice versa."
+        },
+        "zwave": {
+          "index": 24,
+          "size": 1
+        },
+        "value": false
       }
-    ]
-  },
-  {
-    "type": "group",
-    "label": {
-      "en": "Scenes",
-      "nl": "Scenes"
-    },
-    "collapsed": false,
-    "children": [
     ]
   },
   {
@@ -105,7 +112,7 @@
           },
           "values": [
             {
-              "id": "0",
+              "id": "1",
               "label": {
                 "en": "Off",
                 "nl": "Uit"

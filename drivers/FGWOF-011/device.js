@@ -7,7 +7,7 @@ class FibaroWalliWallOutletDevice extends ZwaveDevice {
 	onMeshInit() {
 		this.registerCapability('onoff', 'SWITCH_BINARY');
 		this.registerCapability('measure_power', 'METER');
-		//this.registerCapability('meter_power', 'METER');
+		this.registerCapability('meter_power', 'METER');
 
 		this.registerSetting('always_on', value => {
 		    // Flip 0 = 1, 1 = 0, because 0 is active and 1 is inactive

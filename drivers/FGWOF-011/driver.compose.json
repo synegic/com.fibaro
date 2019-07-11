@@ -16,14 +16,13 @@
                 "nl": "Sluit de spanning aan op de wandcontactdoos en druk driemaal op de knop op van {{driverNameNl}}"
             }
         },
-        "associationGroups": [
-            1,3
-        ]
+        "associationGroups": [1, 2]
     },
     "class": "socket",
     "capabilities": [
         "onoff",
-        "measure_power"
+        "measure_power",
+        "meter_power"
     ],
     "images": {
         "large": "{{driverAssetsPath}}/images/large.png",

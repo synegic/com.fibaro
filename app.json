@@ -5,8 +5,8 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.33",
-  "compatibility": ">=1.5.6",
+  "version": "2.1.34",
+  "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
   },
@@ -504,6 +504,172 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=FGS-223"
+          }
+        ]
+      },
+      {
+        "id": "FGWDSEU_led_on",
+        "title": {
+          "en": "LED Colour, on state",
+          "nl": "LED Kleur wanneer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDSEU-221&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Changes continuously according to power load using full spectrum of LED color",
+                  "nl": "Verandert continu afhankelijk van het stroomverbruik"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Changes in predefined steps according to power load",
+                  "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FGWDSEU_led_off",
+        "title": {
+          "en": "LED Colour, off state",
+          "nl": "LED Kleur wanneer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGWDSEU-221&flags=zwaveRoot"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "White",
+                  "nl": "Wit"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Red",
+                  "nl": "Rood"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Green",
+                  "nl": "Groen"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Blue",
+                  "nl": "Blauw"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Yellow",
+                  "nl": "Geel"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Cyan",
+                  "nl": "Cyaan"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Magenta",
+                  "nl": "Magenta"
+                }
+              }
+            ]
           }
         ]
       },
@@ -13938,9 +14104,7 @@
       },
       "zwave": {
         "manufacturerId": 271,
-        "productTypeId": [
-          7169
-        ],
+        "productTypeId": 7169,
         "productId": [
           4096
         ],
@@ -13954,9 +14118,7 @@
         "associationGroups": [
           1,
           2,
-          3,
-          4,
-          5
+          3
         ]
       },
       "capabilitiesOptions": {
@@ -14416,7 +14578,9 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_power",
+        "meter_power"
       ],
       "images": {
         "large": "/drivers/FGWDSEU-221/assets/images/large.png",
@@ -14431,6 +14595,7 @@
           4096
         ],
         "includeSecure": false,
+        "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
         "learnmode": {
           "image": "/drivers/FGWDSEU-221/assets/learnmode.svg",
           "instruction": {
@@ -14438,11 +14603,35 @@
             "nl": "Druk driemaal op een knop van uw Walli Switch"
           }
         },
+        "associationGroups": [
+          1,
+          2,
+          4
+        ],
+        "associationGroupsMultiChannel": [
+          1,
+          2,
+          4
+        ],
+        "defaultConfiguration": [
+          {
+            "id": 40,
+            "size": 1,
+            "value": 1
+          },
+          {
+            "id": 41,
+            "size": 1,
+            "value": 1
+          }
+        ],
         "multiChannelNodes": {
           "2": {
             "class": "socket",
             "capabilities": [
-              "onoff"
+              "onoff",
+              "measure_power",
+              "meter_power"
             ],
             "icon": "/drivers/FGWDSEU-221/assets/icon.svg",
             "name": {
@@ -14478,17 +14667,25 @@
                 "size": 1
               },
               "value": true
+            },
+            {
+              "id": "switch_button",
+              "type": "checkbox",
+              "label": {
+                "en": "Change button orientation",
+                "nl": "Wissel knop orientatie"
+              },
+              "hint": {
+                "en": "This parameter (24) changes the orientation of the buttons. Button 1 will become 2 and vice versa.",
+                "nl": "Deze parameter (24) verandert de orientatie van de knoppen. Knop 1 wordt 2 en vice versa."
+              },
+              "zwave": {
+                "index": 24,
+                "size": 1
+              },
+              "value": false
             }
           ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Scenes",
-            "nl": "Scenes"
-          },
-          "collapsed": false,
-          "children": []
         },
         {
           "type": "group",
@@ -14588,7 +14785,7 @@
               },
               "values": [
                 {
-                  "id": "0",
+                  "id": "1",
                   "label": {
                     "en": "Off",
                     "nl": "Uit"
@@ -14779,13 +14976,14 @@
         },
         "associationGroups": [
           1,
-          3
+          2
         ]
       },
       "class": "socket",
       "capabilities": [
         "onoff",
-        "measure_power"
+        "measure_power",
+        "meter_power"
       ],
       "images": {
         "large": "/drivers/FGWOF-011/assets/images/large.png",
@@ -16003,6 +16201,20 @@
           "instruction": {
             "en": "Press  a button on your Walli Roller Shutter three times.",
             "nl": "Druk driemaal op een knop op uw Walli Rolluik."
+          }
+        },
+        "multiChannelNodes": {
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "onoff"
+            ],
+            "icon": "/drivers/FGWREU-111/assets/icon.svg",
+            "name": {
+              "en": "Walli Switch 2",
+              "nl": "Walli Schakelaar 2"
+            },
+            "settings": []
           }
         }
       },
