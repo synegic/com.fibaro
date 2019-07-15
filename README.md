@@ -59,6 +59,9 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.34
+Added product IDs for multiple devices.
+
 ### v 2.1.32
 Fixes to FGRGBWM-411 regarding hue and value changes not taking effect
 Fixes to the Smoke Detector, should now fire alarm smoke and alarm heat again
