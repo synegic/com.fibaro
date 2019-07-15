@@ -5441,6 +5441,7 @@
           8194,
           12290
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2791,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2791/FGFS-101-EN-T-v2.1.pdf",
         "learnmode": {
@@ -6879,6 +6880,7 @@
           40961,
           45057
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 1356,
         "learnmode": {
           "image": "/drivers/FGK-10x/assets/learnmode.svg",
@@ -8871,6 +8873,7 @@
           45057,
           45058
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2762,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2762/FGMS-001-EN-T-v2.1.pdf",
         "learnmode": {
@@ -12759,6 +12762,7 @@
           8194,
           12290
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2837,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2837/FGSD-002-EN-A-v1.1.pdf",
         "learnmode": {

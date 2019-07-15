@@ -61,6 +61,7 @@ If it takes longer you (probably) need to restart your homey.
 
 ### v 2.1.34
 Added product IDs for multiple devices.
+Improvements for Z-Wave Plus sensors.
 
 ### v 2.1.32
 Fixes to FGRGBWM-411 regarding hue and value changes not taking effect
