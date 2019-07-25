@@ -30,12 +30,18 @@ The FGRGBWM-441 - RGBW controller has issues regarding the white channel
 * FGWPx-102-PLUS, Wall Plug (Z-Wave Plus)
 * FGKF-601, KeyFob (Z-Wave Plus)
 * FGDW-002, Door/Window Sensor 2
+* FGWDEU-111, Walli Dimmer
+* FGWOF-011, Walli Outlet
 
 ## Supported devices with some parameters:
 * FGR-221, Roller Shutter
 * FGRM-222, Roller Shutter 2
 * FGR-222, Roller Shutter 2 (v2.5)
-* FGR-223, Roller Shutter 3
+* FGR-223, Roller Shutter 3,
+* FGWREU-111, Walli Roller Shutter
+
+## Battery powered sensors
+Should you experience problems with battery powered sensors, please remove those devices and re-add them to Homey.
 
 ## Supported Languages:
 * English
@@ -58,8 +64,9 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
-### v 2.2.0
-Include Fibaro Walli series
+### v 2.1.35
+Include Fibaro Walli Socket, Dimmer and Roller Shutter.
+Updated product IDs.
 Updated meshdriver
 
 ### v 2.1.34
