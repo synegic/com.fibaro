@@ -58,6 +58,9 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.2.0
+Include Fibaro Walli series
+Updated meshdriver
 
 ### v 2.1.34
 Added product IDs for multiple devices.
@@ -66,7 +69,7 @@ Improvements for Z-Wave Plus sensors.
 ### v 2.1.32
 Fixes to FGRGBWM-411 regarding hue and value changes not taking effect
 Fixes to the Smoke Detector, should now fire alarm smoke and alarm heat again
-Fixed no controlls for FGR-221
+Fixed no controls for FGR-221
 
 ### v 2.1.31
 Fixes to device icons
