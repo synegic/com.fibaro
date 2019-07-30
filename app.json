@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.36",
+  "version": "2.1.37",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -15686,6 +15686,7 @@
       ]
     },
     {
+      "deprecated": true,
       "id": "FGWREU-111",
       "name": {
         "en": "Walli Roller Shutter",
@@ -15737,6 +15738,67 @@
         }
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Blind settings",
+            "nl": "Zonwering instellingen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "start_calibration",
+              "type": "checkbox",
+              "label": {
+                "en": "Start calibration",
+                "nl": "Start kalibratie"
+              },
+              "hint": {
+                "en": "This parameter (150) starts the calibration procedure on save.",
+                "nl": "Deze parameter (150) start de kalibratieprocedure na het opslaan."
+              },
+              "zwave": {
+                "index": 150,
+                "size": 1
+              },
+              "value": false
+            },
+            {
+              "id": "invertInputDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert input",
+                "nl": "Keer de ingangen om"
+              },
+              "hint": {
+                "en": "This parameter (24) inverts the input direction.",
+                "nl": "Deze parameter (24) keert de ingangsdirectie om."
+              },
+              "zwave": {
+                "index": 24,
+                "size": 1
+              },
+              "value": false
+            },
+            {
+              "id": "invertOutputDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert output",
+                "nl": "Keer de uitgangen om"
+              },
+              "hint": {
+                "en": "This parameter (25) inverts the output direction.",
+                "nl": "Deze parameter (25) keert de uitgangsdirectie om."
+              },
+              "zwave": {
+                "index": 25,
+                "size": 1
+              },
+              "value": false
+            }
+          ]
+        },
         {
           "type": "group",
           "label": {

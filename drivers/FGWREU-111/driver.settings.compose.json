@@ -2,6 +2,67 @@
   {
     "type": "group",
     "label": {
+      "en": "Blind settings",
+      "nl": "Zonwering instellingen"
+    },
+    "collapsed": true,
+    "children": [
+      {
+        "id": "start_calibration",
+        "type": "checkbox",
+        "label": {
+          "en": "Start calibration",
+          "nl": "Start kalibratie"
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) starts the calibration procedure on save.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) start de kalibratieprocedure na het opslaan."
+        },
+        "zwave": {
+          "index": 150,
+          "size": 1
+        },
+        "value": false
+      },
+      {
+        "id": "invertInputDirection",
+        "type": "checkbox",
+        "label": {
+          "en": "Invert input",
+          "nl": "Keer de ingangen om"
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) inverts the input direction.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) keert de ingangsdirectie om."
+        },
+        "zwave": {
+          "index": 24,
+          "size": 1
+        },
+        "value": false
+      },
+      {
+        "id": "invertOutputDirection",
+        "type": "checkbox",
+        "label": {
+          "en": "Invert output",
+          "nl": "Keer de uitgangen om"
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) inverts the output direction.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) keert de uitgangsdirectie om."
+        },
+        "zwave": {
+          "index": 25,
+          "size": 1
+        },
+        "value": false
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
         "en": "LED Frame",
         "nl": "LED Frame"
     },
