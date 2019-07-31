@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.37",
+  "version": "2.1.38",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -4903,6 +4903,10 @@
               "type": "dropdown"
             },
             {
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
               "values": [
                 {
                   "id": "0",
@@ -4925,13 +4929,9 @@
                 "en": "Default position for sensor",
                 "nl": "Standaard positie voor sensor"
               },
-              "zwave": {
-                "index": 2,
-                "size": 1
-              },
               "hint": {
-                "en": "This parameter (2) determines the default position for this sensor.",
-                "nl": "Deze parameter (2) bepaalt de standaard positite van de sensor."
+                "en": "This parameter (1) determines the default position for this sensor.",
+                "nl": "Deze parameter (1) bepaalt de standaard positite van de sensor."
               },
               "value": "0"
             }
