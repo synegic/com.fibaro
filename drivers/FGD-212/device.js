@@ -20,8 +20,8 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		this.registerCapability('measure_power', 'SENSOR_MULTILEVEL');
 		this.registerCapability('meter_power', 'METER');
 
-		this.registerSetting('force_no_dim', value => new Buffer([value ? 2 : 0]));
-		this.registerSetting('kwh_report', value => new Buffer([value * 100]));
+		this.registerSetting('force_no_dim', value => value ? 2 : 0);
+		this.registerSetting('kwh_report', value => value * 100);
 
 		this.registerReportListener('SCENE_ACTIVATION', 'SCENE_ACTIVATION_SET', (report) => {
 			if (report.hasOwnProperty('Scene ID')) {

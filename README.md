@@ -64,8 +64,21 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.1.39
+Added multichannel node 2 for FGK-101 temperature sensor. Thanks Caseda!
+Fixed some settings regarding dimming for Dimmer 2.
+Fixed all flow triggers for Swipe.
+Fixed temperature sensor on Flood Sensor FGFS-101.
+String and translation corrections.
+
+### v 2.1.38
+Fixed advanced parameters for Door/Window sensor 2.
+
+### v 2.1.36
+Fixed advanced parameters for Wall Plug.
+
 ### v 2.1.35
-Include Fibaro Walli Socket, Dimmer and Roller Shutter.
+Include Fibaro Walli Socket and Dimmer.
 Updated product IDs.
 Updated meshdriver
 

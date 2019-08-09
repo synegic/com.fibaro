@@ -79,6 +79,13 @@
           "nl": "Start dim/stop dim commando, rondgaand gebaar"
         }
       }
-    }
+    },
+    "defaultConfiguration": [
+      {
+        "id": 10,
+        "size": 1,
+        "value": 63
+      }
+    ]
   }
 }
