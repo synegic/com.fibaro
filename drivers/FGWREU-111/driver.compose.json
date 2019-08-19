@@ -23,7 +23,7 @@
     "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
     "learnmode": {
       "instruction": {
-        "en": "Press  a button on your {{driverNameEn}} three times.",
+        "en": "Press a button on your {{driverNameEn}} three times.",
         "nl": "Druk driemaal op een knop op uw {{driverNameNl}}."
       }
     },

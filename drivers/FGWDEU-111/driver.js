@@ -18,7 +18,14 @@ class FibaroWalliDimmerDeviceDriver extends Homey.Driver {
             .registerRunListener((args, state) => {
                 return args.device.switchTriggersRunListener(args, state);
             });
-    }
+
+        this.ledOnAction = new Homey.FlowCardAction('FGWDEU_led_on').register().registerRunListener((args, state) => {
+            return args.device.ledOnRunListener(args, state);
+        });
+        this.ledOffAction = new Homey.FlowCardAction('FGWDEU_led_off').register().registerRunListener((args, state) => {
+            return args.device.ledOffRunListener(args, state);
+        });
+}
 }
 
 module.exports = FibaroWalliDimmerDeviceDriver;

@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.41",
+  "version": "2.1.42",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -508,7 +508,7 @@
         ]
       },
       {
-        "id": "FGWDSEU_led_on",
+        "id": "FGWDEU_led_on",
         "title": {
           "en": "LED Colour, on state",
           "nl": "LED Kleur wanneer aan"
@@ -598,7 +598,7 @@
         ]
       },
       {
-        "id": "FGWDSEU_led_off",
+        "id": "FGWDEU_led_off",
         "title": {
           "en": "LED Colour, off state",
           "nl": "LED Kleur wanneer uit"
@@ -15718,7 +15718,7 @@
         "__comment": "Multichannel nodes don't work properly with secureInclusion due to Fibaro firmware issues",
         "learnmode": {
           "instruction": {
-            "en": "Press  a button on your Walli Roller Shutter three times.",
+            "en": "Press a button on your Walli Roller Shutter three times.",
             "nl": "Druk driemaal op een knop op uw Walli Rolluik."
           }
         },

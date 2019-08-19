@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "FGWDSEU_led_on",
+      "id": "FGWDEU_led_on",
       "$filter": "flags=zwaveRoot",
       "title": {
         "en": "LED Colour, on state",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "id": "FGWDSEU_led_off",
+      "id": "FGWDEU_led_off",
       "$filter": "flags=zwaveRoot",
       "title": {
         "en": "LED Colour, off state",

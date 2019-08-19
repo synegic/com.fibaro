@@ -64,7 +64,13 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
-### v 2.1.40
+
+### v 2.1.42
+Fix test mode on CO sensor.
+Fix LED settings for some Walli devices.
+Updated meshdriver.
+
+### v 2.1.40/41
 Fix icons for some devices.
 
 ### v 2.1.39
