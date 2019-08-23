@@ -65,6 +65,11 @@ If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
 
+### v 2.1.43
+Changes on BInary Sensor temperature sensors.
+Fix timeout for tamper alarm on Flood Sensor (FGFS-101)
+Fix for Door/Window sensor 2 alarms.
+
 ### v 2.1.42
 Fix test mode on CO sensor.
 Fix LED settings for some Walli devices.

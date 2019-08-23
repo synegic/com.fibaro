@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.42",
+  "version": "2.1.43",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -3227,57 +3227,6 @@
         "large": "/drivers/FGBS-001/assets/images/large.png",
         "small": "/drivers/FGBS-001/assets/images/small.png"
       },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": []
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "alarm_generic.contact1",
-              "alarm_generic.contact2",
-              "measure_temperature.sensor1",
-              "measure_temperature.sensor2",
-              "measure_temperature.sensor3",
-              "measure_temperature.sensor4"
-            ],
-            "options": {
-              "icons": {
-                "alarm_generic.contact1": "/drivers/FGBS-001/assets/switch.svg",
-                "alarm_generic.contact2": "/drivers/FGBS-001/assets/switch.svg"
-              },
-              "alarm_generic.contact1": {
-                "noblink": true,
-                "label": {
-                  "true": {
-                    "en": "Open",
-                    "nl": "Open"
-                  },
-                  "false": {
-                    "en": "Closed",
-                    "nl": "Gesloten"
-                  }
-                }
-              },
-              "alarm_generic.contact2": {
-                "noblink": true,
-                "label": {
-                  "true": {
-                    "en": "Open",
-                    "nl": "Open"
-                  },
-                  "false": {
-                    "en": "Closed",
-                    "nl": "Gesloten"
-                  }
-                }
-              }
-            }
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": 1281,
@@ -4826,6 +4775,7 @@
           40960,
           45056
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2181,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2181/FGDW-002-EN-T-v0.3.2.pdf",
         "learnmode": {
