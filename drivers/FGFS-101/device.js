@@ -14,9 +14,10 @@ class FibaroFloodSensor extends ZwaveDevice {
             if (!report || !report.hasOwnProperty('Sensor Type') || !report.hasOwnProperty('Sensor State')) return null;
 
             if (report['Sensor Type'] === 'General Purpose Alarm' && report['Sensor State'] === 'alarm') {
-                this.setCapabilityValue('alarm_tamper', true);
-                this.tamperTimeOut = setTimeout(() => {
-                    this.setCapabilityValue('alarm_tamper', false);
+				this.setCapabilityValue('alarm_tamper', true);
+				if (this.tamperTimeout) clearTimeout(this.tamperTimeout);
+                this.tamperTimeout = setTimeout(() => {
+					this.setCapabilityValue('alarm_tamper', false);
                 }, TAMPER_TIMEOUT);
             }
         });
