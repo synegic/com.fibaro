@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.43",
+  "version": "2.1.46",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -3456,6 +3456,11 @@
         "large": "/drivers/FGCD-001/assets/images/large.png",
         "small": "/drivers/FGCD-001/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -4757,6 +4762,11 @@
         "large": "/drivers/FGDW-002/assets/images/large.png",
         "small": "/drivers/FGDW-002/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "LS14250"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -5325,6 +5335,11 @@
         "large": "/drivers/FGFS-101/assets/images/large.png",
         "small": "/drivers/FGFS-101/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -5337,7 +5352,7 @@
         ],
         "zwaveAllianceProductId": 994,
         "learnmode": {
-          "image": "/drivers/FGFS-101/assets/assets/learnmode.svg",
+          "image": "/drivers/FGFS-101/assets/learnmode.svg",
           "instruction": {
             "en": "Press the button on your Fibaro flood sensor three times.",
             "nl": "Druk driemaal op de knop op de Fibaro overstromingssensor."
@@ -5878,6 +5893,11 @@
       "images": {
         "large": "/drivers/FGFS-101-PLUS/assets/images/large.png",
         "small": "/drivers/FGFS-101-PLUS/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
       },
       "zwave": {
         "manufacturerId": 271,
@@ -6420,6 +6440,14 @@
       "images": {
         "large": "/drivers/FGGC-001/assets/images/large.png",
         "small": "/drivers/FGGC-001/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA",
+          "AA",
+          "AA"
+        ]
       },
       "zwave": {
         "manufacturerId": 271,
@@ -7171,6 +7199,11 @@
         "large": "/drivers/FGK-101/assets/images/large.png",
         "small": "/drivers/FGK-101/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "LS14250"
+        ]
+      },
       "id": "FGK-101",
       "settings": [
         {
@@ -7318,6 +7351,22 @@
         "en": "Door/Window Sensor (Z-Wave plus)",
         "nl": "Deur/Raam Sensor (Z-Wave plus)"
       },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_tamper",
+        "measure_temperature",
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/FGK-10x/assets/images/large.png",
+        "small": "/drivers/FGK-10x/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "LS14250"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -7349,17 +7398,6 @@
           1,
           2
         ]
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_contact",
-        "alarm_tamper",
-        "measure_temperature",
-        "measure_battery"
-      ],
-      "images": {
-        "large": "/drivers/FGK-10x/assets/images/large.png",
-        "small": "/drivers/FGK-10x/assets/images/small.png"
       },
       "id": "FGK-10x",
       "settings": [
@@ -7670,6 +7708,11 @@
       "images": {
         "large": "/drivers/FGKF-601/assets/images/large.png",
         "small": "/drivers/FGKF-601/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zwave": {
         "manufacturerId": 271,
@@ -8419,6 +8462,23 @@
         "en": "Motion Sensor",
         "nl": "Bewegingssensor"
       },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+        "measure_luminance",
+        "measure_temperature",
+        "alarm_motion",
+        "alarm_tamper"
+      ],
+      "images": {
+        "large": "/drivers/FGMS-001/assets/images/large.png",
+        "small": "/drivers/FGMS-001/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -8446,18 +8506,6 @@
             "value": 1
           }
         ]
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_battery",
-        "measure_luminance",
-        "measure_temperature",
-        "alarm_motion",
-        "alarm_tamper"
-      ],
-      "images": {
-        "large": "/drivers/FGMS-001/assets/images/large.png",
-        "small": "/drivers/FGMS-001/assets/images/small.png"
       },
       "id": "FGMS-001",
       "settings": [
@@ -9299,6 +9347,11 @@
       "images": {
         "large": "/drivers/FGMS-001-PLUS/assets/images/large.png",
         "small": "/drivers/FGMS-001-PLUS/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
       },
       "zwave": {
         "manufacturerId": 271,
@@ -13207,6 +13260,11 @@
         "large": "/drivers/FGSD-002/assets/images/large.png",
         "small": "/drivers/FGSD-002/assets/images/small.png"
       },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
       "zwave": {
         "manufacturerId": 271,
         "productTypeId": [
@@ -13544,6 +13602,11 @@
       "images": {
         "large": "/drivers/FGSS-001/assets/images/large.png",
         "small": "/drivers/FGSS-001/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
       },
       "zwave": {
         "manufacturerId": 271,
