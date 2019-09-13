@@ -27,6 +27,7 @@
     "productId": [
       4096
     ],
+    "includeSecure": false,
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
@@ -34,8 +35,9 @@
         "nl": "Druk driemaal op de knop van uw {{driverNameNl}}."
       }
     },
-    "associationGroupsMultiChannel": [ 1,2,3 ],
-    "associationGroups": [ 1,2,3 ],
+    "associationGroupsMultiChannel": [
+      1
+    ],
     "defaultConfiguration": [
       {
         "id": 20,

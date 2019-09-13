@@ -7,6 +7,7 @@ class FibaroSmartImplant extends ZwaveDevice {
 
 	onMeshInit() {
 		// this.printNode();
+		this.enableDebug();
 
 		// Settings:
 		// Input 1 mode
@@ -30,30 +31,27 @@ class FibaroSmartImplant extends ZwaveDevice {
 		//console.log('ROOT NODE', this.node.CommandClass);
 
 		Object.keys(this.node.MultiChannelNodes).forEach(id => {
-			console.log(id, Object.keys(this.node.MultiChannelNodes[id].CommandClass))
-		})
-
-		this.registerCapabilityListener('onoff.output1', (value, opts) => {
-			console.log('onoff1', value);
-			// return this.node.MultiChannelNodes['5'].CommandClass.COMMAND_CLASS_BASIC.BASIC_SET(value ? 0 : 255); //set true or false
-			return this.node.CommandClass.COMMAND_CLASS_BASIC.BASIC_SET(value ? 0 : 255); //set true or false
-		})
-
-		this.node.CommandClass.COMMAND_CLASS_NOTIFICATION.on('report', (command, report) => {
-			console.log('root notification report', report);
-			if (report.Event === 0) { this.setCapabilityValue('alarm_generic.input1', false); }
-			else if (report.Event === 2) { this.setCapabilityValue('alarm_generic.input1', true); }
+			this.log(id, Object.keys(this.node.MultiChannelNodes[id].CommandClass))
 		});
 
-		// This handles both scenes from input 1 and 2
-		this.node.CommandClass.COMMAND_CLASS_CENTRAL_SCENE.on('report', (command, report) => {
-			console.log('root scene report', report);
-			// trigger een flow scene
-		});
+		// TODO: Check confog to determine which capability is being used, or use only generic input stuff
+		this.registerCapability('alarm_generic.input1', 'ALARM_GENERIC', { multiChannelNodeId: 1 });
+		this.registerCapability('alarm_generic.input2', 'ALARM_GENERIC', { multiChannelNodeId: 2 });
 
-		// this.node.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_NOTIFICATION.on('report', () => {
-		// 	console.log('CHANNEL 2 notification report', report);
-		// });
+		this.registerCapability('measure_voltage.input1', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 3 });
+		this.registerCapability('measure_voltage.input2', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 4 });
+
+		this.registerCapability('onoff.output1', 'SWITCH_BINARY', { multiChannelNodeId: 5 });
+		this.registerCapability('onoff.output2', 'SWITCH_BINARY', { multiChannelNodeId: 6 });
+
+		this.registerCapability('measure_temperature.internal', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 7});
+		if (this.node.MultiChannelNodes.hasOwnProperty('8')) this.registerCapability('measure_temperature.external1', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 8 });
+		if (this.node.MultiChannelNodes.hasOwnProperty('9')) this.registerCapability('measure_temperature.external2', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 9 });
+		if (this.node.MultiChannelNodes.hasOwnProperty('10')) this.registerCapability('measure_temperature.external3', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 10 });
+		if (this.node.MultiChannelNodes.hasOwnProperty('11')) this.registerCapability('measure_temperature.external4', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 11 });
+		if (this.node.MultiChannelNodes.hasOwnProperty('12')) this.registerCapability('measure_temperature.external5', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 12 });
+		if (this.node.MultiChannelNodes.hasOwnProperty('13')) this.registerCapability('measure_temperature.external6', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 13 });
+
 	}
 }
 

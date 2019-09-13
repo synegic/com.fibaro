@@ -3020,6 +3020,7 @@
         "productId": [
           4096
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/FGBS-222/assets/learnmode.svg",
           "instruction": {
@@ -3028,14 +3029,7 @@
           }
         },
         "associationGroupsMultiChannel": [
-          1,
-          2,
-          3
-        ],
-        "associationGroups": [
-          1,
-          2,
-          3
+          1
         ],
         "defaultConfiguration": [
           {
