@@ -104,6 +104,90 @@
         ]
       },
       {
+        "id": "FGBS-222_o1_on",
+        "title": {
+          "en": "Output 1 on",
+          "nl": "Uitgang 1 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o1_off",
+        "title": {
+          "en": "Output 1 off",
+          "nl": "Uitgang 1 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o1_toggle",
+        "title": {
+          "en": "Output 1 toggle",
+          "nl": "Uitgang 1 omschakelen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_on",
+        "title": {
+          "en": "Output 2 on",
+          "nl": "Uitgang 2 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_off",
+        "title": {
+          "en": "Output 2 off",
+          "nl": "Uitgang 2 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_toggle",
+        "title": {
+          "en": "Output 2 toggle",
+          "nl": "Uitgang 2 omschakelen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
         "id": "FGD-212_set_brightness",
         "title": {
           "en": "Set forced brightness",
@@ -1025,6 +1109,265 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=FGBS-001"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i1_on",
+        "title": {
+          "en": "Input 1 opened",
+          "nl": "Ingang 1 geopend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i1_off",
+        "title": {
+          "en": "Input 1 closed",
+          "nl": "Ingang 1 gesloten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i1_switch",
+        "title": {
+          "en": "Input 1 switched",
+          "nl": "Ingang 1 geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i2_on",
+        "title": {
+          "en": "Input 2 opened",
+          "nl": "Ingang 2 geopend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i2_off",
+        "title": {
+          "en": "Input 2 closed",
+          "nl": "Ingang 2 gesloten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i2_switch",
+        "title": {
+          "en": "Input 2 switched",
+          "nl": "Ingang 2 geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp_internal",
+        "title": {
+          "en": "Internal temperature has changed",
+          "nl": "Interal temperatuur is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp1",
+        "title": {
+          "en": "Temperature 1 has changed",
+          "nl": "Temperatuur 1 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp2",
+        "title": {
+          "en": "Temperature 2 has changed",
+          "nl": "Temperatuur 2 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp3",
+        "title": {
+          "en": "Temperature 3 has changed",
+          "nl": "Temperatuur 3 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp4",
+        "title": {
+          "en": "Temperature 4 has changed",
+          "nl": "Temperatuur 4 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp5",
+        "title": {
+          "en": "Temperature 5 has changed",
+          "nl": "Temperatuur 5 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temp",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "example": 18
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_temp6",
+        "title": {
+          "en": "Temperature 6 has changed",
+          "nl": "Temperatuur 6 is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
           }
         ],
         "tokens": [
@@ -2668,6 +3011,34 @@
             "filter": "driver_id=FGBS-001"
           }
         ]
+      },
+      {
+        "id": "FGBS-222_i1",
+        "title": {
+          "en": "Input 1 !{{is open|is closed}}",
+          "nl": "Ingang 1 !{{is geopend|is gesloten}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_i2",
+        "title": {
+          "en": "Input 2 !{{is open|is closed}}",
+          "nl": "Ingang 2 !{{is geopend|is gesloten}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
       }
     ]
   },
@@ -3000,6 +3371,8 @@
       "capabilities": [
         "alarm_generic.input1",
         "alarm_generic.input2",
+        "measure_voltage.input1",
+        "measure_voltage.input2",
         "onoff.output1",
         "onoff.output2",
         "measure_temperature.internal",
@@ -3043,7 +3416,522 @@
             "value": 1
           }
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Input configuration",
+            "nl": "Ingang configuratie"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "20",
+              "type": "dropdown",
+              "label": {
+                "en": "Type input 1",
+                "nl": "Type ingang 1"
+              },
+              "zwave": {
+                "index": 20,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally closed contact",
+                    "nl": "Normaal gesloten contact"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally open contact",
+                    "nl": "Normaal open contact"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Push button / momentary button",
+                    "nl": "Puls knop / tijdelijk contact"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle button / Bistable button",
+                    "nl": "Schakelaar / dubbel contact"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Analog input without internal pull-up",
+                    "nl": "Analoge ingang zonder interne pull-up"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Analog input with internal pull-up",
+                    "nl": "Analoge ingang met interne pull-up"
+                  }
+                }
+              ],
+              "value": "1"
+            },
+            {
+              "id": "21",
+              "type": "dropdown",
+              "label": {
+                "en": "Type input 2",
+                "nl": "Type ingang 2"
+              },
+              "zwave": {
+                "index": 21,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally closed contact",
+                    "nl": "Normaal gesloten contact"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally open contact",
+                    "nl": "Normaal open contact"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Push button / momentary button",
+                    "nl": "Puls knop / tijdelijk contact"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle button / Bistable button",
+                    "nl": "Schakelaar / dubbel contact"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Analog input without internal pull-up",
+                    "nl": "Analoge ingang zonder interne pull-up"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Analog input with internal pull-up",
+                    "nl": "Analoge ingang met interne pull-up"
+                  }
+                }
+              ],
+              "value": "1"
+            },
+            {
+              "id": "24",
+              "type": "dropdown",
+              "label": {
+                "en": "Input orientation",
+                "nl": "Ingang orientatie"
+              },
+              "zwave": {
+                "index": 24,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (24) inverts the inputs. When inverted, physical input 1 will trigger input 2 and vice versa.",
+                "nl": "Deze parameter (24) inverteerd de ingangen. Wanneer geïnverteerd zal fysieke ingang 1 triggeren naar ingang 2 en andersom."
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Default",
+                    "nl": "Standaard"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Inverted",
+                    "nl": "Geïnverteerd"
+                  }
+                }
+              ],
+              "value": "0"
+            },
+            {
+              "id": "40",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 scenes",
+                "nl": "Ingang 1 scenes"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No scenes sent",
+                    "nl": "Geen scenes verzenden"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Key pressed 1 time",
+                    "nl": "Knop 1 keer indrukken"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Key pressed 2 times",
+                    "nl": "Knop 2 keer indrukken"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Key pressed 3 times",
+                    "nl": "Knop 3 keer indrukken"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Key hold down",
+                    "nl": "Knop ingedrukt houden"
+                  }
+                }
+              ],
+              "value": "0"
+            },
+            {
+              "id": "41",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 scenes",
+                "nl": "Ingang 2 scenes"
+              },
+              "zwave": {
+                "index": 41,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "No scenes sent",
+                    "nl": "Geen scenes verzenden"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Key pressed 1 time",
+                    "nl": "Knop 1 keer indrukken"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Key pressed 2 times",
+                    "nl": "Knop 2 keer indrukken"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Key pressed 3 times",
+                    "nl": "Knop 3 keer indrukken"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Key hold down",
+                    "nl": "Knop ingedrukt houden"
+                  }
+                }
+              ],
+              "value": "0"
+            },
+            {
+              "label": {
+                "en": "Analog input report threshold",
+                "nl": "Analoge ingang rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (63) sets the minimum voltage change to trigger a report. Only available when Input 1 or 2 is set to analog input.",
+                "nl": "Deze parameter (63) bepaalt het minimale spanningsverschil om een rapport te verzenden. Alleen beschikbaar wanneer ingang 1 of 2 op analoge modus staat."
+              },
+              "zwave": {
+                "index": 63,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 100,
+                "step": 1
+              },
+              "value": 5,
+              "id": "63",
+              "type": "number"
+            },
+            {
+              "label": {
+                "en": "Analog input periodical report",
+                "nl": "Analoge ingang periodieke raportage"
+              },
+              "hint": {
+                "en": "This parameter (64) sets the time between sending a report with the analog measure values. Only available when Input 1 or 2 is set to analog input.",
+                "nl": "Deze parameter (64) zet de tijd tussen de rapporten met analoge sensorwaarden. Alleen beschikbaar wanneer ingang 1 of 2 op analoge modus staat."
+              },
+              "zwave": {
+                "index": 64,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 32400
+              },
+              "value": 0,
+              "id": "64",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Output configuration",
+            "nl": "Uitgang configuratie"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "id": "154",
+              "type": "dropdown",
+              "label": {
+                "en": "Output 1 mode",
+                "nl": "Modus uitgang 1"
+              },
+              "zwave": {
+                "index": 154,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally open contact, closed when active",
+                    "nl": "Normaal open contact, gesloten wanneer actief"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally closed contact, opened when active",
+                    "nl": "Normaal gesloten contact, geopend wanneer actief"
+                  }
+                }
+              ],
+              "value": "0"
+            },
+            {
+              "id": "155",
+              "type": "dropdown",
+              "label": {
+                "en": "Output 2 mode",
+                "nl": "Modus uitgang 2"
+              },
+              "zwave": {
+                "index": 155,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Normally open contact, closed when active",
+                    "nl": "Normaal open contact, gesloten wanneer actief"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Normally closed contact, opened when active",
+                    "nl": "Normaal gesloten contact, geopend wanneer actief"
+                  }
+                }
+              ],
+              "value": "0"
+            },
+            {
+              "id": "25",
+              "type": "dropdown",
+              "label": {
+                "en": "Output orientation",
+                "nl": "Uitgang orientatie"
+              },
+              "zwave": {
+                "index": 25,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (25) inverts the outputs. When inverted, physical output 1 will trigger when output 1 is controlled and vice versa.",
+                "nl": "Deze parameter (25) inverteerd de uitgangen. Wanneer geïnverteerd zal fysieke uitgang 1 worden bestuurd via uitgang 2 en andersom."
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Default",
+                    "nl": "Standaard"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Inverted",
+                    "nl": "Omgedraaid"
+                  }
+                }
+              ],
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Internal temperature sensor",
+            "nl": "Interne temperatuurssensor"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 66,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "value": 200,
+              "id": "66",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (66) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (66) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 65,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 16,
+                "step": 0.1
+              },
+              "value": 0.5,
+              "id": "65",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (65) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (65) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "External temperature sensor(s)",
+            "nl": "Externe temperatuurssensor(en)"
+          },
+          "collapsed": false,
+          "children": [
+            {
+              "zwave": {
+                "index": 68,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 255
+              },
+              "value": 200,
+              "id": "68",
+              "label": {
+                "en": "Report interval (s)",
+                "nl": "Rapportage interval (s)"
+              },
+              "hint": {
+                "en": "This parameter (66) determines the time between reports to Homey, independent of value changes.",
+                "nl": "Deze parameter (66) bepaalt wanneer de waarden naar Homey worden verzonden, ook als deze niet veranderd is."
+              },
+              "type": "number"
+            },
+            {
+              "zwave": {
+                "index": 67,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 16,
+                "step": 0.1
+              },
+              "value": 0.5,
+              "id": "67",
+              "label": {
+                "en": "Report threshold",
+                "nl": "Rapportage drempel"
+              },
+              "hint": {
+                "en": "This parameter (65) determines the minimum change in value before reporting changes to Homey.",
+                "nl": "Deze parameter (65) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."
+              },
+              "type": "number"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "FGCD-001",

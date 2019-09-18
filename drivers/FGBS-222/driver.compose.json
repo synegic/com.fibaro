@@ -7,6 +7,8 @@
   "capabilities": [
    "alarm_generic.input1",
    "alarm_generic.input2",
+   "measure_voltage.input1",
+   "measure_voltage.input2",
    "onoff.output1",
    "onoff.output2",
    "measure_temperature.internal",
