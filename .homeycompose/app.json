@@ -6,7 +6,7 @@
     },
     "brandColor": "#000000",
     "sdk": 2,
-    "version": "2.1.46",
+    "version": "2.1.47",
     "compatibility": ">=2.4.0",
     "description": {
       "en": "Fibaro devices for Homey"

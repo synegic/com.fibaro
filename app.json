@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.1.46",
+  "version": "2.1.47",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -3403,6 +3403,7 @@
           45056,
           45057
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2336,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2336/FGCD-001-EN-T-v0.4.pdf",
         "learnmode": {

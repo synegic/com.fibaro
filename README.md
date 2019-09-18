@@ -60,6 +60,12 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.1.47
+Fix CO sensor unsecure pairing.
+Updated meshdriver
+
+### v 2.1.46
+Add battery types
 
 ### v 2.1.44
 RGBW Controller: Completely new implementation. All previous issues with this device should now be resolved.
