@@ -35,6 +35,7 @@ Should you experience problems with battery powered sensors, please remove those
 * FGDW-002, Door/Window Sensor 2
 * FGWDEU-111, Walli Dimmer
 * FGWOF-011, Walli Outlet
+* FGBS-222, Smart Implant
 
 ## Supported devices with some parameters:
 * FGR-221, Roller Shutter
@@ -60,6 +61,9 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.2.0
+Added basic support for Smart Implant
+
 ### v 2.1.47
 Fix CO sensor unsecure pairing.
 Updated meshdriver

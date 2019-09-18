@@ -117,8 +117,6 @@ class FibaroSmartImplant extends ZwaveDevice {
 
 	// Settings parser. Not all settings are compatbile with eachother, so check which to save
 	async onSettings(oldSettings, newSettings, changedKeys) {
-		this.log(`old: ${oldSettings}, new: ${newSettings}, diff: ${changedKeys}`);
-
 		// Input parser
 		if (changedKeys.includes('20')) {
 			if (newSettings['20'] !== '4' || newSettings['20' !== '5']) this.setCapabilityValue('measure_voltage.input1', null); //reset measure voltage
