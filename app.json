@@ -104,6 +104,90 @@
         ]
       },
       {
+        "id": "FGBS-222_o1_on",
+        "title": {
+          "en": "Output 1 on",
+          "nl": "Uitgang 1 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o1_off",
+        "title": {
+          "en": "Output 1 off",
+          "nl": "Uitgang 1 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o1_toggle",
+        "title": {
+          "en": "Output 1 toggle",
+          "nl": "Uitgang 1 omschakelen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_on",
+        "title": {
+          "en": "Output 2 on",
+          "nl": "Uitgang 2 aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_off",
+        "title": {
+          "en": "Output 2 off",
+          "nl": "Uitgang 2 uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
+        "id": "FGBS-222_o2_toggle",
+        "title": {
+          "en": "Output 2 toggle",
+          "nl": "Uitgang 2 omschakelen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGBS-222"
+          }
+        ]
+      },
+      {
         "id": "FGD-212_set_brightness",
         "title": {
           "en": "Set forced brightness",
