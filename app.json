@@ -287,75 +287,6 @@
         ]
       },
       {
-        "id": "RGBW_random",
-        "title": {
-          "en": "Choose a random color",
-          "nl": "Kies een willekeurige kleur"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
-          },
-          {
-            "name": "range",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "rgb",
-                "label": {
-                  "en": "RGB",
-                  "nl": "RGB"
-                }
-              },
-              {
-                "id": "rgbw",
-                "label": {
-                  "en": "RGB with white",
-                  "nl": "RGB met wit"
-                }
-              },
-              {
-                "id": "rgb-w",
-                "label": {
-                  "en": "RGB or white",
-                  "nl": "RGB of wit"
-                }
-              },
-              {
-                "id": "r-g-b",
-                "label": {
-                  "en": "Primary",
-                  "nl": "Primair"
-                }
-              },
-              {
-                "id": "r-g-b-w",
-                "label": {
-                  "en": "Primary or white",
-                  "nl": "Primair of wit"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m",
-                "label": {
-                  "en": "Primary/secundary",
-                  "nl": "Primair/secundair"
-                }
-              },
-              {
-                "id": "r-y-g-c-b-m-w",
-                "label": {
-                  "en": "Primary/secundary or white",
-                  "nl": "Primair/secundair of wit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
         "id": "RGBW_animation",
         "title": {
           "en": "Choose an animation",
@@ -432,24 +363,6 @@
                 }
               }
             ]
-          }
-        ]
-      },
-      {
-        "id": "FGRGBWM-441_reset_meter",
-        "title": {
-          "en": "Reset meter values",
-          "nl": "Meter waarden resetten"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (KWh). Can not be reversed.",
-          "nl": "Reset de stroomberbruik (KWh) waarden. Kan niet ongedaan gemaakt worden."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=FGRGBWM-441"
           }
         ]
       },
@@ -15388,6 +15301,10 @@
               "type": "number"
             },
             {
+              "label": {
+                "en": "Report percentage threshold",
+                "nl": "Procentuele rapportage drempel"
+              },
               "zwave": {
                 "index": 10,
                 "size": 1
@@ -15398,10 +15315,6 @@
               },
               "value": 80,
               "id": "immediate_watt_percent_report",
-              "label": {
-                "en": "Report threshold",
-                "nl": "Rapportage drempel"
-              },
               "hint": {
                 "en": "This parameter (11) determines the minimum change in value before reporting changes to Homey.",
                 "nl": "Deze parameter (11) bepaalt de minimum verandering van de meetwaarde voordat deze naar Homey wordt gestuurd."

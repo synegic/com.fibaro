@@ -59,6 +59,10 @@
       {
         "$extends": "reportThreshold",
         "$id": "immediate_watt_percent_report",
+        "label": {
+          "en": "Report percentage threshold",
+          "nl": "Procentuele rapportage drempel" 
+        },
         "zwave": {
           "index": 10,
           "size": 1
