@@ -9,7 +9,6 @@ const CONFIGURED_MULTI_CHANNEL_ASSOCIATION = 'configuredMCAssociation';
 class FibaroDoubleSwitchTwoDevice extends ZwaveDevice {
 
 	async onMeshInit() {
-		this.printNode();
 
 		// If not multi channel node this is the main node, use multi channel node 1 for that
 		if (!this.node.isMultiChannelNode) {

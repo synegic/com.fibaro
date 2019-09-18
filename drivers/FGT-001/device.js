@@ -3,6 +3,7 @@
 const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 // TODO: Make the MultiChannel node 2 (optional bluetooth temperature sensor) report the temperature, currently not possible since the device doesn't report the MultiChannel node unless you change a setting.
+// TODO: set battery type in driver.compose.json
 class RadiatorThermostat extends ZwaveDevice {
 
 	onMeshInit() {
