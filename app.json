@@ -3424,7 +3424,7 @@
         ]
       },
       {
-        "id": "FGBS-222_i1",
+        "id": "FGBS-222_i1_state",
         "title": {
           "en": "Input 1 !{{is open|is closed}}",
           "nl": "Ingang 1 !{{is geopend|is gesloten}}"
@@ -3438,7 +3438,7 @@
         ]
       },
       {
-        "id": "FGBS-222_i2",
+        "id": "FGBS-222_i2_state",
         "title": {
           "en": "Input 2 !{{is open|is closed}}",
           "nl": "Ingang 2 !{{is geopend|is gesloten}}"
