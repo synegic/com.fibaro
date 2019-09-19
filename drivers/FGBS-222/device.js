@@ -31,8 +31,8 @@ class FibaroSmartImplant extends ZwaveDevice {
 
 		this.registerMultiChannelReportListener(1, 'NOTIFICATION', 'NOTIFICATION_REPORT', (report) => {
 			const value = !!report['Event'];
-			if (value) this.driver.input1OnTrigger.trigger(this);
-			else this.driver.input1OffTrigger.trigger(this);
+			if (value) this.driver.input1OffTrigger.trigger(this);
+			else this.driver.input1OnTrigger.trigger(this);
 			if (value !== this.getCapabilityValue('alarm_generic.input1')) this.driver.input1SwitchTrigger.trigger(this);
 
 			this.setCapabilityValue('alarm_generic.input1', value);
@@ -40,8 +40,8 @@ class FibaroSmartImplant extends ZwaveDevice {
 
 		this.registerMultiChannelReportListener(2, 'NOTIFICATION', 'NOTIFICATION_REPORT', (report) => {
 			const value = !!report['Event'];
-			if (value) this.driver.input2OnTrigger.trigger(this);
-			else this.driver.input2OffTrigger.trigger(this);
+			if (value) this.driver.input2OffTrigger.trigger(this);
+			else this.driver.input2OnTrigger.trigger(this);
 			if (value !== this.getCapabilityValue('alarm_generic.input2')) this.driver.input2SwitchTrigger.trigger(this);
 
 			this.setCapabilityValue('alarm_generic.input2', value);
