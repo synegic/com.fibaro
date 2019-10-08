@@ -61,6 +61,11 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+
+### v 2.2.1/2/3
+Fixed RGBW controller using white when set to color mode.
+Renamed capabilities for Smart Implant.
+
 ### v 2.2.0
 Added basic support for Smart Implant
 

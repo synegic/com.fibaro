@@ -50,42 +50,22 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             if (typeof newValues.light_saturation === 'number') this.currentHSV.saturation = newValues.light_saturation;
             this.currentHSV.value = this.getCapabilityValue('dim');
 
-            this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
+            let rgbColors = ZwaveUtils.convertHSVToRGB(this.currentHSV);
+            rgbColors.white = 0;
+            this.sendColors(rgbColors);
         });
 
         this.registerCapabilityListener('light_temperature', async (value, opts) => {
-            const HSV = this.temperatureGradient.hsvAt(value).toHsv();
-            HSV.h /= 100;
-            HSV.s /= 100;
-            HSV.v = this.currentHSV.value;
-
-            this.log('Temperature HSV', HSV);
-            this.currentHSV = {
-                hue: (HSV.h /100),
-                saturation: (HSV.s /100),
+            const colorTempValues = {
+                blue: (1 - value) * 255, // In temperature mode mix in blue to imitate cool white mode
+                red: 0, // Set red to zero since we don't want colors
+                green: 0, // Set red to zero since we don't want colors
+                white: 255,
             }
-            this.currentHSV.value = this.getCapabilityValue('dim')
 
-            switch(this.stripType) {
-                case 'cct':
-                    let colorObject = { 
-                        // Red & green always 0 to turn them off in temperature mode
-                        red: 0,
-                        green: 0,
-                        blue: Math.round(this.currentHSV.value * (1 - value) * 99),
-                        white: Math.round(this.currentHSV.value * value * 99)
-                    }
-                    this.sendColors(colorObject);
-                    break;
-                case 'rgbw': 
-                    this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
-                    break;
-                case 'rgb':
-                    this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
-                    break;
-                default:
-                    return new Error('temperature_mode_not_supported');
-            }
+            if (this.stripType === 'cct' || this.stripType === 'rgbw') {
+                this.sendColors(colorTempValues);
+            } else  return new Error('temperature_mode_not_supported');
         });
 
         // Input/ report
@@ -222,7 +202,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.setCapabilityValue('light_hue', tempHSV.hue);
                 this.setCapabilityValue('light_saturation', tempHSV.saturation);
                 this.setCapabilityValue('dim', tempHSV.value);   
-            }, 1000);
+            }, 2000);
 
             // TODO Instead of returning 0, remove the capability when not in voltage mode.
             return 0;
