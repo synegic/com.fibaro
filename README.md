@@ -61,6 +61,8 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.2.5
+Improve response for FGT-001, Heat Controller.
 
 ### v 2.2.1/2/3
 Fixed RGBW controller using white when set to color mode.

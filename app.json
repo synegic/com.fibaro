@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.2.4",
+  "version": "2.2.5",
   "compatibility": ">=2.4.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -14835,6 +14835,7 @@
           40960,
           45056
         ],
+        "includeSecure": false,
         "zwaveAllianceProductId": 2586,
         "zwaveAllianceProductDocumentation": "https://Products.Z-WaveAlliance.org/ProductManual/File?folder=&filename=Manuals/2586/FGT-001-EN-T-v1.0.pdf",
         "learnmode": {
