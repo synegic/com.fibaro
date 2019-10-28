@@ -20,7 +20,7 @@
   ],
   "capabilitiesOptions": {
     "onoff": {
-      "setOnDim": false
+      "setOnDim": true
     },
     "measure_voltage.input1": {
       "title": {

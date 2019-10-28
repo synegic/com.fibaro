@@ -107,7 +107,8 @@
     "manufacturerId": 271,
     "productTypeId": 1282,
     "productId": [
-      4096
+      4096,
+	    12288
     ],
     "includeSecure": false,
     "learnmode": {

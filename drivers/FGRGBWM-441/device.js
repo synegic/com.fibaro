@@ -179,7 +179,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         const inputNumber = multiChannelNodeId-1;
         if (this.getSetting(`input_config_${inputNumber}`) === '8') {
             // The report has a value of 0-99, 100 levels. 0-10V input, so divide by 10.
-            const voltageValue = Math.round((report['Value (Raw)'].readUIntBE(0, 1) / 99) * 100);
+            const voltageValue = Math.round((report['Value (Raw)'].readUIntBE(0, 1) / 99) * 10);
             this.log('Voltage mode', voltageValue);
 
             this.inputFlowTriggers[inputNumber].trigger(this, null), { volt: voltageValue };

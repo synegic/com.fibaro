@@ -61,6 +61,14 @@ When the app has just started, it can take up to 2 minutes before it reacts.
 If it takes longer you (probably) need to restart your homey.
 
 ## Change Log:
+### v 2.2.7
+Changed FGRGBWM-441, RGBW Controller to turn of when a new dim value is set and the device is turned off.
+Corrected voltage measurements values for FGRGBWM-441, RGBW Controller.
+Added internal battery type for FGT-001, Heat Controller.
+
+### v 2.2.6
+Capability fixes.
+
 ### v 2.2.5
 Improve response for FGT-001, Heat Controller.
 
