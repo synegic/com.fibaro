@@ -219,8 +219,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
         Object.keys(colorObject).forEach(async (key) => {
             this.log(`Sending value: ${colorObject[key]} to node: ${multiChannelNodeToColorMap[key]}`);
-            // Get the node matching with the color, then send the color value divided by 2.55 (0-100 range)
-            await this.node.MultiChannelNodes[multiChannelNodeToColorMap[key]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: Math.round(colorObject[key] /2.55)});
+            // Get the node matching with the color, then send the color value divided by 2.55 (0-99 range)
+            await this.node.MultiChannelNodes[multiChannelNodeToColorMap[key]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: Math.round((colorObject[key] / 255)*99)});
         });
         return true;
     }
