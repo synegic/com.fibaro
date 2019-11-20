@@ -186,7 +186,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
             return voltageValue;
         } else {
-            this.log('Color mode');
+            this.log('Color report received');
             // Get the associated color channel from the multichannelnode number
             let color = Object.keys(multiChannelNodeToColorMap).find(key => {
                 return multiChannelNodeToColorMap[key] === multiChannelNodeId;
