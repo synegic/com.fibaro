@@ -50,42 +50,22 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
             if (typeof newValues.light_saturation === 'number') this.currentHSV.saturation = newValues.light_saturation;
             this.currentHSV.value = this.getCapabilityValue('dim');
 
-            this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
+            let rgbColors = ZwaveUtils.convertHSVToRGB(this.currentHSV);
+            rgbColors.white = 0;
+            this.sendColors(rgbColors);
         });
 
         this.registerCapabilityListener('light_temperature', async (value, opts) => {
-            const HSV = this.temperatureGradient.hsvAt(value).toHsv();
-            HSV.h /= 100;
-            HSV.s /= 100;
-            HSV.v = this.currentHSV.value;
-
-            this.log('Temperature HSV', HSV);
-            this.currentHSV = {
-                hue: (HSV.h /100),
-                saturation: (HSV.s /100),
+            const colorTempValues = {
+                blue: Math.round((1 - value) * 255  * this.getCapabilityValue('dim')), // In temperature mode mix in blue to imitate cool white mode
+                red: 0, // Set red to zero since we don't want colors
+                green: 0, // Set red to zero since we don't want colors
+                white: Math.round(255 * this.getCapabilityValue('dim')),
             }
-            this.currentHSV.value = this.getCapabilityValue('dim')
 
-            switch(this.stripType) {
-                case 'cct':
-                    let colorObject = { 
-                        // Red & green always 0 to turn them off in temperature mode
-                        red: 0,
-                        green: 0,
-                        blue: Math.round(this.currentHSV.value * (1 - value) * 99),
-                        white: Math.round(this.currentHSV.value * value * 99)
-                    }
-                    this.sendColors(colorObject);
-                    break;
-                case 'rgbw': 
-                    this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
-                    break;
-                case 'rgb':
-                    this.sendColors(ZwaveUtils.convertHSVToRGB(this.currentHSV));
-                    break;
-                default:
-                    return new Error('temperature_mode_not_supported');
-            }
+            if (this.stripType === 'cct' || this.stripType === 'rgbw') {
+                this.sendColors(colorTempValues);
+            } else  return new Error('temperature_mode_not_supported');
         });
 
         // Input/ report
@@ -199,14 +179,14 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
         const inputNumber = multiChannelNodeId-1;
         if (this.getSetting(`input_config_${inputNumber}`) === '8') {
             // The report has a value of 0-99, 100 levels. 0-10V input, so divide by 10.
-            const voltageValue = Math.round((report['Value (Raw)'].readUIntBE(0, 1) / 99) * 100);
+            const voltageValue = Math.round((report['Value (Raw)'].readUIntBE(0, 1) / 99) * 10);
             this.log('Voltage mode', voltageValue);
 
             this.inputFlowTriggers[inputNumber].trigger(this, null), { volt: voltageValue };
 
             return voltageValue;
         } else {
-            this.log('Color mode');
+            this.log('Color report received');
             // Get the associated color channel from the multichannelnode number
             let color = Object.keys(multiChannelNodeToColorMap).find(key => {
                 return multiChannelNodeToColorMap[key] === multiChannelNodeId;
@@ -214,6 +194,11 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
             this.currentRGB[color] = Math.round((report['Value (Raw)'].readUIntBE(0, 1) /99) * 255);
             const tempHSV = ZwaveUtils.convertRGBToHSV(this.currentRGB);
+
+            //overwrite tempHSV.value for dim level when lightmode is temperature
+            if (typeof this.currentRGB['white'] !== 'undefined' && this.currentRGB['white'] > 0) {
+                tempHSV.value = this.currentRGB['white'] / 255;
+            }
             
             // Debounce timeout to prevent glitches in the Homey UI.
             if (this.colorChangeReportTimeout) clearTimeout(this.colorChangeReportTimeout);
@@ -222,7 +207,7 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
                 this.setCapabilityValue('light_hue', tempHSV.hue);
                 this.setCapabilityValue('light_saturation', tempHSV.saturation);
                 this.setCapabilityValue('dim', tempHSV.value);   
-            }, 1000);
+            }, 2000);
 
             // TODO Instead of returning 0, remove the capability when not in voltage mode.
             return 0;
@@ -239,8 +224,8 @@ class FibaroRGBWControllerDevice extends ZwaveDevice {
 
         Object.keys(colorObject).forEach(async (key) => {
             this.log(`Sending value: ${colorObject[key]} to node: ${multiChannelNodeToColorMap[key]}`);
-            // Get the node matching with the color, then send the color value divided by 2.55 (0-100 range)
-            await this.node.MultiChannelNodes[multiChannelNodeToColorMap[key]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: Math.round(colorObject[key] /2.55)});
+            // Get the node matching with the color, then send the color value divided by 2.55 (0-99 range)
+            await this.node.MultiChannelNodes[multiChannelNodeToColorMap[key]].CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value: Math.round((colorObject[key] / 255)*99)});
         });
         return true;
     }
