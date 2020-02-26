@@ -61,8 +61,6 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		catch (error) {
 			return Promise.reject(error.message);
 		}
-		return Promise.reject('unknown_error');
-
 	}
 
 	async dimDurationRunListener(args, state) {
@@ -105,7 +103,6 @@ class FibaroDimmerTwoDevice extends ZwaveDevice {
 		catch (error) {
 			return Promise.reject(error.message);
 		}
-		return Promise.reject('unknown_error');
 	}
 
 	async resetMeterRunListener(args, state) {
