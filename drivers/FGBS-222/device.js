@@ -127,12 +127,12 @@ class FibaroSmartImplant extends ZwaveDevice {
 		}
 
 		// Analog input parser
-		if (changedKeys.includes('63') || changedKeys.includes('64')) {
-			if (newSettings['20'] !== '4' || newSettings['20'] !== '5' ||
-				newSettings['21'] !== '4' || newSettings['21'] !== '5') {
-					return Promise.reject(new Error(Homey.__('errors.input')));
-				}
-		}
+		// if (changedKeys.includes('63') || changedKeys.includes('64')) {
+		// 	if (newSettings['20'] !== '4' || newSettings['20'] !== '5' ||
+		// 		newSettings['21'] !== '4' || newSettings['21'] !== '5') {
+		// 			return Promise.reject(new Error(Homey.__('errors.input')));
+		// 		}
+		// }
 		
 		return super.onSettings(oldSettings, newSettings, changedKeys);
 	}

@@ -23,6 +23,20 @@ class FibaroUniversalBinarySensorDriver extends Homey.Driver {
         this.temperature5Trigger = new Homey.FlowCardTriggerDevice('FGBS-222_temp5').register();
         this.temperature6Trigger = new Homey.FlowCardTriggerDevice('FGBS-222_temp6').register();
 
+        // Input condition cards
+
+        this.input1Condition = new Homey.FlowCardCondition('FGBS-222_i1_state')
+            .register()
+            .registerRunListener((args, state) => {
+                return !args.device.getCapabilityValue('alarm_generic.input1');
+            });
+
+        this.input2Condition = new Homey.FlowCardCondition('FGBS-222_i2_state')
+            .register()
+            .registerRunListener((args, state) => {
+                return !args.device.getCapabilityValue('alarm_generic.input2')
+            });
+
         // Output action cards
         this.output1OnAction = new Homey.FlowCardAction('FGBS-222_o1_on')
             .register()
