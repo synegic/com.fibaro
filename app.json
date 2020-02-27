@@ -14950,8 +14950,10 @@
             "nl": "Druk driemaal op een knop van uw Walli Dimmer"
           }
         },
+        "associationGroupsMultiChannel": [
+          1
+        ],
         "associationGroups": [
-          1,
           2,
           3
         ]
