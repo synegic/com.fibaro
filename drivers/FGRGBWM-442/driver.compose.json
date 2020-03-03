@@ -5,14 +5,14 @@
   },
   "class": "light",
   "capabilities": [
+    "onoff",
     "dim",
     "light_hue",
     "light_mode",
-    "measure_power",
-    "meter_power",
     "light_saturation",
     "light_temperature",
-    "onoff",
+    "measure_power",
+    "meter_power",
     "measure_voltage.input1",
     "measure_voltage.input2",
     "measure_voltage.input3",
@@ -21,6 +21,26 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": false
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "light_hue": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "light_saturation": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "light_temperature": {
+      "opts": {
+        "duration": true
+      }
     },
     "measure_voltage.input1": {
       "title": {
@@ -59,7 +79,7 @@
     "productId": [
       4096
     ],
-    "zwaveAllianceProductId": 1054,
+    "zwaveAllianceProductId": 3589,
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
@@ -67,40 +87,9 @@
         "nl": "Druk driemaal op de knop op de {{driverNameNl}}."
       }
     },
-    "associationGroups": [
-      5
-    ],
-    "associationGroupOptions": {
-      "1": {
-        "hint": {
-          "en": "On/off signals from input 1",
-          "nl": "Aan/uit signalen van ingang 1"
-        }
-      },
-      "2": {
-        "hint": {
-          "en": "On/off signals from input 2",
-          "nl": "Aan/uit signalen van ingang 2"
-        }
-      },
-      "3": {
-        "hint": {
-          "en": "On/off signals from input 3",
-          "nl": "Aan/uit signalen van ingang 3"
-        }
-      },
-      "4": {
-        "hint": {
-          "en": "On/off signals from input 4",
-          "nl": "Aan/uit signalen van ingang 4"
-        }
-      },
-      "5": {
-        "hint": {
-          "en": "This is the controller group, it is not recommended to change this.",
-          "nl": "Dit is de controller groep, het is niet aangeraden deze te wijzigen."
-        }
-      }
-    }
+    "includeSecure": false,
+    "associationGroupsMultiChannel": [
+      0, 1
+    ]
   }
 }
