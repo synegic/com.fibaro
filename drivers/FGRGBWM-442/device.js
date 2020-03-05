@@ -1,17 +1,82 @@
 'use strict'
 
 const ZwaveLightDevice = require('homey-meshdriver').ZwaveLightDevice;
-const ZwaveUtils = require('homey-meshdriver').Util;
 
 class FibaroRGBW2Device extends ZwaveLightDevice {
     async onMeshInit() {
-        this.enableDebug();
+        this.driver = this.getDriver()
 
+        // Init for ZWave light device which handles RGBW
         await super.onMeshInit();
 
         // Power capabilities
         this.registerCapability('meter_power', 'METER');
-        this.registerCapability('measure_power', 'SENSOR_MULTILEVEL');
+        this.registerCapability('measure_power', 'METER');
+
+        // Input/ report
+        this.registerCapability('measure_voltage.input1', 'SENSOR_MULTILEVEL', {
+            multiChannelNodeId: 6,
+          	get: 'SENSOR_MULTILEVEL_GET',
+          	getOpts: {
+          		getOnStart: true,
+          	},
+            report: 'SENSOR_MULTILEVEL_REPORT',
+            reportParser: (report) => this.multiChannelAnalogInputParser(report, 6),
+        });
+
+        this.registerCapability('measure_voltage.input2', 'SENSOR_MULTILEVEL', {
+            multiChannelNodeId: 7,
+          	get: 'SENSOR_MULTILEVEL_GET',
+          	getOpts: {
+          		getOnStart: true,
+          	},
+            report: 'SENSOR_MULTILEVEL_REPORT',
+            reportParser: (report) => this.multiChannelAnalogInputParser(report, 7),
+        });
+
+        this.registerCapability('measure_voltage.input3', 'SENSOR_MULTILEVEL', {
+            multiChannelNodeId: 8,
+          	get: 'SENSOR_MULTILEVEL_GET',
+          	getOpts: {
+          		getOnStart: true,
+          	},
+            report: 'SENSOR_MULTILEVEL_REPORT',
+            reportParser: (report) => this.multiChannelAnalogInputParser(report, 8),
+        });
+
+        this.registerCapability('measure_voltage.input4', 'SENSOR_MULTILEVEL', {
+            multiChannelNodeId: 9,
+          	get: 'SENSOR_MULTILEVEL_GET',
+          	getOpts: {
+          		getOnStart: true,
+          	},
+            report: 'SENSOR_MULTILEVEL_REPORT',
+            reportParser: (report) => this.multiChannelAnalogInputParser(report, 9),
+        });
+
+        this.registerReportListener('COMMAND_CLASS_CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report)=> {
+            this.log('Scene report', report);
+
+
+        });
+    }
+
+    multiChannelAnalogInputParser(report, multiChannelNodeId) {
+        const inputNumber = multiChannelNodeId - 5;
+        const inputConfig = this.getSetting(`input_config_${inputNumber}`);
+
+        if ((inputConfig === '0' || inputConfig === '1') && report.hasOwnProperty('Sensor Value (Parsed)')) {
+            // Get voltage value from report and trigger the matching Flow
+            const voltageValue = Number(report['Sensor Value (Parsed)']);
+
+            this.driver.analogInputFlowTrigger.trigger(
+                this,
+                { input: inputNumber },
+                { volt: voltageValue });
+
+            return voltageValue;
+        }
+        return 0;
     }
 
     // Overrride _sendColor from base class to work with 4 colors rather then 5
@@ -22,7 +87,7 @@ class FibaroRGBW2Device extends ZwaveLightDevice {
         if (cold > 125) {
             blue = cold;
             warm = cold /2;
-        } else {
+        } else if (cold > 0) {
             blue = cold;
         }
 
@@ -55,8 +120,6 @@ class FibaroRGBW2Device extends ZwaveLightDevice {
 		} else if (SwitchColorVersion > 1) {
 			setCommand.Duration = typeof duration !== 'number' ? FACTORY_DEFAULT_COLOR_DURATION : Utils.calculateZwaveDimDuration(duration);
 		}
-
-		this.log(setCommand);
 
 		return this.node.CommandClass.COMMAND_CLASS_SWITCH_COLOR.SWITCH_COLOR_SET(setCommand);
 	}
