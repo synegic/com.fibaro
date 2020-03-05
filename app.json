@@ -1774,6 +1774,164 @@
         ]
       },
       {
+        "id": "input_on",
+        "title": {
+          "en": "In-/output turned on",
+          "nl": "In-/uitgang aan geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-442"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "input_off",
+        "title": {
+          "en": "In-/output turned off",
+          "nl": "In-/uitgang uit geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-442"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "analog_input",
+        "title": {
+          "en": "Voltage input changed",
+          "nl": "Voltage ingang veranderd"
+        },
+        "hint": {
+          "en": "This will only trigger if the input type is set to analog",
+          "nl": "Dit zal alleen werken wanneer het ingangtype staat ingesteld op analoog"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-442"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Input 1",
+                  "nl": "Ingang 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Input 2",
+                  "nl": "Ingang 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Input 3",
+                  "nl": "Ingang 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Input 4",
+                  "nl": "Ingang 4"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "volt",
+            "type": "number",
+            "title": {
+              "en": "Volt"
+            },
+            "example": 5
+          }
+        ]
+      },
+      {
         "id": "FGRM-222-momentary",
         "title": {
           "en": "Shutter scene (momentary)",
@@ -2488,6 +2646,75 @@
                 "label": {
                   "en": "Stop animation",
                   "nl": "Stop animatie"
+                }
+              },
+              {
+                "id": "0",
+                "label": {
+                  "en": "Stop animation, back to previous state",
+                  "nl": "Stop animatie, herstel vorige status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RGBW_animation",
+        "title": {
+          "en": "Choose an animation",
+          "nl": "Kies een animatie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=FGRGBWM-442"
+          },
+          {
+            "name": "animation",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "6",
+                "label": {
+                  "en": "Fire",
+                  "nl": "Vuur"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Storm/lightning",
+                  "nl": "Storm/onweer"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Rainbow",
+                  "nl": "Regenboog"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Aurora",
+                  "nl": "Aurora"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Police",
+                  "nl": "Politie"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Random animation",
+                  "nl": "Willekeurige animatie"
                 }
               },
               {
@@ -12703,6 +12930,628 @@
                 "size": 1
               },
               "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FGRGBWM-442",
+      "name": {
+        "en": "RGBW Controller 2"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_mode",
+        "light_saturation",
+        "light_temperature",
+        "measure_power",
+        "meter_power",
+        "measure_voltage.input1",
+        "measure_voltage.input2",
+        "measure_voltage.input3",
+        "measure_voltage.input4"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "light_hue": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "light_saturation": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "light_temperature": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "measure_voltage.input1": {
+          "title": {
+            "en": "Input 1",
+            "nl": "Ingang 1"
+          }
+        },
+        "measure_voltage.input2": {
+          "title": {
+            "en": "Input 2",
+            "nl": "Ingang 2"
+          }
+        },
+        "measure_voltage.input3": {
+          "title": {
+            "en": "Input 3",
+            "nl": "Ingang 3"
+          }
+        },
+        "measure_voltage.input4": {
+          "title": {
+            "en": "Input 4",
+            "nl": "Ingang 4"
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/FGRGBWM-442/assets/images/large.png",
+        "small": "/drivers/FGRGBWM-442/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          2306
+        ],
+        "productId": [
+          4096
+        ],
+        "zwaveAllianceProductId": 3589,
+        "learnmode": {
+          "image": "/drivers/FGRGBWM-442/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the button on the RGBW Controller 2 three times.",
+            "nl": "Druk driemaal op de knop op de RGBW Controller 2."
+          }
+        },
+        "includeSecure": false,
+        "associationGroupsMultiChannel": [
+          0,
+          1,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Transitions",
+            "nl": "Transities"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "transition_mode",
+              "type": "radio",
+              "label": {
+                "en": "Transition mode",
+                "nl": "Transitie modus"
+              },
+              "hint": {
+                "en": "This parameter (8) determines what transition mode is used.",
+                "nl": "Deze parameter (8) bepaalt welke transitie modus er wordt gebruikt."
+              },
+              "zwave": {
+                "index": 8,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Time based steps (mode 1)",
+                    "nl": "Tijd gebaseerde stappen (mode 1)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Fixed time (mode 2)",
+                    "nl": "Vaste tijd (mode 2)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "mode1_steps",
+              "type": "number",
+              "label": {
+                "en": "Transistion step size (mode 1)",
+                "nl": "Transitie stap grote (mode 1)"
+              },
+              "hint": {
+                "en": "This parameter (9) sets the size of the steps taken when making a transition.",
+                "nl": "Deze parameter (9) bepaalt de grote van de stappen bij het maken van de transitie."
+              },
+              "zwave": {
+                "index": 9,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "value": 1
+            },
+            {
+              "id": "mode1_time",
+              "type": "number",
+              "label": {
+                "en": "Transition step time (mode 1)",
+                "nl": "Transitie stap tijd (mode 1)"
+              },
+              "hint": {
+                "en": "This parameter (10) determines the time that each step takes when making a transition.",
+                "nl": "Deze parameter (10) bepaalt de tijd voor elke stap bij het maken van een transitie."
+              },
+              "zwave": {
+                "index": 10,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 60000
+              },
+              "value": 10
+            },
+            {
+              "id": "mode2_range",
+              "type": "dropdown",
+              "label": {
+                "en": "Time range (mode 2)",
+                "nl": "Tijd bereik (mode 2)"
+              },
+              "hint": {
+                "en": "This parameter (11) determines in which time range mode 2 should work.",
+                "nl": "Deze parameter (11) bepaalt in welk tijdsbereik mode 2 werkt."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1,
+                "signed": false
+              },
+              "value": "64",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Milliseconds",
+                    "nl": "Milliseconden"
+                  }
+                },
+                {
+                  "id": "64",
+                  "label": {
+                    "en": "Seconds",
+                    "nl": "Seconden"
+                  }
+                },
+                {
+                  "id": "128",
+                  "label": {
+                    "en": "Seconds times 10",
+                    "nl": "Seconden keer 10"
+                  }
+                },
+                {
+                  "id": "192",
+                  "label": {
+                    "en": "Minutes",
+                    "nl": "Minuten"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "mode2_transition_time",
+              "type": "number",
+              "label": {
+                "en": "Transition time (mode 2)",
+                "nl": "Transitie tijd (mode 2)"
+              },
+              "hint": {
+                "en": "This parameter (11) determines the amount of time that it takes to transition from beginning to the end.",
+                "nl": "Deze parameter (11) bepaalt de tijd van de transitie van het begin tot aan het eind."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 1,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 63
+              },
+              "value": 3
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "input_threshold",
+              "type": "number",
+              "label": {
+                "en": "Input threshold",
+                "nl": "Ingang drempel"
+              },
+              "hint": {
+                "en": "This parameter (63) determines the amount of voltage on the input(s) that needs to change before being reported.",
+                "nl": "Deze parameter (63) bepaalt hoeveel het voltage op de ingang(en) moet veranderen voor een update wordt verzonden."
+              },
+              "zwave": {
+                "index": 63,
+                "size": 1
+              },
+              "attr": {
+                "min": 0.1,
+                "max": 10,
+                "step": 0.1
+              },
+              "value": 0.5
+            },
+            {
+              "id": "input_config_1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 configuration",
+                "nl": "Ingang 1 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (20) determines what is (optionally) connected to input 1 of the RGBW controller.",
+                "nl": "Deze parameter (20) bepaalt wat er (optioneel) aangesloten is op ingang 1 van de RGBW controller."
+              },
+              "zwave": {
+                "index": 20,
+                "size": 1
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Analog (0 - 10v) without pull-up",
+                    "nl": "Analoog (0 - 10v) zonder pull-up"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Analog (0 - 10v) with pull-up",
+                    "nl": "Analoog (0 - 10v) met pull-up"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 configuration",
+                "nl": "Ingang 2 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (21) determines what is (optionally) connected to input 2 of the RGBW controller.",
+                "nl": "Deze parameter (21) bepaalt wat er (optioneel) aangesloten is op ingang 2 van de RGBW controller."
+              },
+              "zwave": {
+                "index": 21,
+                "size": 1
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Analog (0 - 10v) without pull-up",
+                    "nl": "Analoog (0 - 10v) zonder pull-up"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Analog (0 - 10v) with pull-up",
+                    "nl": "Analoog (0 - 10v) met pull-up"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 configuration",
+                "nl": "Ingang 3 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (22) determines what is (optionally) connected to input 3 of the RGBW controller.",
+                "nl": "Deze parameter (22) bepaalt wat er (optioneel) aangesloten is op ingang 3 van de RGBW controller."
+              },
+              "zwave": {
+                "index": 22,
+                "size": 1
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Analog (0 - 10v) without pull-up",
+                    "nl": "Analoog (0 - 10v) zonder pull-up"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Analog (0 - 10v) with pull-up",
+                    "nl": "Analoog (0 - 10v) met pull-up"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "input_config_4",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 4 configuration",
+                "nl": "Ingang 4 configuratie"
+              },
+              "hint": {
+                "en": "This parameter (23) determines what is (optionally) connected to input 4 of the RGBW controller.",
+                "nl": "Deze parameter (23) bepaalt wat er (optioneel) aangesloten is op ingang 4 van de RGBW controller."
+              },
+              "zwave": {
+                "index": 23,
+                "size": 1
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Analog (0 - 10v) without pull-up",
+                    "nl": "Analoog (0 - 10v) zonder pull-up"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Analog (0 - 10v) with pull-up",
+                    "nl": "Analoog (0 - 10v) met pull-up"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Kortstondige schakelaar"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Toggle switch (toggle state)",
+                    "nl": "Tuimel schakelaar (schakel status)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Toggle switch (switch state based)",
+                    "nl": "Tuimel schakelaar (schakelaar status gebaseerd)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "analog_input_minimum_change",
+              "type": "number",
+              "label": {
+                "en": "Analog input minimum change",
+                "nl": "Minimale verandering analoge ingang"
+              },
+              "hint": {
+                "en": "This parameter (63) defines the minimum input change that the device will respond to, in steps of 0.1v.",
+                "nl": "Deze parameter (63) bepaalt de minimale waarde waar het apparaat op reageert, in stappen van 0.1v."
+              },
+              "zwave": {
+                "index": 63,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "value": 5
+            },
+            {
+              "id": "analog_input_reports_periodic",
+              "type": "number",
+              "label": {
+                "en": "Analog input periodic reports",
+                "nl": "Analoge ingang periodiek verzenden"
+              },
+              "hint": {
+                "en": "This parameter (64) determines on what interval the values of the analog inputs are reported.",
+                "nl": "Deze parameter (64) bepaalt op welke interval de waarden van de analoge ingangen wordt verzonden."
+              },
+              "zwave": {
+                "index": 64,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 32400
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power",
+            "nl": "Stroom"
+          },
+          "collapsed": true,
+          "children": [
+            {
+              "id": "watt_report_interval",
+              "type": "number",
+              "label": {
+                "en": "Watt report interval",
+                "nl": "Watt update interval"
+              },
+              "hint": {
+                "en": "This parameter (66) determines on what interval the Wattage update needs to be send.",
+                "nl": "Deze parameter (66) bepaalt op welke interval een Wattage update wordt verzonden."
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 32400
+              },
+              "value": 0
+            },
+            {
+              "id": "kwh_threshold",
+              "type": "number",
+              "label": {
+                "en": "kWh threshold",
+                "nl": "kWh drempel"
+              },
+              "hint": {
+                "en": "This parameter (65) determines the minimal kWh value change before an update is send.",
+                "nl": "Deze parameter (65) bepaalt de minimale kWh waarde verandering voor het word verzonden."
+              },
+              "zwave": {
+                "index": 65,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 500
+              },
+              "value": 10
+            },
+            {
+              "id": "save_state",
+              "type": "checkbox",
+              "label": {
+                "en": "Save power-off state",
+                "nl": "Onthoud status na stroomonderbreking"
+              },
+              "hint": {
+                "en": "This parameter (16) determines whether or not the device restores its last known state after power disruption.",
+                "nl": "Deze parameter (16) bepaalt of het apparaat de laatst bekende status herstelt na stroomonderbreking."
+              },
+              "zwave": {
+                "index": 16,
+                "size": 1
+              },
+              "value": false
             }
           ]
         }
