@@ -54,7 +54,7 @@ class FibaroRGBW2Device extends ZwaveLightDevice {
             reportParser: (report) => this.multiChannelAnalogInputParser(report, 9),
         });
 
-        this.registerReportListener('COMMAND_CLASS_CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report)=> {
+        this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report)=> {
             this.log('Scene report', report);
 
 
