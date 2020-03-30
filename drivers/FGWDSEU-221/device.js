@@ -4,13 +4,16 @@ const ZwaveDevice = require('homey-meshdriver').ZwaveDevice;
 
 class FibaroWalliSwitchDevice extends ZwaveDevice {
 
-	onMeshInit() {
+	async onMeshInit() {
         this.enableDebug();
 
         this.driver = this.getDriver();
 
+        this.singleSwitchMode = this.node.productTypeId.value === 6657;
+
+        this.log('Is het een single switch?', this.singleSwitchMode);
+
         this.registerCapability('onoff.output1', 'BASIC');
-        this.registerCapability('onoff.output2', 'BASIC', { multiChannelNodeId: 2 });
 
         this.registerCapability('measure_power.output1', 'METER', { 
             reportParser: report => {
@@ -33,27 +36,39 @@ class FibaroWalliSwitchDevice extends ZwaveDevice {
         });
         this.registerCapability('meter_power.output1', 'METER');
 
-        this.registerCapability('measure_power.output2', 'METER', { 
-                multiChannelNodeId: 2,
-                reportParser: report => {
-                    if (report &&
-                    report.hasOwnProperty('Properties1') &&
-                    report.Properties1.hasOwnProperty('Meter Type') &&
-                    (report.Properties1['Meter Type'] === 'Electric meter' || report.Properties1['Meter Type'] === 1) &&
-                    report.Properties1.hasOwnProperty('Scale bit 2') &&
-                    report.Properties1['Scale bit 2'] === false &&
-                    report.hasOwnProperty('Properties2') &&
-                    report.Properties2.hasOwnProperty('Scale bits 10') &&
-                    report.Properties2['Scale bits 10'] === 2) {
-                        this.driver.powerChangedTrigger.trigger(this,
-                            { power: report['Meter Value (Parsed)'] },
-                            { output: 2 },
-                        );
-                        return report['Meter Value (Parsed)'];
+        if (!this.singleSwitchMode) {
+            if (await !this.hasCapability('onoff.output2')) await this.addCapability('onoff.output2');
+            if (await !this.hasCapability('measure_power.output2')) await this.addCapability('measure_power.output2');
+            if (await !this.hasCapability('meter_power.output2')) await this.addCapability('meter_power.output2');
+
+            this.registerCapability('onoff.output2', 'BASIC', { multiChannelNodeId: 2 });
+
+            this.registerCapability('measure_power.output2', 'METER', { 
+                    multiChannelNodeId: 2,
+                    reportParser: report => {
+                        if (report &&
+                        report.hasOwnProperty('Properties1') &&
+                        report.Properties1.hasOwnProperty('Meter Type') &&
+                        (report.Properties1['Meter Type'] === 'Electric meter' || report.Properties1['Meter Type'] === 1) &&
+                        report.Properties1.hasOwnProperty('Scale bit 2') &&
+                        report.Properties1['Scale bit 2'] === false &&
+                        report.hasOwnProperty('Properties2') &&
+                        report.Properties2.hasOwnProperty('Scale bits 10') &&
+                        report.Properties2['Scale bits 10'] === 2) {
+                            this.driver.powerChangedTrigger.trigger(this,
+                                { power: report['Meter Value (Parsed)'] },
+                                { output: 2 },
+                            );
+                            return report['Meter Value (Parsed)'];
+                        }
                     }
-                }
-        });
-        this.registerCapability('meter_power.output2', 'METER', { multiChannelNodeId: 2 });
+            });
+            this.registerCapability('meter_power.output2', 'METER', { multiChannelNodeId: 2 });
+        } else {
+            if (await this.hasCapability('onoff.output2')) await this.removeCapability('onoff.output2');
+            if (await this.hasCapability('measure_power.output2')) await this.removeCapability('measure_power.output2');
+            if (await this.hasCapability('meter_power.output2')) await this.removeCapability('meter_power.output2');
+        }
 
         this.registerReportListener('CENTRAL_SCENE', 'CENTRAL_SCENE_NOTIFICATION', (report) => {
             if (report &&
@@ -65,11 +80,12 @@ class FibaroWalliSwitchDevice extends ZwaveDevice {
                     if (report.Properties1['Key Attributes'] == 'Key Held Down') {
                         presses = 4;
                     } else if (report.Properties1['Key Attributes'] == 'Key Released') {
-                        return;
+                        presses = 5;
                     } else {
-                        const parsedVal = Number(report.Properties1['Key Attributes'].match(/\d+/));
-                        if (parsedVal) presses = parsedVal[0];
+                        presses = Number(report.Properties1['Key Attributes'].match(/\d+/)[0]);
                     }
+
+                    this.log('Button flow', button, presses);
                     this.getDriver().buttonSceneTrigger.trigger(this, {}, { button, presses });
                 }
         });

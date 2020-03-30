@@ -39,6 +39,7 @@ class FibaroWalliSwitchDriver extends Homey.Driver {
 
         this.buttonSceneTrigger = new Homey.FlowCardTriggerDevice('walli_switch_button_scenes')
             .registerRunListener((args, state) => {
+                this.log('Triggering scene flow', args.button == state.button && args.presses == state.presses);
                 return args.button == state.button && args.presses == state.presses;
             })
             .register();

@@ -5,7 +5,7 @@
   },
   "brandColor": "#000000",
   "sdk": 2,
-  "version": "2.4.1",
+  "version": "2.4.3",
   "compatibility": ">=3.2.0",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -16038,7 +16038,10 @@
       },
       "zwave": {
         "manufacturerId": 271,
-        "productTypeId": 6913,
+        "productTypeId": [
+          6913,
+          6657
+        ],
         "productId": [
           4096
         ],
