@@ -94,6 +94,7 @@ class FibaroWalliSwitchDevice extends ZwaveDevice {
     
     async setOutputRunListener(args, state, value) {
         if (!args.output) return new Error('Missing arguments');
+        if (output === 2 && this.singleSwitchMode) return new Error('Can\'t set output 2 in single switch mode!');
 
         const output = Number(args.output);
         if (output === 1) {
