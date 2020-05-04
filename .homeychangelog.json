@@ -22,5 +22,9 @@
   "2.4.3": {
     "en": "Walli Switch now works in single and double mode.",
     "nl": "Walli Schakelaar werkt nu in enkele en dubbele modus."
+  },
+  "2.4.4": {
+    "en": "Bugfixes for various devices (Dimmer 2, Smart Implant).",
+    "nl": "Optimalisatie voor verschillende apparaten (Dimmer 2, Smart Implant)."
   }
 }
